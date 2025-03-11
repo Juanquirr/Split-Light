@@ -1,3 +1,241 @@
-[gd_scene format=3 uid="uid://duepgnu8y1and"]
+[gd_scene load_steps=30 format=3 uid="uid://duepgnu8y1and"]
+
+[ext_resource type="Script" path="res://player_1.gd" id="1_0xm2m"]
+[ext_resource type="Script" path="res://main.gd" id="1_lquwl"]
+[ext_resource type="Texture2D" uid="uid://du2o4mrlcp0br" path="res://player-idle-2.png" id="2_1bvp3"]
+[ext_resource type="Texture2D" uid="uid://yu1oa05kv1va" path="res://cyberpunk-corridor-PREVIEW.png" id="2_272bh"]
+[ext_resource type="Texture2D" uid="uid://qutvpbxvje7n" path="res://run.png" id="2_h2yge"]
+[ext_resource type="Texture2D" uid="uid://b8ltjdyr4vcgd" path="res://jump.png" id="3_lquwl"]
+[ext_resource type="Script" path="res://player_2.gd" id="7_5vw27"]
+[ext_resource type="Script" path="res://button_red.gd" id="8_avt5f"]
+[ext_resource type="Texture2D" uid="uid://0o1jpti3l37p" path="res://boton rojo (1).png" id="8_m6exl"]
+[ext_resource type="Texture2D" uid="uid://2qsitcmgx1wg" path="res://boton azul (1).png" id="10_glcpn"]
+[ext_resource type="Script" path="res://button_blue.gd" id="10_hmhj7"]
+[ext_resource type="Texture2D" uid="uid://b8eu1upsokihp" path="res://puerta_cerrada (1).png" id="11_6mfbj"]
+[ext_resource type="Script" path="res://door.gd" id="12_3ctrk"]
+[ext_resource type="Texture2D" uid="uid://cuydxbg6y0ld0" path="res://puerta_abierta (1).png" id="12_xmccc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_272bh"]
+size = Vector2(4664, 112)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_onhew"]
+size = Vector2(105, 53)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mxskl"]
+size = Vector2(194, 348.5)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kek77"]
+atlas = ExtResource("2_1bvp3")
+region = Rect2(0, 0, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4c57u"]
+atlas = ExtResource("3_lquwl")
+region = Rect2(0, 0, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_efxa6"]
+atlas = ExtResource("3_lquwl")
+region = Rect2(256, 0, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dg77c"]
+atlas = ExtResource("3_lquwl")
+region = Rect2(128, 0, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ycdy4"]
+atlas = ExtResource("3_lquwl")
+region = Rect2(384, 0, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1bvp3"]
+atlas = ExtResource("2_h2yge")
+region = Rect2(128, 0, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lquwl"]
+atlas = ExtResource("2_h2yge")
+region = Rect2(256, 0, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7mycd"]
+atlas = ExtResource("2_h2yge")
+region = Rect2(384, 0, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_272bh"]
+atlas = ExtResource("2_h2yge")
+region = Rect2(512, 0, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5vw27"]
+atlas = ExtResource("2_h2yge")
+region = Rect2(640, 0, 128, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kek77"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kek77")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4c57u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_efxa6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dg77c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ycdy4")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1bvp3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lquwl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7mycd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_272bh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5vw27")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4c57u"]
+size = Vector2(48, 96)
 
 [node name="Main" type="Node2D"]
+script = ExtResource("1_lquwl")
+
+[node name="Parallax2D" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="Parallax2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D/ParallaxLayer"]
+position = Vector2(2106.73, 325)
+scale = Vector2(3.625, 3.625)
+texture = ExtResource("2_272bh")
+
+[node name="Ground" type="StaticBody2D" parent="."]
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
+position = Vector2(2166, 613)
+shape = SubResource("RectangleShape2D_272bh")
+
+[node name="ButtonRed" type="StaticBody2D" parent="."]
+collision_layer = 4
+script = ExtResource("8_avt5f")
+
+[node name="Sprite2D" type="Sprite2D" parent="ButtonRed"]
+position = Vector2(2328, 544)
+scale = Vector2(0.168945, 0.143555)
+texture = ExtResource("8_m6exl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ButtonRed"]
+position = Vector2(2328.5, 521)
+shape = SubResource("RectangleShape2D_onhew")
+
+[node name="Area2D" type="Area2D" parent="ButtonRed"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ButtonRed/Area2D"]
+position = Vector2(2328.5, 521)
+shape = SubResource("RectangleShape2D_onhew")
+
+[node name="ButtonBlue" type="StaticBody2D" parent="."]
+collision_layer = 4
+script = ExtResource("10_hmhj7")
+
+[node name="Sprite2D" type="Sprite2D" parent="ButtonBlue"]
+position = Vector2(3530, 547)
+scale = Vector2(0.168945, 0.143555)
+texture = ExtResource("10_glcpn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ButtonBlue"]
+position = Vector2(3523.5, 524.5)
+shape = SubResource("RectangleShape2D_onhew")
+
+[node name="Area2D" type="Area2D" parent="ButtonBlue"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ButtonBlue/Area2D"]
+position = Vector2(3523.5, 524.5)
+shape = SubResource("RectangleShape2D_onhew")
+
+[node name="Door" type="StaticBody2D" parent="."]
+collision_layer = 8
+script = ExtResource("12_3ctrk")
+
+[node name="CloseDoor" type="Sprite2D" parent="Door"]
+position = Vector2(2998, 428)
+scale = Vector2(0.606725, 0.606725)
+texture = ExtResource("11_6mfbj")
+flip_h = true
+
+[node name="OpenDoor" type="Sprite2D" parent="Door"]
+position = Vector2(2975, 433)
+scale = Vector2(0.606725, 0.606725)
+texture = ExtResource("12_xmccc")
+region_enabled = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door"]
+position = Vector2(2997, 380.25)
+shape = SubResource("RectangleShape2D_mxskl")
+
+[node name="Player1" type="CharacterBody2D" parent="."]
+collision_mask = 14
+script = ExtResource("1_0xm2m")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player1"]
+position = Vector2(27, 481)
+scale = Vector2(1.8125, 2.29688)
+sprite_frames = SubResource("SpriteFrames_kek77")
+animation = &"jump"
+frame_progress = 0.847937
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player1"]
+position = Vector2(34, 508)
+shape = SubResource("RectangleShape2D_4c57u")
+
+[node name="Camera2D" type="Camera2D" parent="Player1"]
+limit_left = 0
+limit_top = 0
+limit_bottom = 0
+
+[node name="Player2" type="CharacterBody2D" parent="."]
+collision_mask = 14
+script = ExtResource("7_5vw27")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player2"]
+position = Vector2(27, 481)
+scale = Vector2(1.8125, 2.29688)
+sprite_frames = SubResource("SpriteFrames_kek77")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player2"]
+position = Vector2(34, 508)
+shape = SubResource("RectangleShape2D_4c57u")
+
+[node name="Camera2D" type="Camera2D" parent="Player2"]
+limit_left = 0
+limit_top = 0
+limit_bottom = 0
+
+[connection signal="button_pressed" from="ButtonRed" to="Door" method="_on_button_red_button_pressed"]
+[connection signal="button_released" from="ButtonRed" to="Door" method="_on_button_red_button_released"]
+[connection signal="body_entered" from="ButtonRed/Area2D" to="ButtonRed" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="ButtonRed/Area2D" to="ButtonRed" method="_on_area_2d_body_exited"]
+[connection signal="button_pressed" from="ButtonBlue" to="Door" method="_on_button_blue_button_pressed"]
+[connection signal="button_released" from="ButtonBlue" to="Door" method="_on_button_blue_button_released"]
+[connection signal="body_entered" from="ButtonBlue/Area2D" to="ButtonBlue" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="ButtonBlue/Area2D" to="ButtonBlue" method="_on_area_2d_body_exited"]
