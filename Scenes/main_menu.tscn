@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://di1phytr0o74x"]
 
-[ext_resource type="Texture2D" uid="uid://yu1oa05kv1va" path="res://cyberpunk-corridor-PREVIEW.png" id="1_fu7sn"]
-[ext_resource type="Texture2D" uid="uid://c5hyn82sro8fy" path="res://split_light (1) (1).png" id="2_jix8l"]
-[ext_resource type="Script" uid="uid://c2wahskthkgq8" path="res://button.gd" id="3_glbon"]
+[ext_resource type="Texture2D" uid="uid://yu1oa05kv1va" path="res://Enviroment/cyberpunk-corridor-PREVIEW.png" id="1_1ehe0"]
+[ext_resource type="Texture2D" uid="uid://c5hyn82sro8fy" path="res://split_light (1) (1).png" id="2_ce3w2"]
+[ext_resource type="Script" uid="uid://c2wahskthkgq8" path="res://Scripts/button.gd" id="3_n45e2"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -18,7 +18,7 @@ offset_left = -346.0
 offset_top = 5.0
 offset_right = 1521.0
 offset_bottom = 643.0
-texture = ExtResource("1_fu7sn")
+texture = ExtResource("1_1ehe0")
 
 [node name="Logo" type="TextureRect" parent="."]
 layout_mode = 0
@@ -26,7 +26,7 @@ offset_left = 384.0
 offset_top = 56.0
 offset_right = 752.0
 offset_bottom = 383.0
-texture = ExtResource("2_jix8l")
+texture = ExtResource("2_ce3w2")
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
@@ -36,6 +36,6 @@ offset_right = 690.0
 offset_bottom = 528.0
 theme_override_font_sizes/font_size = 34
 text = "Iniciar Juego"
-script = ExtResource("3_glbon")
+script = ExtResource("3_n45e2")
 
 [connection signal="pressed" from="Button" to="Button" method="_on_pressed"]

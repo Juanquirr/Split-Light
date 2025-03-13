@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b8ltjdyr4vcgd"
-path="res://.godot/imported/jump.png-60e7d08374724f073911fc9d3b6ea700.ctex"
+uid="uid://cuydxbg6y0ld0"
+path="res://.godot/imported/puerta_abierta (1).png-0c687eafc557fc8c540014db74ae2432.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://jump.png"
-dest_files=["res://.godot/imported/jump.png-60e7d08374724f073911fc9d3b6ea700.ctex"]
+source_file="res://Assets/puerta_abierta (1).png"
+dest_files=["res://.godot/imported/puerta_abierta (1).png-0c687eafc557fc8c540014db74ae2432.ctex"]
 
 [params]
 

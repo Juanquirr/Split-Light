@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cuydxbg6y0ld0"
-path="res://.godot/imported/puerta_abierta (1).png-0314684f54ead988bb4eb8bfa733729e.ctex"
+uid="uid://2qsitcmgx1wg"
+path="res://.godot/imported/boton azul (1).png-08a52efa2ed51f5542c81a731118f907.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://puerta_abierta (1).png"
-dest_files=["res://.godot/imported/puerta_abierta (1).png-0314684f54ead988bb4eb8bfa733729e.ctex"]
+source_file="res://Assets/boton azul (1).png"
+dest_files=["res://.godot/imported/boton azul (1).png-08a52efa2ed51f5542c81a731118f907.ctex"]
 
 [params]
 

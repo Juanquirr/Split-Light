@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://qutvpbxvje7n"
-path="res://.godot/imported/run.png-8e8bae9f565df7416f979962da89cc7f.ctex"
+uid="uid://0o1jpti3l37p"
+path="res://.godot/imported/boton rojo (1).png-897741860fa1148e3d55620718cc6b85.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://run.png"
-dest_files=["res://.godot/imported/run.png-8e8bae9f565df7416f979962da89cc7f.ctex"]
+source_file="res://Assets/boton rojo (1).png"
+dest_files=["res://.godot/imported/boton rojo (1).png-897741860fa1148e3d55620718cc6b85.ctex"]
 
 [params]
 

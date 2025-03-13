@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://2qsitcmgx1wg"
-path="res://.godot/imported/boton azul (1).png-5d2d995b4a1fe2234d0b004a28d12978.ctex"
+uid="uid://yu1oa05kv1va"
+path="res://.godot/imported/cyberpunk-corridor-PREVIEW.png-5aacb76e53a3e9180fc01d7969ecf601.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://boton azul (1).png"
-dest_files=["res://.godot/imported/boton azul (1).png-5d2d995b4a1fe2234d0b004a28d12978.ctex"]
+source_file="res://Enviroment/cyberpunk-corridor-PREVIEW.png"
+dest_files=["res://.godot/imported/cyberpunk-corridor-PREVIEW.png-5aacb76e53a3e9180fc01d7969ecf601.ctex"]
 
 [params]
 
