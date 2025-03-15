@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dknywhhef7a6o"]
 
 [ext_resource type="Texture2D" uid="uid://yu1oa05kv1va" path="res://Enviroment/cyberpunk-corridor-PREVIEW.png" id="1_ymr0u"]
-[ext_resource type="Script" uid="uid://dg5d3g4nei7xx" path="res://Scripts/button_level_1.gd" id="2_4bw2l"]
+[ext_resource type="Script" uid="uid://dg5d3g4nei7xx" path="res://Scripts/level_menu/button_level_1.gd" id="2_4bw2l"]
 
 [node name="LevelMenu" type="Control"]
 layout_mode = 3

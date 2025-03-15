@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c5hyn82sro8fy"
-path="res://.godot/imported/split_light (1) (1).png-3e9b78b51356313e7472a5409daaa54d.ctex"
+uid="uid://cuydxbg6y0ld0"
+path="res://.godot/imported/open_door.png-06e3e76d04128911df787728ac2e614e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://split_light (1) (1).png"
-dest_files=["res://.godot/imported/split_light (1) (1).png-3e9b78b51356313e7472a5409daaa54d.ctex"]
+source_file="res://Assets/open_door.png"
+dest_files=["res://.godot/imported/open_door.png-06e3e76d04128911df787728ac2e614e.ctex"]
 
 [params]
 

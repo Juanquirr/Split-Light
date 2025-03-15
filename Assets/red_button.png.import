@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://2qsitcmgx1wg"
-path="res://.godot/imported/boton azul (1).png-08a52efa2ed51f5542c81a731118f907.ctex"
+uid="uid://0o1jpti3l37p"
+path="res://.godot/imported/red_button.png-53617131c9523391177fbf45b7ad74ff.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/boton azul (1).png"
-dest_files=["res://.godot/imported/boton azul (1).png-08a52efa2ed51f5542c81a731118f907.ctex"]
+source_file="res://Assets/red_button.png"
+dest_files=["res://.godot/imported/red_button.png-53617131c9523391177fbf45b7ad74ff.ctex"]
 
 [params]
 

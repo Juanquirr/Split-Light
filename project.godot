@@ -13,7 +13,7 @@ config_version=5
 config/name="Split Light"
 run/main_scene="uid://di1phytr0o74x"
 config/features=PackedStringArray("4.4", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://Assets/icon.svg"
 
 [display]
 
