@@ -1,14 +1,14 @@
 [gd_scene load_steps=5 format=3 uid="uid://o3mfqsvg685k"]
 
-[ext_resource type="Script" uid="uid://bcjhk7m574wfl" path="res://Scripts/game_manager/game_manager.gd" id="1_0kxa1"]
-[ext_resource type="PackedScene" uid="uid://dri83rq66glsx" path="res://Scenes/player.tscn" id="1_d7u15"]
+[ext_resource type="Script" uid="uid://bcjhk7m574wfl" path="res://Scripts/game_manager/game_manager.gd" id="1_my0fb"]
+[ext_resource type="PackedScene" uid="uid://dri83rq66glsx" path="res://Scenes/player.tscn" id="2_6d4py"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_0kxa1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jumxm"]
 size = Vector2(712, 30)
 
-[node name="main" type="Node2D"]
+[node name="test_scene_v2" type="Node2D"]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(593, 573)
@@ -33,9 +33,9 @@ texture = SubResource("PlaceholderTexture2D_0kxa1")
 shape = SubResource("RectangleShape2D_jumxm")
 
 [node name="GameManager" type="Node" parent="."]
-script = ExtResource("1_0kxa1")
+script = ExtResource("1_my0fb")
 
-[node name="player" parent="GameManager" instance=ExtResource("1_d7u15")]
+[node name="player" parent="GameManager" instance=ExtResource("2_6d4py")]
 position = Vector2(557, 434)
 
 [node name="TimerLabel" type="Label" parent="GameManager"]
