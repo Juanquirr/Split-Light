@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c5hyn82sro8fy"
-path="res://.godot/imported/split_light_logo.png-8028ddd47660079310f67beb945734ed.ctex"
+path="res://.godot/imported/split_light_logo.png-700bc6534731c7af58c6c0c4b8d1d6cc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/split_light_logo.png"
-dest_files=["res://.godot/imported/split_light_logo.png-8028ddd47660079310f67beb945734ed.ctex"]
+source_file="res://assets/split_light_logo.png"
+dest_files=["res://.godot/imported/split_light_logo.png-700bc6534731c7af58c6c0c4b8d1d6cc.ctex"]
 
 [params]
 
