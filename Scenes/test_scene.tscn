@@ -1,0 +1,86 @@
+[gd_scene load_steps=8 format=3 uid="uid://cksu8ej27esu4"]
+
+[ext_resource type="Script" uid="uid://bl8q508indb2q" path="res://Scripts/Test_scene/character.gd" id="1_ak5v8"]
+[ext_resource type="Texture2D" uid="uid://cvcemn4lpjlu1" path="res://Assets/icon.svg" id="2_x033f"]
+[ext_resource type="Script" uid="uid://cou2didw7h2b1" path="res://Scripts/Test_scene/clue_example.gd" id="4_oho3u"]
+[ext_resource type="Script" uid="uid://0eibsumwio8s" path="res://Scripts/Test_scene/character_switch_manager .gd" id="5_d3awe"]
+
+[sub_resource type="Gradient" id="Gradient_1bvp3"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_yglu3"]
+gradient = SubResource("Gradient_1bvp3")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bwjpn"]
+size = Vector2(70, 60)
+
+[node name="TestScene" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(107, 350, -416, 350, -415, 416, 759, 413, 263, 413, 762, 378, 755, 350)
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(173, 380)
+scale = Vector2(18.3437, 1)
+texture = SubResource("GradientTexture2D_yglu3")
+
+[node name="firstPlayer" type="CharacterBody2D" parent="."]
+position = Vector2(167, 205)
+script = ExtResource("1_ak5v8")
+
+[node name="Sprite2D" type="Sprite2D" parent="firstPlayer"]
+texture = ExtResource("2_x033f")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="firstPlayer"]
+position = Vector2(-0.700005, 0.299995)
+scale = Vector2(0.993164, 1.00293)
+polygon = PackedVector2Array(64, 53, 64, 39, 63, -52, 59, -60, 52, -64, -51, -64, -57, -61, -61, -57, -64, -52, -64, 52, -60, 59, -55, 62, -51, 64, 51, 63, 57, 61, 60, 57)
+
+[node name="Camera2D" type="Camera2D" parent="firstPlayer"]
+
+[node name="secondPlayer" type="CharacterBody2D" parent="."]
+position = Vector2(-278, -9)
+script = ExtResource("1_ak5v8")
+
+[node name="Sprite2D" type="Sprite2D" parent="secondPlayer"]
+rotation = 3.14159
+texture = ExtResource("2_x033f")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="secondPlayer"]
+position = Vector2(-0.700005, 0.299995)
+scale = Vector2(0.993164, 1.00293)
+polygon = PackedVector2Array(64, 53, 64, 39, 63, -52, 59, -60, 52, -64, -51, -64, -57, -61, -61, -57, -64, -52, -64, 52, -60, 59, -55, 62, -51, 64, 51, 63, 57, 61, 60, 57)
+
+[node name="Camera2D" type="Camera2D" parent="secondPlayer"]
+
+[node name="ClueFirstPlayer" type="RigidBody2D" parent="."]
+script = ExtResource("4_oho3u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ClueFirstPlayer"]
+position = Vector2(-1, -1)
+shape = SubResource("RectangleShape2D_bwjpn")
+
+[node name="Sprite2D" type="Sprite2D" parent="ClueFirstPlayer"]
+position = Vector2(0, -1)
+rotation = 1.5708
+scale = Vector2(0.5, 0.570313)
+texture = ExtResource("2_x033f")
+
+[node name="ClueSecondPlayer" type="RigidBody2D" parent="."]
+position = Vector2(-122, 57)
+mass = 0.006
+script = ExtResource("4_oho3u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ClueSecondPlayer"]
+position = Vector2(-1, -1)
+shape = SubResource("RectangleShape2D_bwjpn")
+
+[node name="Sprite2D" type="Sprite2D" parent="ClueSecondPlayer"]
+position = Vector2(0, -1)
+rotation = -1.5708
+scale = Vector2(0.5, 0.570313)
+texture = ExtResource("2_x033f")
+
+[node name="CharacterManager" type="Node2D" parent="."]
+script = ExtResource("5_d3awe")

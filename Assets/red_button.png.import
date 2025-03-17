@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bc10doo51q8pe"
-path="res://.godot/imported/adventurer-attack1-00.png-0553cd15a0abd5366f2de97c227b64f1.ctex"
+uid="uid://0o1jpti3l37p"
+path="res://.godot/imported/red_button.png-53617131c9523391177fbf45b7ad74ff.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Adventurer-1.5/Individual Sprites/adventurer-attack1-00.png"
-dest_files=["res://.godot/imported/adventurer-attack1-00.png-0553cd15a0abd5366f2de97c227b64f1.ctex"]
+source_file="res://Assets/red_button.png"
+dest_files=["res://.godot/imported/red_button.png-53617131c9523391177fbf45b7ad74ff.ctex"]
 
 [params]
 
