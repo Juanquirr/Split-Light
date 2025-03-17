@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cu5yhpo4j7v57"
-path="res://.godot/imported/pxArt_1.png-c538b34dca29af99d187514e097d8c84.ctex"
+uid="uid://bvfhpmng83bhx"
+path="res://.godot/imported/marco-vertical.png-292ab01847bc820dccf80bd3e4350164.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/pxArt_1.png"
-dest_files=["res://.godot/imported/pxArt_1.png-c538b34dca29af99d187514e097d8c84.ctex"]
+source_file="res://assets/marco-vertical.png"
+dest_files=["res://.godot/imported/marco-vertical.png-292ab01847bc820dccf80bd3e4350164.ctex"]
 
 [params]
 
