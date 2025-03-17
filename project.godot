@@ -11,12 +11,14 @@ config_version=5
 [application]
 
 config/name="Split Light"
-run/main_scene="uid://di1phytr0o74x"
+run/main_scene="uid://dpdc8adufki1d"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://Assets/icon.svg"
 
 [display]
 
+window/size/viewport_width=1024
+window/size/viewport_height=768
 window/stretch/mode="canvas_items"
 
 [input]
