@@ -96,6 +96,7 @@ texture_filter = 1
 position = Vector2(-4.76837e-06, -1.90735e-06)
 scale = Vector2(3.4527, 3.4527)
 sprite_frames = SubResource("SpriteFrames_sacnx")
+animation = &"on_air"
 autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
