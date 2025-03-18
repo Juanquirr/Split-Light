@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ctp5nixk5u8rn"
-path="res://.godot/imported/FG_Cellar.png-bc81ef1a2e249928a716902482d9178a.ctex"
+uid="uid://jy3qjw8wjjtb"
+path="res://.godot/imported/CONTADOR.png-46289598cefdf31dc534f51988dc0415.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/FG_Cellar.png"
-dest_files=["res://.godot/imported/FG_Cellar.png-bc81ef1a2e249928a716902482d9178a.ctex"]
+source_file="res://Assets/CONTADOR.png"
+dest_files=["res://.godot/imported/CONTADOR.png-46289598cefdf31dc534f51988dc0415.ctex"]
 
 [params]
 

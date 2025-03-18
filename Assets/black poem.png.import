@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c5dy3gs13h8me"
-path="res://.godot/imported/pxArt_2.png-2f8e3074957787098d2127993f1298e9.ctex"
+uid="uid://blfpkrky53i4r"
+path="res://.godot/imported/black poem.png-583f675e09aa565edc7d6e95e6e6af80.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://pxArt_2.png"
-dest_files=["res://.godot/imported/pxArt_2.png-2f8e3074957787098d2127993f1298e9.ctex"]
+source_file="res://Assets/black poem.png"
+dest_files=["res://.godot/imported/black poem.png-583f675e09aa565edc7d6e95e6e6af80.ctex"]
 
 [params]
 
