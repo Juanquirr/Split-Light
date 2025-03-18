@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cksu8ej27esu4"]
+[gd_scene load_steps=9 format=3 uid="uid://cksu8ej27esu4"]
 
 [ext_resource type="Script" uid="uid://bl8q508indb2q" path="res://Trash/Test_scene/character.gd" id="1_ak5v8"]
 [ext_resource type="Texture2D" uid="uid://ceocaoaufc8nt" path="res://assets/icon.svg" id="2_x033f"]
@@ -14,6 +14,7 @@ gradient = SubResource("Gradient_1bvp3")
 size = Vector2(70, 60)
 
 [node name="TestScene" type="Node2D"]
+script = ExtResource("1_x033f")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
@@ -82,5 +83,5 @@ rotation = -1.5708
 scale = Vector2(0.5, 0.570313)
 texture = ExtResource("2_x033f")
 
-[node name="CharacterManager" type="Node2D" parent="."]
+[node name="CharacterSwitchManager" type="Node2D" parent="."]
 script = ExtResource("5_d3awe")
