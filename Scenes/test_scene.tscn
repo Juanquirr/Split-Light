@@ -1,8 +1,8 @@
 [gd_scene load_steps=9 format=3 uid="uid://cksu8ej27esu4"]
 
 [ext_resource type="Script" uid="uid://bl8q508indb2q" path="res://Scripts/Test_scene/character.gd" id="1_ak5v8"]
-[ext_resource type="Script" uid="uid://dn848buqgs0iu" path="res://Scripts/Test_scene/test_scene_main.gd" id="1_x033f"]
-[ext_resource type="Texture2D" uid="uid://cvcemn4lpjlu1" path="res://Assets/icon.svg" id="2_x033f"]
+[ext_resource type="Script" path="res://Scripts/Test_scene/test_scene_main.gd" id="1_x033f"]
+[ext_resource type="Texture2D" uid="uid://dcvkrw5aytsmq" path="res://Assets/icon.svg" id="2_x033f"]
 [ext_resource type="Script" uid="uid://cou2didw7h2b1" path="res://Scripts/Test_scene/clue_example.gd" id="4_oho3u"]
 [ext_resource type="Script" uid="uid://0eibsumwio8s" path="res://Scripts/Components/character_switch_manager/character_switch_manager .gd" id="5_d3awe"]
 

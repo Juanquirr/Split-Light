@@ -1,0 +1,45 @@
+[gd_scene load_steps=5 format=3 uid="uid://o3mfqsvg685k"]
+
+[ext_resource type="Script" uid="uid://bcjhk7m574wfl" path="res://Scripts/game_manager/game_manager.gd" id="1_my0fb"]
+[ext_resource type="PackedScene" uid="uid://dri83rq66glsx" path="res://Scenes/player.tscn" id="2_6d4py"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_0kxa1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jumxm"]
+size = Vector2(712, 30)
+
+[node name="test_scene_v2" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(593, 573)
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(0, 1.54972e-06)
+scale = Vector2(712, 29.75)
+texture = SubResource("PlaceholderTexture2D_0kxa1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_jumxm")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(1151, 494)
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D2"]
+position = Vector2(0, 1.54972e-06)
+scale = Vector2(712, 29.75)
+texture = SubResource("PlaceholderTexture2D_0kxa1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+shape = SubResource("RectangleShape2D_jumxm")
+
+[node name="GameManager" type="Node" parent="."]
+script = ExtResource("1_my0fb")
+
+[node name="player" parent="GameManager" instance=ExtResource("2_6d4py")]
+position = Vector2(557, 434)
+
+[node name="TimerLabel" type="Label" parent="GameManager"]
+offset_left = 30.0
+offset_top = 26.0
+offset_right = 266.0
+offset_bottom = 104.0
