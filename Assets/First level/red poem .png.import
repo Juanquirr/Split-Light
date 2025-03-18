@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cu5yhpo4j7v57"
-path="res://.godot/imported/cuadro3mujeres.png-f5198ef3834f87a614fe9bca7906fd15.ctex"
+uid="uid://dgir6l4p73diq"
+path="res://.godot/imported/red poem .png-29cee5f7de9ef45f9a891980fd296aab.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/cuadro3mujeres.png"
-dest_files=["res://.godot/imported/cuadro3mujeres.png-f5198ef3834f87a614fe9bca7906fd15.ctex"]
+source_file="res://Assets/First level/red poem .png"
+dest_files=["res://.godot/imported/red poem .png-29cee5f7de9ef45f9a891980fd296aab.ctex"]
 
 [params]
 

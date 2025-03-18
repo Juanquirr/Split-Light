@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=3 uid="uid://cksu8ej27esu4"]
 
-[ext_resource type="Script" uid="uid://bl8q508indb2q" path="res://Scripts/Test_scene/character.gd" id="1_ak5v8"]
-[ext_resource type="Texture2D" uid="uid://cvcemn4lpjlu1" path="res://assets/icon.svg" id="2_x033f"]
-[ext_resource type="Script" uid="uid://cou2didw7h2b1" path="res://Scripts/Test_scene/clue_example.gd" id="4_oho3u"]
-[ext_resource type="Script" uid="uid://0eibsumwio8s" path="res://Scripts/Test_scene/character_switch_manager .gd" id="5_d3awe"]
+[ext_resource type="Script" uid="uid://bl8q508indb2q" path="res://Trash/Test_scene/character.gd" id="1_ak5v8"]
+[ext_resource type="Texture2D" uid="uid://ceocaoaufc8nt" path="res://assets/icon.svg" id="2_x033f"]
+[ext_resource type="Script" uid="uid://cou2didw7h2b1" path="res://Trash/Test_scene/clue_example.gd" id="4_oho3u"]
+[ext_resource type="Script" uid="uid://0eibsumwio8s" path="res://Trash/Test_scene/character_switch_manager .gd" id="5_d3awe"]
 
 [sub_resource type="Gradient" id="Gradient_1bvp3"]
 

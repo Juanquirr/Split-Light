@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://o3mfqsvg685k"]
 
 [ext_resource type="Script" uid="uid://bcjhk7m574wfl" path="res://Scripts/game_manager/game_manager.gd" id="1_my0fb"]
-[ext_resource type="PackedScene" uid="uid://dri83rq66glsx" path="res://Scenes/player.tscn" id="2_6d4py"]
+[ext_resource type="PackedScene" uid="uid://dri83rq66glsx" path="res://Trash/player.tscn" id="2_6d4py"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_0kxa1"]
 

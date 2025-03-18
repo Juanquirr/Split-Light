@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dgir6l4p73diq"
-path="res://.godot/imported/red poem .png-f4213fdfa0c0850d3e88da1a4e05305a.ctex"
+uid="uid://2qsitcmgx1wg"
+path="res://.godot/imported/blue_button.png-f575927a65138868c706da959d4a2dc9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/red poem .png"
-dest_files=["res://.godot/imported/red poem .png-f4213fdfa0c0850d3e88da1a4e05305a.ctex"]
+source_file="res://Trash/blue_button.png"
+dest_files=["res://.godot/imported/blue_button.png-f575927a65138868c706da959d4a2dc9.ctex"]
 
 [params]
 

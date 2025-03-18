@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bvfhpmng83bhx"
-path="res://.godot/imported/marco-vertical.png-db0d0f0ba006b64941ebb85412734865.ctex"
+uid="uid://cvi4ajts0emuj"
+path="res://.godot/imported/Dungeon Tile Set 1.PNG-fe162d4df9aeb5f8355b5422daa58854.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/marco-vertical.png"
-dest_files=["res://.godot/imported/marco-vertical.png-db0d0f0ba006b64941ebb85412734865.ctex"]
+source_file="res://Assets/First level/Dungeon Tile Set 1.PNG"
+dest_files=["res://.godot/imported/Dungeon Tile Set 1.PNG-fe162d4df9aeb5f8355b5422daa58854.ctex"]
 
 [params]
 
