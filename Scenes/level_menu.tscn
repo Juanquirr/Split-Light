@@ -1,6 +1,5 @@
-[gd_scene load_steps=3 format=3 uid="uid://dknywhhef7a6o"]
+[gd_scene load_steps=2 format=3 uid="uid://dknywhhef7a6o"]
 
-[ext_resource type="Texture2D" uid="uid://yu1oa05kv1va" path="res://Trash/cyberpunk-corridor-PREVIEW.png" id="1_ymr0u"]
 [ext_resource type="Script" uid="uid://dg5d3g4nei7xx" path="res://Scripts/level_menu/button_level_1.gd" id="2_4bw2l"]
 
 [node name="LevelMenu" type="Control"]
@@ -17,44 +16,43 @@ offset_left = -346.0
 offset_top = 5.0
 offset_right = 1521.0
 offset_bottom = 643.0
-texture = ExtResource("1_ymr0u")
 
 [node name="Label" type="Label" parent="Background"]
 layout_mode = 0
-offset_left = 730.0
-offset_top = 91.0
-offset_right = 1098.0
-offset_bottom = 190.0
+offset_left = 674.0
+offset_top = 139.0
+offset_right = 1042.0
+offset_bottom = 238.0
 theme_override_font_sizes/font_size = 45
 text = "Select Your Level"
 horizontal_alignment = 1
 
 [node name="ButtonLevel1" type="Button" parent="."]
 layout_mode = 0
-offset_left = 456.0
-offset_top = 192.0
-offset_right = 682.0
-offset_bottom = 256.0
+offset_left = 400.0
+offset_top = 256.0
+offset_right = 626.0
+offset_bottom = 320.0
 theme_override_font_sizes/font_size = 34
 text = "Level 1"
 script = ExtResource("2_4bw2l")
 
 [node name="ButtonLevel2" type="Button" parent="."]
 layout_mode = 0
-offset_left = 456.0
-offset_top = 320.0
-offset_right = 682.0
-offset_bottom = 384.0
+offset_left = 400.0
+offset_top = 384.0
+offset_right = 626.0
+offset_bottom = 448.0
 theme_override_font_sizes/font_size = 34
 text = "Level 2"
 script = ExtResource("2_4bw2l")
 
 [node name="ButtonLevel3" type="Button" parent="."]
 layout_mode = 0
-offset_left = 456.0
-offset_top = 448.0
-offset_right = 682.0
-offset_bottom = 512.0
+offset_left = 400.0
+offset_top = 512.0
+offset_right = 626.0
+offset_bottom = 576.0
 theme_override_font_sizes/font_size = 34
 text = "Level 3"
 script = ExtResource("2_4bw2l")

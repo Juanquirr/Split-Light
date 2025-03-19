@@ -1,12 +1,23 @@
 extends CharacterBody2D
 
-const SPEED = 1000
-const JUMP_VELOCITY = -400
-const GRAVITY = 500
+signal count_changed(new_count)
+
+const SPEED = 500
+const JUMP_VELOCITY = -600
+const GRAVITY = 900
+@export var LEFT_LIMIT = 500
+@export var RIGHT_LIMIT = 3400
 
 @onready var sprite = $Movement
 
+var count = 3
+
 func _physics_process(delta):
+	# Solo mover si este jugador es el activo en Level1
+	if get_parent().active_player != self:
+		velocity.x = 0
+		sprite.play("idle")
+		return
 
 	# Aplicar gravedad
 	if not is_on_floor():
@@ -35,3 +46,13 @@ func _physics_process(delta):
 		sprite.play("idle")
 
 	move_and_slide()
+	
+	if global_position.x > RIGHT_LIMIT:
+		global_position.x = 500
+		count = count + 1
+		emit_signal("count_changed", count)
+		
+	if global_position.x < LEFT_LIMIT:
+		global_position.x = 3400
+		count = count - 1
+		emit_signal("count_changed", count)
