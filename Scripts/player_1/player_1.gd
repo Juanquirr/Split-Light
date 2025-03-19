@@ -2,11 +2,11 @@ extends CharacterBody2D
 
 signal count_changed(new_count)
 
-const SPEED = 500
+const SPEED = 650
 const JUMP_VELOCITY = -600
 const GRAVITY = 900
-@export var LEFT_LIMIT = 500
-@export var RIGHT_LIMIT = 3400
+@export var LEFT_LIMIT = 600
+@export var RIGHT_LIMIT = 3750
 
 @onready var sprite = $Movement
 
@@ -48,11 +48,11 @@ func _physics_process(delta):
 	move_and_slide()
 	
 	if global_position.x > RIGHT_LIMIT:
-		global_position.x = 500
+		global_position.x = 600
 		count = count + 1
 		emit_signal("count_changed", count)
 		
 	if global_position.x < LEFT_LIMIT:
-		global_position.x = 3400
+		global_position.x = 3750
 		count = count - 1
 		emit_signal("count_changed", count)
