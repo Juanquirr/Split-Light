@@ -14,8 +14,6 @@ const GRAVITY = 900
 var count = 3
 
 func _physics_process(delta):
-	
-
 	# Aplicar gravedad
 	if not is_on_floor():
 		velocity.y += GRAVITY * delta
@@ -33,8 +31,6 @@ func _physics_process(delta):
 	elif is_on_floor():
 		velocity.x = 0
 		direction = 0
-
-	
 
 	# Cambio de animaciones
 	if not is_on_floor():

@@ -1,6 +1,5 @@
 extends Node2D
 
-
 @onready var player1_perspective_manager: Array[Player_perspective_manager] = [$Count.visibility]
 @onready var player2_perspective_manager: Array[Player_perspective_manager] = []
 
@@ -12,10 +11,8 @@ extends Node2D
 func _ready():
 	await get_tree().process_frame 
 	player1.count_changed.connect(_on_count_changed)
+	_on_count_changed(player1.count)
 	player_switch_manager.set_perspective_managers_list(player1_perspective_manager, player2_perspective_manager)
 	
-
-
-
 func _on_count_changed(new_count):
 	label.text = str(new_count)
