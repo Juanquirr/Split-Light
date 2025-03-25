@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://b35e40yclrr4"]
+[gd_scene load_steps=19 format=4 uid="uid://b35e40yclrr4"]
 
 [ext_resource type="PackedScene" uid="uid://3kej1w4j6pkr" path="res://Scenes/player_1.tscn" id="1_8ffim"]
 [ext_resource type="Script" uid="uid://vv6j32fqj70f" path="res://Scripts/level_1/level_1.gd" id="1_chwpn"]
@@ -15,7 +15,6 @@
 [ext_resource type="Script" path="res://Scripts/interactive-book.gd" id="11_uy8f0"]
 [ext_resource type="Texture2D" uid="uid://l7hhufg1rfop" path="res://Assets/First level/black_poem.png" id="13_6r07y"]
 [ext_resource type="Texture2D" uid="uid://rkpg71ao6qrh" path="res://Assets/First level/red_poem.png" id="14_6ioyp"]
-[ext_resource type="PackedScene" uid="uid://dfpa2ywr1hfch" path="res://Scenes/Components/timer/timer_label.tscn" id="16_8i23i"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uy8f0"]
 texture = ExtResource("1_xrdnt")
@@ -355,14 +354,6 @@ vertical_alignment = 1
 position = Vector2(-17696.6, 7012.17)
 scale = Vector2(6.29986, 4.80316)
 texture = ExtResource("14_6ioyp")
-
-[node name="TimerLabel" parent="." instance=ExtResource("16_8i23i")]
-anchors_preset = 0
-anchor_top = 0.0
-offset_left = 472.0
-offset_top = -115.0
-offset_right = 749.0
-offset_bottom = -38.0
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
