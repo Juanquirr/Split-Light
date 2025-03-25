@@ -1,7 +1,7 @@
 extends Node2D
 
-@onready var player1_perspective_manager: Array[Player_perspective_manager] = [$Count.visibility]
-@onready var player2_perspective_manager: Array[Player_perspective_manager] = []
+@onready var player1_perspective_manager: Array[Player_perspective_manager] = [$Count.visibility, $Area2D.visibility_black_poem ]
+@onready var player2_perspective_manager: Array[Player_perspective_manager] = [$Area2D.visibility_red_poem]
 
 @onready var player1 = $Player1
 
