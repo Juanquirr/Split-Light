@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://baurfcyyjlrc1"
-path="res://.godot/imported/closed-book.PNG-5f4aa490b3660d8a16d90a5d2a4e79f5.ctex"
+uid="uid://b6r4kt8bwnbd1"
+path="res://.godot/imported/logo underline.png-f683f7b42b1ad094cb045494d342fa79.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/First level/closed-book.PNG"
-dest_files=["res://.godot/imported/closed-book.PNG-5f4aa490b3660d8a16d90a5d2a4e79f5.ctex"]
+source_file="res://Assets/MainMenu/logo underline.png"
+dest_files=["res://.godot/imported/logo underline.png-f683f7b42b1ad094cb045494d342fa79.ctex"]
 
 [params]
 
