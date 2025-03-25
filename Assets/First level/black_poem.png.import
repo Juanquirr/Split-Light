@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://baurfcyyjlrc1"
-path="res://.godot/imported/closed-book.PNG-5f4aa490b3660d8a16d90a5d2a4e79f5.ctex"
+uid="uid://l7hhufg1rfop"
+path="res://.godot/imported/black_poem.png-b017ce04c826329a944c83ee788a1964.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/First level/closed-book.PNG"
-dest_files=["res://.godot/imported/closed-book.PNG-5f4aa490b3660d8a16d90a5d2a4e79f5.ctex"]
+source_file="res://Assets/First level/black_poem.png"
+dest_files=["res://.godot/imported/black_poem.png-b017ce04c826329a944c83ee788a1964.ctex"]
 
 [params]
 

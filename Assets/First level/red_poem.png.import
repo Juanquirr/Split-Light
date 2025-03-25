@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://blfpkrky53i4r"
-path="res://.godot/imported/black poem.png-86816cc1b3a83004b98d51214efb6629.ctex"
+uid="uid://rkpg71ao6qrh"
+path="res://.godot/imported/red_poem.png-e4c024417d7e8a12831969126f996896.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/First level/black poem.png"
-dest_files=["res://.godot/imported/black poem.png-86816cc1b3a83004b98d51214efb6629.ctex"]
+source_file="res://Assets/First level/red_poem.png"
+dest_files=["res://.godot/imported/red_poem.png-e4c024417d7e8a12831969126f996896.ctex"]
 
 [params]
 
