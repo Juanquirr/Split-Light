@@ -1,6 +1,6 @@
 [gd_scene load_steps=15 format=3 uid="uid://3kej1w4j6pkr"]
 
-[ext_resource type="Script" uid="uid://dx1d71eei5ajx" path="res://Scripts/player_1/player_1.gd" id="1_kslfe"]
+[ext_resource type="Script" path="res://Scripts/player_1/player_1.gd" id="1_kslfe"]
 [ext_resource type="Texture2D" uid="uid://unjvfcxrm44y" path="res://Assets/Adventurer-1.5/Individual Sprites/adventurer-idle-00.png" id="2_k46vw"]
 [ext_resource type="Texture2D" uid="uid://qkx74cvqhss6" path="res://Assets/Adventurer-1.5/Individual Sprites/adventurer-idle-01.png" id="3_xg3ne"]
 [ext_resource type="Texture2D" uid="uid://l8f0yolt4twn" path="res://Assets/Adventurer-1.5/Individual Sprites/adventurer-idle-02.png" id="4_tyugg"]
@@ -75,8 +75,7 @@ texture_filter = 1
 position = Vector2(0, 2)
 scale = Vector2(6.27618, 6.27618)
 sprite_frames = SubResource("SpriteFrames_k46vw")
-animation = &"run"
-frame_progress = 0.200883
+animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(8.5, 20.5)
