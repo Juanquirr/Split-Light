@@ -15,6 +15,6 @@ func _ready():
 	player1.count_changed.connect(_on_count_changed)
 	_on_count_changed(player1.count)
 	player_switch_manager.set_perspective_managers_list(player1_perspective_manager, player2_perspective_manager)
-	
+
 func _on_count_changed(new_count):
 	label.text = str(new_count)
