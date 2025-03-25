@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://b35e40yclrr4"]
+[gd_scene load_steps=16 format=4 uid="uid://b35e40yclrr4"]
 
 [ext_resource type="PackedScene" uid="uid://3kej1w4j6pkr" path="res://Scenes/player_1.tscn" id="1_8ffim"]
 [ext_resource type="Script" uid="uid://vv6j32fqj70f" path="res://Scripts/level_1/level_1.gd" id="1_chwpn"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://bvfhpmng83bhx" path="res://Assets/First level/marco-vertical.png" id="6_6r07y"]
 [ext_resource type="Texture2D" uid="uid://b00cgm2f8lc8l" path="res://Assets/First level/Santa Maria.png" id="7_6ioyp"]
 [ext_resource type="PackedScene" uid="uid://byfig72cx8tsq" path="res://Scenes/Components/player_switch_manager/player_switch_manager.tscn" id="11_af3po"]
+[ext_resource type="PackedScene" uid="uid://dfpa2ywr1hfch" path="res://Scenes/Components/timer/timer_label.tscn" id="13_6r07y"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ebaxq"]
 texture = ExtResource("1_xrdnt")
@@ -305,9 +306,17 @@ scale = Vector2(0.1, 0.1)
 texture = ExtResource("7_6ioyp")
 
 [node name="Player1" parent="." instance=ExtResource("1_8ffim")]
+z_index = 1
 position = Vector2(617, 175)
 
 [node name="Player2" parent="." instance=ExtResource("2_xfk5q")]
+z_index = 1
 position = Vector2(803, 176)
 
 [node name="PlayerSwitchManager" parent="." instance=ExtResource("11_af3po")]
+
+[node name="TimerLabel" parent="." instance=ExtResource("13_6r07y")]
+offset_left = 473.0
+offset_top = -112.0
+offset_right = 750.0
+offset_bottom = -35.0
