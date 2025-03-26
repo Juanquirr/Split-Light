@@ -1,4 +1,4 @@
-[gd_scene load_steps=310 format=3 uid="uid://di1phytr0o74x"]
+[gd_scene load_steps=313 format=3 uid="uid://di1phytr0o74x"]
 
 [ext_resource type="Texture2D" uid="uid://dutbh4ryrrv3c" path="res://Assets/MainMenu/mainframe.png" id="1_l26e0"]
 [ext_resource type="Texture2D" uid="uid://b6r4kt8bwnbd1" path="res://Assets/MainMenu/logo underline.png" id="2_o4ajm"]
@@ -7,6 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://bf0yyj3vj55rs" path="res://Assets/MainMenu/RenderedPlanets/Galaxy - 3586005132 - white - spritesheet.png" id="4_wyxwn"]
 [ext_resource type="Texture2D" uid="uid://b6a8ndqcek1o7" path="res://Assets/MainMenu/RenderedPlanets/Galaxy - 3586005132 - orange - spritesheet.png" id="5_ov708"]
 [ext_resource type="Texture2D" uid="uid://cb2m8ogbll17c" path="res://Assets/MainMenu/players stage.png" id="7_u6r2q"]
+[ext_resource type="Texture2D" uid="uid://ivqjak8odrhf" path="res://Assets/Common/Button.png" id="8_yhxw7"]
+[ext_resource type="Texture2D" uid="uid://ksymtls3rnfl" path="res://Assets/Common/ButtonHover.png" id="9_trj04"]
+[ext_resource type="Script" uid="uid://c2wahskthkgq8" path="res://Scripts/main_menu/menu_buttons.gd" id="10_16hvj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6f1u6"]
 atlas = ExtResource("5_ov708")
@@ -2181,3 +2184,105 @@ texture = ExtResource("2_o4ajm")
 [node name="PlayersStage" type="Sprite2D" parent="."]
 position = Vector2(139, 619)
 texture = ExtResource("7_u6r2q")
+
+[node name="Quit Button" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 790.0
+offset_top = 630.0
+offset_right = 987.0
+offset_bottom = 703.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("8_yhxw7")
+texture_hover = ExtResource("9_trj04")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Quit Button"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -35.0
+offset_top = -15.5
+offset_right = 35.0
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+mouse_default_cursor_shape = 2
+bbcode_enabled = true
+text = "[font_size=30][center][font=\"res://Assets/Font/yoster.ttf\"]Quit[/font][/center][/font_size]"
+scroll_active = false
+shortcut_keys_enabled = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Options Button" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 790.0
+offset_top = 540.0
+offset_right = 987.0
+offset_bottom = 613.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("8_yhxw7")
+texture_hover = ExtResource("9_trj04")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Options Button"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -63.5
+offset_top = -15.5
+offset_right = 63.5
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+mouse_default_cursor_shape = 2
+bbcode_enabled = true
+text = "[font_size=30][center][font=\"res://Assets/Font/yoster.ttf\"]Options[/font][/center][/font_size]"
+scroll_active = false
+shortcut_keys_enabled = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Play Button" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 790.0
+offset_top = 450.0
+offset_right = 987.0
+offset_bottom = 523.0
+mouse_default_cursor_shape = 2
+action_mode = 0
+texture_normal = ExtResource("8_yhxw7")
+texture_hover = ExtResource("9_trj04")
+script = ExtResource("10_16hvj")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Play Button"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -36.0
+offset_top = -15.5
+offset_right = 36.0
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+mouse_default_cursor_shape = 2
+bbcode_enabled = true
+text = "[font_size=30][center][font=\"res://Assets/Font/yoster.ttf\"]Play[/font][/center][/font_size]"
+scroll_active = false
+shortcut_keys_enabled = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Quit Button" to="Play Button" method="_on_quit_button_pressed"]
+[connection signal="pressed" from="Options Button" to="Play Button" method="_on_options_button_pressed"]
+[connection signal="pressed" from="Play Button" to="Play Button" method="_on_play_button_pressed"]
