@@ -5,8 +5,8 @@ signal count_changed(new_count)
 const SPEED = 650
 const JUMP_VELOCITY = -600
 const GRAVITY = 900
-@export var LEFT_LIMIT = 600
-@export var RIGHT_LIMIT = 3750
+@export var LEFT_LIMIT = -600
+@export var RIGHT_LIMIT = 37500
 
 @onready var sprite = $Movement
 @onready var is_active  = false
