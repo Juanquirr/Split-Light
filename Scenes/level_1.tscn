@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://b35e40yclrr4"]
+[gd_scene load_steps=19 format=4 uid="uid://b35e40yclrr4"]
 
 [ext_resource type="PackedScene" uid="uid://3kej1w4j6pkr" path="res://Scenes/player_1.tscn" id="1_8ffim"]
 [ext_resource type="Script" uid="uid://vv6j32fqj70f" path="res://Scripts/level_1/level_1.gd" id="1_chwpn"]
@@ -14,6 +14,7 @@
 [ext_resource type="Script" uid="uid://b4bmahyley38r" path="res://Scripts/interactive-book.gd" id="11_uy8f0"]
 [ext_resource type="Texture2D" uid="uid://l7hhufg1rfop" path="res://Assets/First level/black_poem.png" id="13_6r07y"]
 [ext_resource type="Texture2D" uid="uid://rkpg71ao6qrh" path="res://Assets/First level/red_poem.png" id="14_6ioyp"]
+[ext_resource type="FontFile" uid="uid://r0dmn3iwndr8" path="res://Assets/Font/yoster.ttf" id="14_oovug"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ebaxq"]
 texture = ExtResource("1_xrdnt")
@@ -338,6 +339,7 @@ offset_right = 1721.0
 offset_bottom = 954.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("14_oovug")
 theme_override_font_sizes/font_size = 300
 text = "Press 'F' to read the book"
 horizontal_alignment = 1
