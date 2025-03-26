@@ -12,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://b00cgm2f8lc8l" path="res://Assets/First level/Santa Maria.png" id="7_6ioyp"]
 [ext_resource type="PackedScene" uid="uid://byfig72cx8tsq" path="res://Scenes/Components/player_switch_manager/player_switch_manager.tscn" id="11_af3po"]
 [ext_resource type="PackedScene" uid="uid://7047hw6dqf7h" path="res://Scenes/Components/teleporter/teleporter.tscn" id="11_oovug"]
-[ext_resource type="Script" path="res://Scripts/interactive-book.gd" id="11_uy8f0"]
+[ext_resource type="Script" uid="uid://b4bmahyley38r" path="res://Scripts/interactive_book.gd" id="11_uy8f0"]
 [ext_resource type="Texture2D" uid="uid://l7hhufg1rfop" path="res://Assets/First level/black_poem.png" id="13_6r07y"]
 [ext_resource type="Texture2D" uid="uid://rkpg71ao6qrh" path="res://Assets/First level/red_poem.png" id="14_6ioyp"]
 [ext_resource type="FontFile" uid="uid://r0dmn3iwndr8" path="res://Assets/Font/yoster.ttf" id="14_oovug"]

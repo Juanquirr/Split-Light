@@ -17,6 +17,7 @@ config/features=PackedStringArray("4.4", "Forward Plus")
 run/max_fps=250
 boot_splash/bg_color=Color(0.133333, 0.133333, 0.133333, 1)
 boot_splash/image="uid://dxafuiq7yur4r"
+config/icon="uid://fa8ti372lkxv"
 config/macos_native_icon="res://Assets/Icons/icon.icns"
 config/windows_native_icon="res://Assets/Icons/icon.ico"
 boot_splash/minimum_display_time=1000
