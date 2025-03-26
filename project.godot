@@ -11,9 +11,19 @@ config_version=5
 [application]
 
 config/name="Split Light"
+config/version="0.1.0"
 run/main_scene="res://Scenes/main_menu.tscn"
 config/features=PackedStringArray("4.4", "Forward Plus")
-config/icon="res://Assets/icon.svg"
+run/max_fps=250
+boot_splash/bg_color=Color(0.133333, 0.133333, 0.133333, 1)
+boot_splash/image="uid://dxafuiq7yur4r"
+config/macos_native_icon="res://Assets/Icons/icon.icns"
+config/windows_native_icon="res://Assets/Icons/icon.ico"
+boot_splash/minimum_display_time=1000
+
+[autoload]
+
+SceneManager="*res://Scenes/Components/scene_manager.gd"
 
 [display]
 
