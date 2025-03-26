@@ -29,6 +29,7 @@ func _on_body_exited(body):
 		if is_book_opened and player_inside != null:
 			is_book_opened = false
 			player_inside.get_node("Camera2D").make_current()
+		player_inside = null
 
 func _process(delta):
 	if is_player_inside_area and Input.is_action_just_pressed("Interact"):
