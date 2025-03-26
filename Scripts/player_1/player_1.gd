@@ -9,7 +9,7 @@ const GRAVITY = 900
 @export var RIGHT_LIMIT = 37500
 
 @onready var sprite = $Movement
-@onready var is_active  = false
+@onready var is_active = false
 @onready var direction = 0
 var count = 3
 
@@ -51,3 +51,7 @@ func _physics_process(delta):
 		global_position.x = 3750
 		count = count - 1
 		emit_signal("count_changed", count)
+		
+
+func is_active_player() -> bool:
+	return is_active  # Use the is_active property to determine if this player is active
