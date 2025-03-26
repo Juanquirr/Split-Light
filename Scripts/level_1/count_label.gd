@@ -8,10 +8,12 @@ signal count_changed(new_count)
 
 func add_count():
 	count = count + 1
+	self.text = str(count)
 	emit_signal("count_changed", count)
 
 func sub_count():
 	count = count -1
+	self.text = str(count)
 	emit_signal("count_changed", count)
 
 func get_count():
@@ -19,3 +21,5 @@ func get_count():
 
 func set_count(value: int):
 	count = value
+	self.text = str(count)
+	

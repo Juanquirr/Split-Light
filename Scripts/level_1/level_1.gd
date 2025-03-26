@@ -12,9 +12,15 @@ func _ready():
 	await get_tree().process_frame 
 	$Teleporter_left.init($Teleporter_right, $Teleporter_left.exit_direction.RIGHT )
 	$Teleporter_right.init($Teleporter_left,$Teleporter_right.exit_direction.LEFT )
-	player1.count_changed.connect(_on_count_changed)
-	_on_count_changed(player1.count)
+	$Count.set_count(3)
 	player_switch_manager.set_perspective_managers_list(player1_perspective_manager, player2_perspective_manager)
+	$Teleporter_left.connect("teleported", Callable(self, "_on_teleported_left"))
+	$Teleporter_right.connect("teleported", Callable(self, "_on_teleported_right"))
 
-func _on_count_changed(new_count):
-	label.text = str(new_count)
+func _on_teleported_left(body):
+	if body == $Player1:
+		$Count.sub_count()
+
+func _on_teleported_right(body):
+	if body == $Player1:
+		$Count.add_count()
