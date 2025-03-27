@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://b35e40yclrr4"]
+[gd_scene load_steps=22 format=4 uid="uid://b35e40yclrr4"]
 
 [ext_resource type="PackedScene" uid="uid://3kej1w4j6pkr" path="res://Scenes/player_1.tscn" id="1_8ffim"]
 [ext_resource type="Script" uid="uid://vv6j32fqj70f" path="res://Scripts/level_1/level_1.gd" id="1_chwpn"]
@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://rkpg71ao6qrh" path="res://Assets/First level/red_poem.png" id="14_6ioyp"]
 [ext_resource type="FontFile" uid="uid://r0dmn3iwndr8" path="res://Assets/Font/yoster.ttf" id="14_oovug"]
 [ext_resource type="PackedScene" uid="uid://dfpa2ywr1hfch" path="res://Scenes/Components/timer/timer_label.tscn" id="16_8i23i"]
+[ext_resource type="PackedScene" uid="uid://bxwd08bcmtq47" path="res://Scenes/Components/key/key.tscn" id="17_pjppf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uy8f0"]
 texture = ExtResource("1_xrdnt")
@@ -357,6 +358,9 @@ vertical_alignment = 1
 position = Vector2(-17696.6, 7012.17)
 scale = Vector2(6.29986, 4.80316)
 texture = ExtResource("14_6ioyp")
+
+[node name="key" parent="." instance=ExtResource("17_pjppf")]
+position = Vector2(1220, 273)
 
 [node name="TimerLabel" parent="." instance=ExtResource("16_8i23i")]
 offset_left = 479.0
