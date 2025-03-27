@@ -33,11 +33,21 @@ func _process(_delta):
 		for player in players_inside:
 			if player.is_active_player():
 				if player in open_book_for_player:
+					InputManager.unblock_action("switch_player")
+					player.set_process_input(true)
+					player.set_physics_process(true)
 					open_book_for_player.erase(player)
+					player.get_node("Camera2D").enabled = true
 					player.get_node("Camera2D").make_current()
+					$Camera2D.enabled = false
 				else:
+					InputManager.block_action("switch_player")
+					$Camera2D.enabled = true
 					$Camera2D.make_current()
 					open_book_for_player[player] = true
+					player.set_process_input(false)
+					player.set_physics_process(false)
+					player.get_node("Camera2D").enabled = false
 				update_poem_visibility()
 
 func update_poem_visibility():
