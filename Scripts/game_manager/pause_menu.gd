@@ -25,3 +25,6 @@ func pause():
 func unpause():
 	visible = false
 	get_tree().paused = false
+
+func exit_game():
+	get_tree().quit()

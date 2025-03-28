@@ -1,7 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://cpv8jgrj32l7s"]
+[gd_scene load_steps=2 format=3 uid="uid://cpv8jgrj32l7s"]
 
 [ext_resource type="Script" uid="uid://2ls1dlswxhb3" path="res://Scripts/game_manager/pause_menu.gd" id="1_emv3i"]
-[ext_resource type="Script" uid="uid://stqf741t81mc" path="res://Scripts/game_over_menu/main_menu.gd" id="2_k0w1u"]
 
 [node name="PauseMenu" type="Control"]
 process_mode = 3
@@ -61,6 +60,6 @@ text = "Continue"
 [node name="Exit" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 text = "Exit"
-script = ExtResource("2_k0w1u")
 
 [connection signal="pressed" from="VBoxContainer/Continue" to="." method="unpause"]
+[connection signal="button_up" from="VBoxContainer/Exit" to="." method="exit_game"]
