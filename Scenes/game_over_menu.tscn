@@ -53,6 +53,7 @@ text = "TRY AGAIN"
 script = ExtResource("1_arass")
 
 [node name="MainMenu" type="Button" parent="."]
+layout_mode = 0
 offset_left = 384.0
 offset_top = 512.0
 offset_right = 640.0

@@ -24,3 +24,6 @@ func _on_teleported_left(body):
 func _on_teleported_right(body):
 	if body == $Player1:
 		$Count.add_count()
+
+func _on_button_pressed() -> void:
+	pass # Replace with function body.
