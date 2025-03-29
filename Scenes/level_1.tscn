@@ -12,12 +12,13 @@
 [ext_resource type="Texture2D" uid="uid://b00cgm2f8lc8l" path="res://Assets/First level/Santa Maria.png" id="7_6ioyp"]
 [ext_resource type="PackedScene" uid="uid://byfig72cx8tsq" path="res://Scenes/Components/player_switch_manager/player_switch_manager.tscn" id="11_af3po"]
 [ext_resource type="PackedScene" uid="uid://7047hw6dqf7h" path="res://Scenes/Components/teleporter/teleporter.tscn" id="11_oovug"]
-[ext_resource type="Script" uid="uid://b4bmahyley38r" path="res://Scripts/interactive_book.gd" id="11_uy8f0"]
+[ext_resource type="Script" uid="uid://b4bmahyley38r" path="res://Scripts/Interaction/interactive_book.gd" id="11_uy8f0"]
 [ext_resource type="Texture2D" uid="uid://l7hhufg1rfop" path="res://Assets/First level/black_poem.png" id="13_6r07y"]
 [ext_resource type="Texture2D" uid="uid://rkpg71ao6qrh" path="res://Assets/First level/red_poem.png" id="14_6ioyp"]
 [ext_resource type="FontFile" uid="uid://r0dmn3iwndr8" path="res://Assets/Font/yoster.ttf" id="14_oovug"]
 [ext_resource type="PackedScene" uid="uid://dfpa2ywr1hfch" path="res://Scenes/Components/timer/timer_label.tscn" id="16_8i23i"]
 [ext_resource type="PackedScene" uid="uid://cpv8jgrj32l7s" path="res://Scenes/pause_menu.tscn" id="18_pjppf"]
+[ext_resource type="PackedScene" uid="uid://bxwd08bcmtq47" path="res://Scenes/Components/key/key.tscn" id="17_pjppf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uy8f0"]
 texture = ExtResource("1_xrdnt")
@@ -350,7 +351,7 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("14_oovug")
 theme_override_font_sizes/font_size = 300
-text = "Press 'F' to read the book"
+text = "Press 'E' to read the book"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -358,6 +359,9 @@ vertical_alignment = 1
 position = Vector2(-17696.6, 7012.17)
 scale = Vector2(6.29986, 4.80316)
 texture = ExtResource("14_6ioyp")
+
+[node name="key" parent="." instance=ExtResource("17_pjppf")]
+position = Vector2(1220, 273)
 
 [node name="TimerLabel" parent="." instance=ExtResource("16_8i23i")]
 offset_left = 479.0
