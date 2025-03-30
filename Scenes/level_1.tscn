@@ -272,11 +272,12 @@ scale = Vector2(0.263736, 0.263736)
 texture = ExtResource("2_wrinw")
 
 [node name="Count" type="Label" parent="."]
-offset_left = 1315.0
+offset_left = 1291.0
 offset_top = -139.0
-offset_right = 1353.0
+offset_right = 1362.0
 offset_bottom = -63.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("14_oovug")
 theme_override_font_sizes/font_size = 50
 text = "0"
 horizontal_alignment = 2
