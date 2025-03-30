@@ -63,3 +63,6 @@ theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_i22rp")
 text = "Main Menu"
 script = ExtResource("2_i22rp")
+
+[connection signal="pressed" from="TryAgain" to="TryAgain" method="_on_pressed"]
+[connection signal="pressed" from="MainMenu" to="MainMenu" method="_on_pressed"]

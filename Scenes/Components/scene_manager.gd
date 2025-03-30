@@ -3,13 +3,17 @@ extends Node
 enum SCENES {
 	MAIN_MENU,
 	LEVEL_SELECTOR,
-	LEVEL_1
+	LEVEL_1,
+	LEVEL_1_COMPLETED,
+	GAME_OVER
 }
 
 const SCENE_LIST = {
 	SCENES.MAIN_MENU: "main_menu",
 	SCENES.LEVEL_SELECTOR: "level_menu",
-	SCENES.LEVEL_1: "level_1"
+	SCENES.LEVEL_1: "level_1",
+	SCENES.LEVEL_1_COMPLETED: "level_1_completed",
+	SCENES.GAME_OVER: "game_over_menu"
 }
 
 const SCENES_PATH = "res://Scenes/"

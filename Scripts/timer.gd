@@ -21,6 +21,8 @@ func _process(delta):
 			running = false
 			emit_signal("time_out")
 		update_timer_label()
+	else:
+		SceneManager.change_to_scene(SceneManager.SCENES.GAME_OVER)
 
 func reset_timer():
 	timer_time = TIME
