@@ -1,14 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://ygju8mh2r6jn"]
+[gd_scene load_steps=7 format=3 uid="uid://ygju8mh2r6jn"]
 
 [ext_resource type="Script" uid="uid://caqe6p26485qn" path="res://Scripts/game_over_menu/try_again.gd" id="1_arass"]
+[ext_resource type="Texture2D" uid="uid://c5h4m4bq3kpuy" path="res://Assets/MainMenu/starry-background.png" id="1_thk71"]
 [ext_resource type="Script" uid="uid://stqf741t81mc" path="res://Scripts/game_over_menu/main_menu.gd" id="2_i22rp"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i22rp"]
-bg_color = Color(1, 0.647059, 0.415686, 1)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
+[ext_resource type="Texture2D" uid="uid://ivqjak8odrhf" path="res://Assets/Common/Button.png" id="4_jfp0r"]
+[ext_resource type="Texture2D" uid="uid://ksymtls3rnfl" path="res://Assets/Common/ButtonHover.png" id="5_h05y8"]
+[ext_resource type="FontFile" uid="uid://r0dmn3iwndr8" path="res://Assets/Font/yoster.ttf" id="6_w552w"]
 
 [node name="GameOverMenu" type="Control"]
 layout_mode = 3
@@ -18,11 +15,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ColorRect" type="ColorRect" parent="."]
-layout_mode = 0
-offset_right = 1024.0
-offset_bottom = 768.0
-color = Color(0, 0, 0, 1)
+[node name="Starry-background" type="Sprite2D" parent="."]
+position = Vector2(512, 384)
+texture = ExtResource("1_thk71")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 layout_mode = 1
@@ -40,29 +35,70 @@ grow_vertical = 2
 bbcode_enabled = true
 text = "[font_size=90][center][font=\"res://Assets/Font/yoster.ttf\"]GAME OVER[/font][/center][/font_size]"
 
-[node name="TryAgain" type="Button" parent="."]
-layout_mode = 0
+[node name="TryAgainButton" type="TextureButton" parent="."]
+modulate = Color(1, 0.647059, 0.415686, 1)
+layout_mode = 1
+anchors_preset = -1
 offset_left = 384.0
-offset_top = 360.0
-offset_right = 640.0
-offset_bottom = 448.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 30
-theme_override_styles/normal = SubResource("StyleBoxFlat_i22rp")
-text = "TRY AGAIN"
+offset_top = 355.0
+offset_right = 581.0
+offset_bottom = 428.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.4, 1.4)
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("4_jfp0r")
+texture_hover = ExtResource("5_h05y8")
 script = ExtResource("1_arass")
 
-[node name="MainMenu" type="Button" parent="."]
-layout_mode = 0
+[node name="Label" type="Label" parent="TryAgainButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -43.5
+offset_top = -8.5
+offset_right = 43.5
+offset_bottom = 8.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("6_w552w")
+text = "TRY AGAIN"
+horizontal_alignment = 1
+
+[node name="MainMenuButton" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = -1
 offset_left = 384.0
-offset_top = 512.0
-offset_right = 640.0
-offset_bottom = 600.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 30
-theme_override_styles/normal = SubResource("StyleBoxFlat_i22rp")
-text = "Main Menu"
+offset_top = 480.0
+offset_right = 581.0
+offset_bottom = 553.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.4, 1.4)
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("4_jfp0r")
+texture_hover = ExtResource("5_h05y8")
 script = ExtResource("2_i22rp")
 
-[connection signal="pressed" from="TryAgain" to="TryAgain" method="_on_pressed"]
-[connection signal="pressed" from="MainMenu" to="MainMenu" method="_on_pressed"]
+[node name="Label" type="Label" parent="MainMenuButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -43.0
+offset_top = -8.5
+offset_right = 43.0
+offset_bottom = 8.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("6_w552w")
+text = "MAIN MENU"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="TryAgainButton" to="TryAgainButton" method="_on_pressed"]
+[connection signal="pressed" from="MainMenuButton" to="MainMenuButton" method="_on_pressed"]
