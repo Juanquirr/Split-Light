@@ -106,3 +106,5 @@ grow_vertical = 2
 theme_override_fonts/font = ExtResource("7_s72mw")
 theme_override_font_sizes/font_size = 25
 text = "Main Menu"
+
+[connection signal="pressed" from="TextureButton" to="TextureButton" method="_on_pressed"]
