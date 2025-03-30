@@ -1,4 +1,4 @@
-[gd_scene load_steps=1073 format=3 uid="uid://di1phytr0o74x"]
+[gd_scene load_steps=1077 format=3 uid="uid://di1phytr0o74x"]
 
 [ext_resource type="Texture2D" uid="uid://dutbh4ryrrv3c" path="res://Assets/MainMenu/mainframe.png" id="1_l26e0"]
 [ext_resource type="Texture2D" uid="uid://b6r4kt8bwnbd1" path="res://Assets/MainMenu/logo underline.png" id="2_o4ajm"]
@@ -8,9 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://bf0yyj3vj55rs" path="res://Assets/MainMenu/RenderedPlanets/Galaxy - 3586005132 - white - spritesheet.png" id="4_wyxwn"]
 [ext_resource type="Texture2D" uid="uid://b6a8ndqcek1o7" path="res://Assets/MainMenu/RenderedPlanets/Galaxy - 3586005132 - orange - spritesheet.png" id="5_ov708"]
 [ext_resource type="Texture2D" uid="uid://cb2m8ogbll17c" path="res://Assets/MainMenu/players stage.png" id="7_u6r2q"]
-[ext_resource type="Texture2D" uid="uid://ivqjak8odrhf" path="res://Assets/Common/Button.png" id="8_yhxw7"]
-[ext_resource type="Texture2D" uid="uid://ksymtls3rnfl" path="res://Assets/Common/ButtonHover.png" id="9_trj04"]
-[ext_resource type="Script" path="res://Scripts/main_menu/menu_buttons.gd" id="10_16hvj"]
 [ext_resource type="Texture2D" uid="uid://c376k0eennobf" path="res://Assets/MainMenu/RenderedPlanets/Gas giant 2 - 3684719804 - spritesheet.png" id="11_vtepg"]
 [ext_resource type="Texture2D" uid="uid://dr4dh5p68ek2x" path="res://Assets/MainMenu/RenderedPlanets/Lava World - 9223372036854775807 - spritesheet.png" id="12_8dnnj"]
 [ext_resource type="Texture2D" uid="uid://d4ke3seabm106" path="res://Assets/MainMenu/RenderedPlanets/Terran Wet - 834592966 - spritesheet.png" id="13_m3bi6"]
@@ -3189,6 +3186,27 @@ animations = [{
 "name": &"new_animation",
 "speed": 25.0
 }]
+
+[sub_resource type="Resource" id="Resource_t1dhk"]
+metadata/__load_path__ = "res://Assets/Common/Button.png"
+
+[sub_resource type="Resource" id="Resource_5egv6"]
+metadata/__load_path__ = "res://Assets/Common/ButtonHover.png"
+
+[sub_resource type="Resource" id="Resource_vtepg"]
+metadata/__load_path__ = "res://Assets/Common/Button.png"
+
+[sub_resource type="Resource" id="Resource_8dnnj"]
+metadata/__load_path__ = "res://Assets/Common/ButtonHover.png"
+
+[sub_resource type="Resource" id="Resource_m3bi6"]
+metadata/__load_path__ = "res://Assets/Common/Button.png"
+
+[sub_resource type="Resource" id="Resource_wyh8j"]
+metadata/__load_path__ = "res://Assets/Common/ButtonHover.png"
+
+[sub_resource type="Resource" id="Resource_ujyyl"]
+metadata/__load_path__ = "res://Scripts/main_menu/menu_buttons.gd"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ujyyl"]
 atlas = ExtResource("11_vtepg")
@@ -7493,8 +7511,8 @@ offset_top = 630.0
 offset_right = 987.0
 offset_bottom = 703.0
 mouse_default_cursor_shape = 2
-texture_normal = ExtResource("8_yhxw7")
-texture_hover = ExtResource("9_trj04")
+texture_normal = SubResource("Resource_t1dhk")
+texture_hover = SubResource("Resource_5egv6")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Quit Button"]
 layout_mode = 1
@@ -7525,8 +7543,8 @@ offset_top = 540.0
 offset_right = 987.0
 offset_bottom = 613.0
 mouse_default_cursor_shape = 2
-texture_normal = ExtResource("8_yhxw7")
-texture_hover = ExtResource("9_trj04")
+texture_normal = SubResource("Resource_vtepg")
+texture_hover = SubResource("Resource_8dnnj")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Options Button"]
 layout_mode = 1
@@ -7558,9 +7576,9 @@ offset_right = 987.0
 offset_bottom = 523.0
 mouse_default_cursor_shape = 2
 action_mode = 0
-texture_normal = ExtResource("8_yhxw7")
-texture_hover = ExtResource("9_trj04")
-script = ExtResource("10_16hvj")
+texture_normal = SubResource("Resource_m3bi6")
+texture_hover = SubResource("Resource_wyh8j")
+script = SubResource("Resource_ujyyl")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Play Button"]
 layout_mode = 1
