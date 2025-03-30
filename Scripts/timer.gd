@@ -14,12 +14,6 @@ func _process(delta):
 	add_theme_color_override("font_outline_color", Color.BLACK)
 	add_theme_constant_override("outline_size", 4)
 
-	if Input.is_action_just_pressed("stop_timer"):
-		running = !running
-
-	if Input.is_action_just_pressed("reset_timer"):
-		reset_timer()
-
 	if running and timer_time > 0:
 		timer_time -= delta
 		if timer_time < 0:
@@ -31,9 +25,6 @@ func _process(delta):
 func reset_timer():
 	timer_time = TIME
 	update_timer_label()
-
-func stop_timer():
-	running = false
 
 func start_timer():
 	running = true

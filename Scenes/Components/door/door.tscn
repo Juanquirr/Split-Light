@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://bxaxp10vw5kkc"]
+
+[ext_resource type="Texture2D" uid="uid://4kf88snnit0r" path="res://Assets/First level/exit_door.png" id="1_w805u"]
+[ext_resource type="Script" uid="uid://bgjfhahys72jp" path="res://Scripts/Components/door/door.gd" id="2_0l7ll"]
+
+[node name="Door" type="Sprite2D"]
+scale = Vector2(0.83545, 0.83545)
+texture = ExtResource("1_w805u")
+script = ExtResource("2_0l7ll")

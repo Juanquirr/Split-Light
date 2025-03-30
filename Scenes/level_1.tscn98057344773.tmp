@@ -5,20 +5,20 @@
 [ext_resource type="Texture2D" uid="uid://cvi4ajts0emuj" path="res://Assets/First level/Dungeon Tile Set 1.PNG" id="1_xrdnt"]
 [ext_resource type="Texture2D" uid="uid://cu5yhpo4j7v57" path="res://Assets/First level/cuadro3mujeres.png" id="2_wrinw"]
 [ext_resource type="PackedScene" uid="uid://bqsxn12ajmun7" path="res://Scenes/player_2.tscn" id="2_xfk5q"]
+[ext_resource type="Texture2D" uid="uid://3c137wte1lgj" path="res://Assets/First level/firstleveldoor.png" id="3_chwpn"]
 [ext_resource type="Script" uid="uid://bv28nvdu6ccst" path="res://Scripts/level_1/count_label.gd" id="3_uy8f0"]
 [ext_resource type="Texture2D" uid="uid://baurfcyyjlrc1" path="res://Assets/First level/Closed_book.PNG" id="4_af3po"]
 [ext_resource type="Texture2D" uid="uid://bvfhpmng83bhx" path="res://Assets/First level/marco-vertical.png" id="6_6r07y"]
 [ext_resource type="Texture2D" uid="uid://b00cgm2f8lc8l" path="res://Assets/First level/Santa Maria.png" id="7_6ioyp"]
 [ext_resource type="PackedScene" uid="uid://byfig72cx8tsq" path="res://Scenes/Components/player_switch_manager/player_switch_manager.tscn" id="11_af3po"]
 [ext_resource type="PackedScene" uid="uid://7047hw6dqf7h" path="res://Scenes/Components/teleporter/teleporter.tscn" id="11_oovug"]
-[ext_resource type="Script" uid="uid://b4bmahyley38r" path="res://Scripts/Interaction/interactive_book.gd" id="11_uy8f0"]
+[ext_resource type="Script" uid="uid://b4bmahyley38r" path="res://Scripts/interactive_book.gd" id="11_uy8f0"]
 [ext_resource type="Texture2D" uid="uid://l7hhufg1rfop" path="res://Assets/First level/black_poem.png" id="13_6r07y"]
 [ext_resource type="Texture2D" uid="uid://rkpg71ao6qrh" path="res://Assets/First level/red_poem.png" id="14_6ioyp"]
 [ext_resource type="FontFile" uid="uid://r0dmn3iwndr8" path="res://Assets/Font/yoster.ttf" id="14_oovug"]
 [ext_resource type="PackedScene" uid="uid://dfpa2ywr1hfch" path="res://Scenes/Components/timer/timer_label.tscn" id="16_8i23i"]
-[ext_resource type="PackedScene" uid="uid://bxwd08bcmtq47" path="res://Scenes/Components/key/key.tscn" id="17_pjppf"]
 [ext_resource type="PackedScene" uid="uid://cpv8jgrj32l7s" path="res://Scenes/pause_menu.tscn" id="18_pjppf"]
-[ext_resource type="PackedScene" uid="uid://bxaxp10vw5kkc" path="res://Scenes/Components/door/door.tscn" id="19_yltlr"]
+[ext_resource type="Script" uid="uid://2ls1dlswxhb3" path="res://Scenes/pause_menu.gd" id="19_yltlr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uy8f0"]
 texture = ExtResource("1_xrdnt")
@@ -283,6 +283,18 @@ horizontal_alignment = 2
 script = ExtResource("3_uy8f0")
 metadata/_edit_use_anchors_ = true
 
+[node name="Firstleveldoor" type="Sprite2D" parent="."]
+position = Vector2(614, 116)
+scale = Vector2(0.642473, 0.642473)
+texture = ExtResource("3_chwpn")
+
+[node name="Contador" type="Sprite2D" parent="."]
+position = Vector2(1311, -94)
+scale = Vector2(0.331146, 0.685571)
+
+[node name="Contador2" type="Sprite2D" parent="."]
+position = Vector2(618, -124)
+
 [node name="Marco-vertical" type="Sprite2D" parent="."]
 position = Vector2(29, -28.5)
 scale = Vector2(1.18243, 1.44388)
@@ -339,7 +351,7 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("14_oovug")
 theme_override_font_sizes/font_size = 300
-text = "Press 'E' to read the book"
+text = "Press 'F' to read the book"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -348,32 +360,25 @@ position = Vector2(-17696.6, 7012.17)
 scale = Vector2(6.29986, 4.80316)
 texture = ExtResource("14_6ioyp")
 
-[node name="key" parent="." instance=ExtResource("17_pjppf")]
-position = Vector2(1220, 273)
-
 [node name="TimerLabel" parent="." instance=ExtResource("16_8i23i")]
-offset_left = 470.0
-offset_top = -171.0
-offset_right = 747.0
-offset_bottom = -94.0
+offset_left = 479.0
+offset_top = -117.0
+offset_right = 756.0
+offset_bottom = -40.0
 
 [node name="PauseMenu" parent="." instance=ExtResource("18_pjppf")]
+process_mode = 3
 visible = false
-
-[node name="Label" parent="PauseMenu/VBoxContainer" index="0"]
-theme_override_fonts/font = ExtResource("14_oovug")
-
-[node name="Continue" parent="PauseMenu/VBoxContainer" index="1"]
-theme_override_fonts/font = ExtResource("14_oovug")
-
-[node name="Exit" parent="PauseMenu/VBoxContainer" index="2"]
-theme_override_fonts/font = ExtResource("14_oovug")
-
-[node name="ExitDoor" parent="." instance=ExtResource("19_yltlr")]
-position = Vector2(605, 109)
+z_index = 3
+offset_left = 925.0
+offset_top = -77.0
+offset_right = 925.0
+offset_bottom = -77.0
+script = ExtResource("19_yltlr")
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
+[connection signal="pressed" from="PauseMenu/VBoxContainer/Continue" to="PauseMenu" method="unpause"]
 
 [editable path="Teleporter_left"]
 [editable path="Teleporter_right"]
