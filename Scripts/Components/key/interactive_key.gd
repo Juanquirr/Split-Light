@@ -57,3 +57,6 @@ func enable_take_permission():
 	
 func disable_take_permission():
 	can_be_taken = false
+
+func get_key_status():
+	return can_be_taken && is_taken

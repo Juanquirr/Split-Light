@@ -18,6 +18,7 @@ func _ready():
 	$Count.connect("number_reached", Callable(self, "_count_number_reached"))
 	$Count.set_reach_number(0)
 	$key.init(false,false,false)
+	$ExitDoor.init( SceneManager.SCENES.MAIN_MENU, $key)
 	player_switch_manager.init($Player1, $Player2,player1_perspective_manager, player2_perspective_manager)
 	
 
