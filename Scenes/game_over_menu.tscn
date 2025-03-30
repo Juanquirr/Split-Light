@@ -1,0 +1,65 @@
+[gd_scene load_steps=4 format=3 uid="uid://ygju8mh2r6jn"]
+
+[ext_resource type="Script" uid="uid://caqe6p26485qn" path="res://Scripts/game_over_menu/try_again.gd" id="1_arass"]
+[ext_resource type="Script" uid="uid://stqf741t81mc" path="res://Scripts/game_over_menu/main_menu.gd" id="2_i22rp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i22rp"]
+bg_color = Color(1, 0.647059, 0.415686, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="GameOverMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1024.0
+offset_bottom = 768.0
+color = Color(0, 0, 0, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -324.0
+offset_top = -192.0
+offset_right = 324.0
+offset_bottom = -64.0
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+text = "[font_size=90][center][font=\"res://Assets/Font/yoster.ttf\"]GAME OVER[/font][/center][/font_size]"
+
+[node name="TryAgain" type="Button" parent="."]
+layout_mode = 0
+offset_left = 384.0
+offset_top = 360.0
+offset_right = 640.0
+offset_bottom = 448.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_i22rp")
+text = "TRY AGAIN"
+script = ExtResource("1_arass")
+
+[node name="MainMenu" type="Button" parent="."]
+layout_mode = 0
+offset_left = 384.0
+offset_top = 512.0
+offset_right = 640.0
+offset_bottom = 600.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_i22rp")
+text = "Main Menu"
+script = ExtResource("2_i22rp")
