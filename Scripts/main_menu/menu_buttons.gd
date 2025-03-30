@@ -2,6 +2,9 @@ extends TextureButton
 
 @onready var ConfirmQuitScreen = $"../ConfirmQuitScreen"
 
+func _ready():
+	ConfirmQuitScreen.hide()
+
 func _on_play_button_pressed():
 	SceneManager.change_to_scene(SceneManager.SCENES.LEVEL_1)
 
