@@ -1,4 +1,4 @@
-[gd_scene load_steps=1072 format=3 uid="uid://dknywhhef7a6o"]
+[gd_scene load_steps=1074 format=3 uid="uid://dknywhhef7a6o"]
 
 [ext_resource type="Texture2D" uid="uid://dutbh4ryrrv3c" path="res://Assets/MainMenu/mainframe.png" id="1_4cu3e"]
 [ext_resource type="Texture2D" uid="uid://c5h4m4bq3kpuy" path="res://Assets/MainMenu/starry-background.png" id="2_afd11"]
@@ -11,6 +11,8 @@
 [ext_resource type="Texture2D" uid="uid://wnnyby16cb6b" path="res://Assets/MainMenu/RenderedPlanets/No atmosphere - 834592966 - spritesheet.png" id="9_lnqoo"]
 [ext_resource type="Texture2D" uid="uid://dwoxiwkxw7s2c" path="res://Assets/MainMenu/RenderedPlanets/2035508050.png" id="10_xtf36"]
 [ext_resource type="Texture2D" uid="uid://b6a8ndqcek1o7" path="res://Assets/MainMenu/RenderedPlanets/Galaxy - 3586005132 - orange - spritesheet.png" id="11_hhchn"]
+[ext_resource type="Texture2D" uid="uid://ivqjak8odrhf" path="res://Assets/Common/Button.png" id="11_onwru"]
+[ext_resource type="Texture2D" uid="uid://ksymtls3rnfl" path="res://Assets/Common/ButtonHover.png" id="12_0ndaj"]
 [ext_resource type="Texture2D" uid="uid://bf0yyj3vj55rs" path="res://Assets/MainMenu/RenderedPlanets/Galaxy - 3586005132 - white - spritesheet.png" id="12_q4k1h"]
 [ext_resource type="Texture2D" uid="uid://b6r4kt8bwnbd1" path="res://Assets/MainMenu/logo underline.png" id="13_1807b"]
 [ext_resource type="Texture2D" uid="uid://8ljj14e4vu2h" path="res://Assets/MainMenu/RenderedPlanets/elipses/options.png" id="14_un7i8"]
@@ -1070,7 +1072,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 20.0
+"speed": 12.0
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0o41b"]
@@ -2128,7 +2130,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 20.0
+"speed": 12.0
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mm3ir"]
@@ -3186,7 +3188,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 20.0
+"speed": 18.0
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_py12u"]
@@ -4244,7 +4246,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 25.0
+"speed": 20.0
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m3bi6"]
@@ -5302,7 +5304,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 13.0
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6f1u6"]
@@ -7479,6 +7481,7 @@ autoplay = "default"
 
 [node name="LavaWorld-9223372036854775807-Spritesheet" type="AnimatedSprite2D" parent="Planets"]
 position = Vector2(520.328, 723.047)
+rotation = 2.30383
 scale = Vector2(2.7085, 2.53271)
 sprite_frames = SubResource("SpriteFrames_6a21d")
 autoplay = "default"
@@ -7487,6 +7490,7 @@ frame_progress = 0.27714
 
 [node name="TerranWet-834592966-Spritesheet" type="AnimatedSprite2D" parent="Planets"]
 position = Vector2(365, 289)
+rotation = -1.58301
 scale = Vector2(1.60156, 1.58594)
 sprite_frames = SubResource("SpriteFrames_wt5eh")
 autoplay = "default"
@@ -7500,8 +7504,10 @@ frame_progress = 0.0511527
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Planets"]
 position = Vector2(837, 280)
+rotation = -1.27409
 scale = Vector2(1.66924, 1.66924)
 sprite_frames = SubResource("SpriteFrames_t4sxo")
+autoplay = "default"
 
 [node name="Quit Button" type="TextureButton" parent="."]
 layout_mode = 0
@@ -7510,6 +7516,8 @@ offset_top = 22.0
 offset_right = 1007.0
 offset_bottom = 95.0
 mouse_default_cursor_shape = 2
+texture_normal = ExtResource("11_onwru")
+texture_hover = ExtResource("12_0ndaj")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Quit Button"]
 layout_mode = 1
