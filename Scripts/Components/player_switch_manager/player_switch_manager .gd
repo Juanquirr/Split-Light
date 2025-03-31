@@ -1,33 +1,25 @@
 extends Node2D
 
 var active_player: CharacterBody2D  
-@onready var player1 = get_node("../Player1")
+@onready var player1 = null
 @onready var player1_perspective_manager: Array[Player_perspective_manager] = []
-@onready var player2 = get_node("../Player2")
+@onready var player2 = null
 @onready var player2_perspective_manager: Array[Player_perspective_manager] = []
 
-func set_perspective_managers_list(new_first_list: Array, new_second_list: Array) -> void:
-	player1_perspective_manager = new_first_list
-	player2_perspective_manager = new_second_list
-	reload_perpectives()
+func init(player1,player2,player1_perspective_manager: Array, player2_perspective_manager: Array) -> void:
+	self.player1 = player1
+	self.player2 = player2
+	self.player1_perspective_manager = player1_perspective_manager
+	self.player2_perspective_manager = player2_perspective_manager
+	setup_initial_players()
 
-func reload_perpectives():
-	if active_player == player1:
-		set_active_player(player1)
-		disable_movement_player(player2)
-		disable_clues(player2)
-	else:
-		set_active_player(player2)
-		disable_movement_player(player1)
-		disable_clues(player1)
-
-func _ready():
-	set_active_player(player1)  
+func setup_initial_players():
+	set_active_player(player1)
 	disable_movement_player(player2)
 	disable_clues(player2)
 
 func _process(delta):
-	if InputManager.is_action_just_pressed("switch_player"):  # Cambiado a InputManager
+	if InputManager.is_action_just_pressed("switch_player") && player1 != null && player2 != null: 
 		if active_player == player1:
 			change_active_player(player2)
 		else:

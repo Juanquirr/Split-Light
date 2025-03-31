@@ -15,10 +15,11 @@ func _ready():
 	$Count.set_count(3)
 	$Teleporter_left.connect("teleported", Callable(self, "_on_teleported_left"))
 	$Teleporter_right.connect("teleported", Callable(self, "_on_teleported_right"))
-	$Count.connect("number_reached", Callable(self, "_number_reached"))
+	$Count.connect("number_reached", Callable(self, "_count_number_reached"))
 	$Count.set_reach_number(0)
 	$key.init(false,false,false)
-	player_switch_manager.set_perspective_managers_list(player1_perspective_manager, player2_perspective_manager)
+	$ExitDoor.init( SceneManager.SCENES.LEVEL_1_COMPLETED, $key)
+	player_switch_manager.init($Player1, $Player2,player1_perspective_manager, player2_perspective_manager)
 	
 
 func _on_teleported_left(body):
@@ -33,6 +34,6 @@ func _on_teleported_right(body):
 		$key.make_invisible()
 		$Count.add_count()
 
-func _number_reached():
+func _count_number_reached():
 	$key.enable_level_visibility()
 	$key.make_visible()
