@@ -70,6 +70,7 @@ bbcode_enabled = true
 text = "[font_size=90][center][font=\"res://Assets/Font/yoster.ttf\"]LEVEL 1 COMPLETED[/font][/center][/font_size]"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
 position = Vector2(512, 408)
 scale = Vector2(5.68919, 5.68919)
 sprite_frames = SubResource("SpriteFrames_xsdq6")
