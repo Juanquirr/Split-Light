@@ -1,6 +1,60 @@
 # Godot 4+ specific ignores
 .godot/
-/android/
 
-# Mac files
+# Godot-specific ignores
+.import/
+addons/*
+export.cfg
+export_credentials.cfg
+*.godot
+*.mono
+*.sln
+*.csproj
+*.pdb
+*.vsconfig
+*.cache
+
+# Imported translations (automatically generated from CSV files)
+*.translation
+
+# OS-specific ignores
+# macOS
+.DS_Store
 *.DS_Store
+._*
+Icon?
+
+# Mono-specific ignores
+.mono/
+data_*/
+mono_crash.*.json
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+*.lnk
+
+# Common editor/IDE files
+*.tmp
+*.bak
+*.swp
+*.suo
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.vscode
+*.idea
+*.sublime-workspace
+
+# Build and export directories
+/export/
+/build/
+
+# Misc
+*.log
+*.zip
+*.rar
+*.7z

@@ -1,17 +1,17 @@
 [gd_scene load_steps=23 format=4 uid="uid://b35e40yclrr4"]
 
 [ext_resource type="PackedScene" uid="uid://3kej1w4j6pkr" path="res://Scenes/player_1.tscn" id="1_8ffim"]
-[ext_resource type="Script" uid="uid://vv6j32fqj70f" path="res://Scripts/level_1/level_1.gd" id="1_chwpn"]
+[ext_resource type="Script" uid="uid://dqfyrh0rj50cc" path="res://Scripts/level_1/level_1.gd" id="1_chwpn"]
 [ext_resource type="Texture2D" uid="uid://cvi4ajts0emuj" path="res://Assets/First level/Dungeon Tile Set 1.PNG" id="1_xrdnt"]
 [ext_resource type="Texture2D" uid="uid://cu5yhpo4j7v57" path="res://Assets/First level/cuadro3mujeres.png" id="2_wrinw"]
 [ext_resource type="PackedScene" uid="uid://bqsxn12ajmun7" path="res://Scenes/player_2.tscn" id="2_xfk5q"]
-[ext_resource type="Script" uid="uid://bv28nvdu6ccst" path="res://Scripts/level_1/count_label.gd" id="3_uy8f0"]
+[ext_resource type="Script" uid="uid://ndofrbc516hj" path="res://Scripts/level_1/count_label.gd" id="3_uy8f0"]
 [ext_resource type="Texture2D" uid="uid://baurfcyyjlrc1" path="res://Assets/First level/Closed_book.PNG" id="4_af3po"]
 [ext_resource type="Texture2D" uid="uid://bvfhpmng83bhx" path="res://Assets/First level/marco-vertical.png" id="6_6r07y"]
 [ext_resource type="Texture2D" uid="uid://b00cgm2f8lc8l" path="res://Assets/First level/Santa Maria.png" id="7_6ioyp"]
 [ext_resource type="PackedScene" uid="uid://byfig72cx8tsq" path="res://Scenes/Components/player_switch_manager/player_switch_manager.tscn" id="11_af3po"]
 [ext_resource type="PackedScene" uid="uid://7047hw6dqf7h" path="res://Scenes/Components/teleporter/teleporter.tscn" id="11_oovug"]
-[ext_resource type="Script" uid="uid://b4bmahyley38r" path="res://Scripts/Interaction/interactive_book.gd" id="11_uy8f0"]
+[ext_resource type="Script" uid="uid://dtcimaofnp7k" path="res://Scripts/Interaction/interactive_book.gd" id="11_uy8f0"]
 [ext_resource type="Texture2D" uid="uid://l7hhufg1rfop" path="res://Assets/First level/black_poem.png" id="13_6r07y"]
 [ext_resource type="Texture2D" uid="uid://rkpg71ao6qrh" path="res://Assets/First level/red_poem.png" id="14_6ioyp"]
 [ext_resource type="FontFile" uid="uid://r0dmn3iwndr8" path="res://Assets/Font/yoster.ttf" id="14_oovug"]
@@ -277,6 +277,7 @@ offset_top = -139.0
 offset_right = 1353.0
 offset_bottom = -63.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("14_oovug")
 theme_override_font_sizes/font_size = 50
 text = "0"
 horizontal_alignment = 2
@@ -365,6 +366,8 @@ theme_override_fonts/font = ExtResource("14_oovug")
 
 [node name="Continue" parent="PauseMenu/VBoxContainer" index="1"]
 theme_override_fonts/font = ExtResource("14_oovug")
+icon_alignment = 1
+text_direction = 1
 
 [node name="Exit" parent="PauseMenu/VBoxContainer" index="2"]
 theme_override_fonts/font = ExtResource("14_oovug")

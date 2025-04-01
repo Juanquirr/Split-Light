@@ -9,7 +9,7 @@ func init(target_scene: SceneManager.SCENES, key = null ) -> void:
 	self.target_scene = target_scene 
 	
 func _process(_delta):
-	if Input.is_action_just_pressed("Interact"):
+	if InputManager.is_action_just_pressed("Interact"):
 		for player in players_inside:
 				if player.is_active_player() && (key == null || key.get_key_status()):
 					SceneManager.change_to_scene(self.target_scene)
