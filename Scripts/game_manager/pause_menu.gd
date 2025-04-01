@@ -27,4 +27,5 @@ func unpause():
 	get_tree().paused = false
 
 func exit_game():
-	get_tree().quit()
+	unpause()
+	SceneManager.change_to_scene(SceneManager.SCENES.MAIN_MENU)
