@@ -1,5 +1,7 @@
 extends Area2D
 
+class_name Door
+
 var key: Node  
 var target_scene: SceneManager.SCENES
 var players_inside = []

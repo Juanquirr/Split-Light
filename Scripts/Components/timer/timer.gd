@@ -1,14 +1,20 @@
 extends Label
 
-const TIME = 300.0
+class_name LevelTimer
+const TIME = 0
 
 signal time_out
 var timer_time = TIME
 var running = true
 
+func set_timer(time):
+	timer_time = time
+
 func _ready():
 	update_timer_label()
 
+
+	
 func _process(delta):
 	add_theme_color_override("font_color", Color(1, 1, 1))
 	add_theme_color_override("font_outline_color", Color.BLACK)

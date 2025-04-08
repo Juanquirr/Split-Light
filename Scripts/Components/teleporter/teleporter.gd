@@ -1,5 +1,6 @@
 extends Area2D
 
+class_name Teleporter
 enum exit_direction { LEFT, RIGHT }  
 
 var connected_teleporter = self
@@ -7,9 +8,10 @@ var direction = exit_direction.LEFT
 
 signal teleported(body)
 
+
 func _ready() -> void:
 	connect("body_entered", Callable(self, "_on_body_entered"))
-
+	
 func init(connected_teleporter, exit_direction):
 	self.connected_teleporter = connected_teleporter
 	self.direction = exit_direction
