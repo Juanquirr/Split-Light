@@ -1,17 +1,16 @@
 extends Node2D
 
+class_name PlayerSwitchManager
+
 var active_player: CharacterBody2D  
 @onready var player1 = null
 @onready var player1_perspective_manager: Array[Player_perspective_manager] = []
 @onready var player2 = null
 @onready var player2_perspective_manager: Array[Player_perspective_manager] = []
 
-func init(player1,player2,player1_perspective_manager: Array, player2_perspective_manager: Array) -> void:
-	self.player1 = player1
-	self.player2 = player2
-	self.player1_perspective_manager = player1_perspective_manager
-	self.player2_perspective_manager = player2_perspective_manager
+func _ready() -> void:
 	setup_initial_players()
+
 
 func setup_initial_players():
 	set_active_player(player1)

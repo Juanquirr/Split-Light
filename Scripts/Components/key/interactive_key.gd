@@ -1,5 +1,7 @@
 extends Area2D
 
+class_name InteractiveKey
+
 class Key_interaction_manager extends Player_perspective_manager:
 	var node  
 	func _init(node):
