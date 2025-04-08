@@ -4,18 +4,17 @@ class_name LevelTimer
 const TIME = 0
 
 signal time_out
-var timer_time = TIME
+var timer_time: int = TIME
 var running = true
 
-func set_timer(time):
+func set_timer(time: int):
 	timer_time = time
+	update_timer_label()
 
 func _ready():
 	update_timer_label()
-
-
 	
-func _process(delta):
+func _process(delta: float):
 	add_theme_color_override("font_color", Color(1, 1, 1))
 	add_theme_color_override("font_outline_color", Color.BLACK)
 	add_theme_constant_override("outline_size", 4)
