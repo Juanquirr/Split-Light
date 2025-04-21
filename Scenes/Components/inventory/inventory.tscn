@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://d1byaawikdyfu"]
+
+[ext_resource type="Script" uid="uid://h8mpqgmmg0f4" path="res://Scripts/Components/inventory/inventory.gd" id="1_fmc0o"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2ympu"]
+size = Vector2(109, 181)
+
+[node name="Inventory" type="Area2D"]
+collision_layer = 2
+collision_mask = 3
+script = ExtResource("1_fmc0o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(7.5, 20.5)
+shape = SubResource("RectangleShape2D_2ympu")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

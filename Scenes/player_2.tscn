@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bqsxn12ajmun7"]
+[gd_scene load_steps=16 format=3 uid="uid://bqsxn12ajmun7"]
 
 [ext_resource type="Script" uid="uid://dx1d71eei5ajx" path="res://Scripts/player_1/player_1.gd" id="1_ggx0o"]
 [ext_resource type="Texture2D" uid="uid://unjvfcxrm44y" path="res://Assets/Adventurer-1.5/Individual Sprites/adventurer-idle-00.png" id="2_0kjde"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://ctitxee0w2w4o" path="res://Assets/Adventurer-1.5/Individual Sprites/adventurer-run-03.png" id="10_s3tad"]
 [ext_resource type="Texture2D" uid="uid://c622yua41urnt" path="res://Assets/Adventurer-1.5/Individual Sprites/adventurer-run-04.png" id="11_ne8t6"]
 [ext_resource type="Texture2D" uid="uid://bb4w4f0sr7ru2" path="res://Assets/Adventurer-1.5/Individual Sprites/adventurer-run-05.png" id="12_sc7t3"]
+[ext_resource type="PackedScene" uid="uid://d1byaawikdyfu" path="res://Scenes/Components/inventory/inventory.tscn" id="13_0kjde"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_k46vw"]
 animations = [{
@@ -68,6 +69,7 @@ animations = [{
 size = Vector2(115, 183)
 
 [node name="Player2" type="CharacterBody2D"]
+collision_layer = 2
 script = ExtResource("1_ggx0o")
 
 [node name="Movement" type="AnimatedSprite2D" parent="."]
@@ -84,3 +86,5 @@ shape = SubResource("RectangleShape2D_s4j3i")
 [node name="Camera2D" type="Camera2D" parent="."]
 limit_top = 0
 limit_bottom = 0
+
+[node name="Inventory" parent="." instance=ExtResource("13_0kjde")]
