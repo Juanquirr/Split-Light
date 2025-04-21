@@ -1,12 +1,14 @@
 extends Label
 
+
+class_name Counter
 var visibility = Player_perspective_manager_visibility.new(self)
 
 signal number_reached()
 @onready var reach_number = null
 @export var count = 0
-
 signal teleported(body)
+
 func add_count():
 	count = count + 1
 	self.text = str(count)
