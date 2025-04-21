@@ -28,11 +28,11 @@ func _physics_process(delta):
 		direction = 0
 
 	if not is_on_floor():
-		sprite.play("main_jump")
+		sprite.play("reverend_jump")
 	elif direction != 0 and is_on_floor():
-		sprite.play("main_run")
+		sprite.play("reverend_walk")
 	else:
-		sprite.play("main_idle")
+		sprite.play("reverend_idle")
 
 	move_and_slide()
 
