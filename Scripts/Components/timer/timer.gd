@@ -4,7 +4,7 @@ class_name LevelTimer
 const TIME = 0
 
 signal time_out
-var timer_time: int = TIME
+var timer_time: float = TIME
 var running = true
 
 func set_timer(time: int):

@@ -359,16 +359,9 @@ script = ExtResource("22_gcla0")
 [node name="PauseMenu" parent="." instance=ExtResource("18_pjppf")]
 visible = false
 
-[node name="Label" parent="PauseMenu/VBoxContainer" index="0"]
-theme_override_fonts/font = ExtResource("14_oovug")
-
 [node name="Continue" parent="PauseMenu/VBoxContainer" index="1"]
-theme_override_fonts/font = ExtResource("14_oovug")
 icon_alignment = 1
 text_direction = 1
-
-[node name="Exit" parent="PauseMenu/VBoxContainer" index="2"]
-theme_override_fonts/font = ExtResource("14_oovug")
 
 [node name="ExitDoor" parent="." instance=ExtResource("19_yltlr")]
 position = Vector2(617, 107)

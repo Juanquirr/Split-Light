@@ -1,7 +1,7 @@
 [gd_scene load_steps=31 format=3 uid="uid://bqsxn12ajmun7"]
 
 [ext_resource type="Script" uid="uid://0l6brjd02vug" path="res://Scenes/player_2.gd" id="1_dgubp"]
-[ext_resource type="Texture2D" uid="uid://bkepthvxrgreg" path="res://Assets/Reverend/Reverend Idle.png" id="2_dgubp"]
+[ext_resource type="Texture2D" uid="uid://bkepthvxrgreg" path="res://Assets/Reverend/Reverend IDLE.png" id="2_dgubp"]
 [ext_resource type="Texture2D" uid="uid://b8bned208youe" path="res://Assets/Adventurer-1.5/Individual Sprites/adventurer-jump-03.png" id="6_iet35"]
 [ext_resource type="Texture2D" uid="uid://bykj8hhuyg4l8" path="res://Assets/Adventurer-1.5/Individual Sprites/adventurer-run-00.png" id="7_mxbqu"]
 [ext_resource type="Texture2D" uid="uid://638nyax1ce0e" path="res://Assets/Adventurer-1.5/Individual Sprites/adventurer-run-01.png" id="8_0l2yj"]
