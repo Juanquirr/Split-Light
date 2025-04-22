@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bkepthvxrgreg"
-path="res://.godot/imported/Reverend IDLE.png-21299160b9f7f6611eb0f3899ae991ee.ctex"
+uid="uid://g8p5qw0wrhlo"
+path="res://.godot/imported/Reverend Walk.png-338fa1e3744873d2d869fb8784f37311.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Reverend/Reverend IDLE.png"
-dest_files=["res://.godot/imported/Reverend IDLE.png-21299160b9f7f6611eb0f3899ae991ee.ctex"]
+source_file="res://Assets/Reverend/Reverend Walk.png"
+dest_files=["res://.godot/imported/Reverend Walk.png-338fa1e3744873d2d869fb8784f37311.ctex"]
 
 [params]
 
