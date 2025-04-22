@@ -11,7 +11,6 @@ func _ready():
 	$Teleporter_left.connect("teleported", Callable(self, "_on_teleported_left"))
 	$Teleporter_right.connect("teleported", Callable(self, "_on_teleported_right"))
 	$Count.connect("number_reached", Callable(self, "_count_number_reached"))
-	
 
 func _on_teleported_left(body):
 	if body == $Player1:

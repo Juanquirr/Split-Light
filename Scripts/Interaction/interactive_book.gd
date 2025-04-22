@@ -9,14 +9,12 @@ var visibility_black_poem
 func _ready():
 	visibility_red_poem = Player_perspective_manager_visibility.new($RedPoem)
 	visibility_black_poem = Player_perspective_manager_visibility.new($BlackPoem)
-	$MessageLabel.visible = false
 	visibility_black_poem.disable()
 	visibility_red_poem.disable()
 
 func _on_body_entered(body):
 	if body.name.begins_with("Player"):
 		players_inside.append(body)
-		$MessageLabel.visible = true
 		update_poem_visibility()
 
 func _on_body_exited(body):
@@ -24,8 +22,6 @@ func _on_body_exited(body):
 		players_inside.erase(body)
 		if body in open_book_for_player:
 			open_book_for_player.erase(body)
-		if players_inside.is_empty():
-			$MessageLabel.visible = false
 		update_poem_visibility()
 
 func _process(_delta):
