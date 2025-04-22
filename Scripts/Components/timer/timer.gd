@@ -7,7 +7,7 @@ signal time_out
 var timer_time: float = TIME
 var running = true
 
-func set_timer(time: int):
+func set_timer(time):
 	timer_time = time
 	update_timer_label()
 
@@ -44,5 +44,4 @@ func update_timer_label():
 
 	if timer_time < 60:
 		add_theme_color_override("font_color", Color(1, 0, 0))
-	#elif timer_time <= 5:
-		# add_theme_color_override("font_color", Color(randf(), randf(), randf()))
+	
