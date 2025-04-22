@@ -26,6 +26,7 @@ boot_splash/minimum_display_time=1000
 
 InputManager="*res://Scripts/Components/player_switch_manager/input_manager.gd"
 SceneManager="*res://Scenes/Components/scene_manager.gd"
+GetFinalTime="*res://Scripts/get_final_time.gd"
 
 [display]
 

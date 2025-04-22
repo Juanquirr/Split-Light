@@ -20,7 +20,7 @@ func _process(delta: float):
 	add_theme_constant_override("outline_size", 4)
 
 	if running and timer_time > 0:
-		timer_time -= delta
+		# timer_time -= delta
 		if timer_time < 0:
 			timer_time = 0
 			running = false
