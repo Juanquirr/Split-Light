@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://diquptsplkf57" path="res://Assets/First level/key.png" id="2_tlapc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_imks0"]
-size = Vector2(645.337, 623.304)
+size = Vector2(717.039, 623.304)
 
 [node name="key" type="Area2D"]
 scale = Vector2(0.0697311, 0.0898438)

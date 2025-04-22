@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b4gifijo4vfgr"
-path="res://.godot/imported/PlayerWalk 48x48.png-7610473a15a3e9ee6239715bda6fbf80.ctex"
+uid="uid://g8p5qw0wrhlo"
+path="res://.godot/imported/Reverend Walk.png-338fa1e3744873d2d869fb8784f37311.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Reverend/PlayerWalk 48x48.png"
-dest_files=["res://.godot/imported/PlayerWalk 48x48.png-7610473a15a3e9ee6239715bda6fbf80.ctex"]
+source_file="res://Assets/Reverend/Reverend Walk.png"
+dest_files=["res://.godot/imported/Reverend Walk.png-338fa1e3744873d2d869fb8784f37311.ctex"]
 
 [params]
 
