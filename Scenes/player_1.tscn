@@ -8,7 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://b8bned208youe" path="res://Assets/Adventurer-1.5/Individual Sprites/adventurer-jump-03.png" id="9_kslfe"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_lp8rx"]
-load_path = "res://.godot/imported/player run 48x48.png-6befebebc4c60057baa39820558cb818.ctex"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c4k0l"]
 atlas = SubResource("CompressedTexture2D_lp8rx")
