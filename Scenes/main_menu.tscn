@@ -1,4 +1,4 @@
-[gd_scene load_steps=1073 format=3 uid="uid://di1phytr0o74x"]
+[gd_scene load_steps=1076 format=3 uid="uid://di1phytr0o74x"]
 
 [ext_resource type="Texture2D" uid="uid://dutbh4ryrrv3c" path="res://Assets/MainMenu/mainframe.png" id="1_l26e0"]
 [ext_resource type="Texture2D" uid="uid://b6r4kt8bwnbd1" path="res://Assets/MainMenu/logo underline.png" id="2_o4ajm"]
@@ -7422,6 +7422,91 @@ animations = [{
 "speed": 13.0
 }]
 
+[sub_resource type="Animation" id="Animation_m3bi6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Options Button:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(790, 540)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Play Button:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(790, 450)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
+}
+
+[sub_resource type="Animation" id="Animation_8dnnj"]
+resource_name = "quit_button_to_top"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1.07177, 0.164939),
+"update": 0,
+"values": [Vector2(790, 630), Vector2(790, 50)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Options Button:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(790, 540), Vector2(790, 10000)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Play Button:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(790, 450), Vector2(790, 10000)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_m3bi6"]
+_data = {
+&"RESET": SubResource("Animation_m3bi6"),
+&"quit_button_to_top": SubResource("Animation_8dnnj")
+}
+
 [node name="MainMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -7725,8 +7810,16 @@ bbcode_enabled = true
 text = "[font_size=30][font=\"res://Assets/Font/yoster.ttf\"][center]Yes[/center][/font][/font_size]"
 scroll_active = false
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Quit Button")
+libraries = {
+&"": SubResource("AnimationLibrary_m3bi6")
+}
+
 [connection signal="pressed" from="Quit Button" to="Play Button" method="_on_quit_button_pressed"]
 [connection signal="pressed" from="Options Button" to="Play Button" method="_on_options_button_pressed"]
+[connection signal="pressed" from="Play Button" to="Play Button" method="_on_pressed"]
 [connection signal="pressed" from="Play Button" to="Play Button" method="_on_play_button_pressed"]
 [connection signal="pressed" from="ConfirmQuitScreen/Confirm Buttons/Cancel Quit" to="Play Button" method="_on_quit_cancel_button_pressed"]
 [connection signal="pressed" from="ConfirmQuitScreen/Confirm Buttons/Confirm Quit" to="Play Button" method="_on_quit_confirm_button_pressed"]
+[connection signal="animation_finished" from="AnimationPlayer" to="Play Button" method="_on_animation_player_animation_finished"]
