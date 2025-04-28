@@ -1,6 +1,5 @@
 [gd_scene load_steps=1076 format=3 uid="uid://di1phytr0o74x"]
 
-[ext_resource type="Texture2D" uid="uid://dutbh4ryrrv3c" path="res://Assets/MainMenu/mainframe.png" id="1_l26e0"]
 [ext_resource type="Texture2D" uid="uid://b6r4kt8bwnbd1" path="res://Assets/MainMenu/logo underline.png" id="2_o4ajm"]
 [ext_resource type="Texture2D" uid="uid://dwoxiwkxw7s2c" path="res://Assets/MainMenu/RenderedPlanets/2035508050.png" id="3_8dnnj"]
 [ext_resource type="Texture2D" uid="uid://c5h4m4bq3kpuy" path="res://Assets/MainMenu/starry-background.png" id="3_flxil"]
@@ -8,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bf0yyj3vj55rs" path="res://Assets/MainMenu/RenderedPlanets/Galaxy - 3586005132 - white - spritesheet.png" id="4_wyxwn"]
 [ext_resource type="Texture2D" uid="uid://b6a8ndqcek1o7" path="res://Assets/MainMenu/RenderedPlanets/Galaxy - 3586005132 - orange - spritesheet.png" id="5_ov708"]
 [ext_resource type="Texture2D" uid="uid://cb2m8ogbll17c" path="res://Assets/MainMenu/players stage.png" id="7_u6r2q"]
+[ext_resource type="Script" uid="uid://c3de5grfears" path="res://Scripts/quit_button.gd" id="8_m3bi6"]
 [ext_resource type="Texture2D" uid="uid://ivqjak8odrhf" path="res://Assets/Common/Button.png" id="8_yhxw7"]
 [ext_resource type="Texture2D" uid="uid://ksymtls3rnfl" path="res://Assets/Common/ButtonHover.png" id="9_trj04"]
 [ext_resource type="Script" uid="uid://c2wahskthkgq8" path="res://Scripts/main_menu/menu_buttons.gd" id="10_16hvj"]
@@ -7427,43 +7427,18 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../Options Button:position")
+tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(790, 540)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../Play Button:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(790, 450)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath(".:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
-"update": 0,
-"values": []
+"values": [Vector2(810, 669)]
 }
 
 [sub_resource type="Animation" id="Animation_8dnnj"]
-resource_name = "quit_button_to_top"
-length = 2.0
+resource_name = "selection_menu_animation"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -7471,40 +7446,16 @@ tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.5),
-"transitions": PackedFloat32Array(1.07177, 0.164939),
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1.03527),
 "update": 0,
-"values": [Vector2(790, 630), Vector2(790, 50)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../Options Button:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(790, 540), Vector2(790, 10000)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("../Play Button:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 1.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(790, 450), Vector2(790, 10000)]
+"values": [Vector2(810, 669), Vector2(810, 669)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_m3bi6"]
 _data = {
 &"RESET": SubResource("Animation_m3bi6"),
-&"quit_button_to_top": SubResource("Animation_8dnnj")
+&"selection_menu_animation": SubResource("Animation_8dnnj")
 }
 
 [node name="MainMenu" type="Control"]
@@ -7515,12 +7466,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Mainframe" type="Sprite2D" parent="."]
-position = Vector2(512, 384)
-texture = ExtResource("1_l26e0")
-
 [node name="Starry-background" type="Sprite2D" parent="."]
-position = Vector2(512, 384)
+position = Vector2(513, 383)
 texture = ExtResource("3_flxil")
 
 [node name="Logo" type="Node2D" parent="."]
@@ -7559,13 +7506,14 @@ texture = ExtResource("2_o4ajm")
 
 [node name="Quit Button" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 790.0
-offset_top = 630.0
-offset_right = 987.0
-offset_bottom = 703.0
+offset_left = 810.0
+offset_top = 669.0
+offset_right = 1007.0
+offset_bottom = 742.0
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource("8_yhxw7")
 texture_hover = ExtResource("9_trj04")
+script = ExtResource("8_m3bi6")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Quit Button"]
 layout_mode = 1
@@ -7591,10 +7539,10 @@ vertical_alignment = 1
 
 [node name="Options Button" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 790.0
-offset_top = 540.0
-offset_right = 987.0
-offset_bottom = 613.0
+offset_left = 810.0
+offset_top = 579.0
+offset_right = 1007.0
+offset_bottom = 652.0
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource("8_yhxw7")
 texture_hover = ExtResource("9_trj04")
@@ -7623,10 +7571,10 @@ vertical_alignment = 1
 
 [node name="Play Button" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 790.0
-offset_top = 450.0
-offset_right = 987.0
-offset_bottom = 523.0
+offset_left = 810.0
+offset_top = 489.0
+offset_right = 1007.0
+offset_bottom = 562.0
 mouse_default_cursor_shape = 2
 action_mode = 0
 texture_normal = ExtResource("8_yhxw7")
@@ -7810,16 +7758,18 @@ bbcode_enabled = true
 text = "[font_size=30][font=\"res://Assets/Font/yoster.ttf\"][center]Yes[/center][/font][/font_size]"
 scroll_active = false
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="SelectionLevelAnimation" type="AnimationPlayer" parent="."]
 root_node = NodePath("../Quit Button")
 libraries = {
 &"": SubResource("AnimationLibrary_m3bi6")
 }
 
-[connection signal="pressed" from="Quit Button" to="Play Button" method="_on_quit_button_pressed"]
+[connection signal="pressed" from="Quit Button" to="Quit Button" method="_on_quit_confirm_button_pressed"]
+[connection signal="pressed" from="Quit Button" to="Quit Button" method="_on_quit_cancel_button_pressed"]
+[connection signal="pressed" from="Quit Button" to="Quit Button" method="_on_pressed"]
 [connection signal="pressed" from="Options Button" to="Play Button" method="_on_options_button_pressed"]
 [connection signal="pressed" from="Play Button" to="Play Button" method="_on_pressed"]
 [connection signal="pressed" from="Play Button" to="Play Button" method="_on_play_button_pressed"]
 [connection signal="pressed" from="ConfirmQuitScreen/Confirm Buttons/Cancel Quit" to="Play Button" method="_on_quit_cancel_button_pressed"]
 [connection signal="pressed" from="ConfirmQuitScreen/Confirm Buttons/Confirm Quit" to="Play Button" method="_on_quit_confirm_button_pressed"]
-[connection signal="animation_finished" from="AnimationPlayer" to="Play Button" method="_on_animation_player_animation_finished"]
+[connection signal="animation_finished" from="SelectionLevelAnimation" to="Play Button" method="_on_animation_player_animation_finished"]

@@ -5,7 +5,7 @@ extends TextureButton
 func _ready():
 	ConfirmQuitScreen.hide()
 
-func _on_quit_button_pressed():
+func _on_pressed() -> void:
 	ConfirmQuitScreen.show()
 
 func _on_quit_cancel_button_pressed():
