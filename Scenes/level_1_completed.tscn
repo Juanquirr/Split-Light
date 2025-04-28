@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cv1unvvjroute"]
+[gd_scene load_steps=14 format=3 uid="uid://cv1unvvjroute"]
 
 [ext_resource type="Texture2D" uid="uid://c5h4m4bq3kpuy" path="res://Assets/MainMenu/starry-background.png" id="1_abxp7"]
 [ext_resource type="Texture2D" uid="uid://l8f0yolt4twn" path="res://Assets/Adventurer-1.5/Individual Sprites/adventurer-idle-02.png" id="2_i74u4"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://ksymtls3rnfl" path="res://Assets/Common/ButtonHover.png" id="6_2yw68"]
 [ext_resource type="Script" uid="uid://qka7mssvlc5" path="res://Scripts/level_1_completed/main_menu.gd" id="7_2yw68"]
 [ext_resource type="FontFile" uid="uid://r0dmn3iwndr8" path="res://Assets/Font/yoster.ttf" id="7_s72mw"]
+[ext_resource type="Script" uid="uid://rv6wn4fki3vn" path="res://Scripts/Components/timer/time_left.gd" id="9_s72mw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2yw68"]
 atlas = ExtResource("2_i74u4")
@@ -107,5 +108,29 @@ grow_vertical = 2
 theme_override_fonts/font = ExtResource("7_s72mw")
 theme_override_font_sizes/font_size = 25
 text = "Main Menu"
+
+[node name="TimeLeft" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -272.0
+offset_top = -96.0
+offset_right = 272.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/normal_font = ExtResource("7_s72mw")
+theme_override_font_sizes/bold_italics_font_size = 30
+theme_override_font_sizes/italics_font_size = 30
+theme_override_font_sizes/mono_font_size = 30
+theme_override_font_sizes/normal_font_size = 30
+theme_override_font_sizes/bold_font_size = 30
+bbcode_enabled = true
+text = "TEST"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("9_s72mw")
 
 [connection signal="pressed" from="TextureButton" to="TextureButton" method="_on_pressed"]

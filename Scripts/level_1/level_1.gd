@@ -1,7 +1,5 @@
 extends Node2D
 
-@onready var player1_perspective_manager: Array[Player_perspective_manager] = [$Count.visibility, $Area2D.visibility_black_poem, $key.interaction_manager ]
-@onready var player2_perspective_manager: Array[Player_perspective_manager] = [$Area2D.visibility_red_poem]
 
 @onready var player1 = $Player1
 
@@ -10,17 +8,9 @@ extends Node2D
 
 func _ready():
 	await get_tree().process_frame 
-	$Teleporter_left.init($Teleporter_right, $Teleporter_left.exit_direction.RIGHT )
-	$Teleporter_right.init($Teleporter_left,$Teleporter_right.exit_direction.LEFT )
-	$Count.set_count(3)
 	$Teleporter_left.connect("teleported", Callable(self, "_on_teleported_left"))
 	$Teleporter_right.connect("teleported", Callable(self, "_on_teleported_right"))
 	$Count.connect("number_reached", Callable(self, "_count_number_reached"))
-	$Count.set_reach_number(0)
-	$key.init(false,false,false)
-	$ExitDoor.init( SceneManager.SCENES.LEVEL_1_COMPLETED, $key)
-	player_switch_manager.init($Player1, $Player2,player1_perspective_manager, player2_perspective_manager)
-	
 
 func _on_teleported_left(body):
 	if body == $Player1:

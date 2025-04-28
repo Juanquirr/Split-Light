@@ -25,6 +25,11 @@ func pause():
 func unpause():
 	visible = false
 	get_tree().paused = false
+	
+func restart():
+	unpause()
+	SceneManager.change_to_scene(SceneManager.SCENES.LEVEL_1)
 
 func exit_game():
-	get_tree().quit()
+	unpause()
+	SceneManager.change_to_scene(SceneManager.SCENES.MAIN_MENU)

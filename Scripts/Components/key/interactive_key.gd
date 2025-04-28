@@ -1,5 +1,7 @@
 extends Area2D
 
+class_name InteractiveKey
+
 class Key_interaction_manager extends Player_perspective_manager:
 	var node  
 	func _init(node):
@@ -18,20 +20,17 @@ var is_taken = false
 var can_be_taken = true
 var level_visibility_enabled = true
 var player_visibility_enabled = true
+var inventory_item = Base_inventory_item.new($"Sprite2D", self)
 
 func init(level_visibility_enabled,can_be_taken,taken):
 	self.level_visibility_enabled = level_visibility_enabled
 	self.can_be_taken = can_be_taken
 	self.is_taken = taken
 	self.make_visible()
-	
-func _ready():
-	self.make_invisible()
 
-func _on_body_entered(body):
-	if body.name.begins_with("Player") and body.is_active_player() and self.visible and can_be_taken:
-		is_taken = true
-		self.visible = false
+func _process(delta: float) -> void:
+	inventory_item._process(delta)
+	
 
 func enable_level_visibility():
 	level_visibility_enabled = true
@@ -48,9 +47,11 @@ func disable_player_visibility():
 func make_visible():
 	if level_visibility_enabled && player_visibility_enabled && not is_taken :
 		self.visible = true
+		self.collision_layer = 1
 
 func make_invisible():
 	self.visible = false
+	self.collision_layer = 0
 	
 func enable_take_permission():
 	can_be_taken = true
@@ -60,3 +61,7 @@ func disable_take_permission():
 
 func get_key_status():
 	return can_be_taken && is_taken
+
+func get_inventory_item():
+	return inventory_item
+	
