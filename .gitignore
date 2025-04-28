@@ -21,6 +21,7 @@ export_credentials.cfg
 # macOS
 .DS_Store
 *.DS_Store
+*/*.DS_Store
 ._*
 Icon?
 
