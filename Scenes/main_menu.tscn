@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://cb2m8ogbll17c" path="res://Assets/MainMenu/players stage.png" id="7_u6r2q"]
 [ext_resource type="Texture2D" uid="uid://ivqjak8odrhf" path="res://Assets/Common/Button.png" id="8_yhxw7"]
 [ext_resource type="Texture2D" uid="uid://ksymtls3rnfl" path="res://Assets/Common/ButtonHover.png" id="9_trj04"]
-[ext_resource type="Script" uid="uid://cj0f383tvo5rf" path="res://Scripts/main_menu/menu_buttons.gd" id="10_16hvj"]
+[ext_resource type="Script" uid="uid://c2wahskthkgq8" path="res://Scripts/main_menu/menu_buttons.gd" id="10_16hvj"]
 [ext_resource type="Texture2D" uid="uid://c376k0eennobf" path="res://Assets/MainMenu/RenderedPlanets/Gas giant 2 - 3684719804 - spritesheet.png" id="11_vtepg"]
 [ext_resource type="Texture2D" uid="uid://dr4dh5p68ek2x" path="res://Assets/MainMenu/RenderedPlanets/Lava World - 9223372036854775807 - spritesheet.png" id="12_8dnnj"]
 [ext_resource type="Texture2D" uid="uid://d4ke3seabm106" path="res://Assets/MainMenu/RenderedPlanets/Terran Wet - 834592966 - spritesheet.png" id="13_m3bi6"]
