@@ -1,7 +1,7 @@
 extends TextureButton
 
 @onready var ConfirmQuitScreen = $"../ConfirmQuitScreen"
-@onready var animation_player = get_node("../AnimationPlayer")
+@onready var animation_player = get_node("../SelectionLevelAnimation")
 
 func _ready():
 	pass
