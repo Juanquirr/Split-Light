@@ -1,6 +1,5 @@
-[gd_scene load_steps=1073 format=3 uid="uid://di1phytr0o74x"]
+[gd_scene load_steps=1077 format=3 uid="uid://di1phytr0o74x"]
 
-[ext_resource type="Texture2D" uid="uid://dutbh4ryrrv3c" path="res://Assets/MainMenu/mainframe.png" id="1_l26e0"]
 [ext_resource type="Texture2D" uid="uid://b6r4kt8bwnbd1" path="res://Assets/MainMenu/logo underline.png" id="2_o4ajm"]
 [ext_resource type="Texture2D" uid="uid://dwoxiwkxw7s2c" path="res://Assets/MainMenu/RenderedPlanets/2035508050.png" id="3_8dnnj"]
 [ext_resource type="Texture2D" uid="uid://c5h4m4bq3kpuy" path="res://Assets/MainMenu/starry-background.png" id="3_flxil"]
@@ -8,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bf0yyj3vj55rs" path="res://Assets/MainMenu/RenderedPlanets/Galaxy - 3586005132 - white - spritesheet.png" id="4_wyxwn"]
 [ext_resource type="Texture2D" uid="uid://b6a8ndqcek1o7" path="res://Assets/MainMenu/RenderedPlanets/Galaxy - 3586005132 - orange - spritesheet.png" id="5_ov708"]
 [ext_resource type="Texture2D" uid="uid://cb2m8ogbll17c" path="res://Assets/MainMenu/players stage.png" id="7_u6r2q"]
+[ext_resource type="Script" uid="uid://c3de5grfears" path="res://Scripts/quit_button.gd" id="8_m3bi6"]
 [ext_resource type="Texture2D" uid="uid://ivqjak8odrhf" path="res://Assets/Common/Button.png" id="8_yhxw7"]
 [ext_resource type="Texture2D" uid="uid://ksymtls3rnfl" path="res://Assets/Common/ButtonHover.png" id="9_trj04"]
 [ext_resource type="Script" uid="uid://c2wahskthkgq8" path="res://Scripts/main_menu/menu_buttons.gd" id="10_16hvj"]
@@ -2131,6 +2131,45 @@ animations = [{
 "name": &"new_animation",
 "speed": 25.0
 }]
+
+[sub_resource type="Animation" id="Animation_m3bi6"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(151, -0.0005, 0, 0.0005, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(611, -0.0005, 0, 0.0005, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_8dnnj"]
+resource_name = "selection_menu_animation"
+markers = [{
+"color": Color(1, 1, 1, 1),
+"name": &"new_marker",
+"time": 1.53
+}]
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wyh8j"]
+_data = {
+&"RESET": SubResource("Animation_m3bi6"),
+&"moveOut": SubResource("Animation_8dnnj")
+}
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ujyyl"]
 atlas = ExtResource("11_vtepg")
@@ -7422,6 +7461,12 @@ animations = [{
 "speed": 13.0
 }]
 
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_m3bi6"]
+_data = {
+&"RESET": SubResource("Animation_m3bi6"),
+&"selection_menu_animation": SubResource("Animation_8dnnj")
+}
+
 [node name="MainMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -7430,12 +7475,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Mainframe" type="Sprite2D" parent="."]
-position = Vector2(512, 384)
-texture = ExtResource("1_l26e0")
-
 [node name="Starry-background" type="Sprite2D" parent="."]
-position = Vector2(512, 384)
+position = Vector2(513, 383)
 texture = ExtResource("3_flxil")
 
 [node name="Logo" type="Node2D" parent="."]
@@ -7474,13 +7515,14 @@ texture = ExtResource("2_o4ajm")
 
 [node name="Quit Button" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 790.0
-offset_top = 630.0
-offset_right = 987.0
-offset_bottom = 703.0
+offset_left = 810.0
+offset_top = 669.0
+offset_right = 1007.0
+offset_bottom = 742.0
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource("8_yhxw7")
 texture_hover = ExtResource("9_trj04")
+script = ExtResource("8_m3bi6")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Quit Button"]
 layout_mode = 1
@@ -7506,10 +7548,10 @@ vertical_alignment = 1
 
 [node name="Options Button" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 790.0
-offset_top = 540.0
-offset_right = 987.0
-offset_bottom = 613.0
+offset_left = 810.0
+offset_top = 579.0
+offset_right = 1007.0
+offset_bottom = 652.0
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource("8_yhxw7")
 texture_hover = ExtResource("9_trj04")
@@ -7538,10 +7580,10 @@ vertical_alignment = 1
 
 [node name="Play Button" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 790.0
-offset_top = 450.0
-offset_right = 987.0
-offset_bottom = 523.0
+offset_left = 810.0
+offset_top = 489.0
+offset_right = 1007.0
+offset_bottom = 562.0
 mouse_default_cursor_shape = 2
 action_mode = 0
 texture_normal = ExtResource("8_yhxw7")
@@ -7571,9 +7613,15 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="PlayersStage2" type="Sprite2D" parent="."]
-position = Vector2(150, 612)
+position = Vector2(151, 611)
 scale = Vector2(1.08273, 1.04181)
 texture = ExtResource("7_u6r2q")
+
+[node name="PlayerStageAnimation" type="AnimationPlayer" parent="."]
+root_node = NodePath("../PlayersStage2")
+libraries = {
+&"": SubResource("AnimationLibrary_wyh8j")
+}
 
 [node name="Planets" type="Node2D" parent="."]
 
@@ -7583,6 +7631,7 @@ position = Vector2(147, 413.5)
 scale = Vector2(1.3125, 1.34896)
 sprite_frames = SubResource("SpriteFrames_u8had")
 autoplay = "default"
+frame_progress = 0.408081
 
 [node name="LavaWorld-9223372036854775807-Spritesheet" type="AnimatedSprite2D" parent="Planets"]
 modulate = Color(1, 1, 1, 0.282353)
@@ -7591,12 +7640,14 @@ rotation = 1.80293
 scale = Vector2(2.33594, 2.33594)
 sprite_frames = SubResource("SpriteFrames_6a21d")
 autoplay = "default"
+frame_progress = 0.205512
 
 [node name="TerranWet-834592966-Spritesheet" type="AnimatedSprite2D" parent="Planets"]
 position = Vector2(394, 353)
 scale = Vector2(1.60156, 1.58594)
 sprite_frames = SubResource("SpriteFrames_wt5eh")
 autoplay = "default"
+frame_progress = 0.143134
 
 [node name="NoAtmosphere-834592966-Spritesheet" type="AnimatedSprite2D" parent="Planets"]
 position = Vector2(628, 447)
@@ -7605,6 +7656,7 @@ scale = Vector2(1.58008, 1.58008)
 sprite_frames = SubResource("SpriteFrames_ipvmw")
 animation = &"new_animation"
 autoplay = "new_animation"
+frame_progress = 0.0275809
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Planets"]
 modulate = Color(1, 1, 1, 0.709804)
@@ -7613,6 +7665,7 @@ rotation = -0.767945
 scale = Vector2(1.66924, 1.66924)
 sprite_frames = SubResource("SpriteFrames_t4sxo")
 autoplay = "default"
+frame_progress = 0.606541
 
 [node name="FlashlightOverlay" type="Sprite2D" parent="."]
 position = Vector2(326, 481)
@@ -7725,8 +7778,18 @@ bbcode_enabled = true
 text = "[font_size=30][font=\"res://Assets/Font/yoster.ttf\"][center]Yes[/center][/font][/font_size]"
 scroll_active = false
 
-[connection signal="pressed" from="Quit Button" to="Play Button" method="_on_quit_button_pressed"]
+[node name="SelectionLevelAnimation" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Quit Button")
+libraries = {
+&"": SubResource("AnimationLibrary_m3bi6")
+}
+
+[connection signal="pressed" from="Quit Button" to="Quit Button" method="_on_pressed"]
+[connection signal="pressed" from="Quit Button" to="Quit Button" method="_on_quit_confirm_button_pressed"]
+[connection signal="pressed" from="Quit Button" to="Quit Button" method="_on_quit_cancel_button_pressed"]
 [connection signal="pressed" from="Options Button" to="Play Button" method="_on_options_button_pressed"]
 [connection signal="pressed" from="Play Button" to="Play Button" method="_on_play_button_pressed"]
+[connection signal="pressed" from="Play Button" to="Play Button" method="_on_pressed"]
 [connection signal="pressed" from="ConfirmQuitScreen/Confirm Buttons/Cancel Quit" to="Play Button" method="_on_quit_cancel_button_pressed"]
 [connection signal="pressed" from="ConfirmQuitScreen/Confirm Buttons/Confirm Quit" to="Play Button" method="_on_quit_confirm_button_pressed"]
+[connection signal="animation_finished" from="SelectionLevelAnimation" to="Play Button" method="_on_animation_player_animation_finished"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=1074 format=3 uid="uid://dknywhhef7a6o"]
+[gd_scene load_steps=1075 format=3 uid="uid://dknywhhef7a6o"]
 
 [ext_resource type="Texture2D" uid="uid://dutbh4ryrrv3c" path="res://Assets/MainMenu/mainframe.png" id="1_4cu3e"]
 [ext_resource type="Texture2D" uid="uid://c5h4m4bq3kpuy" path="res://Assets/MainMenu/starry-background.png" id="2_afd11"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://ivqjak8odrhf" path="res://Assets/Common/Button.png" id="11_onwru"]
 [ext_resource type="Texture2D" uid="uid://ksymtls3rnfl" path="res://Assets/Common/ButtonHover.png" id="12_0ndaj"]
 [ext_resource type="Texture2D" uid="uid://bf0yyj3vj55rs" path="res://Assets/MainMenu/RenderedPlanets/Galaxy - 3586005132 - white - spritesheet.png" id="12_q4k1h"]
+[ext_resource type="Script" uid="uid://c3de5grfears" path="res://Scripts/quit_button.gd" id="13_0ndaj"]
 [ext_resource type="Texture2D" uid="uid://b6r4kt8bwnbd1" path="res://Assets/MainMenu/logo underline.png" id="13_1807b"]
 [ext_resource type="Texture2D" uid="uid://8ljj14e4vu2h" path="res://Assets/MainMenu/RenderedPlanets/elipses/options.png" id="14_un7i8"]
 
@@ -7518,6 +7519,7 @@ offset_bottom = 95.0
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource("11_onwru")
 texture_hover = ExtResource("12_0ndaj")
+script = ExtResource("13_0ndaj")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Quit Button"]
 layout_mode = 1
@@ -7862,3 +7864,115 @@ scroll_active = false
 shortcut_keys_enabled = false
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="ConfirmQuitScreen" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1024.0
+offset_bottom = 768.0
+
+[node name="ColorRect" type="ColorRect" parent="ConfirmQuitScreen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -558.0
+offset_top = -426.5
+offset_right = 558.0
+offset_bottom = 426.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.894118)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ConfirmQuitScreen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -220.5
+offset_top = -125.5
+offset_right = 220.5
+offset_bottom = 125.5
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+text = "[font_size=40][font=\"res://Assets/Font/yoster.ttf\"][center]Are you sure you want to quit?[/center][/font][/font_size]"
+
+[node name="Confirm Buttons" type="Node2D" parent="ConfirmQuitScreen"]
+
+[node name="Cancel Quit" type="TextureButton" parent="ConfirmQuitScreen/Confirm Buttons"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 273.5
+offset_top = 397.5
+offset_right = 470.5
+offset_bottom = 470.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("11_onwru")
+texture_hover = ExtResource("12_0ndaj")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ConfirmQuitScreen/Confirm Buttons/Cancel Quit"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -91.0
+offset_top = -15.5
+offset_right = 91.0
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "[font_size=30][font=\"res://Assets/Font/yoster.ttf\"][center]No[/center][/font][/font_size]"
+scroll_active = false
+
+[node name="Confirm Quit" type="TextureButton" parent="ConfirmQuitScreen/Confirm Buttons"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 553.5
+offset_top = 397.5
+offset_right = 750.5
+offset_bottom = 470.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("11_onwru")
+texture_hover = ExtResource("12_0ndaj")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ConfirmQuitScreen/Confirm Buttons/Confirm Quit"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -105.5
+offset_top = -16.0
+offset_right = 105.5
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "[font_size=30][font=\"res://Assets/Font/yoster.ttf\"][center]Yes[/center][/font][/font_size]"
+scroll_active = false
+
+[connection signal="pressed" from="Quit Button" to="Quit Button" method="_on_quit_button_pressed"]
+[connection signal="pressed" from="ConfirmQuitScreen/Confirm Buttons/Cancel Quit" to="Quit Button" method="_on_quit_cancel_button_pressed"]
+[connection signal="pressed" from="ConfirmQuitScreen/Confirm Buttons/Confirm Quit" to="Quit Button" method="_on_quit_confirm_button_pressed"]
