@@ -1,4 +1,4 @@
-[gd_scene load_steps=1077 format=3 uid="uid://di1phytr0o74x"]
+[gd_scene load_steps=1078 format=3 uid="uid://di1phytr0o74x"]
 
 [ext_resource type="Script" uid="uid://dbhmwpkn06k08" path="res://Scripts/main_menu_animation.gd" id="1_m3bi6"]
 [ext_resource type="Texture2D" uid="uid://b6r4kt8bwnbd1" path="res://Assets/MainMenu/logo underline.png" id="2_o4ajm"]
@@ -19,53 +19,27 @@
 
 [sub_resource type="Animation" id="Animation_m3bi6"]
 length = 0.001
-tracks/0/type = "value"
+tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("..:position")
+tracks/0/path = NodePath(".:position:x")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(800, 515)]
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(151, -0.0005, 0, 0.0005, 0),
+"times": PackedFloat32Array(0)
 }
-tracks/1/type = "value"
+tracks/1/type = "bezier"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("../../PlayersStage2:position")
+tracks/1/path = NodePath(".:position:y")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(150, 612)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("../../Logo:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(512, 256)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("../../Logo:scale")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1, 1)]
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(611, -0.0005, 0, 0.0005, 0),
+"times": PackedFloat32Array(0)
 }
 
 [sub_resource type="Animation" id="Animation_8dnnj"]
@@ -2239,39 +2213,6 @@ animations = [{
 "loop": true,
 "name": &"new_animation",
 "speed": 25.0
-}]
-
-[sub_resource type="Animation" id="Animation_m3bi6"]
-length = 0.001
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position:x")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(151, -0.0005, 0, 0.0005, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:position:y")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(611, -0.0005, 0, 0.0005, 0),
-"times": PackedFloat32Array(0)
-}
-
-[sub_resource type="Animation" id="Animation_8dnnj"]
-resource_name = "selection_menu_animation"
-markers = [{
-"color": Color(1, 1, 1, 1),
-"name": &"new_marker",
-"time": 1.53
 }]
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wyh8j"]
@@ -7569,12 +7510,6 @@ animations = [{
 "name": &"default",
 "speed": 13.0
 }]
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_m3bi6"]
-_data = {
-&"RESET": SubResource("Animation_m3bi6"),
-&"selection_menu_animation": SubResource("Animation_8dnnj")
-}
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
