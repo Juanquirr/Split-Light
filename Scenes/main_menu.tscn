@@ -2241,6 +2241,45 @@ animations = [{
 "speed": 25.0
 }]
 
+[sub_resource type="Animation" id="Animation_m3bi6"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(151, -0.0005, 0, 0.0005, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(611, -0.0005, 0, 0.0005, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_8dnnj"]
+resource_name = "selection_menu_animation"
+markers = [{
+"color": Color(1, 1, 1, 1),
+"name": &"new_marker",
+"time": 1.53
+}]
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wyh8j"]
+_data = {
+&"RESET": SubResource("Animation_m3bi6"),
+&"moveOut": SubResource("Animation_8dnnj")
+}
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_ujyyl"]
 atlas = ExtResource("11_vtepg")
 region = Rect2(0, 0, 192, 192)
@@ -7531,6 +7570,12 @@ animations = [{
 "speed": 13.0
 }]
 
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_m3bi6"]
+_data = {
+&"RESET": SubResource("Animation_m3bi6"),
+&"selection_menu_animation": SubResource("Animation_8dnnj")
+}
+
 [node name="MainMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -7681,9 +7726,15 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="PlayersStage2" type="Sprite2D" parent="."]
-position = Vector2(150, 612)
+position = Vector2(151, 611)
 scale = Vector2(1.08273, 1.04181)
 texture = ExtResource("7_u6r2q")
+
+[node name="PlayerStageAnimation" type="AnimationPlayer" parent="."]
+root_node = NodePath("../PlayersStage2")
+libraries = {
+&"": SubResource("AnimationLibrary_wyh8j")
+}
 
 [node name="Planets" type="Node2D" parent="."]
 
@@ -7693,6 +7744,7 @@ position = Vector2(147, 413.5)
 scale = Vector2(1.3125, 1.34896)
 sprite_frames = SubResource("SpriteFrames_u8had")
 autoplay = "default"
+frame_progress = 0.408081
 
 [node name="TaalPlanet" type="AnimatedSprite2D" parent="Planets"]
 modulate = Color(1, 1, 1, 0.282353)
@@ -7701,12 +7753,14 @@ rotation = 1.80293
 scale = Vector2(2.33594, 2.33594)
 sprite_frames = SubResource("SpriteFrames_6a21d")
 autoplay = "default"
+frame_progress = 0.205512
 
 [node name="EarthPlanet" type="AnimatedSprite2D" parent="Planets"]
 position = Vector2(394, 353)
 scale = Vector2(1.60156, 1.58594)
 sprite_frames = SubResource("SpriteFrames_wt5eh")
 autoplay = "default"
+frame_progress = 0.143134
 
 [node name="MalborkPlanet" type="AnimatedSprite2D" parent="Planets"]
 position = Vector2(628, 447)
@@ -7715,6 +7769,7 @@ scale = Vector2(1.58008, 1.58008)
 sprite_frames = SubResource("SpriteFrames_ipvmw")
 animation = &"new_animation"
 autoplay = "new_animation"
+frame_progress = 0.0275809
 
 [node name="SomatraPlanet" type="AnimatedSprite2D" parent="Planets"]
 modulate = Color(1, 1, 1, 0.709804)
@@ -7723,6 +7778,7 @@ rotation = -0.767945
 scale = Vector2(1.66924, 1.66924)
 sprite_frames = SubResource("SpriteFrames_t4sxo")
 autoplay = "default"
+frame_progress = 0.606541
 
 [node name="FlashlightOverlay" type="Sprite2D" parent="."]
 position = Vector2(326, 481)

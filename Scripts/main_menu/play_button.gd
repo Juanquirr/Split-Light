@@ -1,7 +1,15 @@
 extends TextureButton
 
+<<<<<<< HEAD:Scripts/main_menu/play_button.gd
 @onready var animation_player = get_node("../../SelectionLevelAnimation")
 var play_pressed := false
+=======
+@onready var ConfirmQuitScreen = $"../ConfirmQuitScreen"
+@onready var animation_player = get_node("../SelectionLevelAnimation")
+
+func _ready():
+	pass
+>>>>>>> develop:Scripts/main_menu/menu_buttons.gd
 
 func _on_pressed() -> void:
 	play_pressed = true
