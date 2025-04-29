@@ -1,20 +1,103 @@
-[gd_scene load_steps=1077 format=3 uid="uid://di1phytr0o74x"]
+[gd_scene load_steps=1078 format=3 uid="uid://di1phytr0o74x"]
 
+[ext_resource type="Script" uid="uid://dbhmwpkn06k08" path="res://Scripts/main_menu_animation.gd" id="1_m3bi6"]
 [ext_resource type="Texture2D" uid="uid://b6r4kt8bwnbd1" path="res://Assets/MainMenu/logo underline.png" id="2_o4ajm"]
-[ext_resource type="Texture2D" uid="uid://dwoxiwkxw7s2c" path="res://Assets/MainMenu/RenderedPlanets/2035508050.png" id="3_8dnnj"]
+[ext_resource type="Texture2D" uid="uid://dwoxiwkxw7s2c" path="res://Assets/MainMenu/RenderedPlanets/SomatraSprite.png" id="3_8dnnj"]
 [ext_resource type="Texture2D" uid="uid://c5h4m4bq3kpuy" path="res://Assets/MainMenu/starry-background.png" id="3_flxil"]
 [ext_resource type="Texture2D" uid="uid://cicemmfqvh4k2" path="res://Assets/MainMenu/flashlight overlay.png" id="3_hl1se"]
-[ext_resource type="Texture2D" uid="uid://bf0yyj3vj55rs" path="res://Assets/MainMenu/RenderedPlanets/Galaxy - 3586005132 - white - spritesheet.png" id="4_wyxwn"]
-[ext_resource type="Texture2D" uid="uid://b6a8ndqcek1o7" path="res://Assets/MainMenu/RenderedPlanets/Galaxy - 3586005132 - orange - spritesheet.png" id="5_ov708"]
+[ext_resource type="Texture2D" uid="uid://bf0yyj3vj55rs" path="res://Assets/MainMenu/RenderedPlanets/WhiteGalaxy.png" id="4_wyxwn"]
+[ext_resource type="Texture2D" uid="uid://b6a8ndqcek1o7" path="res://Assets/MainMenu/RenderedPlanets/RedGalaxy.png" id="5_ov708"]
 [ext_resource type="Texture2D" uid="uid://cb2m8ogbll17c" path="res://Assets/MainMenu/players stage.png" id="7_u6r2q"]
-[ext_resource type="Script" uid="uid://c3de5grfears" path="res://Scripts/quit_button.gd" id="8_m3bi6"]
+[ext_resource type="Script" uid="uid://c3de5grfears" path="res://Scripts/main_menu/quit_button.gd" id="8_m3bi6"]
 [ext_resource type="Texture2D" uid="uid://ivqjak8odrhf" path="res://Assets/Common/Button.png" id="8_yhxw7"]
 [ext_resource type="Texture2D" uid="uid://ksymtls3rnfl" path="res://Assets/Common/ButtonHover.png" id="9_trj04"]
-[ext_resource type="Script" uid="uid://c2wahskthkgq8" path="res://Scripts/main_menu/menu_buttons.gd" id="10_16hvj"]
-[ext_resource type="Texture2D" uid="uid://c376k0eennobf" path="res://Assets/MainMenu/RenderedPlanets/Gas giant 2 - 3684719804 - spritesheet.png" id="11_vtepg"]
-[ext_resource type="Texture2D" uid="uid://dr4dh5p68ek2x" path="res://Assets/MainMenu/RenderedPlanets/Lava World - 9223372036854775807 - spritesheet.png" id="12_8dnnj"]
-[ext_resource type="Texture2D" uid="uid://d4ke3seabm106" path="res://Assets/MainMenu/RenderedPlanets/Terran Wet - 834592966 - spritesheet.png" id="13_m3bi6"]
-[ext_resource type="Texture2D" uid="uid://wnnyby16cb6b" path="res://Assets/MainMenu/RenderedPlanets/No atmosphere - 834592966 - spritesheet.png" id="14_wyh8j"]
+[ext_resource type="Script" uid="uid://c2wahskthkgq8" path="res://Scripts/main_menu/play_button.gd" id="10_16hvj"]
+[ext_resource type="Texture2D" uid="uid://c376k0eennobf" path="res://Assets/MainMenu/RenderedPlanets/NamibSprite.png" id="11_vtepg"]
+[ext_resource type="Texture2D" uid="uid://dr4dh5p68ek2x" path="res://Assets/MainMenu/RenderedPlanets/TaalSprite.png" id="12_8dnnj"]
+[ext_resource type="Texture2D" uid="uid://d4ke3seabm106" path="res://Assets/MainMenu/RenderedPlanets/EarthSprite.png" id="13_m3bi6"]
+[ext_resource type="Texture2D" uid="uid://wnnyby16cb6b" path="res://Assets/MainMenu/RenderedPlanets/MalborkSprite.png" id="14_wyh8j"]
+
+[sub_resource type="Animation" id="Animation_m3bi6"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(151, -0.0005, 0, 0.0005, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(611, -0.0005, 0, 0.0005, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_8dnnj"]
+resource_name = "selection_menu_animation"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.966667),
+"transitions": PackedFloat32Array(1, 2),
+"update": 0,
+"values": [Vector2(800, 515), Vector2(800, 1000)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../PlayersStage2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.966667),
+"transitions": PackedFloat32Array(1, 2),
+"update": 0,
+"values": [Vector2(150, 612), Vector2(150, 1000)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../../Logo:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.966667),
+"transitions": PackedFloat32Array(1, 2),
+"update": 0,
+"values": [Vector2(512, 256), Vector2(150, 90)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../../Logo:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.966667),
+"transitions": PackedFloat32Array(1, 2),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.5, 0.5)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_m3bi6"]
+_data = {
+&"RESET": SubResource("Animation_m3bi6"),
+&"selection_menu_animation": SubResource("Animation_8dnnj")
+}
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6f1u6"]
 atlas = ExtResource("5_ov708")
@@ -2130,39 +2213,6 @@ animations = [{
 "loop": true,
 "name": &"new_animation",
 "speed": 25.0
-}]
-
-[sub_resource type="Animation" id="Animation_m3bi6"]
-length = 0.001
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position:x")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(151, -0.0005, 0, 0.0005, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:position:y")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(611, -0.0005, 0, 0.0005, 0),
-"times": PackedFloat32Array(0)
-}
-
-[sub_resource type="Animation" id="Animation_8dnnj"]
-resource_name = "selection_menu_animation"
-markers = [{
-"color": Color(1, 1, 1, 1),
-"name": &"new_marker",
-"time": 1.53
 }]
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wyh8j"]
@@ -7461,12 +7511,6 @@ animations = [{
 "speed": 13.0
 }]
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_m3bi6"]
-_data = {
-&"RESET": SubResource("Animation_m3bi6"),
-&"selection_menu_animation": SubResource("Animation_8dnnj")
-}
-
 [node name="MainMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -7474,9 +7518,17 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_m3bi6")
+
+[node name="SelectionLevelAnimation" type="AnimationPlayer" parent="."]
+root_node = NodePath("../VBoxContainer/Quit Button")
+libraries = {
+&"": SubResource("AnimationLibrary_m3bi6")
+}
 
 [node name="Starry-background" type="Sprite2D" parent="."]
-position = Vector2(513, 383)
+position = Vector2(512.5, 383.5)
+scale = Vector2(0.999023, 0.998698)
 texture = ExtResource("3_flxil")
 
 [node name="Logo" type="Node2D" parent="."]
@@ -7513,84 +7565,23 @@ autoplay = "new_animation"
 position = Vector2(8, -28)
 texture = ExtResource("2_o4ajm")
 
-[node name="Quit Button" type="TextureButton" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 810.0
-offset_top = 669.0
-offset_right = 1007.0
+offset_left = 800.0
+offset_top = 515.0
+offset_right = 997.0
 offset_bottom = 742.0
-mouse_default_cursor_shape = 2
-texture_normal = ExtResource("8_yhxw7")
-texture_hover = ExtResource("9_trj04")
-script = ExtResource("8_m3bi6")
+alignment = 1
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Quit Button"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -35.0
-offset_top = -15.5
-offset_right = 35.0
-offset_bottom = 15.5
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-mouse_default_cursor_shape = 2
-bbcode_enabled = true
-text = "[font_size=30][center][font=\"res://Assets/Font/yoster.ttf\"]Quit[/font][/center][/font_size]"
-scroll_active = false
-shortcut_keys_enabled = false
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Options Button" type="TextureButton" parent="."]
-layout_mode = 0
-offset_left = 810.0
-offset_top = 579.0
-offset_right = 1007.0
-offset_bottom = 652.0
-mouse_default_cursor_shape = 2
-texture_normal = ExtResource("8_yhxw7")
-texture_hover = ExtResource("9_trj04")
-
-[node name="RichTextLabel" type="RichTextLabel" parent="Options Button"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -63.5
-offset_top = -15.5
-offset_right = 63.5
-offset_bottom = 15.5
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-mouse_default_cursor_shape = 2
-bbcode_enabled = true
-text = "[font_size=30][center][font=\"res://Assets/Font/yoster.ttf\"]Options[/font][/center][/font_size]"
-scroll_active = false
-shortcut_keys_enabled = false
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Play Button" type="TextureButton" parent="."]
-layout_mode = 0
-offset_left = 810.0
-offset_top = 489.0
-offset_right = 1007.0
-offset_bottom = 562.0
+[node name="Play Button" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
 mouse_default_cursor_shape = 2
 action_mode = 0
 texture_normal = ExtResource("8_yhxw7")
 texture_hover = ExtResource("9_trj04")
 script = ExtResource("10_16hvj")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Play Button"]
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/Play Button"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -7612,6 +7603,63 @@ shortcut_keys_enabled = false
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Options Button" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("8_yhxw7")
+texture_hover = ExtResource("9_trj04")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/Options Button"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -63.5
+offset_top = -15.5
+offset_right = 63.5
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+mouse_default_cursor_shape = 2
+bbcode_enabled = true
+text = "[font_size=30][center][font=\"res://Assets/Font/yoster.ttf\"]Options[/font][/center][/font_size]"
+scroll_active = false
+shortcut_keys_enabled = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Quit Button" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("8_yhxw7")
+texture_hover = ExtResource("9_trj04")
+script = ExtResource("8_m3bi6")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/Quit Button"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -35.0
+offset_top = -15.5
+offset_right = 35.0
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+mouse_default_cursor_shape = 2
+bbcode_enabled = true
+text = "[font_size=30][center][font=\"res://Assets/Font/yoster.ttf\"]Quit[/font][/center][/font_size]"
+scroll_active = false
+shortcut_keys_enabled = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="PlayersStage2" type="Sprite2D" parent="."]
 position = Vector2(151, 611)
 scale = Vector2(1.08273, 1.04181)
@@ -7625,7 +7673,7 @@ libraries = {
 
 [node name="Planets" type="Node2D" parent="."]
 
-[node name="GasGiant2-3684719804-Spritesheet" type="AnimatedSprite2D" parent="Planets"]
+[node name="NamibPlanet" type="AnimatedSprite2D" parent="Planets"]
 modulate = Color(1, 1, 1, 0.419608)
 position = Vector2(147, 413.5)
 scale = Vector2(1.3125, 1.34896)
@@ -7633,7 +7681,7 @@ sprite_frames = SubResource("SpriteFrames_u8had")
 autoplay = "default"
 frame_progress = 0.408081
 
-[node name="LavaWorld-9223372036854775807-Spritesheet" type="AnimatedSprite2D" parent="Planets"]
+[node name="TaalPlanet" type="AnimatedSprite2D" parent="Planets"]
 modulate = Color(1, 1, 1, 0.282353)
 position = Vector2(484, 624)
 rotation = 1.80293
@@ -7642,14 +7690,14 @@ sprite_frames = SubResource("SpriteFrames_6a21d")
 autoplay = "default"
 frame_progress = 0.205512
 
-[node name="TerranWet-834592966-Spritesheet" type="AnimatedSprite2D" parent="Planets"]
+[node name="EarthPlanet" type="AnimatedSprite2D" parent="Planets"]
 position = Vector2(394, 353)
 scale = Vector2(1.60156, 1.58594)
 sprite_frames = SubResource("SpriteFrames_wt5eh")
 autoplay = "default"
 frame_progress = 0.143134
 
-[node name="NoAtmosphere-834592966-Spritesheet" type="AnimatedSprite2D" parent="Planets"]
+[node name="MalborkPlanet" type="AnimatedSprite2D" parent="Planets"]
 position = Vector2(628, 447)
 rotation = -0.767945
 scale = Vector2(1.58008, 1.58008)
@@ -7658,7 +7706,7 @@ animation = &"new_animation"
 autoplay = "new_animation"
 frame_progress = 0.0275809
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Planets"]
+[node name="SomatraPlanet" type="AnimatedSprite2D" parent="Planets"]
 modulate = Color(1, 1, 1, 0.709804)
 position = Vector2(822, 324)
 rotation = -0.767945
@@ -7778,18 +7826,13 @@ bbcode_enabled = true
 text = "[font_size=30][font=\"res://Assets/Font/yoster.ttf\"][center]Yes[/center][/font][/font_size]"
 scroll_active = false
 
-[node name="SelectionLevelAnimation" type="AnimationPlayer" parent="."]
-root_node = NodePath("../Quit Button")
-libraries = {
-&"": SubResource("AnimationLibrary_m3bi6")
-}
-
-[connection signal="pressed" from="Quit Button" to="Quit Button" method="_on_pressed"]
-[connection signal="pressed" from="Quit Button" to="Quit Button" method="_on_quit_confirm_button_pressed"]
-[connection signal="pressed" from="Quit Button" to="Quit Button" method="_on_quit_cancel_button_pressed"]
-[connection signal="pressed" from="Options Button" to="Play Button" method="_on_options_button_pressed"]
-[connection signal="pressed" from="Play Button" to="Play Button" method="_on_play_button_pressed"]
-[connection signal="pressed" from="Play Button" to="Play Button" method="_on_pressed"]
-[connection signal="pressed" from="ConfirmQuitScreen/Confirm Buttons/Cancel Quit" to="Play Button" method="_on_quit_cancel_button_pressed"]
-[connection signal="pressed" from="ConfirmQuitScreen/Confirm Buttons/Confirm Quit" to="Play Button" method="_on_quit_confirm_button_pressed"]
-[connection signal="animation_finished" from="SelectionLevelAnimation" to="Play Button" method="_on_animation_player_animation_finished"]
+[connection signal="ready" from="." to="." method="_on_ready"]
+[connection signal="animation_finished" from="SelectionLevelAnimation" to="VBoxContainer/Play Button" method="_on_animation_player_animation_finished"]
+[connection signal="pressed" from="VBoxContainer/Play Button" to="VBoxContainer/Play Button" method="_on_pressed"]
+[connection signal="pressed" from="VBoxContainer/Play Button" to="VBoxContainer/Quit Button" method="_on_play_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Options Button" to="VBoxContainer/Play Button" method="_on_options_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit Button" to="VBoxContainer/Quit Button" method="_on_quit_button_pressed"]
+[connection signal="pressed" from="ConfirmQuitScreen/Confirm Buttons/Cancel Quit" to="VBoxContainer/Play Button" method="_on_quit_cancel_button_pressed"]
+[connection signal="pressed" from="ConfirmQuitScreen/Confirm Buttons/Cancel Quit" to="VBoxContainer/Quit Button" method="_on_cancel_quit_pressed"]
+[connection signal="pressed" from="ConfirmQuitScreen/Confirm Buttons/Confirm Quit" to="VBoxContainer/Play Button" method="_on_quit_confirm_button_pressed"]
+[connection signal="pressed" from="ConfirmQuitScreen/Confirm Buttons/Confirm Quit" to="VBoxContainer/Quit Button" method="_on_confirm_quit_pressed"]

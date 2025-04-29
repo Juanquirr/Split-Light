@@ -10,7 +10,7 @@ enum SCENES {
 
 const SCENE_LIST = {
 	SCENES.MAIN_MENU: "main_menu",
-	SCENES.LEVEL_SELECTOR: "level_menu",
+	SCENES.LEVEL_SELECTOR: "level_selection_menu",
 	SCENES.LEVEL_1: "level_1",
 	SCENES.LEVEL_1_COMPLETED: "level_1_completed",
 	SCENES.GAME_OVER: "game_over_menu"
