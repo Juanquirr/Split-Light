@@ -23,9 +23,12 @@ func _ready() -> void:
 	
 func get_inventory_items():
 	return takeable_items
-
-func _process(delta: float) -> void:
 	
+func place_item_in_inventory(item_sprite: Sprite2D, slot_position: Vector2) -> void:
+	if item_sprite == null: return;
+	item_sprite.global_position = $"../Camera2D".get_screen_center_position() + slot_position;
+
+func _process(_delta: float) -> void:	
 	if item_sprites[0] != null: 
 		item_sprites[0].global_position = get_node("../Camera2D").get_screen_center_position() + Vector2(-460, +335) 
 	
@@ -48,16 +51,14 @@ func _process(delta: float) -> void:
 						item.take()
 						
 						if item.inventory_icon != null:
-							var sprite = item.inventory_icon.duplicate() 
-							
+							var sprite = item.inventory_icon.duplicate()
 							
 							sprite.scale = Vector2(1, 1) 
-							sprite.region_enabled = false 
 							
 							var desired_size = Vector2(48, 48)
 							var texture_size = sprite.texture.get_size()
 							sprite.scale = desired_size / texture_size
-							sprite.visible = true
+							#sprite.visible = true
 							add_child(sprite)
 							item_sprites[i] = sprite
 						break

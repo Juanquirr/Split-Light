@@ -1,6 +1,5 @@
 extends Inventory_item
 
-
 class_name Base_inventory_item
 
 var velocity = Vector2(0, 0) 
@@ -8,8 +7,7 @@ var gravity = 1000
 var raycast: RayCast2D  
 var parent_node
 
-
-func _init(icon, parent_node: Node2D) -> void:
+func _init(icon: Sprite2D, parent_node: Node2D) -> void:
 	super._init(icon) 
 	
 	self.parent_node = parent_node
@@ -19,8 +17,6 @@ func _init(icon, parent_node: Node2D) -> void:
 	raycast.visible = false
 	raycast.collision_mask = 1 
 	parent_node.add_child(raycast)
-	
-	
 
 func take():
 	parent_node.visible = false
