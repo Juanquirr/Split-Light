@@ -20,8 +20,9 @@ var is_taken = false
 var can_be_taken = true
 var level_visibility_enabled = true
 var player_visibility_enabled = true
-var inventory_item = Base_inventory_item.new($"Sprite2D", self)
+var inventory_item = Base_inventory_item.new($Sprite2D, self)
 
+@warning_ignore("shadowed_variable")
 func init(level_visibility_enabled,can_be_taken,taken):
 	self.level_visibility_enabled = level_visibility_enabled
 	self.can_be_taken = can_be_taken

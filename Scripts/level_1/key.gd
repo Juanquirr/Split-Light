@@ -10,11 +10,12 @@ class Base_inventory_key extends Base_inventory_item:
 	func drop(start_position: Vector2):
 		super.drop(start_position)
 		parent_node.is_taken = false
+		parent_node.make_invisible()
 		parent_node.make_visible()
 		
 			
 
 func _ready() -> void:
 	init(false,false,false)
-	inventory_item = Base_inventory_key.new($"Sprite2D", self)
+	inventory_item = Base_inventory_key.new($Sprite2D, self)
 	
