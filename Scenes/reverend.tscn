@@ -1,6 +1,6 @@
 [gd_scene load_steps=32 format=3 uid="uid://bqsxn12ajmun7"]
 
-[ext_resource type="Script" uid="uid://0l6brjd02vug" path="res://Scripts/reverend/reverend.gd" id="1_dgubp"]
+[ext_resource type="Script" uid="uid://0l6brjd02vug" path="res://Scripts/reverend/reverend_player_instance.gd" id="1_3fly1"]
 [ext_resource type="Texture2D" uid="uid://bkepthvxrgreg" path="res://Assets/Reverend/Reverend IDLE.png" id="2_dgubp"]
 [ext_resource type="Texture2D" uid="uid://b8bned208youe" path="res://Assets/Adventurer-1.5/Individual Sprites/adventurer-jump-03.png" id="6_iet35"]
 [ext_resource type="Texture2D" uid="uid://bykj8hhuyg4l8" path="res://Assets/Adventurer-1.5/Individual Sprites/adventurer-run-00.png" id="7_mxbqu"]
@@ -185,9 +185,11 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s4j3i"]
 size = Vector2(114, 184)
 
-[node name="Player2" type="CharacterBody2D"]
+[node name="Player2" type="CharacterBody2D" node_paths=PackedStringArray("animated_sprite")]
 collision_layer = 2
-script = ExtResource("1_dgubp")
+script = ExtResource("1_3fly1")
+SPEED = 300
+animated_sprite = NodePath("Movement")
 
 [node name="Movement" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
