@@ -42,5 +42,3 @@ func _process(delta: float) -> void:
 			velocity = Vector2.ZERO
 			raycast.enabled = false
 			var collider = raycast.get_collider()
-			
-	
