@@ -4,6 +4,7 @@ var inventory: Array[Inventory_item] = [null, null, null]
 var selected_index: int = 0
 var takeable_items: Array[Inventory_item]
 var item_sprites: Array[Sprite2D] = [null, null, null] 
+var slots_offset = [Vector2(-460, +335),Vector2(-390, +335), Vector2(-323, +335)]
 
 func check_active_player(active_player):
 	if get_parent() != active_player:
@@ -23,17 +24,17 @@ func _ready() -> void:
 	
 func get_inventory_items():
 	return takeable_items
+	
 
-func _process(delta: float) -> void:
+func update_item_sprites_position():
+	for index in range(3):
+		if item_sprites[index] != null: 
+			item_sprites[index].global_position = get_node("../Camera2D").get_screen_center_position() + slots_offset[index]  
 	
-	if item_sprites[0] != null: 
-		item_sprites[0].global_position = get_node("../Camera2D").get_screen_center_position() + Vector2(-460, +335) 
+
+func _process(_delta: float) -> void:	
+	update_item_sprites_position()
 	
-	if item_sprites[1] != null: 
-		item_sprites[1].global_position = get_node("../Camera2D").get_screen_center_position() + Vector2(-390, +335) 
-	
-	if item_sprites[2] != null: 
-		item_sprites[2].global_position = get_node("../Camera2D").get_screen_center_position() + Vector2(-323, +335) 
 	
 	var parent = get_parent()
 	if parent and parent.has_method("is_active_player") and not parent.is_active_player():
@@ -48,18 +49,16 @@ func _process(delta: float) -> void:
 						item.take()
 						
 						if item.inventory_icon != null:
-							var sprite = item.inventory_icon.duplicate() 
-							
+							var sprite = item.inventory_icon.duplicate()
 							
 							sprite.scale = Vector2(1, 1) 
-							sprite.region_enabled = false 
 							
 							var desired_size = Vector2(48, 48)
 							var texture_size = sprite.texture.get_size()
 							sprite.scale = desired_size / texture_size
-							sprite.visible = true
 							add_child(sprite)
 							item_sprites[i] = sprite
+							update_item_sprites_position()
 						break
 				break
 	

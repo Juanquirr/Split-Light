@@ -24,7 +24,7 @@ boot_splash/minimum_display_time=1000
 
 [autoload]
 
-InputManager="*res://Scripts/Components/player_switch_manager/input_manager.gd"
+InputManager="*res://Scripts/Components/player/player_switch_manager/input_manager.gd"
 SceneManager="*res://Scripts/Components/managers/scene_manager.gd"
 GetFinalTime="*res://Scripts/get_final_time.gd"
 
