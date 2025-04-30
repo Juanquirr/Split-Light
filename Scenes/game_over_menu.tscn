@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://stqf741t81mc" path="res://Scripts/game_over_menu/main_menu.gd" id="2_i22rp"]
 [ext_resource type="Texture2D" uid="uid://ivqjak8odrhf" path="res://Assets/Common/Button.png" id="4_jfp0r"]
 [ext_resource type="Texture2D" uid="uid://ksymtls3rnfl" path="res://Assets/Common/ButtonHover.png" id="5_h05y8"]
-[ext_resource type="FontFile" uid="uid://r0dmn3iwndr8" path="res://Assets/Font/yoster.ttf" id="6_w552w"]
+[ext_resource type="FontFile" uid="uid://r0dmn3iwndr8" path="res://Assets/Fonts/yoster.ttf" id="6_w552w"]
 
 [node name="GameOverMenu" type="Control"]
 layout_mode = 3
@@ -33,7 +33,7 @@ offset_bottom = -64.0
 grow_horizontal = 2
 grow_vertical = 2
 bbcode_enabled = true
-text = "[font_size=90][center][font=\"res://Assets/Font/yoster.ttf\"]GAME OVER[/font][/center][/font_size]"
+text = "[font_size=90][center][font=\"res://Assets/Fonts/soster.ttf\"]GAME OVER[/font][/center][/font_size]"
 
 [node name="TryAgainButton" type="TextureButton" parent="."]
 modulate = Color(1, 0.647059, 0.415686, 1)
