@@ -20,6 +20,78 @@
 
 [sub_resource type="Animation" id="Animation_m3bi6"]
 length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../FlashlightOverlay:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(326, 481)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../Planets/NamibPlanet:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1.3125, 1.34896)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../../Planets/TaalPlanet:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2.33594, 2.33594)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../../Planets/EarthPlanet:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1.6, 1.6)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../../Planets/MalborkPlanet:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1.6, 1.6)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../../Planets/SomatraPlanet:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1.6, 1.6)]
+}
 
 [sub_resource type="Animation" id="Animation_8dnnj"]
 resource_name = "selection_menu_animation"
@@ -30,7 +102,7 @@ tracks/0/path = NodePath("..:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.966667),
+"times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 2),
 "update": 0,
 "values": [Vector2(800, 515), Vector2(800, 1000)]
@@ -42,7 +114,7 @@ tracks/1/path = NodePath("../../PlayersStage2:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.966667),
+"times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 2),
 "update": 0,
 "values": [Vector2(150, 612), Vector2(150, 1000)]
@@ -54,7 +126,7 @@ tracks/2/path = NodePath("../../Logo:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.966667),
+"times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 2),
 "update": 0,
 "values": [Vector2(512, 200), Vector2(150, 90)]
@@ -66,10 +138,82 @@ tracks/3/path = NodePath("../../Logo:scale")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.966667),
+"times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 2),
 "update": 0,
 "values": [Vector2(1, 1), Vector2(0.5, 0.5)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../../FlashlightOverlay:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 2),
+"update": 0,
+"values": [Vector2(326, 481), Vector2(326, 1000)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../../Planets/NamibPlanet:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 0.05),
+"update": 0,
+"values": [Vector2(1.3125, 1.34896), Vector2(0, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../../Planets/TaalPlanet:scale")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 0.05),
+"update": 0,
+"values": [Vector2(2.33594, 2.33594), Vector2(0, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../../Planets/EarthPlanet:scale")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 0.05),
+"update": 0,
+"values": [Vector2(1.6, 1.6), Vector2(0, 0)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("../../Planets/MalborkPlanet:scale")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 0.05),
+"update": 0,
+"values": [Vector2(1.6, 1.6), Vector2(0, 0)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("../../Planets/SomatraPlanet:scale")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1.6, 1.6), Vector2(0, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_m3bi6"]
@@ -4307,7 +4451,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 12.0
+"speed": 25.0
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mm3ir"]
@@ -6423,7 +6567,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"new_animation",
-"speed": 20.0
+"speed": 25.0
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m3bi6"]
@@ -7481,7 +7625,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 13.0
+"speed": 25.0
 }]
 
 [node name="MainMenu" type="Control"]
@@ -7639,11 +7783,12 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="PlayersStage2" type="Sprite2D" parent="."]
-position = Vector2(150.25, 612.125)
+position = Vector2(150, 612)
 scale = Vector2(1.08093, 1.04264)
 texture = ExtResource("7_u6r2q")
 
 [node name="Planets" type="Node2D" parent="."]
+scale = Vector2(0.98, 0.98)
 
 [node name="NamibPlanet" type="AnimatedSprite2D" parent="Planets"]
 texture_filter = 1

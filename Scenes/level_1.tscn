@@ -371,6 +371,7 @@ collision_layer = 0
 script = ExtResource("19_dlmop")
 
 [node name="Sprite2D" parent="key" index="0"]
+z_index = 1
 position = Vector2(-12.3398, -281.932)
 
 [node name="CollisionShape2D" parent="key" index="1"]

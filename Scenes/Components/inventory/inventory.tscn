@@ -16,30 +16,33 @@ position = Vector2(7.5, 20.5)
 shape = SubResource("RectangleShape2D_2ympu")
 
 [node name="Slot1" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_left = -488.0
-offset_top = 123.0
+offset_top = 35.0
 offset_right = -431.0
-offset_bottom = 179.0
+offset_bottom = 91.0
 script = ExtResource("2_hfv8s")
 
 [node name="Slot2" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_left = -422.0
-offset_top = 123.0
+offset_top = 35.0
 offset_right = -364.0
-offset_bottom = 179.0
+offset_bottom = 91.0
 script = ExtResource("2_hfv8s")
 
 [node name="Slot3" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_left = -355.0
-offset_top = 123.0
+offset_top = 35.0
 offset_right = -300.0
-offset_bottom = 179.0
+offset_bottom = 91.0
 script = ExtResource("2_hfv8s")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

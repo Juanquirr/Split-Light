@@ -46,19 +46,19 @@ func _process_movement():
 	self.velocity.x = direction * SPEED
 	
 func _process_vertical_gravity(delta: float):
-	if not is_on_floor():
-		self.velocity.y += GRAVITY * delta
+	if is_on_floor(): return
+	self.velocity.y += GRAVITY * delta
 	
 func _physics_process(delta: float):
+	self._process_vertical_gravity(delta)	
+	
 	if self.is_active:
 		self.direction = 0
 		self._process_movement()
 		self._process_jump()
 	elif is_on_floor():
 		self.velocity.x = 0
-		self.direction = 0
-	else:
-		self._process_vertical_gravity(delta)
+		self.direction = 0		
 
-	animation_process()
+	self.animation_process()
 	move_and_slide()
