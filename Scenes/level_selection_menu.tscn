@@ -1,19 +1,19 @@
 [gd_scene load_steps=1074 format=3 uid="uid://dknywhhef7a6o"]
 
 [ext_resource type="Texture2D" uid="uid://c5h4m4bq3kpuy" path="res://Assets/MainMenu/starry-background.png" id="1_c6u4o"]
-[ext_resource type="Texture2D" uid="uid://d4bhghhvjlvbb" path="res://Assets/MainMenu/RenderedPlanets/elipses/Ellipse 3.png" id="2_nilwd"]
-[ext_resource type="Texture2D" uid="uid://cv0cxccgh5aim" path="res://Assets/MainMenu/RenderedPlanets/elipses/Ellipse 4.png" id="3_vftvl"]
-[ext_resource type="Texture2D" uid="uid://c376k0eennobf" path="res://Assets/MainMenu/RenderedPlanets/NamibSprite.png" id="4_ir6ig"]
-[ext_resource type="Texture2D" uid="uid://dr4dh5p68ek2x" path="res://Assets/MainMenu/RenderedPlanets/TaalSprite.png" id="5_8fj52"]
-[ext_resource type="Texture2D" uid="uid://d4ke3seabm106" path="res://Assets/MainMenu/RenderedPlanets/EarthSprite.png" id="6_ov1y2"]
-[ext_resource type="Texture2D" uid="uid://wnnyby16cb6b" path="res://Assets/MainMenu/RenderedPlanets/MalborkSprite.png" id="7_t11vj"]
-[ext_resource type="Texture2D" uid="uid://dwoxiwkxw7s2c" path="res://Assets/MainMenu/RenderedPlanets/SomatraSprite.png" id="8_p1cm0"]
+[ext_resource type="Texture2D" uid="uid://d4bhghhvjlvbb" path="res://Assets/RenderedPlanets/elipses/Ellipse 3.png" id="2_nilwd"]
+[ext_resource type="Texture2D" uid="uid://cv0cxccgh5aim" path="res://Assets/RenderedPlanets/elipses/Ellipse 4.png" id="3_vftvl"]
+[ext_resource type="Texture2D" uid="uid://c376k0eennobf" path="res://Assets/RenderedPlanets/NamibSprite.png" id="4_ir6ig"]
+[ext_resource type="Texture2D" uid="uid://dr4dh5p68ek2x" path="res://Assets/RenderedPlanets/TaalSprite.png" id="5_8fj52"]
+[ext_resource type="Texture2D" uid="uid://d4ke3seabm106" path="res://Assets/RenderedPlanets/EarthSprite.png" id="6_ov1y2"]
+[ext_resource type="Texture2D" uid="uid://wnnyby16cb6b" path="res://Assets/RenderedPlanets/MalborkSprite.png" id="7_t11vj"]
+[ext_resource type="Texture2D" uid="uid://dwoxiwkxw7s2c" path="res://Assets/RenderedPlanets/SomatraSprite.png" id="8_p1cm0"]
 [ext_resource type="Texture2D" uid="uid://ivqjak8odrhf" path="res://Assets/Common/Button.png" id="9_d1ivi"]
 [ext_resource type="Texture2D" uid="uid://ksymtls3rnfl" path="res://Assets/Common/ButtonHover.png" id="10_4yviu"]
 [ext_resource type="Script" uid="uid://klwselc2jsa4" path="res://Scripts/main_menu/back_button.gd" id="11_m4w1s"]
 [ext_resource type="Script" uid="uid://0tcv7gleq05a" path="res://Scripts/level_menu/load_level_1.gd" id="12_nilwd"]
-[ext_resource type="Texture2D" uid="uid://b6a8ndqcek1o7" path="res://Assets/MainMenu/RenderedPlanets/RedGalaxy.png" id="12_xt3q6"]
-[ext_resource type="Texture2D" uid="uid://bf0yyj3vj55rs" path="res://Assets/MainMenu/RenderedPlanets/WhiteGalaxy.png" id="13_us2ug"]
+[ext_resource type="Texture2D" uid="uid://b6a8ndqcek1o7" path="res://Assets/RenderedPlanets/RedGalaxy.png" id="12_xt3q6"]
+[ext_resource type="Texture2D" uid="uid://bf0yyj3vj55rs" path="res://Assets/RenderedPlanets/WhiteGalaxy.png" id="13_us2ug"]
 [ext_resource type="Texture2D" uid="uid://b6r4kt8bwnbd1" path="res://Assets/MainMenu/logo underline.png" id="14_7k58x"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ujyyl"]
@@ -7438,7 +7438,6 @@ mouse_filter = 2
 texture_filter = 1
 texture_repeat = 3
 position = Vector2(511.999, 384)
-scale = Vector2(1, 1)
 texture = ExtResource("1_c6u4o")
 
 [node name="Ellipses" type="Node2D" parent="."]
@@ -7536,7 +7535,7 @@ grow_vertical = 2
 mouse_filter = 2
 mouse_default_cursor_shape = 2
 bbcode_enabled = true
-text = "[font_size=30][center][font=\"res://Assets/Font/yoster.ttf\"]Backº[/font][/center][/font_size]"
+text = "[font_size=30][center][font=\"res://Assets/Fonts/yoster.ttf\"]Back[/font][/center][/font_size]"
 scroll_active = false
 shortcut_keys_enabled = false
 horizontal_alignment = 1
@@ -7593,7 +7592,7 @@ offset_top = -107.5
 offset_right = 282.0
 offset_bottom = 117.5
 bbcode_enabled = true
-text = "[font_size=70][center][font=\"res://Assets/Font/yoster.ttf\"][wave amp=25 freq=2][color=#FFA56A]SPLIT[/color] LIGHT[/wave][/font][/center][/font_size]"
+text = "[font_size=70][center][font=\"res://Assets/Fonts/yoster.ttf\"][wave amp=25 freq=2][color=#FFA56A]SPLIT[/color] LIGHT[/wave][/font][/center][/font_size]"
 scroll_active = false
 shortcut_keys_enabled = false
 meta_underlined = false

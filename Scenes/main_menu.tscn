@@ -2,21 +2,21 @@
 
 [ext_resource type="Script" uid="uid://dbhmwpkn06k08" path="res://Scripts/main_menu_animation.gd" id="1_m3bi6"]
 [ext_resource type="Texture2D" uid="uid://b6r4kt8bwnbd1" path="res://Assets/MainMenu/logo underline.png" id="2_o4ajm"]
-[ext_resource type="Texture2D" uid="uid://dwoxiwkxw7s2c" path="res://Assets/MainMenu/RenderedPlanets/SomatraSprite.png" id="3_8dnnj"]
+[ext_resource type="Texture2D" uid="uid://dwoxiwkxw7s2c" path="res://Assets/RenderedPlanets/SomatraSprite.png" id="3_8dnnj"]
 [ext_resource type="Texture2D" uid="uid://c5h4m4bq3kpuy" path="res://Assets/MainMenu/starry-background.png" id="3_flxil"]
 [ext_resource type="Texture2D" uid="uid://cicemmfqvh4k2" path="res://Assets/MainMenu/flashlight overlay.png" id="3_hl1se"]
-[ext_resource type="Texture2D" uid="uid://bf0yyj3vj55rs" path="res://Assets/MainMenu/RenderedPlanets/WhiteGalaxy.png" id="4_wyxwn"]
-[ext_resource type="Texture2D" uid="uid://b6a8ndqcek1o7" path="res://Assets/MainMenu/RenderedPlanets/RedGalaxy.png" id="5_ov708"]
+[ext_resource type="FontFile" uid="uid://r0dmn3iwndr8" path="res://Assets/Fonts/yoster.ttf" id="4_wyh8j"]
+[ext_resource type="Texture2D" uid="uid://bf0yyj3vj55rs" path="res://Assets/RenderedPlanets/WhiteGalaxy.png" id="4_wyxwn"]
+[ext_resource type="Texture2D" uid="uid://b6a8ndqcek1o7" path="res://Assets/RenderedPlanets/RedGalaxy.png" id="5_ov708"]
 [ext_resource type="Texture2D" uid="uid://cb2m8ogbll17c" path="res://Assets/MainMenu/players stage.png" id="7_u6r2q"]
 [ext_resource type="Script" uid="uid://c3de5grfears" path="res://Scripts/main_menu/quit_button.gd" id="8_m3bi6"]
 [ext_resource type="Texture2D" uid="uid://ivqjak8odrhf" path="res://Assets/Common/Button.png" id="8_yhxw7"]
 [ext_resource type="Texture2D" uid="uid://ksymtls3rnfl" path="res://Assets/Common/ButtonHover.png" id="9_trj04"]
 [ext_resource type="Script" uid="uid://c2wahskthkgq8" path="res://Scripts/main_menu/play_button.gd" id="10_16hvj"]
-[ext_resource type="Texture2D" uid="uid://c376k0eennobf" path="res://Assets/MainMenu/RenderedPlanets/NamibSprite.png" id="11_vtepg"]
-[ext_resource type="Texture2D" uid="uid://dr4dh5p68ek2x" path="res://Assets/MainMenu/RenderedPlanets/TaalSprite.png" id="12_8dnnj"]
-[ext_resource type="Texture2D" uid="uid://d4ke3seabm106" path="res://Assets/MainMenu/RenderedPlanets/EarthSprite.png" id="13_m3bi6"]
-[ext_resource type="Texture2D" uid="uid://wnnyby16cb6b" path="res://Assets/MainMenu/RenderedPlanets/MalborkSprite.png" id="14_wyh8j"]
-[ext_resource type="Texture2D" uid="uid://cypr5itgtae" path="res://Assets/MainMenu/image.png" id="17_wyh8j"]
+[ext_resource type="Texture2D" uid="uid://c376k0eennobf" path="res://Assets/RenderedPlanets/NamibSprite.png" id="11_vtepg"]
+[ext_resource type="Texture2D" uid="uid://dr4dh5p68ek2x" path="res://Assets/RenderedPlanets/TaalSprite.png" id="12_8dnnj"]
+[ext_resource type="Texture2D" uid="uid://d4ke3seabm106" path="res://Assets/RenderedPlanets/EarthSprite.png" id="13_m3bi6"]
+[ext_resource type="Texture2D" uid="uid://wnnyby16cb6b" path="res://Assets/RenderedPlanets/MalborkSprite.png" id="14_wyh8j"]
 
 [sub_resource type="Animation" id="Animation_m3bi6"]
 length = 0.001
@@ -7503,7 +7503,6 @@ libraries = {
 texture_filter = 1
 texture_repeat = 3
 position = Vector2(512, 384)
-scale = Vector2(1, 1)
 texture = ExtResource("3_flxil")
 
 [node name="Logo" type="Node2D" parent="."]
@@ -7522,8 +7521,9 @@ offset_left = -256.0
 offset_top = -107.5
 offset_right = 282.0
 offset_bottom = 117.5
+theme_override_fonts/normal_font = ExtResource("4_wyh8j")
 bbcode_enabled = true
-text = "[font_size=70][center][font=\"res://Assets/Font/yoster.ttf\"][wave amp=25 freq=2][color=#FFA56A]SPLIT[/color] LIGHT[/wave][/font][/center][/font_size]"
+text = "[font_size=70][center][font=\"res://Assets/Fonts/yoster.ttf\"][wave amp=25 freq=2][color=#FFA56A]SPLIT[/color] LIGHT[/wave][/font][/center][/font_size]"
 scroll_active = false
 shortcut_keys_enabled = false
 meta_underlined = false
@@ -7573,8 +7573,9 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 mouse_default_cursor_shape = 2
+theme_override_fonts/normal_font = ExtResource("4_wyh8j")
 bbcode_enabled = true
-text = "[font_size=30][center][font=\"res://Assets/Font/yoster.ttf\"]Play[/font][/center][/font_size]"
+text = "[font_size=30][center][font=\"res://Assets/Fonts/yoster.ttf\"]Play[/font][/center][/font_size]"
 scroll_active = false
 shortcut_keys_enabled = false
 horizontal_alignment = 1
@@ -7602,7 +7603,7 @@ grow_vertical = 2
 mouse_filter = 2
 mouse_default_cursor_shape = 2
 bbcode_enabled = true
-text = "[font_size=30][center][font=\"res://Assets/Font/yoster.ttf\"]Options[/font][/center][/font_size]"
+text = "[font_size=30][center][font=\"res://Assets/Fonts/yoster.ttf\"]Options[/font][/center][/font_size]"
 scroll_active = false
 shortcut_keys_enabled = false
 horizontal_alignment = 1
@@ -7631,7 +7632,7 @@ grow_vertical = 2
 mouse_filter = 2
 mouse_default_cursor_shape = 2
 bbcode_enabled = true
-text = "[font_size=30][center][font=\"res://Assets/Font/yoster.ttf\"]Quit[/font][/center][/font_size]"
+text = "[font_size=30][center][font=\"res://Assets/Fonts/yoster.ttf\"]Quit[/font][/center][/font_size]"
 scroll_active = false
 shortcut_keys_enabled = false
 horizontal_alignment = 1
@@ -7657,7 +7658,7 @@ frame_progress = 0.977492
 texture_filter = 1
 texture_repeat = 3
 position = Vector2(484, 624)
-rotation = 1.80293
+rotation = 1.57079
 scale = Vector2(2.33594, 2.33594)
 sprite_frames = SubResource("SpriteFrames_6a21d")
 autoplay = "default"
@@ -7732,7 +7733,7 @@ offset_bottom = 125.5
 grow_horizontal = 2
 grow_vertical = 2
 bbcode_enabled = true
-text = "[font_size=40][font=\"res://Assets/Font/yoster.ttf\"][center]Are you sure you want to quit?[/center][/font][/font_size]"
+text = "[font_size=40][font=\"res://Assets/Fonts/yoster.ttf\"][center]Are you sure you want to quit?[/center][/font][/font_size]"
 
 [node name="Confirm Buttons" type="Node2D" parent="ConfirmQuitScreen"]
 
@@ -7767,7 +7768,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 bbcode_enabled = true
-text = "[font_size=30][font=\"res://Assets/Font/yoster.ttf\"][center]No[/center][/font][/font_size]"
+text = "[font_size=30][font=\"res://Assets/Fonts/yoster.ttf\"][center]No[/center][/font][/font_size]"
 scroll_active = false
 
 [node name="Confirm Quit" type="TextureButton" parent="ConfirmQuitScreen/Confirm Buttons"]
@@ -7801,14 +7802,8 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 bbcode_enabled = true
-text = "[font_size=30][font=\"res://Assets/Font/yoster.ttf\"][center]Yes[/center][/font][/font_size]"
+text = "[font_size=30][font=\"res://Assets/Fonts/yoster.ttf\"][center]Yes[/center][/font][/font_size]"
 scroll_active = false
-
-[node name="Image" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(514, 384)
-scale = Vector2(1.46, 1.4749)
-texture = ExtResource("17_wyh8j")
 
 [connection signal="ready" from="." to="." method="_on_ready"]
 [connection signal="animation_finished" from="SelectionLevelAnimation" to="VBoxContainer/Play Button" method="_on_animation_player_animation_finished"]
