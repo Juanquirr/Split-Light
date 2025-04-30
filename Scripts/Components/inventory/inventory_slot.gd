@@ -6,22 +6,18 @@ func check_active_player(active_player):
 	if get_parent().get_parent() != active_player:
 		self.visible = false
 	else:
+		await get_tree().process_frame
 		self.visible = true
 
 func _process(_delta: float) -> void:
-	global_position.y = get_parent().get_node("../Camera2D").get_screen_center_position().y + 305
-
+	global_position.y = (get_parent().get_node("../Camera2D").get_screen_center_position().y + 305)
+	
 func _ready() -> void:
 	await get_tree().process_frame
-	var grandparent = get_parent().get_parent() 
-	if grandparent and grandparent.has_method("is_active_player") and grandparent.is_active_player():
-		visible = true  
-	else:
-		visible  = false 
-
 	var player_switch_manager = get_node_or_null("../../../PlayerSwitchManager")
 	if player_switch_manager:
 		player_switch_manager.connect("player_changed", Callable(self, "check_active_player"))
+
 
 func _draw() -> void:
 	var rect = Rect2(Vector2.ZERO, size)
