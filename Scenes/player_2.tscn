@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://bqsxn12ajmun7"]
+[gd_scene load_steps=35 format=3 uid="uid://bqsxn12ajmun7"]
 
 [ext_resource type="Script" uid="uid://0l6brjd02vug" path="res://Scenes/player_2.gd" id="1_dgubp"]
 [ext_resource type="Texture2D" uid="uid://bkepthvxrgreg" path="res://Assets/Reverend/Reverend IDLE.png" id="2_dgubp"]
@@ -11,6 +11,9 @@
 [ext_resource type="Texture2D" uid="uid://c622yua41urnt" path="res://Assets/Adventurer-1.5/Individual Sprites/adventurer-run-04.png" id="11_ne8t6"]
 [ext_resource type="Texture2D" uid="uid://bb4w4f0sr7ru2" path="res://Assets/Adventurer-1.5/Individual Sprites/adventurer-run-05.png" id="12_sc7t3"]
 [ext_resource type="PackedScene" uid="uid://d1byaawikdyfu" path="res://Scenes/Components/inventory/inventory.tscn" id="13_0kjde"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_os74a"]
+light_mode = 1
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_os74a"]
 atlas = ExtResource("2_dgubp")
@@ -185,12 +188,22 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s4j3i"]
 size = Vector2(114, 184)
 
+[sub_resource type="Gradient" id="Gradient_os74a"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_os74a"]
+gradient = SubResource("Gradient_os74a")
+fill = 1
+fill_from = Vector2(0.521368, 0.474359)
+fill_to = Vector2(0.867521, 0.188034)
+
 [node name="Player2" type="CharacterBody2D"]
 collision_layer = 2
 script = ExtResource("1_dgubp")
 
 [node name="Movement" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
+material = SubResource("CanvasItemMaterial_os74a")
 position = Vector2(0, 2)
 scale = Vector2(6.27618, 6.27618)
 sprite_frames = SubResource("SpriteFrames_k46vw")
@@ -205,3 +218,8 @@ limit_top = 0
 limit_bottom = 0
 
 [node name="Inventory" parent="." instance=ExtResource("13_0kjde")]
+
+[node name="PointLight2D2" type="PointLight2D" parent="."]
+position = Vector2(3, 3)
+scale = Vector2(8.50196, 8.50196)
+texture = SubResource("GradientTexture2D_os74a")

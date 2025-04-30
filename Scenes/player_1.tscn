@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://3kej1w4j6pkr"]
+[gd_scene load_steps=22 format=3 uid="uid://3kej1w4j6pkr"]
 
 [ext_resource type="Script" uid="uid://dx1d71eei5ajx" path="res://Scripts/player_1/player_1.gd" id="1_kslfe"]
 [ext_resource type="Texture2D" uid="uid://unjvfcxrm44y" path="res://Assets/Adventurer-1.5/Individual Sprites/adventurer-idle-00.png" id="2_jkush"]
@@ -7,6 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://bwecglf385qvh" path="res://Assets/Adventurer-1.5/Individual Sprites/adventurer-idle-03.png" id="5_2ympu"]
 [ext_resource type="Texture2D" uid="uid://b8bned208youe" path="res://Assets/Adventurer-1.5/Individual Sprites/adventurer-jump-03.png" id="9_kslfe"]
 [ext_resource type="PackedScene" uid="uid://d1byaawikdyfu" path="res://Scenes/Components/inventory/inventory.tscn" id="10_2ympu"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_jkush"]
+light_mode = 1
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_lp8rx"]
 
@@ -102,12 +105,22 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s4j3i"]
 size = Vector2(119, 195)
 
+[sub_resource type="Gradient" id="Gradient_vr6f4"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_vmi10"]
+gradient = SubResource("Gradient_vr6f4")
+fill = 1
+fill_from = Vector2(0.521368, 0.474359)
+fill_to = Vector2(0.867521, 0.188034)
+
 [node name="Player1" type="CharacterBody2D"]
 collision_layer = 2
 script = ExtResource("1_kslfe")
 
 [node name="Movement" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
+material = SubResource("CanvasItemMaterial_jkush")
 position = Vector2(0, 2)
 scale = Vector2(6.27618, 6.27618)
 sprite_frames = SubResource("SpriteFrames_k46vw")
@@ -122,6 +135,11 @@ limit_top = 0
 limit_bottom = 0
 
 [node name="Inventory" parent="." instance=ExtResource("10_2ympu")]
+
+[node name="PointLight2D2" type="PointLight2D" parent="."]
+position = Vector2(3, 3)
+scale = Vector2(8.50196, 8.50196)
+texture = SubResource("GradientTexture2D_vmi10")
 
 [connection signal="area_entered" from="Inventory" to="Inventory" method="_on_area_entered"]
 [connection signal="area_exited" from="Inventory" to="." method="_on_inventory_area_exited"]
