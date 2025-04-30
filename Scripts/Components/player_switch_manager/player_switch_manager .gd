@@ -8,6 +8,8 @@ var active_player: CharacterBody2D
 @onready var player2 = null
 @onready var player2_perspective_manager: Array[Player_perspective_manager] = []
 
+signal player_changed(active_player)
+
 func _ready() -> void:
 	setup_initial_players()
 
@@ -16,6 +18,7 @@ func setup_initial_players():
 	set_active_player(player1)
 	disable_movement_player(player2)
 	disable_clues(player2)
+	emit_signal("player_changed", active_player)
 
 func _process(delta):
 	if InputManager.is_action_just_pressed("switch_player") && player1 != null && player2 != null: 
@@ -63,3 +66,5 @@ func change_active_player(new_player: CharacterBody2D):
 	if active_player:
 		unset_active_player()
 		set_active_player(new_player)
+		emit_signal("player_changed", active_player)
+		
