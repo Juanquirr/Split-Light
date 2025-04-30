@@ -1,6 +1,6 @@
 [gd_scene load_steps=29 format=4 uid="uid://b35e40yclrr4"]
 
-[ext_resource type="PackedScene" uid="uid://3kej1w4j6pkr" path="res://Scenes/player_1.tscn" id="1_8ffim"]
+[ext_resource type="PackedScene" uid="uid://3kej1w4j6pkr" path="res://Scenes/main_character.tscn" id="1_8ffim"]
 [ext_resource type="Script" uid="uid://vv6j32fqj70f" path="res://Scripts/level_1/level_1.gd" id="1_chwpn"]
 [ext_resource type="Texture2D" uid="uid://cvi4ajts0emuj" path="res://Assets/First level/Dungeon Tile Set 1.PNG" id="1_xrdnt"]
 [ext_resource type="Texture2D" uid="uid://cu5yhpo4j7v57" path="res://Assets/First level/cuadro3mujeres.png" id="2_wrinw"]
