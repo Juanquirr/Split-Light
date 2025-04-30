@@ -1,6 +1,5 @@
 extends Label
 
-
 class_name Counter
 var visibility = Player_perspective_manager_visibility.new(self)
 

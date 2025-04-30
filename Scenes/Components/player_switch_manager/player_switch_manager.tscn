@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://byfig72cx8tsq"]
 
-[ext_resource type="Script" uid="uid://0eibsumwio8s" path="res://Scripts/Components/player_switch_manager/player_switch_manager .gd" id="1_wmofh"]
+[ext_resource type="Script" uid="uid://0eibsumwio8s" path="res://Scripts/Components/player/player_switch_manager/player_switch_manager.gd" id="1_wmofh"]
 
 [node name="PlayerSwitchManager" type="Node2D"]
 script = ExtResource("1_wmofh")
