@@ -59,6 +59,8 @@ func make_visible():
 	if self.level_visibility_enabled && self.player_visibility_enabled && not self.is_taken:
 		self.visible = true
 		self.collision_layer = 1
+	elif self.is_taken && self.visible:
+		self.visible = false
 
 func make_invisible():
 	self.visible = false
