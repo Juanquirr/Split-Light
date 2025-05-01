@@ -11,4 +11,4 @@ func _on_pressed() -> void:
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "selection_menu_animation" and play_pressed:
 		play_pressed = false
-		SceneManager.change_to_scene(SceneManager.SCENES.LEVEL_SELECTOR)
+		SceneManager.change_to_scene(SceneManager.GameScenes.LEVEL_SELECTOR)

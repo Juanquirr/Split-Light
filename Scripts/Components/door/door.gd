@@ -1,12 +1,12 @@
 extends Area2D
 
-class_name Door
+class_name InteractiveDoor
 
 var key: InteractiveKey  
-var target_scene: SceneManager.SCENES
+var target_scene: SceneManager.GameScenes
 var players_inside: Array[PlayerInstance] = []
 
-func init(init_target_scene: SceneManager.SCENES, init_key = null ) -> void:
+func init(init_target_scene: SceneManager.GameScenes, init_key = null ) -> void:
 	self.key = init_key  
 	self.target_scene = init_target_scene 
 
@@ -23,4 +23,3 @@ func _on_body_entered(body: CharacterBody2D):
 func _on_body_exited(body: CharacterBody2D):
 	if body in players_inside:
 		players_inside.erase(body)
-		

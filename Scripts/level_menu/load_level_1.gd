@@ -7,4 +7,4 @@ func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int):
 	if event is InputEventMouseButton and event.pressed:
 		# TODO PANEL Y OTRAS COSAS
 		print("¡Clic detectado en el planeta!")
-		SceneManager.change_to_scene(SceneManager.SCENES.LEVEL_1)
+		SceneManager.change_to_scene(SceneManager.GameScenes.LEVEL_1)

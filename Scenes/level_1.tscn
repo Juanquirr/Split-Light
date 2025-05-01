@@ -441,6 +441,7 @@ texture = SubResource("GradientTexture2D_u5cqy")
 [connection signal="teleported" from="Teleporter_right" to="." method="_on_teleported_right"]
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
+[connection signal="level_end" from="ExitDoor" to="TimerLabel" method="set_remaining_time"]
 
 [editable path="Teleporter_left"]
 [editable path="Teleporter_right"]
