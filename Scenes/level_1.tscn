@@ -436,6 +436,8 @@ scale = Vector2(5.00781, 1.57813)
 texture = SubResource("GradientTexture2D_u5cqy")
 
 [connection signal="number_reached" from="Count" to="." method="_count_number_reached"]
+[connection signal="teleported" from="Teleporter_left" to="." method="_on_teleported_left"]
+[connection signal="teleported" from="Teleporter_right" to="." method="_on_teleported_right"]
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
 
