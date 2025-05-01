@@ -3,11 +3,11 @@ extends Label
 class_name CounterLabel
 ## Label node class that acts as a counter.
 
-var visibility = Player_perspective_manager_visibility.new(self)
+var visibility = PlayerPerspectiveVisibilityManager.new(self)
 
 signal number_reached
-@export var target_number = 0
-@export var counter = 1
+@export var target_number: int = 0
+@export var counter: int = 1
 
 func _ready() -> void:
 	self._update_ui()
@@ -25,7 +25,7 @@ func sub_count():
 	self._update_ui()
 	self.emit_signal_on_reach()
 
-func get_count():
+func get_count() -> int:
 	return self.counter
 
 func set_counter(value: int):

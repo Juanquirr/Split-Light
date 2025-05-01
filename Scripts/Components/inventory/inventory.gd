@@ -1,8 +1,8 @@
 extends Node2D
 
-var inventory: Array[Inventory_item] = [null, null, null]
+var inventory: Array[InventoryItemInterface] = [null, null, null]
 var selected_index: int = 0
-var takeable_items: Array[Inventory_item]
+var takeable_items: Array[InventoryItemInterface]
 var item_sprites: Array[Sprite2D] = [null, null, null] 
 var slots_offset = [Vector2(-460, +335),Vector2(-390, +335), Vector2(-323, +335)]
 
@@ -15,26 +15,23 @@ func check_active_player(active_player):
 		for item in item_sprites:
 			if item != null:
 				item.visible = true
-	
+
 func _ready() -> void:
 	$Slot1.select()
 	var player_switch_manager = get_node_or_null("../../PlayerSwitchManager")
 	if player_switch_manager:
 		player_switch_manager.connect("player_changed", Callable(self, "check_active_player"))
-	
+
 func get_inventory_items():
 	return takeable_items
-	
 
 func update_item_sprites_position():
 	for index in range(3):
-		if item_sprites[index] != null: 
-			item_sprites[index].global_position = get_node("../Camera2D").get_screen_center_position() + slots_offset[index]  
-	
+		if item_sprites[index] == null: continue
+		item_sprites[index].global_position = $"../Camera2D".get_screen_center_position() + slots_offset[index]  
 
 func _process(_delta: float) -> void:	
 	update_item_sprites_position()
-	
 	
 	var parent = get_parent()
 	if parent and parent.has_method("is_active_player") and not parent.is_active_player():
@@ -85,7 +82,6 @@ func _process(_delta: float) -> void:
 		$Slot1.deselect()
 		$Slot2.deselect()
 		$Slot3.select()
-	
 
 func _on_area_entered(body: Node2D) -> void:
 	if body.has_method("get_inventory_item"):

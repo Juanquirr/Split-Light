@@ -1,14 +1,13 @@
-extends Player_perspective_manager
+extends PlayerPerspectiveManagerInterface
 
-class_name Player_perspective_manager_visibility
-var parent_node  
+class_name PlayerPerspectiveVisibilityManager
+var parent_node: Node
 
-
-func _init(node):
-	parent_node = node  
+func _init(node: Node):
+	self.parent_node = node  
 
 func disable():
-	parent_node.visible = false
+	self.parent_node.visible = false
 
 func enable():
-	parent_node.visible = true
+	self.parent_node.visible = true

@@ -2,11 +2,11 @@ extends Area2D
 
 class_name InteractiveKey
 
-class Key_interaction_manager extends Player_perspective_manager:
+class KeyPerspectiveManager extends PlayerPerspectiveManagerInterface:
 	var node: Node2D
 	
-	func _init(node: Node2D):
-		self.node = node  
+	func _init(init_node: Node2D):
+		self.node = init_node  
 	
 	func disable():
 		self.node.make_invisible()
@@ -18,24 +18,26 @@ class Key_interaction_manager extends Player_perspective_manager:
 		self.node.make_visible()
 		self.node.enable_take_permission()
 
-var interaction_manager: Key_interaction_manager
+var interaction_manager: KeyPerspectiveManager
 var is_taken = false
 var can_be_taken = true
 var level_visibility_enabled = true
 var player_visibility_enabled = true
-var inventory_item: Base_inventory_item
+var inventory_item: BaseInventoryItem
+@export var KEY_GRAVITY: float = 1000
 
 func init(
 	enable_visibility: bool,
 	interactable: bool,
 	taken: bool,
-	inventory_item_instance: Base_inventory_item
+	inventory_item_instance: BaseInventoryItem
 ):
-	self.interaction_manager = Key_interaction_manager.new(self)
+	self.interaction_manager = KeyPerspectiveManager.new(self)
 	self.level_visibility_enabled = enable_visibility
 	self.can_be_taken = interactable
 	self.is_taken = taken
 	self.inventory_item = inventory_item_instance
+	self.inventory_item.GRAVITY = self.KEY_GRAVITY
 	self.make_visible()
 
 func _process(delta: float) -> void:
@@ -68,9 +70,9 @@ func enable_take_permission():
 func disable_take_permission():
 	can_be_taken = false
 
-func get_key_status():
+func get_key_status() -> bool:
 	return can_be_taken && is_taken
 
-func get_inventory_item():
+func get_inventory_item() -> BaseInventoryItem:
 	return inventory_item
 	
