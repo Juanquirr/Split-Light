@@ -10,9 +10,9 @@
 [ext_resource type="Texture2D" uid="uid://wnnyby16cb6b" path="res://Assets/RenderedPlanets/MalborkSprite.png" id="7_t11vj"]
 [ext_resource type="Texture2D" uid="uid://dwoxiwkxw7s2c" path="res://Assets/RenderedPlanets/SomatraSprite.png" id="8_p1cm0"]
 [ext_resource type="Texture2D" uid="uid://ivqjak8odrhf" path="res://Assets/Common/Button.png" id="9_d1ivi"]
+[ext_resource type="Script" uid="uid://cxmhvt57mc6iy" path="res://Scripts/Components/managers/level_loader_interface.gd" id="9_vftvl"]
 [ext_resource type="Texture2D" uid="uid://ksymtls3rnfl" path="res://Assets/Common/ButtonHover.png" id="10_4yviu"]
 [ext_resource type="Script" uid="uid://klwselc2jsa4" path="res://Scripts/main_menu/back_button.gd" id="11_m4w1s"]
-[ext_resource type="Script" uid="uid://0tcv7gleq05a" path="res://Scripts/level_menu/load_level_1.gd" id="12_nilwd"]
 [ext_resource type="Texture2D" uid="uid://b6a8ndqcek1o7" path="res://Assets/RenderedPlanets/RedGalaxy.png" id="12_xt3q6"]
 [ext_resource type="Texture2D" uid="uid://bf0yyj3vj55rs" path="res://Assets/RenderedPlanets/WhiteGalaxy.png" id="13_us2ug"]
 [ext_resource type="Texture2D" uid="uid://b6r4kt8bwnbd1" path="res://Assets/MainMenu/logo underline.png" id="14_7k58x"]
@@ -66,7 +66,7 @@ tracks/0/path = NodePath("Ellipses/elipse1:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
+"times": PackedFloat32Array(0, 0.533333),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(0.854902, 0.854902, 0.854902, 0), Color(0.856067, 0.856067, 0.856067, 1)]
@@ -78,7 +78,7 @@ tracks/1/path = NodePath("Ellipses/elipse2:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 1),
+"times": PackedFloat32Array(0.166667, 0.666667),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(0.854902, 0.854902, 0.854902, 0), Color(0.856067, 0.856067, 0.856067, 1)]
@@ -90,7 +90,7 @@ tracks/2/path = NodePath("Ellipses/elipse3:modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 1),
+"times": PackedFloat32Array(0.266667, 0.733333),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(0.854902, 0.854902, 0.854902, 0), Color(0.856067, 0.856067, 0.856067, 1)]
@@ -102,7 +102,7 @@ tracks/3/path = NodePath("Ellipses/elipse4:modulate")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 1),
+"times": PackedFloat32Array(0.366667, 0.866667),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(0.854902, 0.854902, 0.854902, 0), Color(0.856067, 0.856067, 0.856067, 1)]
@@ -114,7 +114,7 @@ tracks/4/path = NodePath("Ellipses/elipse5:modulate")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 1),
+"times": PackedFloat32Array(0.466667, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(0.854902, 0.854902, 0.854902, 0), Color(0.856067, 0.856067, 0.856067, 1)]
@@ -126,7 +126,7 @@ tracks/5/path = NodePath("Level1/MalborkPlanet:visible")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0, 2),
+"times": PackedFloat32Array(0, 1.3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
@@ -138,7 +138,7 @@ tracks/6/path = NodePath("Level2/EarthPlanet:visible")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(0, 2.5),
+"times": PackedFloat32Array(0, 1.6),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
@@ -150,7 +150,7 @@ tracks/7/path = NodePath("Level3/SomatraPlanet:visible")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(0, 3),
+"times": PackedFloat32Array(0, 2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
@@ -162,7 +162,7 @@ tracks/8/path = NodePath("Level4/NamibPlanet:visible")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
-"times": PackedFloat32Array(0, 3.5),
+"times": PackedFloat32Array(0, 2.4),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
@@ -174,7 +174,7 @@ tracks/9/path = NodePath("Level5/TaalPlanet:visible")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
-"times": PackedFloat32Array(0, 4),
+"times": PackedFloat32Array(0, 2.76667),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
@@ -7682,10 +7682,10 @@ vertical_alignment = 1
 
 [node name="Level1" type="Area2D" parent="."]
 position = Vector2(-50, 113)
-script = ExtResource("12_nilwd")
 
 [node name="MalborkPlanet" type="AnimatedSprite2D" parent="Level1"]
 position = Vector2(170, 255)
+rotation = -3.59538
 scale = Vector2(1.6, 1.6)
 sprite_frames = SubResource("SpriteFrames_ipvmw")
 autoplay = "default"
@@ -7695,20 +7695,117 @@ frame_progress = 0.0633339
 position = Vector2(170, 255)
 shape = SubResource("CircleShape2D_37b0r")
 
+[node name="Hover info box" type="Control" parent="Level1"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="Level1/Hover info box"]
+layout_mode = 0
+offset_left = 93.0
+offset_top = 82.0
+offset_right = 247.0
+offset_bottom = 200.0
+color = Color(0.133333, 0.133333, 0.133333, 0.419608)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Level1/Hover info box"]
+offset_left = 93.0
+offset_top = 82.0
+offset_right = 247.0
+offset_bottom = 200.0
+bbcode_enabled = true
+text = "[font_size=20][font=\"res://Assets/Fonts/yoster.ttf\"][center]Malbork[/center][/font][/font_size]
+[font_size=14][font=\"res://Assets/Fonts/yoster.ttf\"][center][color=#a8a8a8]
+A dark moon stranded on the edge of this galaxy.
+[/color][/center][/font][/font_size]"
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Level1/Hover info box"]
+offset_left = 143.0
+offset_top = 244.0
+offset_right = 197.0
+offset_bottom = 264.0
+bbcode_enabled = true
+text = "[font_size=20][font=\"res://Assets/Fonts/yoster.ttf\"][center][color=#a8a8a8]Play[/color][/center][/font][/font_size]"
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="Level1Button" type="TextureButton" parent="Level1" node_paths=PackedStringArray("planet_info_box")]
+offset_left = 119.0
+offset_top = 204.0
+offset_right = 221.0
+offset_bottom = 306.0
+mouse_default_cursor_shape = 2
+script = ExtResource("9_vftvl")
+planet_info_box = NodePath("../Hover info box")
+target_scene = 2
+
 [node name="Level2" type="Control" parent="."]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="EarthPlanet" type="AnimatedSprite2D" parent="Level2"]
+modulate = Color(0.158472, 0.158472, 0.158472, 1)
 texture_filter = 1
 texture_repeat = 3
 position = Vector2(253, 551)
-rotation = -1.58301
+rotation = -2.86583
 scale = Vector2(1.6, 1.6)
 sprite_frames = SubResource("SpriteFrames_wt5eh")
 autoplay = "default"
 frame_progress = 0.769041
+
+[node name="Hover info box" type="Control" parent="Level2"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 83.0
+offset_top = 296.0
+offset_right = 123.0
+offset_bottom = 336.0
+
+[node name="ColorRect" type="ColorRect" parent="Level2/Hover info box"]
+layout_mode = 0
+offset_left = 93.0
+offset_top = 82.0
+offset_right = 247.0
+offset_bottom = 200.0
+color = Color(0.133333, 0.133333, 0.133333, 0.419608)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Level2/Hover info box"]
+offset_left = 93.0
+offset_top = 82.0
+offset_right = 247.0
+offset_bottom = 200.0
+bbcode_enabled = true
+text = "[font_size=20][font=\"res://Assets/Fonts/yoster.ttf\"][center]Earth[/center][/font][/font_size]
+[font_size=14][font=\"res://Assets/Fonts/yoster.ttf\"][center][color=#a8a8a8]
+A populated planet full of different kinds of creatures and lifeforms.
+[/color][/center][/font][/font_size]"
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Level2/Hover info box"]
+visible = false
+offset_left = 143.0
+offset_top = 244.0
+offset_right = 197.0
+offset_bottom = 264.0
+bbcode_enabled = true
+text = "[font_size=20][font=\"res://Assets/Fonts/yoster.ttf\"][center][color=#e4e4e4]Play[/color][/center][/font][/font_size]"
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="Level2Button" type="TextureButton" parent="Level2" node_paths=PackedStringArray("planet_info_box")]
+offset_left = 201.0
+offset_top = 498.0
+offset_right = 304.0
+offset_bottom = 602.0
+mouse_default_cursor_shape = 2
+script = ExtResource("9_vftvl")
+planet_info_box = NodePath("../Hover info box")
 
 [node name="Level3" type="Control" parent="."]
 anchors_preset = 0
@@ -7716,14 +7813,64 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="SomatraPlanet" type="AnimatedSprite2D" parent="Level3"]
+modulate = Color(0.156863, 0.156863, 0.156863, 1)
 texture_filter = 1
 texture_repeat = 3
 position = Vector2(522, 620)
-rotation = -1.57079
+rotation = 0.0959931
 scale = Vector2(1.6, 1.6)
 sprite_frames = SubResource("SpriteFrames_t4sxo")
 autoplay = "default"
 frame_progress = 0.49066
+
+[node name="Hover info box" type="Control" parent="Level3"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 353.0
+offset_top = 362.0
+offset_right = 393.0
+offset_bottom = 402.0
+
+[node name="ColorRect" type="ColorRect" parent="Level3/Hover info box"]
+layout_mode = 0
+offset_left = 93.0
+offset_top = 82.0
+offset_right = 247.0
+offset_bottom = 200.0
+color = Color(0.133333, 0.133333, 0.133333, 0.419608)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Level3/Hover info box"]
+offset_left = 93.0
+offset_top = 82.0
+offset_right = 247.0
+offset_bottom = 200.0
+bbcode_enabled = true
+text = "[font_size=20][font=\"res://Assets/Fonts/yoster.ttf\"][center]Sumatra[/center][/font][/font_size]
+[font_size=14][font=\"res://Assets/Fonts/yoster.ttf\"][center][color=#a8a8a8]
+Filled with lush plants and vegetation, it's easy to get lost in it's giant forest.
+[/color][/center][/font][/font_size]"
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Level3/Hover info box"]
+visible = false
+offset_left = 143.0
+offset_top = 244.0
+offset_right = 197.0
+offset_bottom = 264.0
+bbcode_enabled = true
+text = "[font_size=20][font=\"res://Assets/Fonts/yoster.ttf\"][center][color=#222222]Play[/color][/center][/font][/font_size]"
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="Level3Button" type="TextureButton" parent="Level3" node_paths=PackedStringArray("planet_info_box")]
+offset_left = 471.0
+offset_top = 570.0
+offset_right = 574.0
+offset_bottom = 674.0
+mouse_default_cursor_shape = 2
+script = ExtResource("9_vftvl")
+planet_info_box = NodePath("../Hover info box")
 
 [node name="Level4" type="Control" parent="."]
 anchors_preset = 0
@@ -7731,6 +7878,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="NamibPlanet" type="AnimatedSprite2D" parent="Level4"]
+modulate = Color(0.156863, 0.156863, 0.156863, 1)
 texture_filter = 1
 texture_repeat = 3
 position = Vector2(795, 561)
@@ -7739,12 +7887,62 @@ sprite_frames = SubResource("SpriteFrames_u8had")
 autoplay = "default"
 frame_progress = 0.751512
 
+[node name="Hover info box" type="Control" parent="Level4"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 626.0
+offset_top = 306.0
+offset_right = 666.0
+offset_bottom = 346.0
+
+[node name="ColorRect" type="ColorRect" parent="Level4/Hover info box"]
+layout_mode = 0
+offset_left = 93.0
+offset_top = 82.0
+offset_right = 247.0
+offset_bottom = 200.0
+color = Color(0.133333, 0.133333, 0.133333, 0.419608)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Level4/Hover info box"]
+offset_left = 93.0
+offset_top = 82.0
+offset_right = 247.0
+offset_bottom = 200.0
+bbcode_enabled = true
+text = "[font_size=20][font=\"res://Assets/Fonts/yoster.ttf\"][center]Namib[/center][/font][/font_size]
+[font_size=14][font=\"res://Assets/Fonts/yoster.ttf\"][center][color=#a8a8a8]
+Harsh environments revolve around this planet, forming rings.
+[/color][/center][/font][/font_size]"
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Level4/Hover info box"]
+visible = false
+offset_left = 143.0
+offset_top = 244.0
+offset_right = 197.0
+offset_bottom = 264.0
+bbcode_enabled = true
+text = "[font_size=20][font=\"res://Assets/Fonts/yoster.ttf\"][center][color=#222222]Play[/color][/center][/font][/font_size]"
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="Level4Button" type="TextureButton" parent="Level4" node_paths=PackedStringArray("planet_info_box")]
+offset_left = 703.0
+offset_top = 480.0
+offset_right = 888.0
+offset_bottom = 634.0
+mouse_default_cursor_shape = 2
+script = ExtResource("9_vftvl")
+planet_info_box = NodePath("../Hover info box")
+
 [node name="Level5" type="Control" parent="."]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="TaalPlanet" type="AnimatedSprite2D" parent="Level5"]
+modulate = Color(0.156863, 0.156863, 0.156863, 1)
 texture_filter = 1
 texture_repeat = 3
 position = Vector2(930, 368)
@@ -7753,6 +7951,55 @@ scale = Vector2(1.6, 1.6)
 sprite_frames = SubResource("SpriteFrames_6a21d")
 autoplay = "default"
 frame_progress = 0.919133
+
+[node name="Hover info box" type="Control" parent="Level5"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 758.0
+offset_top = 111.0
+offset_right = 798.0
+offset_bottom = 151.0
+
+[node name="ColorRect" type="ColorRect" parent="Level5/Hover info box"]
+layout_mode = 0
+offset_left = 93.0
+offset_top = 82.0
+offset_right = 247.0
+offset_bottom = 200.0
+color = Color(0.133333, 0.133333, 0.133333, 0.419608)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Level5/Hover info box"]
+offset_left = 93.0
+offset_top = 82.0
+offset_right = 247.0
+offset_bottom = 200.0
+bbcode_enabled = true
+text = "[font_size=20][font=\"res://Assets/Fonts/yoster.ttf\"][center]Taal[/center][/font][/font_size]
+[font_size=14][font=\"res://Assets/Fonts/yoster.ttf\"][center][color=#a8a8a8]
+Flowing lava plagues the surface of this planet. Beware it's hostility.
+[/color][/center][/font][/font_size]"
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Level5/Hover info box"]
+visible = false
+offset_left = 143.0
+offset_top = 244.0
+offset_right = 197.0
+offset_bottom = 264.0
+bbcode_enabled = true
+text = "[font_size=20][font=\"res://Assets/Fonts/yoster.ttf\"][center][color=#d4d4d4]Play[/color][/center][/font][/font_size]"
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="Level5Button" type="TextureButton" parent="Level5" node_paths=PackedStringArray("planet_info_box")]
+offset_left = 879.0
+offset_top = 318.0
+offset_right = 980.0
+offset_bottom = 420.0
+mouse_default_cursor_shape = 2
+script = ExtResource("9_vftvl")
+planet_info_box = NodePath("../Hover info box")
 
 [node name="Logo" type="Node2D" parent="."]
 position = Vector2(165, 100)
@@ -7792,3 +8039,18 @@ texture = ExtResource("14_7k58x")
 [connection signal="tree_entered" from="." to="." method="_on_tree_entered"]
 [connection signal="pressed" from="Back Button" to="Back Button" method="_on_pressed"]
 [connection signal="input_event" from="Level1" to="Level1" method="_on_input_event"]
+[connection signal="mouse_entered" from="Level1/Level1Button" to="Level1/Level1Button" method="on_mouse_hover_entered"]
+[connection signal="mouse_exited" from="Level1/Level1Button" to="Level1/Level1Button" method="on_mouse_hover_exit"]
+[connection signal="pressed" from="Level1/Level1Button" to="Level1/Level1Button" method="load_level"]
+[connection signal="mouse_entered" from="Level2/Level2Button" to="Level2/Level2Button" method="on_mouse_hover_entered"]
+[connection signal="mouse_exited" from="Level2/Level2Button" to="Level2/Level2Button" method="on_mouse_hover_exit"]
+[connection signal="pressed" from="Level2/Level2Button" to="Level2/Level2Button" method="load_level"]
+[connection signal="mouse_entered" from="Level3/Level3Button" to="Level3/Level3Button" method="on_mouse_hover_entered"]
+[connection signal="mouse_exited" from="Level3/Level3Button" to="Level3/Level3Button" method="on_mouse_hover_exit"]
+[connection signal="pressed" from="Level3/Level3Button" to="Level3/Level3Button" method="load_level"]
+[connection signal="mouse_entered" from="Level4/Level4Button" to="Level4/Level4Button" method="on_mouse_hover_entered"]
+[connection signal="mouse_exited" from="Level4/Level4Button" to="Level4/Level4Button" method="on_mouse_hover_exit"]
+[connection signal="pressed" from="Level4/Level4Button" to="Level4/Level4Button" method="load_level"]
+[connection signal="mouse_entered" from="Level5/Level5Button" to="Level5/Level5Button" method="on_mouse_hover_entered"]
+[connection signal="mouse_exited" from="Level5/Level5Button" to="Level5/Level5Button" method="on_mouse_hover_exit"]
+[connection signal="pressed" from="Level5/Level5Button" to="Level5/Level5Button" method="load_level"]
