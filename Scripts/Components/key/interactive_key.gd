@@ -41,22 +41,22 @@ func init(
 	self.make_visible()
 
 func _process(delta: float) -> void:
-	inventory_item._process(delta)
+	self.inventory_item._process(delta)
 	
 func enable_level_visibility():
-	level_visibility_enabled = true
+	self.level_visibility_enabled = true
 
 func disable_level_visibility():
-	level_visibility_enabled = false
+	self.level_visibility_enabled = false
 
 func enable_player_visibility():
-	player_visibility_enabled = true
+	self.player_visibility_enabled = true
 
 func disable_player_visibility():
-	player_visibility_enabled = false
+	self.player_visibility_enabled = false
 
 func make_visible():
-	if level_visibility_enabled && player_visibility_enabled && not is_taken :
+	if self.level_visibility_enabled && self.player_visibility_enabled && not self.is_taken:
 		self.visible = true
 		self.collision_layer = 1
 
@@ -65,14 +65,14 @@ func make_invisible():
 	self.collision_layer = 0
 	
 func enable_take_permission():
-	can_be_taken = true
+	self.can_be_taken = true
 	
 func disable_take_permission():
-	can_be_taken = false
+	self.can_be_taken = false
 
 func get_key_status() -> bool:
-	return can_be_taken && is_taken
+	return self.can_be_taken && self.is_taken
 
 func get_inventory_item() -> BaseInventoryItem:
-	return inventory_item
+	return self.inventory_item
 	
