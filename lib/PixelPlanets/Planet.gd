@@ -58,7 +58,7 @@ func change_light_source_on_mouse_moved() -> void:
 	var offset: Vector2 = mouse_pos - center
 	var clamped_offset: Vector2 = offset.limit_length(self.max_light_radius)
 	var clamped_pos: Vector2 = center + clamped_offset
-	var normal = (clamped_pos / center) / 1.8
+	var normal: Vector2 = (clamped_pos / center) / 1.75
 	set_light(normal)
 
 func set_dither(_d: bool):

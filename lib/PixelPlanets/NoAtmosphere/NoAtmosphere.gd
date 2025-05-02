@@ -10,8 +10,8 @@ func set_pixels(amount):
 	$Ground.material.set_shader_parameter("pixels", amount)
 	$Craters.material.set_shader_parameter("pixels", amount)
 
-	$Ground.size = Vector2(amount, amount)
-	$Craters.size = Vector2(amount, amount)
+	#$Ground.size = Vector2(amount, amount)
+	#$Craters.size = Vector2(amount, amount)
 
 func set_light(pos):
 	$Ground.material.set_shader_parameter("light_origin", pos)

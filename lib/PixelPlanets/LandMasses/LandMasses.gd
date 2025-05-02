@@ -11,9 +11,9 @@ func set_pixels(amount):
 	$Land.material.set_shader_parameter("pixels", amount)
 	$Cloud.material.set_shader_parameter("pixels", amount)
 	
-	$Water.size = Vector2(amount, amount)
-	$Land.size = Vector2(amount, amount)
-	$Cloud.size = Vector2(amount, amount)
+	#$Water.size = Vector2(amount, amount)
+	#$Land.size = Vector2(amount, amount)
+	#$Cloud.size = Vector2(amount, amount)
 
 func set_light(pos):
 	$Cloud.material.set_shader_parameter("light_origin", pos)

@@ -11,9 +11,9 @@ func set_pixels(amount):
 	$Craters.material.set_shader_parameter("pixels", amount)
 	$LavaRivers.material.set_shader_parameter("pixels", amount)
 	
-	$Land.size = Vector2(amount, amount)
-	$Craters.size = Vector2(amount, amount)
-	$LavaRivers.size = Vector2(amount, amount)
+	#$Land.size = Vector2(amount, amount)
+	#$Craters.size = Vector2(amount, amount)
+	#$LavaRivers.size = Vector2(amount, amount)
 	
 func set_light(pos):
 	$Land.material.set_shader_parameter("light_origin", pos)
