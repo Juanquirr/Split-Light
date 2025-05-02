@@ -2,6 +2,10 @@ extends BasePlanet
 
 class_name DryTerrainPlanet
 
+func _ready() -> void:
+	self.planet_color_amount = 5
+	super._ready()
+
 func set_pixels(amount):
 	$Land.material.set_shader_parameter("pixels", amount)
 	$Land.size = Vector2(amount, amount)

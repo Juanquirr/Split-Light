@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://Planets/Planet.gd" type="Script" id=4]
+[ext_resource type="Script" uid="uid://bvox3honumcdq" path="res://lib/PixelPlanets/Planet.gd" id="4"]
 
 [node name="Planet" type="Control"]
 anchor_right = 1.0

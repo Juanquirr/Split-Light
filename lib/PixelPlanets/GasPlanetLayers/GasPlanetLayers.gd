@@ -1,15 +1,19 @@
 extends BasePlanet
 
-class_name LayerGastPlanet
+class_name LayerGasPlanet
+
+func _ready() -> void:
+	self.planet_color_amount = 6
+	super._ready()
 
 func set_pixels(amount):
 	$GasLayers.material.set_shader_parameter("pixels", amount)
 	 # times 3 here because in this case ring is 3 times larger than planet
 	$Ring.material.set_shader_parameter("pixels", amount*3.0)
 	
-	$GasLayers.size = Vector2(amount, amount)
-	$Ring.position = Vector2(-amount, -amount)
-	$Ring.size = Vector2(amount, amount)*3.0
+	#$GasLayers.size = Vector2(amount, amount)
+#	$Ring.position = Vector2(-amount, -amount)
+	#$Ring.size = Vector2(amount, amount)*3.0
 
 func set_light(pos):
 	$GasLayers.material.set_shader_parameter("light_origin", pos)
@@ -37,7 +41,6 @@ func set_dither(d):
 
 func get_dither():
 	return $GasLayers.material.get_shader_parameter("should_dither")
-
 
 func get_colors():
 	return get_colors_from_shader($GasLayers.material) + get_colors_from_shader($GasLayers.material, "dark_colors") + get_colors_from_shader($Ring.material) + get_colors_from_shader($Ring.material, "dark_colors")

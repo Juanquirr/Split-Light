@@ -1,4 +1,4 @@
-[gd_scene load_steps=1078 format=3 uid="uid://di1phytr0o74x"]
+[gd_scene load_steps=1079 format=3 uid="uid://di1phytr0o74x"]
 
 [ext_resource type="Script" uid="uid://dbhmwpkn06k08" path="res://Scripts/main_menu_animation.gd" id="1_m3bi6"]
 [ext_resource type="Texture2D" uid="uid://b6r4kt8bwnbd1" path="res://Assets/MainMenu/logo underline.png" id="2_o4ajm"]
@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://dr4dh5p68ek2x" path="res://Assets/RenderedPlanets/TaalSprite.png" id="12_8dnnj"]
 [ext_resource type="Texture2D" uid="uid://d4ke3seabm106" path="res://Assets/RenderedPlanets/EarthSprite.png" id="13_m3bi6"]
 [ext_resource type="Texture2D" uid="uid://wnnyby16cb6b" path="res://Assets/RenderedPlanets/MalborkSprite.png" id="14_wyh8j"]
+[ext_resource type="PackedScene" uid="uid://b47dpsuy2ch3g" path="res://lib/PixelPlanets/GasPlanetLayers/GasPlanetLayers.tscn" id="17_mkpwh"]
 
 [sub_resource type="Animation" id="Animation_m3bi6"]
 length = 0.001
@@ -7791,6 +7792,7 @@ texture = ExtResource("7_u6r2q")
 scale = Vector2(0.98, 0.98)
 
 [node name="NamibPlanet" type="AnimatedSprite2D" parent="Planets"]
+self_modulate = Color(1, 1, 1, 0)
 texture_filter = 1
 texture_repeat = 3
 position = Vector2(126, 350)
@@ -7798,6 +7800,33 @@ scale = Vector2(1.3125, 1.34896)
 sprite_frames = SubResource("SpriteFrames_u8had")
 autoplay = "default"
 frame_progress = 0.977492
+
+[node name="NamibDynamic" parent="Planets/NamibPlanet" node_paths=PackedStringArray("center_point") instance=ExtResource("17_mkpwh")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = -35.3586
+offset_top = -36.3092
+offset_right = -35.3586
+offset_bottom = -36.3092
+grow_horizontal = 1
+grow_vertical = 1
+scale = Vector2(0.7, 0.7)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+pixels = 64
+should_dither = true
+planet_seed = 3694719804
+center_point = NodePath("Center")
+max_light_radius = 325.0
+color_palette = PackedColorArray(0.933333, 0.764706, 0.603922, 1, 0.85098, 0.627451, 0.4, 1, 0.560784, 0.337255, 0.231373, 1, 0.4, 0.223529, 0.192157, 1, 0.270588, 0.156863, 0.235294, 1, 0.133333, 0.12549, 0.203922, 1)
+
+[node name="Center" type="Control" parent="Planets/NamibPlanet/NamibDynamic"]
+anchors_preset = 0
+offset_left = 50.0
+offset_top = 50.0
+offset_right = 50.0
+offset_bottom = 50.0
 
 [node name="TaalPlanet" type="AnimatedSprite2D" parent="Planets"]
 texture_filter = 1
@@ -7838,6 +7867,8 @@ scale = Vector2(1.6, 1.6)
 sprite_frames = SubResource("SpriteFrames_t4sxo")
 autoplay = "default"
 frame_progress = 0.606541
+
+[node name="DynamicPlanets" type="Node2D" parent="."]
 
 [node name="FlashlightOverlay" type="Sprite2D" parent="."]
 position = Vector2(326, 481)

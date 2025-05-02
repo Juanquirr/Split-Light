@@ -1,9 +1,9 @@
 [gd_scene load_steps=9 format=3 uid="uid://cax1rhbpl13hv"]
 
-[ext_resource type="PackedScene" path="res://Planets/Planet.tscn" id="1"]
-[ext_resource type="Shader" path="res://Planets/LandMasses/PlanetUnder.gdshader" id="2"]
-[ext_resource type="Script" path="res://Planets/IceWorld/IceWorld.gd" id="3"]
-[ext_resource type="Shader" path="res://Planets/LandMasses/Clouds.gdshader" id="4"]
+[ext_resource type="PackedScene" path="res://lib/PixelPlanets/Planet.tscn" id="1"]
+[ext_resource type="Shader" uid="uid://oamqm61pflfg" path="res://lib/PixelPlanets/LandMasses/PlanetUnder.gdshader" id="2"]
+[ext_resource type="Script" uid="uid://cm5mfnws8sdu2" path="res://lib/PixelPlanets/IceWorld/IceWorld.gd" id="3"]
+[ext_resource type="Shader" uid="uid://mfvxi41nbnfw" path="res://lib/PixelPlanets/LandMasses/Clouds.gdshader" id="4"]
 
 [sub_resource type="ShaderMaterial" id="1"]
 shader = ExtResource("2")

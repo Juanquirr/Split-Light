@@ -1,5 +1,9 @@
 extends BasePlanet
 
+func _ready() -> void:
+	self.planet_color_amount = 8
+	super._ready()
+
 func set_pixels(amount):
 	$Cloud.material.set_shader_parameter("pixels", amount)
 	$Cloud2.material.set_shader_parameter("pixels", amount)

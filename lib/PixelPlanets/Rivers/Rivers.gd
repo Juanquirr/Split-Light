@@ -2,6 +2,10 @@ extends BasePlanet
 
 class_name RiverPlanet
 
+func _ready() -> void:
+	self.planet_color_amount = 10
+	super._ready()
+
 func set_pixels(amount):
 	$Land.material.set_shader_parameter("pixels", amount)
 	$Cloud.material.set_shader_parameter("pixels", amount)

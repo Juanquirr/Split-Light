@@ -2,6 +2,10 @@ extends BasePlanet
 
 class_name LavaWorldPlanet
 
+func _ready() -> void:
+	self.planet_color_amount = 8
+	super._ready()
+
 func set_pixels(amount):
 	$Land.material.set_shader_parameter("pixels", amount)
 	$Craters.material.set_shader_parameter("pixels", amount)

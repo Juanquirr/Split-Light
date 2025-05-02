@@ -2,6 +2,10 @@ extends BasePlanet
 
 class_name GalaxyPlanet
 
+func _ready() -> void:
+	self.planet_color_amount = 6
+	super._ready()
+
 func set_pixels(amount):
 	$Galaxy.material.set_shader_parameter("pixels", amount)
 	$Galaxy.size = Vector2(amount, amount) 

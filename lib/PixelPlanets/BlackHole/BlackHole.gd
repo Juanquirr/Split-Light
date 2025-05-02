@@ -2,6 +2,10 @@ extends BasePlanet
 
 class_name BlackHolePlanet
 
+func _ready() -> void:
+	self.planet_color_amount = 8
+	super._ready()
+
 func set_pixels(amount):
 	$BlackHole.material.set_shader_parameter("pixels", amount)
 	 # times 3 here because in this case ring is 3 times larger than planet

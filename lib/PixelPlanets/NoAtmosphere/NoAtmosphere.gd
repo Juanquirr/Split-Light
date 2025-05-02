@@ -2,6 +2,10 @@ extends BasePlanet
 
 class_name NoAtmospherePlanet
 
+func _ready() -> void:
+	self.planet_color_amount = 5
+	super._ready()
+
 func set_pixels(amount):
 	$Ground.material.set_shader_parameter("pixels", amount)
 	$Craters.material.set_shader_parameter("pixels", amount)

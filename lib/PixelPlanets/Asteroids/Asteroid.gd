@@ -2,6 +2,10 @@ extends BasePlanet
 
 class_name AsteroidPlanet
 
+func _ready() -> void:
+	self.planet_color_amount = 3
+	super._ready()
+
 func set_pixels(amount):
 	$Asteroid.material.set_shader_parameter("pixels", amount)
 	$Asteroid.size = Vector2(amount, amount)

@@ -2,6 +2,10 @@ extends BasePlanet
 
 class_name LandMassPlanet
 
+func _ready() -> void:
+	self.planet_color_amount = 11
+	super._ready()
+
 func set_pixels(amount):	
 	$Water.material.set_shader_parameter("pixels", amount)
 	$Land.material.set_shader_parameter("pixels", amount)
@@ -43,7 +47,6 @@ func set_dither(d):
 
 func get_dither():
 	return $Water.material.get_shader_parameter("should_dither")
-
 
 func get_colors():
 	return get_colors_from_shader($Water.material) + get_colors_from_shader($Land.material) + get_colors_from_shader($Cloud.material)

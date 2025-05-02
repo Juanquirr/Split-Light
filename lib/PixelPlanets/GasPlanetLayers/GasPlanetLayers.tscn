@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=3 uid="uid://b47dpsuy2ch3g"]
 
-[ext_resource type="PackedScene" path="res://Planets/Planet.tscn" id="1"]
-[ext_resource type="Script" path="res://Planets/GasPlanetLayers/GasPlanetLayers.gd" id="2"]
-[ext_resource type="Shader" path="res://Planets/GasPlanetLayers/Ring.gdshader" id="3"]
-[ext_resource type="Shader" path="res://Planets/GasPlanetLayers/GasLayers.gdshader" id="4"]
+[ext_resource type="PackedScene" path="res://lib/PixelPlanets/Planet.tscn" id="1"]
+[ext_resource type="Script" uid="uid://bar2fp82drrt4" path="res://lib/PixelPlanets/GasPlanetLayers/GasPlanetLayers.gd" id="2"]
+[ext_resource type="Shader" uid="uid://1ljfhs0sqt6s" path="res://lib/PixelPlanets/GasPlanetLayers/Ring.gdshader" id="3"]
+[ext_resource type="Shader" uid="uid://codbgicadhaf4" path="res://lib/PixelPlanets/GasPlanetLayers/GasLayers.gdshader" id="4"]
 
 [sub_resource type="ShaderMaterial" id="5"]
 shader = ExtResource("4")
@@ -11,7 +11,7 @@ shader_parameter/pixels = 100.0
 shader_parameter/rotation = 0.0
 shader_parameter/cloud_cover = 0.61
 shader_parameter/light_origin = Vector2(-0.1, 0.3)
-shader_parameter/time_speed = 0.05
+shader_parameter/time_speed = 0.2
 shader_parameter/stretch = 2.204
 shader_parameter/cloud_curve = 1.376
 shader_parameter/light_border_1 = 0.52
@@ -54,8 +54,6 @@ offset_bottom = -200.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("2")
-relative_scale = 3.0
-gui_zoom = 2.5
 
 [node name="GasLayers" type="ColorRect" parent="." index="0"]
 material = SubResource("5")
