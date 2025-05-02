@@ -7710,6 +7710,7 @@ offset_bottom = 200.0
 color = Color(0.133333, 0.133333, 0.133333, 0.419608)
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Level1/Hover info box"]
+layout_mode = 0
 offset_left = 93.0
 offset_top = 82.0
 offset_right = 247.0
@@ -7723,6 +7724,7 @@ scroll_active = false
 horizontal_alignment = 1
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="Level1/Hover info box"]
+layout_mode = 0
 offset_left = 143.0
 offset_top = 244.0
 offset_right = 197.0
@@ -7775,6 +7777,7 @@ offset_bottom = 200.0
 color = Color(0.133333, 0.133333, 0.133333, 0.419608)
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Level2/Hover info box"]
+layout_mode = 0
 offset_left = 93.0
 offset_top = 82.0
 offset_right = 247.0
@@ -7789,6 +7792,7 @@ horizontal_alignment = 1
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="Level2/Hover info box"]
 visible = false
+layout_mode = 0
 offset_left = 143.0
 offset_top = 244.0
 offset_right = 197.0
@@ -7799,6 +7803,7 @@ scroll_active = false
 horizontal_alignment = 1
 
 [node name="Level2Button" type="TextureButton" parent="Level2" node_paths=PackedStringArray("planet_info_box")]
+layout_mode = 0
 offset_left = 201.0
 offset_top = 498.0
 offset_right = 304.0
@@ -7840,6 +7845,7 @@ offset_bottom = 200.0
 color = Color(0.133333, 0.133333, 0.133333, 0.419608)
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Level3/Hover info box"]
+layout_mode = 0
 offset_left = 93.0
 offset_top = 82.0
 offset_right = 247.0
@@ -7854,6 +7860,7 @@ horizontal_alignment = 1
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="Level3/Hover info box"]
 visible = false
+layout_mode = 0
 offset_left = 143.0
 offset_top = 244.0
 offset_right = 197.0
@@ -7864,6 +7871,7 @@ scroll_active = false
 horizontal_alignment = 1
 
 [node name="Level3Button" type="TextureButton" parent="Level3" node_paths=PackedStringArray("planet_info_box")]
+layout_mode = 0
 offset_left = 471.0
 offset_top = 570.0
 offset_right = 574.0
@@ -7904,6 +7912,7 @@ offset_bottom = 200.0
 color = Color(0.133333, 0.133333, 0.133333, 0.419608)
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Level4/Hover info box"]
+layout_mode = 0
 offset_left = 93.0
 offset_top = 82.0
 offset_right = 247.0
@@ -7918,6 +7927,7 @@ horizontal_alignment = 1
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="Level4/Hover info box"]
 visible = false
+layout_mode = 0
 offset_left = 143.0
 offset_top = 244.0
 offset_right = 197.0
@@ -7928,6 +7938,7 @@ scroll_active = false
 horizontal_alignment = 1
 
 [node name="Level4Button" type="TextureButton" parent="Level4" node_paths=PackedStringArray("planet_info_box")]
+layout_mode = 0
 offset_left = 703.0
 offset_top = 480.0
 offset_right = 888.0
@@ -7969,6 +7980,7 @@ offset_bottom = 200.0
 color = Color(0.133333, 0.133333, 0.133333, 0.419608)
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Level5/Hover info box"]
+layout_mode = 0
 offset_left = 93.0
 offset_top = 82.0
 offset_right = 247.0
@@ -7983,6 +7995,7 @@ horizontal_alignment = 1
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="Level5/Hover info box"]
 visible = false
+layout_mode = 0
 offset_left = 143.0
 offset_top = 244.0
 offset_right = 197.0
@@ -7993,6 +8006,7 @@ scroll_active = false
 horizontal_alignment = 1
 
 [node name="Level5Button" type="TextureButton" parent="Level5" node_paths=PackedStringArray("planet_info_box")]
+layout_mode = 0
 offset_left = 879.0
 offset_top = 318.0
 offset_right = 980.0
