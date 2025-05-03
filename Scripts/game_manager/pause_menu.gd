@@ -28,8 +28,8 @@ func unpause():
 	
 func restart():
 	unpause()
-	SceneManager.change_to_scene(SceneManager.SCENES.LEVEL_1)
+	SceneManager.change_to_scene(SceneManager.GameScenes.LEVEL_1)
 
 func exit_game():
 	unpause()
-	SceneManager.change_to_scene(SceneManager.SCENES.MAIN_MENU)
+	SceneManager.change_to_scene(SceneManager.GameScenes.MAIN_MENU)

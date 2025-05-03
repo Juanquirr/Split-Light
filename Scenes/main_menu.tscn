@@ -1,4 +1,4 @@
-[gd_scene load_steps=1078 format=3 uid="uid://di1phytr0o74x"]
+[gd_scene load_steps=1083 format=3 uid="uid://di1phytr0o74x"]
 
 [ext_resource type="Script" uid="uid://dbhmwpkn06k08" path="res://Scripts/main_menu_animation.gd" id="1_m3bi6"]
 [ext_resource type="Texture2D" uid="uid://b6r4kt8bwnbd1" path="res://Assets/MainMenu/logo underline.png" id="2_o4ajm"]
@@ -17,6 +17,11 @@
 [ext_resource type="Texture2D" uid="uid://dr4dh5p68ek2x" path="res://Assets/RenderedPlanets/TaalSprite.png" id="12_8dnnj"]
 [ext_resource type="Texture2D" uid="uid://d4ke3seabm106" path="res://Assets/RenderedPlanets/EarthSprite.png" id="13_m3bi6"]
 [ext_resource type="Texture2D" uid="uid://wnnyby16cb6b" path="res://Assets/RenderedPlanets/MalborkSprite.png" id="14_wyh8j"]
+[ext_resource type="PackedScene" uid="uid://xjrxhq67hgl7" path="res://lib/PixelPlanets/LavaWorld/LavaWorld.tscn" id="15_ehtkc"]
+[ext_resource type="PackedScene" uid="uid://crdxh2i35dorc" path="res://lib/PixelPlanets/Rivers/Rivers.tscn" id="16_mkpwh"]
+[ext_resource type="PackedScene" uid="uid://b47dpsuy2ch3g" path="res://lib/PixelPlanets/GasPlanetLayers/GasPlanetLayers.tscn" id="17_mkpwh"]
+[ext_resource type="PackedScene" uid="uid://deyy6w0ssnedu" path="res://lib/PixelPlanets/NoAtmosphere/NoAtmosphere.tscn" id="18_4nkqq"]
+[ext_resource type="PackedScene" uid="uid://chh0bjjvjt2v8" path="res://lib/PixelPlanets/LandMasses/LandMasses.tscn" id="21_6dk6o"]
 
 [sub_resource type="Animation" id="Animation_m3bi6"]
 length = 0.001
@@ -7791,6 +7796,7 @@ texture = ExtResource("7_u6r2q")
 scale = Vector2(0.98, 0.98)
 
 [node name="NamibPlanet" type="AnimatedSprite2D" parent="Planets"]
+self_modulate = Color(1, 1, 1, 0)
 texture_filter = 1
 texture_repeat = 3
 position = Vector2(126, 350)
@@ -7799,7 +7805,35 @@ sprite_frames = SubResource("SpriteFrames_u8had")
 autoplay = "default"
 frame_progress = 0.977492
 
+[node name="NamibDynamic" parent="Planets/NamibPlanet" node_paths=PackedStringArray("center_point") instance=ExtResource("17_mkpwh")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = -35.3586
+offset_top = -36.3092
+offset_right = -35.3586
+offset_bottom = -36.3092
+grow_horizontal = 1
+grow_vertical = 1
+scale = Vector2(0.7, 0.7)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+pixels = 64
+should_dither = true
+planet_seed = 3694719804
+center_point = NodePath("Center")
+max_light_radius = 325.0
+color_palette = PackedColorArray(0.933333, 0.764706, 0.603922, 1, 0.85098, 0.627451, 0.4, 1, 0.560784, 0.337255, 0.231373, 1, 0.4, 0.223529, 0.192157, 1, 0.270588, 0.156863, 0.235294, 1, 0.133333, 0.12549, 0.203922, 1)
+
+[node name="Center" type="Control" parent="Planets/NamibPlanet/NamibDynamic"]
+anchors_preset = 0
+offset_left = 50.0
+offset_top = 50.0
+offset_right = 50.0
+offset_bottom = 50.0
+
 [node name="TaalPlanet" type="AnimatedSprite2D" parent="Planets"]
+self_modulate = Color(1, 1, 1, 0)
 texture_filter = 1
 texture_repeat = 3
 position = Vector2(484, 624)
@@ -7809,7 +7843,34 @@ sprite_frames = SubResource("SpriteFrames_6a21d")
 autoplay = "default"
 frame_progress = 0.205512
 
+[node name="TaalDynamic" parent="Planets/TaalPlanet" node_paths=PackedStringArray("center_point") instance=ExtResource("15_ehtkc")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.116
+offset_top = 1.77548
+offset_right = -64.116
+offset_bottom = 1.77548
+rotation = -1.58301
+scale = Vector2(0.65, 0.65)
+pixels = 64
+should_dither = true
+planet_seed = 3586005132
+center_point = NodePath("Center")
+max_light_radius = 700.0
+color_palette = PackedColorArray(0.666667, 0.560784, 0.631373, 1, 0.443137, 0.376471, 0.4, 1, 0.223529, 0.188235, 0.188235, 1, 0.443137, 0.376471, 0.4, 1, 0.223529, 0.188235, 0.188235, 1, 0.654902, 0.301961, 0.109804, 1, 0.435294, 0.235294, 0.0745098, 1, 0.219608, 0.0352941, 0.0352941, 1)
+
+[node name="Center" type="Control" parent="Planets/TaalPlanet/TaalDynamic"]
+anchors_preset = 0
+offset_left = 120.013
+offset_top = 133.87
+offset_right = 120.013
+offset_bottom = 133.87
+
 [node name="EarthPlanet" type="AnimatedSprite2D" parent="Planets"]
+self_modulate = Color(1, 1, 1, 0)
 texture_filter = 1
 texture_repeat = 3
 position = Vector2(394, 353)
@@ -7818,7 +7879,33 @@ sprite_frames = SubResource("SpriteFrames_wt5eh")
 autoplay = "default"
 frame_progress = 0.143134
 
+[node name="EarthDynamic" parent="Planets/EarthPlanet" node_paths=PackedStringArray("center_point") instance=ExtResource("16_mkpwh")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -63.9643
+offset_top = -63.8495
+offset_right = -63.9643
+offset_bottom = -63.8495
+scale = Vector2(0.65, 0.65)
+pixels = 64
+should_dither = true
+planet_seed = 834592966
+center_point = NodePath("Center")
+max_light_radius = 400.0
+color_palette = PackedColorArray(0.388235, 0.670588, 0.247059, 1, 0.231373, 0.490196, 0.309804, 1, 0.184314, 0.341176, 0.32549, 1, 0.156863, 0.207843, 0.25098, 1, 0.309804, 0.643137, 0.721569, 1, 0.25098, 0.286275, 0.45098, 1, 0.960784, 1, 0.909804, 1, 0.87451, 0.878431, 0.909804, 1, 0.407843, 0.435294, 0.6, 1, 0.25098, 0.286275, 0.45098, 1)
+
+[node name="Center" type="Control" parent="Planets/EarthPlanet/EarthDynamic"]
+anchors_preset = 0
+offset_left = 50.0
+offset_top = 50.0
+offset_right = 50.0
+offset_bottom = 50.0
+
 [node name="MalborkPlanet" type="AnimatedSprite2D" parent="Planets"]
+self_modulate = Color(1, 1, 1, 0)
 texture_filter = 1
 texture_repeat = 3
 position = Vector2(628, 447)
@@ -7829,7 +7916,33 @@ animation = &"new_animation"
 autoplay = "new_animation"
 frame_progress = 0.0275809
 
+[node name="MalborkDynamic" parent="Planets/MalborkPlanet" node_paths=PackedStringArray("center_point") instance=ExtResource("18_4nkqq")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -11.5539
+offset_top = -74.3726
+offset_right = 88.4462
+offset_bottom = 25.6274
+rotation = 1.22173
+scale = Vector2(0.65, 0.65)
+pixels = 64
+planet_seed = 834592966
+center_point = NodePath("Center")
+max_light_radius = 700.0
+color_palette = PackedColorArray(0.509804, 0.321569, 0.47451, 1, 0.223529, 0.243137, 0.470588, 1, 0.14902, 0.168627, 0.309804, 1, 0.223529, 0.243137, 0.470588, 1, 0.14902, 0.168627, 0.309804, 1)
+
+[node name="Center" type="Control" parent="Planets/MalborkPlanet/MalborkDynamic"]
+anchors_preset = 0
+offset_left = 53.6966
+offset_top = 125.0
+offset_right = 53.6966
+offset_bottom = 125.0
+
 [node name="SomatraPlanet" type="AnimatedSprite2D" parent="Planets"]
+self_modulate = Color(1, 1, 1, 0)
 texture_filter = 1
 texture_repeat = 3
 position = Vector2(822, 324)
@@ -7838,6 +7951,29 @@ scale = Vector2(1.6, 1.6)
 sprite_frames = SubResource("SpriteFrames_t4sxo")
 autoplay = "default"
 frame_progress = 0.606541
+
+[node name="SomatraDynamic" parent="Planets/SomatraPlanet" node_paths=PackedStringArray("center_point") instance=ExtResource("21_6dk6o")]
+offset_left = 36.6835
+offset_top = -28.4186
+offset_right = -27.3165
+offset_bottom = -92.4186
+rotation = 1.67552
+scale = Vector2(0.65, 0.65)
+pixels = 64
+should_dither = true
+planet_seed = 8461728
+center_point = NodePath("Center")
+max_light_radius = 600.0
+color_palette = PackedColorArray(0.254902, 0.556863, 0.466667, 1, 0.168627, 0.376471, 0.372549, 1, 0.0862745, 0.156863, 0.188235, 1, 0.54902, 0.282353, 0.262745, 1, 0.364706, 0.262745, 0.180392, 1, 0.188235, 0.168627, 0.0941176, 1, 0.188235, 0.168627, 0.0941176, 1, 0.94902, 0.866667, 0.92549, 1, 0.894118, 0.733333, 0.8, 1, 0.792157, 0.521569, 0.470588, 1, 0.437259, 0.241757, 0.206527, 1)
+
+[node name="Center" type="Control" parent="Planets/SomatraPlanet/SomatraDynamic"]
+anchors_preset = 0
+offset_left = 99.3048
+offset_top = 104.355
+offset_right = 99.3048
+offset_bottom = 104.355
+
+[node name="DynamicPlanets" type="Node2D" parent="."]
 
 [node name="FlashlightOverlay" type="Sprite2D" parent="."]
 position = Vector2(326, 481)

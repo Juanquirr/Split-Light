@@ -1,8 +1,10 @@
 extends Control
 
+class_name InventorySlot
+
 var is_selected: bool = false
 
-func check_active_player(active_player):
+func check_active_player(active_player: PlayerInstance):
 	if get_parent().get_parent() != active_player:
 		self.visible = false
 	else:
@@ -17,7 +19,6 @@ func _ready() -> void:
 	var player_switch_manager = get_node_or_null("../../../PlayerSwitchManager")
 	if player_switch_manager:
 		player_switch_manager.connect("player_changed", Callable(self, "check_active_player"))
-
 
 func _draw() -> void:
 	var rect = Rect2(Vector2.ZERO, size)
