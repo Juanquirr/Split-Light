@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://0l6brjd02vug" path="res://Scripts/reverend/reverend_player_instance.gd" id="1_3fly1"]
 [ext_resource type="Texture2D" uid="uid://omte8hj7348p" path="res://Assets/Reverend/Reverend Idle.png" id="2_dgubp"]
-[ext_resource type="Texture2D" uid="uid://csa6etb4uslbv" path="res://Assets/Reverend/Reverend Jump.png" id="3_4dqf5"]
+[ext_resource type="Texture2D" uid="uid://cy6bsbmv5c5e" path="res://Assets/Reverend/Reverend Jump.png" id="3_4dqf5"]
 [ext_resource type="Texture2D" uid="uid://ddu0g8dmeib8m" path="res://Assets/Reverend/Reverend Walk.png" id="10_dgubp"]
 [ext_resource type="PackedScene" uid="uid://d1byaawikdyfu" path="res://Scenes/Components/inventory/inventory.tscn" id="13_0kjde"]
 
@@ -49,15 +49,15 @@ region = Rect2(384, 0, 48, 48)
 atlas = ExtResource("2_dgubp")
 region = Rect2(432, 0, 48, 48)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_oicdu"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_4dqf5"]
 atlas = ExtResource("3_4dqf5")
 region = Rect2(0, 0, 48, 48)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_w1ckj"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_oicdu"]
 atlas = ExtResource("3_4dqf5")
 region = Rect2(48, 0, 48, 48)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_mxk6x"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_w1ckj"]
 atlas = ExtResource("3_4dqf5")
 region = Rect2(96, 0, 48, 48)
 
@@ -132,13 +132,13 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_4dqf5")
+}, {
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_oicdu")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_w1ckj")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_mxk6x")
 }],
 "loop": false,
 "name": &"reverend_jump",
@@ -198,7 +198,7 @@ material = SubResource("CanvasItemMaterial_os74a")
 position = Vector2(0, 2)
 scale = Vector2(6.27618, 6.27618)
 sprite_frames = SubResource("SpriteFrames_k46vw")
-animation = &"reverend_idle"
+animation = &"reverend_jump"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-7, 11)
