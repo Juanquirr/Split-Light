@@ -1,4 +1,4 @@
-extends Node2D
+extends Control
 
 @onready var player1 = $Player1
 @onready var player_switch_manager = $PlayerSwitchManager

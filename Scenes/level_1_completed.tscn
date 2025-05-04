@@ -1,45 +1,42 @@
 [gd_scene load_steps=14 format=3 uid="uid://cv1unvvjroute"]
 
 [ext_resource type="Texture2D" uid="uid://c5h4m4bq3kpuy" path="res://Assets/MainMenu/starry-background.png" id="1_abxp7"]
-[ext_resource type="Texture2D" uid="uid://l8f0yolt4twn" path="res://Assets/Adventurer-1.5/Individual Sprites/adventurer-idle-02.png" id="2_i74u4"]
-[ext_resource type="Texture2D" uid="uid://jwnd0fdyj80j" path="res://Assets/Adventurer-1.5/Individual Sprites/adventurer-cast-02.png" id="3_f4ibg"]
-[ext_resource type="Texture2D" uid="uid://c6pvcgueaea8l" path="res://Assets/Adventurer-1.5/Individual Sprites/adventurer-crnr-clmb-01.png" id="4_0uciv"]
+[ext_resource type="Texture2D" uid="uid://box1qdfq2ar46" path="res://Assets/Main-Character/Main character Idle.png" id="2_s72mw"]
+[ext_resource type="Texture2D" uid="uid://bt4ir15cxrjdw" path="res://Assets/Main-Character/Main character Jump.png" id="3_e0nfw"]
+[ext_resource type="Texture2D" uid="uid://c5h7qo116lbey" path="res://Assets/Main-Character/Main character Run.png" id="4_xsdq6"]
 [ext_resource type="Texture2D" uid="uid://ivqjak8odrhf" path="res://Assets/Common/Button.png" id="5_0uciv"]
 [ext_resource type="Texture2D" uid="uid://ksymtls3rnfl" path="res://Assets/Common/ButtonHover.png" id="6_2yw68"]
 [ext_resource type="Script" uid="uid://qka7mssvlc5" path="res://Scripts/level_1_completed/main_menu.gd" id="7_2yw68"]
 [ext_resource type="FontFile" uid="uid://r0dmn3iwndr8" path="res://Assets/Fonts/yoster.ttf" id="7_s72mw"]
 [ext_resource type="Script" uid="uid://rv6wn4fki3vn" path="res://Scripts/Components/timer/time_left.gd" id="9_s72mw"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_2yw68"]
-atlas = ExtResource("2_i74u4")
-region = Rect2(0, 0, 50, 37)
+[sub_resource type="AtlasTexture" id="AtlasTexture_x1314"]
+atlas = ExtResource("2_s72mw")
+region = Rect2(0, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s72mw"]
-atlas = ExtResource("3_f4ibg")
-region = Rect2(0, 0, 50, 37)
+atlas = ExtResource("3_e0nfw")
+region = Rect2(48, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e0nfw"]
-atlas = ExtResource("4_0uciv")
-region = Rect2(0, 0, 50, 37)
+atlas = ExtResource("4_xsdq6")
+region = Rect2(144, 0, 48, 48)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xsdq6"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_2yw68")
+"texture": SubResource("AtlasTexture_x1314")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_s72mw")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_e0nfw")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_s72mw")
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 3.0
 }]
 
 [node name="Control" type="Control"]
@@ -76,7 +73,7 @@ position = Vector2(512, 408)
 scale = Vector2(5.68919, 5.68919)
 sprite_frames = SubResource("SpriteFrames_xsdq6")
 autoplay = "default"
-frame_progress = 0.627498
+frame_progress = 0.707756
 
 [node name="TextureButton" type="TextureButton" parent="."]
 modulate = Color(1, 0.647059, 0.415686, 1)
