@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://cpv8jgrj32l7s"]
 
 [ext_resource type="Script" uid="uid://2ls1dlswxhb3" path="res://Scripts/game_manager/pause_menu.gd" id="1_emv3i"]
-[ext_resource type="FontFile" uid="uid://r0dmn3iwndr8" path="res://Assets/Font/yoster.ttf" id="2_k0w1u"]
+[ext_resource type="FontFile" uid="uid://r0dmn3iwndr8" path="res://Assets/Fonts/yoster.ttf" id="2_k0w1u"]
 [ext_resource type="Script" uid="uid://lmxbxh6gmf77" path="res://Scripts/restart.gd" id="3_myy0f"]
 [ext_resource type="Script" uid="uid://2iysv5mharo8" path="res://Scripts/exit.gd" id="3_vmyb1"]
 [ext_resource type="Texture2D" uid="uid://ivqjak8odrhf" path="res://Assets/Common/Button.png" id="4_myy0f"]
@@ -146,7 +146,7 @@ offset_bottom = 125.5
 grow_horizontal = 2
 grow_vertical = 2
 bbcode_enabled = true
-text = "[font_size=40][font=\"res://Assets/Font/yoster.ttf\"][center]Are you sure you want to quit?[/center][/font][/font_size]"
+text = "[font_size=40][font=\"res://Assets/Fonts/yoster.ttf\"][center]Are you sure you want to quit?[/center][/font][/font_size]"
 
 [node name="Confirm Buttons" type="Node2D" parent="ConfirmQuitScreen"]
 
@@ -181,7 +181,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 bbcode_enabled = true
-text = "[font_size=30][font=\"res://Assets/Font/yoster.ttf\"][center]No[/center][/font][/font_size]"
+text = "[font_size=30][font=\"res://Assets/Fonts/yoster.ttf\"][center]No[/center][/font][/font_size]"
 scroll_active = false
 
 [node name="Confirm Quit" type="TextureButton" parent="ConfirmQuitScreen/Confirm Buttons"]
@@ -215,7 +215,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 bbcode_enabled = true
-text = "[font_size=30][font=\"res://Assets/Font/yoster.ttf\"][center]Yes[/center][/font][/font_size]"
+text = "[font_size=30][font=\"res://Assets/Fonts/yoster.ttf\"][center]Yes[/center][/font][/font_size]"
 scroll_active = false
 
 [node name="ConfirmRestartScreen" type="Control" parent="."]
@@ -262,7 +262,7 @@ offset_bottom = 125.5
 grow_horizontal = 2
 grow_vertical = 2
 bbcode_enabled = true
-text = "[font_size=40][font=\"res://Assets/Font/yoster.ttf\"][center]Are you sure you want to restart the level?[/center][/font][/font_size]"
+text = "[font_size=40][font=\"res://Assets/Fonts/yoster.ttf\"][center]Are you sure you want to restart the level?[/center][/font][/font_size]"
 
 [node name="Confirm Buttons" type="Node2D" parent="ConfirmRestartScreen"]
 
@@ -297,7 +297,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 bbcode_enabled = true
-text = "[font_size=30][font=\"res://Assets/Font/yoster.ttf\"][center]No[/center][/font][/font_size]"
+text = "[font_size=30][font=\"res://Assets/Fonts/yoster.ttf\"][center]No[/center][/font][/font_size]"
 scroll_active = false
 
 [node name="Confirm Quit" type="TextureButton" parent="ConfirmRestartScreen/Confirm Buttons"]
@@ -331,7 +331,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 bbcode_enabled = true
-text = "[font_size=30][font=\"res://Assets/Font/yoster.ttf\"][center]Yes[/center][/font][/font_size]"
+text = "[font_size=30][font=\"res://Assets/Fonts/yoster.ttf\"][center]Yes[/center][/font][/font_size]"
 scroll_active = false
 
 [node name="InputSettings" type="Control" parent="."]
@@ -423,7 +423,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 bbcode_enabled = true
-text = "[font_size=30][font=\"res://Assets/Font/yoster.ttf\"][center]Go back[/center][/font][/font_size]"
+text = "[font_size=30][font=\"res://Assets/Fonts/yoster.ttf\"][center]Go back[/center][/font][/font_size]"
 scroll_active = false
 
 [connection signal="pressed" from="VBoxContainer/Continue" to="." method="unpause"]

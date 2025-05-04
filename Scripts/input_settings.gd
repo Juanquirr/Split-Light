@@ -2,7 +2,7 @@ extends Control
 
 @onready var action_list: VBoxContainer = $Scroll/ActionList
 @onready var scroll_container: ScrollContainer = $Scroll
-@onready var custom_font: FontFile = preload("res://Assets/Font/yoster.ttf")
+@onready var custom_font: FontFile = preload("res://Assets/Fonts/yoster.ttf")
 
 var awaiting_action: StringName = &""
 var awaiting_button: Button = null

@@ -11,5 +11,5 @@ func _on_cancel_quit_pressed() -> void:
 
 func _on_confirm_quit_pressed() -> void:
 	PauseMenu.unpause()
-	SceneManager.change_to_scene(SceneManager.SCENES.MAIN_MENU)	
+	SceneManager.change_to_scene(SceneManager.GameScenes.MAIN_MENU)	
 	

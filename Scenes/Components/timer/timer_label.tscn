@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dfpa2ywr1hfch"]
 
-[ext_resource type="FontFile" uid="uid://dgmtili3kmo46" path="res://Assets/First level/Font/E1234-Regular.ttf" id="1_dpoar"]
+[ext_resource type="FontFile" uid="uid://dgmtili3kmo46" path="res://Assets/Fonts/E1234-Regular.ttf" id="1_dpoar"]
 [ext_resource type="Script" uid="uid://cobqjk4gr1cq4" path="res://Scripts/Components/timer/timer.gd" id="2_hqcsk"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vj1ha"]
