@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://cpv8jgrj32l7s"]
+[gd_scene load_steps=7 format=3 uid="uid://cpv8jgrj32l7s"]
 
 [ext_resource type="Script" uid="uid://2ls1dlswxhb3" path="res://Scripts/game_manager/pause_menu.gd" id="1_emv3i"]
 [ext_resource type="FontFile" uid="uid://r0dmn3iwndr8" path="res://Assets/Font/yoster.ttf" id="2_k0w1u"]
+[ext_resource type="Script" uid="uid://lmxbxh6gmf77" path="res://Scripts/restart.gd" id="3_myy0f"]
 [ext_resource type="Script" uid="uid://2iysv5mharo8" path="res://Scripts/exit.gd" id="3_vmyb1"]
 [ext_resource type="Texture2D" uid="uid://ivqjak8odrhf" path="res://Assets/Common/Button.png" id="4_myy0f"]
 [ext_resource type="Texture2D" uid="uid://ksymtls3rnfl" path="res://Assets/Common/ButtonHover.png" id="5_sjs17"]
@@ -69,6 +70,7 @@ text = "Continue"
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_k0w1u")
 text = "Restart Level"
+script = ExtResource("3_myy0f")
 
 [node name="Controls" type="Button" parent="VBoxContainer"]
 layout_mode = 2
@@ -197,8 +199,126 @@ bbcode_enabled = true
 text = "[font_size=30][font=\"res://Assets/Font/yoster.ttf\"][center]Yes[/center][/font][/font_size]"
 scroll_active = false
 
+[node name="ConfirmRestartScreen" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -512.0
+offset_top = -384.0
+offset_right = 512.0
+offset_bottom = 384.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="ConfirmRestartScreen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -558.0
+offset_top = -426.5
+offset_right = 558.0
+offset_bottom = 426.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.894118)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ConfirmRestartScreen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -220.5
+offset_top = -125.5
+offset_right = 220.5
+offset_bottom = 125.5
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+text = "[font_size=40][font=\"res://Assets/Font/yoster.ttf\"][center]Are you sure you want to restart the level?[/center][/font][/font_size]"
+
+[node name="Confirm Buttons" type="Node2D" parent="ConfirmRestartScreen"]
+
+[node name="Cancel Quit" type="TextureButton" parent="ConfirmRestartScreen/Confirm Buttons"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 273.5
+offset_top = 397.5
+offset_right = 470.5
+offset_bottom = 470.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("4_myy0f")
+texture_hover = ExtResource("5_sjs17")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ConfirmRestartScreen/Confirm Buttons/Cancel Quit"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -91.0
+offset_top = -15.5
+offset_right = 91.0
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "[font_size=30][font=\"res://Assets/Font/yoster.ttf\"][center]No[/center][/font][/font_size]"
+scroll_active = false
+
+[node name="Confirm Quit" type="TextureButton" parent="ConfirmRestartScreen/Confirm Buttons"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 553.5
+offset_top = 397.5
+offset_right = 750.5
+offset_bottom = 470.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("4_myy0f")
+texture_hover = ExtResource("5_sjs17")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ConfirmRestartScreen/Confirm Buttons/Confirm Quit"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -105.5
+offset_top = -16.0
+offset_right = 105.5
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "[font_size=30][font=\"res://Assets/Font/yoster.ttf\"][center]Yes[/center][/font][/font_size]"
+scroll_active = false
+
 [connection signal="pressed" from="VBoxContainer/Continue" to="." method="unpause"]
-[connection signal="button_up" from="VBoxContainer/Restart" to="." method="restart"]
+[connection signal="pressed" from="VBoxContainer/Restart" to="VBoxContainer/Restart" method="_on_pressed"]
 [connection signal="pressed" from="VBoxContainer/Exit" to="VBoxContainer/Exit" method="_on_pressed"]
 [connection signal="pressed" from="ConfirmQuitScreen/Confirm Buttons/Cancel Quit" to="VBoxContainer/Exit" method="_on_cancel_quit_pressed"]
 [connection signal="pressed" from="ConfirmQuitScreen/Confirm Buttons/Confirm Quit" to="VBoxContainer/Exit" method="_on_confirm_quit_pressed"]
+[connection signal="pressed" from="ConfirmRestartScreen/Confirm Buttons/Cancel Quit" to="VBoxContainer/Restart" method="_on_cancel_quit_pressed"]
+[connection signal="pressed" from="ConfirmRestartScreen/Confirm Buttons/Confirm Quit" to="VBoxContainer/Restart" method="_on_confirm_quit_pressed"]
