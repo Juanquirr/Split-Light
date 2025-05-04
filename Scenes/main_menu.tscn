@@ -7785,8 +7785,8 @@ libraries = {
 }
 
 [connection signal="pressed" from="Quit Button" to="Quit Button" method="_on_pressed"]
-[connection signal="pressed" from="Quit Button" to="Quit Button" method="_on_quit_confirm_button_pressed"]
 [connection signal="pressed" from="Quit Button" to="Quit Button" method="_on_quit_cancel_button_pressed"]
+[connection signal="pressed" from="Quit Button" to="Quit Button" method="_on_quit_confirm_button_pressed"]
 [connection signal="pressed" from="Options Button" to="Play Button" method="_on_options_button_pressed"]
 [connection signal="pressed" from="Play Button" to="Play Button" method="_on_play_button_pressed"]
 [connection signal="pressed" from="Play Button" to="Play Button" method="_on_pressed"]
