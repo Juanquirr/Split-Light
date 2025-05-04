@@ -68,8 +68,6 @@ func _input(event: InputEvent) -> void:
 			awaiting_button = null
 
 func _create_button_theme() -> Theme:
-	var theme := Theme.new()
-
-	theme.set_font("font", "Button", custom_font)
-
-	return theme
+	var button_theme := Theme.new()
+	button_theme.set_font("font", "Button", custom_font)
+	return button_theme

@@ -7822,7 +7822,7 @@ pixels = 64
 should_dither = true
 planet_seed = 3694719804
 center_point = NodePath("Center")
-max_light_radius = 325.0
+max_light_radius = 185.0
 color_palette = PackedColorArray(0.933333, 0.764706, 0.603922, 1, 0.85098, 0.627451, 0.4, 1, 0.560784, 0.337255, 0.231373, 1, 0.4, 0.223529, 0.192157, 1, 0.270588, 0.156863, 0.235294, 1, 0.133333, 0.12549, 0.203922, 1)
 
 [node name="Center" type="Control" parent="Planets/NamibPlanet/NamibDynamic"]
@@ -7856,7 +7856,6 @@ offset_bottom = 1.77548
 rotation = -1.58301
 scale = Vector2(0.65, 0.65)
 pixels = 64
-should_dither = true
 planet_seed = 3586005132
 center_point = NodePath("Center")
 max_light_radius = 700.0
