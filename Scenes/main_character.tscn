@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://3kej1w4j6pkr"]
+[gd_scene load_steps=24 format=3 uid="uid://3kej1w4j6pkr"]
 
 [ext_resource type="Script" uid="uid://ck8p6xo4yfghc" path="res://Scripts/main_character/main_player_instance.gd" id="1_nlild"]
 [ext_resource type="Texture2D" uid="uid://b8mb3eh211a8a" path="res://Assets/Main-Character/Main character Idle 48x48.png" id="2_q6spo"]
@@ -160,6 +160,7 @@ limit_bottom = 0
 [node name="PointLight2D2" type="PointLight2D" parent="."]
 position = Vector2(3, 3)
 scale = Vector2(8.50196, 8.50196)
+color = Color(1, 0.819608, 0, 1)
 texture = SubResource("GradientTexture2D_vmi10")
 
 [connection signal="area_entered" from="Inventory" to="Inventory" method="_on_area_entered"]

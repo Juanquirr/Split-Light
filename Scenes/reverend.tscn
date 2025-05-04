@@ -224,4 +224,5 @@ limit_bottom = 0
 [node name="PointLight2D2" type="PointLight2D" parent="."]
 position = Vector2(3, 3)
 scale = Vector2(8.50196, 8.50196)
+color = Color(0.937241, 4.52429e-06, 0.572678, 1)
 texture = SubResource("GradientTexture2D_os74a")
