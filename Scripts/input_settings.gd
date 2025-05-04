@@ -2,6 +2,7 @@ extends Control
 
 @onready var action_list: VBoxContainer = $Scroll/ActionList
 @onready var scroll_container: ScrollContainer = $Scroll
+@onready var custom_font: FontFile = preload("res://Assets/Font/yoster.ttf")
 
 var awaiting_action: StringName = &""
 var awaiting_button: Button = null
@@ -10,24 +11,28 @@ func _ready() -> void:
 	_build_action_list()
 
 func _build_action_list() -> void:
-	# Limpiar lista anterior
 	for child in action_list.get_children():
 		child.queue_free()
 
 	var actions := InputMap.get_actions()
+	var label_settings := LabelSettings.new()
+	label_settings.font = custom_font
+	var button_theme := _create_button_theme()
+
 	for action in actions:
 		if action.begins_with("ui"):
-			continue  # Ignorar acciones del sistema (ui_up, ui_accept, etc.)
+			continue
 
 		var hbox := HBoxContainer.new()
 
 		# Etiqueta con el nombre de la acción
 		var label := Label.new()
 		label.text = str(action)
+		label.label_settings = label_settings
 		label.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 		hbox.add_child(label)
 
-		# Mostrar la primera tecla/botón asignado
+		# Entrada actual
 		var current_events := InputMap.action_get_events(action)
 		var current_input := ""
 		if current_events.size() > 0:
@@ -36,13 +41,15 @@ func _build_action_list() -> void:
 		var current_input_label := Label.new()
 		current_input_label.text = current_input
 		current_input_label.name = "CurrentInput"
+		current_input_label.label_settings = label_settings
 		current_input_label.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 		hbox.add_child(current_input_label)
 
-		# Botón para cambiar la asignación
+		# Botón con tema personalizado
 		var button := Button.new()
 		button.text = "Cambiar"
 		button.name = str(action)
+		button.theme = button_theme
 		button.pressed.connect(_on_change_button_pressed.bind(button))
 		hbox.add_child(button)
 
@@ -51,7 +58,7 @@ func _build_action_list() -> void:
 func _on_change_button_pressed(button: Button) -> void:
 	awaiting_action = button.name
 	awaiting_button = button
-	button.text = "Esperando..."
+	button.text = "Esperando..."  # Se mantendrá la fuente ya aplicada por el theme
 	print("Esperando nueva entrada para:", awaiting_action)
 
 func _input(event: InputEvent) -> void:
@@ -65,3 +72,11 @@ func _input(event: InputEvent) -> void:
 			_build_action_list()
 			awaiting_action = &""
 			awaiting_button = null
+
+func _create_button_theme() -> Theme:
+	var theme := Theme.new()
+
+	# Asignar fuente al tipo "Button" en el estilo "font"
+	theme.set_font("font", "Button", custom_font)
+
+	return theme
