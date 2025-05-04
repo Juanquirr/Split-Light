@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ck8p6xo4yfghc" path="res://Scripts/main_character/main_player_instance.gd" id="1_nlild"]
 [ext_resource type="Texture2D" uid="uid://box1qdfq2ar46" path="res://Assets/Main-Character/Main character Idle.png" id="2_nlild"]
-[ext_resource type="Texture2D" uid="uid://dpuvt0ki1pr6t" path="res://Assets/Main-Character/Main character Jump.png" id="3_q6spo"]
+[ext_resource type="Texture2D" uid="uid://bt4ir15cxrjdw" path="res://Assets/Main-Character/Main character Jump.png" id="3_q6spo"]
 [ext_resource type="Texture2D" uid="uid://c5h7qo116lbey" path="res://Assets/Main-Character/Main character Run.png" id="4_fsers"]
 [ext_resource type="PackedScene" uid="uid://d1byaawikdyfu" path="res://Scenes/Components/inventory/inventory.tscn" id="5_024ki"]
 
@@ -51,15 +51,15 @@ region = Rect2(432, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_olw23"]
 atlas = ExtResource("3_q6spo")
-region = Rect2(0, 0, 40, 34)
+region = Rect2(0, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pqtas"]
 atlas = ExtResource("3_q6spo")
-region = Rect2(40, 0, 40, 34)
+region = Rect2(48, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ypp2c"]
 atlas = ExtResource("3_q6spo")
-region = Rect2(80, 0, 40, 34)
+region = Rect2(96, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nlild"]
 atlas = ExtResource("4_fsers")
@@ -197,8 +197,9 @@ material = SubResource("CanvasItemMaterial_jkush")
 position = Vector2(0, 2)
 scale = Vector2(6.27618, 6.27618)
 sprite_frames = SubResource("SpriteFrames_k46vw")
-animation = &"main_run"
-frame_progress = 0.861893
+animation = &"main_jump"
+frame = 2
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-3.5, 5.5)

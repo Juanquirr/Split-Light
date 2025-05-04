@@ -198,8 +198,7 @@ material = SubResource("CanvasItemMaterial_os74a")
 position = Vector2(0, 2)
 scale = Vector2(6.27618, 6.27618)
 sprite_frames = SubResource("SpriteFrames_k46vw")
-animation = &"reverend_walk"
-frame_progress = 0.475611
+animation = &"reverend_idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-7, 11)
