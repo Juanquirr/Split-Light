@@ -296,7 +296,7 @@ tile_set = SubResource("TileSet_ttcxq")
 
 [node name="ThreeWomanPicture" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(1226, -1)
+position = Vector2(1226, -24)
 scale = Vector2(0.263736, 0.263736)
 texture = ExtResource("2_wrinw")
 
@@ -311,6 +311,7 @@ theme_override_font_sizes/font_size = 50
 text = "0"
 horizontal_alignment = 2
 script = ExtResource("5_gcla0")
+counter = 3
 metadata/_edit_use_anchors_ = true
 
 [node name="FrameForHolyMary" type="Sprite2D" parent="."]
