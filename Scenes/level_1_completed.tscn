@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://ivqjak8odrhf" path="res://Assets/Common/Button.png" id="5_0uciv"]
 [ext_resource type="Texture2D" uid="uid://ksymtls3rnfl" path="res://Assets/Common/ButtonHover.png" id="6_2yw68"]
 [ext_resource type="Script" uid="uid://qka7mssvlc5" path="res://Scripts/level_1_completed/main_menu.gd" id="7_2yw68"]
-[ext_resource type="FontFile" uid="uid://r0dmn3iwndr8" path="res://Assets/Font/yoster.ttf" id="7_s72mw"]
+[ext_resource type="FontFile" uid="uid://r0dmn3iwndr8" path="res://Assets/Fonts/yoster.ttf" id="7_s72mw"]
 [ext_resource type="Script" uid="uid://rv6wn4fki3vn" path="res://Scripts/Components/timer/time_left.gd" id="9_s72mw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2yw68"]
@@ -68,7 +68,7 @@ offset_bottom = -128.0
 grow_horizontal = 2
 grow_vertical = 2
 bbcode_enabled = true
-text = "[font_size=90][center][font=\"res://Assets/Font/yoster.ttf\"]LEVEL 1 COMPLETED[/font][/center][/font_size]"
+text = "[font_size=90][center][font=\"res://Assets/Fonts/yoster.ttf\"]LEVEL 1 COMPLETED[/font][/center][/font_size]"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1

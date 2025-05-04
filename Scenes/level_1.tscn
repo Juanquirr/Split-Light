@@ -1,23 +1,23 @@
 [gd_scene load_steps=36 format=4 uid="uid://b35e40yclrr4"]
 
-[ext_resource type="PackedScene" uid="uid://3kej1w4j6pkr" path="res://Scenes/player_1.tscn" id="1_8ffim"]
+[ext_resource type="PackedScene" uid="uid://3kej1w4j6pkr" path="res://Scenes/main_character.tscn" id="1_8ffim"]
 [ext_resource type="Script" uid="uid://vv6j32fqj70f" path="res://Scripts/level_1/level_1.gd" id="1_chwpn"]
-[ext_resource type="Texture2D" uid="uid://cvi4ajts0emuj" path="res://Assets/First level/Dungeon Tile Set 1.PNG" id="1_xrdnt"]
-[ext_resource type="Texture2D" uid="uid://cu5yhpo4j7v57" path="res://Assets/First level/cuadro3mujeres.png" id="2_wrinw"]
+[ext_resource type="Texture2D" uid="uid://cvi4ajts0emuj" path="res://Assets/First Level/Dungeon Tile Set 1.PNG" id="1_xrdnt"]
+[ext_resource type="Texture2D" uid="uid://cu5yhpo4j7v57" path="res://Assets/First Level/cuadro3mujeres.png" id="2_wrinw"]
 [ext_resource type="PackedScene" uid="uid://bqsxn12ajmun7" path="res://Scenes/reverend.tscn" id="2_xfk5q"]
-[ext_resource type="Texture2D" uid="uid://baurfcyyjlrc1" path="res://Assets/First level/Closed_book.PNG" id="4_af3po"]
-[ext_resource type="Script" uid="uid://o7ci7tunywhv" path="res://Scripts/level_1/count.gd" id="5_dlmop"]
-[ext_resource type="Texture2D" uid="uid://bvfhpmng83bhx" path="res://Assets/First level/marco-vertical.png" id="6_6r07y"]
-[ext_resource type="Texture2D" uid="uid://b00cgm2f8lc8l" path="res://Assets/First level/Santa Maria.png" id="7_6ioyp"]
+[ext_resource type="Texture2D" uid="uid://baurfcyyjlrc1" path="res://Assets/First Level/Closed_book.PNG" id="4_af3po"]
+[ext_resource type="Script" uid="uid://bv28nvdu6ccst" path="res://Scripts/Components/count/counter_label.gd" id="5_gcla0"]
+[ext_resource type="Texture2D" uid="uid://bvfhpmng83bhx" path="res://Assets/First Level/marco-vertical.png" id="6_6r07y"]
+[ext_resource type="Texture2D" uid="uid://b00cgm2f8lc8l" path="res://Assets/First Level/Santa Maria.png" id="7_6ioyp"]
 [ext_resource type="Script" uid="uid://betchdi7o8gx7" path="res://Scripts/level_1/player_switch_manager.gd" id="11_1fal7"]
 [ext_resource type="PackedScene" uid="uid://byfig72cx8tsq" path="res://Scenes/Components/player_switch_manager/player_switch_manager.tscn" id="11_af3po"]
 [ext_resource type="PackedScene" uid="uid://7047hw6dqf7h" path="res://Scenes/Components/teleporter/teleporter.tscn" id="11_oovug"]
 [ext_resource type="Script" uid="uid://b4bmahyley38r" path="res://Scripts/Interaction/interactive_book.gd" id="11_uy8f0"]
 [ext_resource type="Script" uid="uid://c6q1gssuclmou" path="res://Scripts/level_1/teleporter_left.gd" id="12_6ssoq"]
-[ext_resource type="Texture2D" uid="uid://l7hhufg1rfop" path="res://Assets/First level/black_poem.png" id="13_6r07y"]
+[ext_resource type="Texture2D" uid="uid://l7hhufg1rfop" path="res://Assets/First Level/black_poem.png" id="13_6r07y"]
 [ext_resource type="Script" uid="uid://dpuqqunjvsfe1" path="res://Scripts/level_1/teleporter_right.gd" id="13_imks0"]
-[ext_resource type="Texture2D" uid="uid://rkpg71ao6qrh" path="res://Assets/First level/red_poem.png" id="14_6ioyp"]
-[ext_resource type="FontFile" uid="uid://r0dmn3iwndr8" path="res://Assets/Font/yoster.ttf" id="14_oovug"]
+[ext_resource type="Texture2D" uid="uid://rkpg71ao6qrh" path="res://Assets/First Level/red_poem.png" id="14_6ioyp"]
+[ext_resource type="FontFile" uid="uid://r0dmn3iwndr8" path="res://Assets/Fonts/yoster.ttf" id="14_oovug"]
 [ext_resource type="PackedScene" uid="uid://dfpa2ywr1hfch" path="res://Scenes/Components/timer/timer_label.tscn" id="16_8i23i"]
 [ext_resource type="PackedScene" uid="uid://bxwd08bcmtq47" path="res://Scenes/Components/key/key.tscn" id="17_pjppf"]
 [ext_resource type="PackedScene" uid="uid://cpv8jgrj32l7s" path="res://Scenes/pause_menu.tscn" id="18_pjppf"]
@@ -268,6 +268,22 @@ sources/2 = SubResource("TileSetAtlasSource_uy8f0")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6r07y"]
 size = Vector2(1218.97, 267.13)
 
+[sub_resource type="Gradient" id="Gradient_gcla0"]
+offsets = PackedFloat32Array(0, 0.00701754)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_vr6f4"]
+gradient = SubResource("Gradient_gcla0")
+fill_from = Vector2(0, 1)
+
+[sub_resource type="Gradient" id="Gradient_vr6f4"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_u5cqy"]
+gradient = SubResource("Gradient_vr6f4")
+fill = 1
+fill_from = Vector2(0.495726, 0.487179)
+fill_to = Vector2(0.84188, 0.200855)
+
 [node name="Level1" type="Node2D"]
 position = Vector2(1572, 384)
 script = ExtResource("1_chwpn")
@@ -285,16 +301,16 @@ scale = Vector2(0.263736, 0.263736)
 texture = ExtResource("2_wrinw")
 
 [node name="Count" type="Label" parent="."]
-offset_left = 1328.0
-offset_top = -106.0
-offset_right = 1366.0
-offset_bottom = -30.0
+offset_left = 1288.0
+offset_top = -139.0
+offset_right = 1359.0
+offset_bottom = -63.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("14_oovug")
 theme_override_font_sizes/font_size = 50
 text = "0"
 horizontal_alignment = 2
-script = ExtResource("5_dlmop")
+script = ExtResource("5_gcla0")
 metadata/_edit_use_anchors_ = true
 
 [node name="FrameForHolyMary" type="Sprite2D" parent="."]
@@ -314,6 +330,8 @@ position = Vector2(617, 175)
 [node name="Player2" parent="." instance=ExtResource("2_xfk5q")]
 z_index = 2
 position = Vector2(803, 176)
+JUMP_VELOCITY = -300
+GRAVITY = 1000
 
 [node name="PlayerSwitchManager" parent="." instance=ExtResource("11_af3po")]
 script = ExtResource("11_1fal7")
@@ -362,8 +380,10 @@ visible = false
 position = Vector2(1219, 287)
 collision_layer = 0
 script = ExtResource("19_dlmop")
+KEY_GRAVITY = 2000.0
 
 [node name="Sprite2D" parent="key" index="0"]
+z_index = 1
 position = Vector2(-12.3398, -281.932)
 
 [node name="CollisionShape2D" parent="key" index="1"]
@@ -456,8 +476,44 @@ position = Vector2(39, 128.532)
 scale = Vector2(0.136704, 0.0643626)
 texture = ExtResource("32_ts4pv")
 
+[node name="GlobalShadow" type="PointLight2D" parent="."]
+position = Vector2(611, -9)
+scale = Vector2(75.6445, 13.7539)
+energy = 0.4
+blend_mode = 1
+texture = SubResource("GradientTexture2D_vr6f4")
+
+[node name="Lamp1" type="PointLight2D" parent="."]
+position = Vector2(-289, -62)
+scale = Vector2(3.72314, 8.51758)
+texture = SubResource("GradientTexture2D_u5cqy")
+
+[node name="Lamp2" type="PointLight2D" parent="."]
+position = Vector2(382, -61)
+scale = Vector2(8.51758, 8.51758)
+texture = SubResource("GradientTexture2D_u5cqy")
+
+[node name="Lamp3" type="PointLight2D" parent="."]
+position = Vector2(830, -65)
+scale = Vector2(8.51758, 8.51758)
+texture = SubResource("GradientTexture2D_u5cqy")
+
+[node name="Lamp4" type="PointLight2D" parent="."]
+position = Vector2(1502, -65)
+scale = Vector2(4.29004, 8.51758)
+texture = SubResource("GradientTexture2D_u5cqy")
+
+[node name="TimerLight" type="PointLight2D" parent="."]
+position = Vector2(610.25, -133)
+scale = Vector2(5.00781, 1.57813)
+texture = SubResource("GradientTexture2D_u5cqy")
+
+[connection signal="number_reached" from="Count" to="." method="_count_number_reached"]
+[connection signal="teleported" from="Teleporter_left" to="." method="_on_teleported_left"]
+[connection signal="teleported" from="Teleporter_right" to="." method="_on_teleported_right"]
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
+[connection signal="level_end" from="ExitDoor" to="TimerLabel" method="set_remaining_time"]
 
 [editable path="Teleporter_left"]
 [editable path="Teleporter_right"]
