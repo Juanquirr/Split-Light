@@ -1,7 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://cpv8jgrj32l7s"]
+[gd_scene load_steps=9 format=3 uid="uid://cpv8jgrj32l7s"]
 
 [ext_resource type="Script" uid="uid://2ls1dlswxhb3" path="res://Scripts/game_manager/pause_menu.gd" id="1_emv3i"]
 [ext_resource type="FontFile" uid="uid://r0dmn3iwndr8" path="res://Assets/Fonts/yoster.ttf" id="2_k0w1u"]
+[ext_resource type="Script" uid="uid://lmxbxh6gmf77" path="res://Scripts/restart.gd" id="3_myy0f"]
+[ext_resource type="Script" uid="uid://2iysv5mharo8" path="res://Scripts/exit.gd" id="3_vmyb1"]
+[ext_resource type="Texture2D" uid="uid://ivqjak8odrhf" path="res://Assets/Common/Button.png" id="4_myy0f"]
+[ext_resource type="Script" uid="uid://cq02oe2udoha0" path="res://Scripts/controls.gd" id="4_sjs17"]
+[ext_resource type="Texture2D" uid="uid://ksymtls3rnfl" path="res://Assets/Common/ButtonHover.png" id="5_sjs17"]
+[ext_resource type="Script" uid="uid://hj76bdvnx34g" path="res://Scripts/input_settings.gd" id="7_sjs17"]
 
 [node name="PauseMenu" type="Control"]
 process_mode = 3
@@ -12,13 +18,25 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -512.0
-offset_top = -384.0
-offset_right = -512.0
-offset_bottom = -384.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_emv3i")
+
+[node name="Black" type="ColorRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -525.0
+offset_top = -394.0
+offset_right = 550.0
+offset_bottom = 416.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.811765)
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -28,18 +46,24 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -168.0
-offset_top = -168.0
+offset_top = -172.0
 offset_right = 168.0
-offset_bottom = 176.0
+offset_bottom = 172.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.266667, 0.266667, 0.266667, 0.811765)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -123.5
+offset_top = -151.0
+offset_right = 123.5
+offset_bottom = 151.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 40
@@ -64,17 +88,350 @@ text = "Continue"
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_k0w1u")
 text = "Restart Level"
+script = ExtResource("3_myy0f")
 
 [node name="Controls" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_k0w1u")
 text = "Controls"
+script = ExtResource("4_sjs17")
 
 [node name="Exit" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_k0w1u")
 text = "Exit"
+script = ExtResource("3_vmyb1")
+
+[node name="ConfirmQuitScreen" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -512.0
+offset_top = -384.0
+offset_right = 512.0
+offset_bottom = 384.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="ConfirmQuitScreen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -558.0
+offset_top = -426.5
+offset_right = 558.0
+offset_bottom = 426.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.894118)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ConfirmQuitScreen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -220.5
+offset_top = -125.5
+offset_right = 220.5
+offset_bottom = 125.5
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+text = "[font_size=40][font=\"res://Assets/Fonts/yoster.ttf\"][center]Are you sure you want to quit?[/center][/font][/font_size]"
+
+[node name="Confirm Buttons" type="Node2D" parent="ConfirmQuitScreen"]
+
+[node name="Cancel Quit" type="TextureButton" parent="ConfirmQuitScreen/Confirm Buttons"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 273.5
+offset_top = 397.5
+offset_right = 470.5
+offset_bottom = 470.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("4_myy0f")
+texture_hover = ExtResource("5_sjs17")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ConfirmQuitScreen/Confirm Buttons/Cancel Quit"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -91.0
+offset_top = -15.5
+offset_right = 91.0
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "[font_size=30][font=\"res://Assets/Fonts/yoster.ttf\"][center]No[/center][/font][/font_size]"
+scroll_active = false
+
+[node name="Confirm Quit" type="TextureButton" parent="ConfirmQuitScreen/Confirm Buttons"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 553.5
+offset_top = 397.5
+offset_right = 750.5
+offset_bottom = 470.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("4_myy0f")
+texture_hover = ExtResource("5_sjs17")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ConfirmQuitScreen/Confirm Buttons/Confirm Quit"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -105.5
+offset_top = -16.0
+offset_right = 105.5
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "[font_size=30][font=\"res://Assets/Fonts/yoster.ttf\"][center]Yes[/center][/font][/font_size]"
+scroll_active = false
+
+[node name="ConfirmRestartScreen" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -512.0
+offset_top = -384.0
+offset_right = 512.0
+offset_bottom = 384.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="ConfirmRestartScreen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -558.0
+offset_top = -426.5
+offset_right = 558.0
+offset_bottom = 426.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.894118)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ConfirmRestartScreen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -220.5
+offset_top = -125.5
+offset_right = 220.5
+offset_bottom = 125.5
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+text = "[font_size=40][font=\"res://Assets/Fonts/yoster.ttf\"][center]Are you sure you want to restart the level?[/center][/font][/font_size]"
+
+[node name="Confirm Buttons" type="Node2D" parent="ConfirmRestartScreen"]
+
+[node name="Cancel Quit" type="TextureButton" parent="ConfirmRestartScreen/Confirm Buttons"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 273.5
+offset_top = 397.5
+offset_right = 470.5
+offset_bottom = 470.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("4_myy0f")
+texture_hover = ExtResource("5_sjs17")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ConfirmRestartScreen/Confirm Buttons/Cancel Quit"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -91.0
+offset_top = -15.5
+offset_right = 91.0
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "[font_size=30][font=\"res://Assets/Fonts/yoster.ttf\"][center]No[/center][/font][/font_size]"
+scroll_active = false
+
+[node name="Confirm Quit" type="TextureButton" parent="ConfirmRestartScreen/Confirm Buttons"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 553.5
+offset_top = 397.5
+offset_right = 750.5
+offset_bottom = 470.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("4_myy0f")
+texture_hover = ExtResource("5_sjs17")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ConfirmRestartScreen/Confirm Buttons/Confirm Quit"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -105.5
+offset_top = -16.0
+offset_right = 105.5
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "[font_size=30][font=\"res://Assets/Fonts/yoster.ttf\"][center]Yes[/center][/font][/font_size]"
+scroll_active = false
+
+[node name="InputSettings" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("7_sjs17")
+
+[node name="TitleLabel" type="Label" parent="InputSettings"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -336.0
+offset_top = -344.0
+offset_right = 399.0
+offset_bottom = -284.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("2_k0w1u")
+theme_override_font_sizes/font_size = 60
+text = "CONTROLS   "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Scroll" type="ScrollContainer" parent="InputSettings"]
+custom_minimum_size = Vector2(0, 500)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -450.0
+offset_top = -256.0
+offset_right = 450.0
+offset_bottom = 256.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ActionList" type="VBoxContainer" parent="InputSettings/Scroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Cancel Quit" type="TextureButton" parent="InputSettings"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -96.0
+offset_top = 272.0
+offset_right = 101.0
+offset_bottom = 345.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("4_myy0f")
+texture_hover = ExtResource("5_sjs17")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="InputSettings/Cancel Quit"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -91.0
+offset_top = -15.5
+offset_right = 91.0
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "[font_size=30][font=\"res://Assets/Fonts/yoster.ttf\"][center]Go back[/center][/font][/font_size]"
+scroll_active = false
 
 [connection signal="pressed" from="VBoxContainer/Continue" to="." method="unpause"]
-[connection signal="button_up" from="VBoxContainer/Restart" to="." method="restart"]
-[connection signal="button_up" from="VBoxContainer/Exit" to="." method="exit_game"]
+[connection signal="pressed" from="VBoxContainer/Restart" to="VBoxContainer/Restart" method="_on_pressed"]
+[connection signal="pressed" from="VBoxContainer/Controls" to="VBoxContainer/Controls" method="_on_pressed"]
+[connection signal="pressed" from="VBoxContainer/Exit" to="VBoxContainer/Exit" method="_on_pressed"]
+[connection signal="pressed" from="ConfirmQuitScreen/Confirm Buttons/Cancel Quit" to="VBoxContainer/Exit" method="_on_cancel_quit_pressed"]
+[connection signal="pressed" from="ConfirmQuitScreen/Confirm Buttons/Confirm Quit" to="VBoxContainer/Exit" method="_on_confirm_quit_pressed"]
+[connection signal="pressed" from="ConfirmRestartScreen/Confirm Buttons/Cancel Quit" to="VBoxContainer/Restart" method="_on_cancel_quit_pressed"]
+[connection signal="pressed" from="ConfirmRestartScreen/Confirm Buttons/Confirm Quit" to="VBoxContainer/Restart" method="_on_confirm_quit_pressed"]
+[connection signal="pressed" from="InputSettings/Cancel Quit" to="VBoxContainer/Controls" method="_on_cancel_quit_pressed"]

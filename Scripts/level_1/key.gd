@@ -1,18 +1,17 @@
 extends InteractiveKey
 
-class Base_inventory_key extends Base_inventory_item:
-
+class BaseInventoryKey extends BaseInventoryItem:
 	func take():
 		super.take()
-		parent_node.is_taken = true
-		parent_node.make_invisible()
+		self.parent_node.is_taken = true
+		self.parent_node.make_invisible()
 		
 	func drop(start_position: Vector2):
 		super.drop(start_position)
-		parent_node.is_taken = false
-		parent_node.make_invisible()
-		parent_node.make_visible()
-
+		self.parent_node.is_taken = false
+		self.parent_node.make_invisible()
+		self.parent_node.make_visible()
 
 func _ready() -> void:
-	init(false, false, false, Base_inventory_key.new($Sprite2D, self))
+	var inventory_key: BaseInventoryItem = BaseInventoryKey.new($Sprite2D, self)
+	init(false, false, false, inventory_key)

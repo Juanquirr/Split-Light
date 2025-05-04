@@ -1,12 +1,11 @@
 extends Node2D
 
-# interface
-class_name Inventory_item
+class_name InventoryItemInterface
 
-var inventory_icon = null
+var inventory_icon: Sprite2D = null
 
-func _init(icon) -> void:
-	inventory_icon = icon
+func _init(icon: Sprite2D) -> void:
+	self.inventory_icon = icon
 	
 func take():
 	assert(false, "The take function must be implemented.")

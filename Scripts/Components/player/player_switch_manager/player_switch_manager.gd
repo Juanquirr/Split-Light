@@ -4,9 +4,9 @@ class_name PlayerSwitchManager
 
 var active_player: CharacterBody2D  
 @onready var player1 = null
-@onready var player1_perspective_manager: Array[Player_perspective_manager] = []
+@onready var player1_perspective_manager: Array[PlayerPerspectiveManagerInterface] = []
 @onready var player2 = null
-@onready var player2_perspective_manager: Array[Player_perspective_manager] = []
+@onready var player2_perspective_manager: Array[PlayerPerspectiveManagerInterface] = []
 
 signal player_changed(active_player)
 
@@ -59,7 +59,7 @@ func set_active_player(new_player: CharacterBody2D):
 	enable_movement_player(new_player)
 	enable_clues(new_player)
 	new_player.get_node("Camera2D").make_current()
-	active_player = new_player
+	self.active_player = new_player
 
 func change_active_player(new_player: CharacterBody2D):
 	if active_player:

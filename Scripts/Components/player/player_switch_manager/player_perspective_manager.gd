@@ -1,5 +1,4 @@
-
-class_name Player_perspective_manager
+class_name PlayerPerspectiveManagerInterface
 
 func disable():
 	assert(false, "The disable() function must be implemented.")

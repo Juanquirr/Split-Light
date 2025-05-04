@@ -3,7 +3,6 @@ extends GutTest
 class TestLevelTimer:
 	extends GutTest
 
-	var LevelTimer = load('res://Scripts/Components/timer/timer.gd')
 	var _level_timer: LevelTimer = null
 
 	func before_each():
