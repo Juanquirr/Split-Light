@@ -25,29 +25,26 @@ func _build_action_list() -> void:
 
 		var hbox := HBoxContainer.new()
 
-		# Etiqueta con el nombre de la acción
 		var label := Label.new()
 		label.text = str(action)
 		label.label_settings = label_settings
 		label.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 		hbox.add_child(label)
 
-		# Entrada actual
 		var current_events := InputMap.action_get_events(action)
 		var current_input := ""
 		if current_events.size() > 0:
 			current_input = current_events[0].as_text()
 
 		var current_input_label := Label.new()
-		current_input_label.text = current_input
+		current_input_label.text = current_input.replace("(Physical)", "")
 		current_input_label.name = "CurrentInput"
 		current_input_label.label_settings = label_settings
 		current_input_label.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 		hbox.add_child(current_input_label)
 
-		# Botón con tema personalizado
 		var button := Button.new()
-		button.text = "Cambiar"
+		button.text = "Change"
 		button.name = str(action)
 		button.theme = button_theme
 		button.pressed.connect(_on_change_button_pressed.bind(button))
@@ -58,16 +55,13 @@ func _build_action_list() -> void:
 func _on_change_button_pressed(button: Button) -> void:
 	awaiting_action = button.name
 	awaiting_button = button
-	button.text = "Esperando..."  # Se mantendrá la fuente ya aplicada por el theme
-	print("Esperando nueva entrada para:", awaiting_action)
+	button.text = "Waiting..."
 
 func _input(event: InputEvent) -> void:
 	if awaiting_action != &"" and event.is_pressed():
 		if event is InputEventKey or event is InputEventMouseButton or event is InputEventJoypadButton:
 			InputMap.action_erase_events(awaiting_action)
 			InputMap.action_add_event(awaiting_action, event)
-
-			print("Asignado", event.as_text(), "a", awaiting_action)
 
 			_build_action_list()
 			awaiting_action = &""
@@ -76,7 +70,6 @@ func _input(event: InputEvent) -> void:
 func _create_button_theme() -> Theme:
 	var theme := Theme.new()
 
-	# Asignar fuente al tipo "Button" en el estilo "font"
 	theme.set_font("font", "Button", custom_font)
 
 	return theme
