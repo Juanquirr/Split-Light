@@ -315,6 +315,11 @@ bbcode_enabled = true
 text = "[font_size=30][font=\"res://Assets/Font/yoster.ttf\"][center]Yes[/center][/font][/font_size]"
 scroll_active = false
 
+[node name="InputSettings" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
 [connection signal="pressed" from="VBoxContainer/Continue" to="." method="unpause"]
 [connection signal="pressed" from="VBoxContainer/Restart" to="VBoxContainer/Restart" method="_on_pressed"]
 [connection signal="pressed" from="VBoxContainer/Exit" to="VBoxContainer/Exit" method="_on_pressed"]
