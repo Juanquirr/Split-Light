@@ -7710,6 +7710,7 @@ offset_bottom = 200.0
 color = Color(0.133333, 0.133333, 0.133333, 0.419608)
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Level1/Hover info box"]
+texture_filter = 1
 layout_mode = 0
 offset_left = 93.0
 offset_top = 82.0
@@ -7777,6 +7778,7 @@ offset_bottom = 200.0
 color = Color(0.133333, 0.133333, 0.133333, 0.419608)
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Level2/Hover info box"]
+texture_filter = 1
 layout_mode = 0
 offset_left = 93.0
 offset_top = 82.0
@@ -7845,6 +7847,7 @@ offset_bottom = 200.0
 color = Color(0.133333, 0.133333, 0.133333, 0.419608)
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Level3/Hover info box"]
+texture_filter = 1
 layout_mode = 0
 offset_left = 93.0
 offset_top = 82.0
@@ -7912,6 +7915,7 @@ offset_bottom = 200.0
 color = Color(0.133333, 0.133333, 0.133333, 0.419608)
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Level4/Hover info box"]
+texture_filter = 1
 layout_mode = 0
 offset_left = 93.0
 offset_top = 82.0
@@ -7980,6 +7984,7 @@ offset_bottom = 200.0
 color = Color(0.133333, 0.133333, 0.133333, 0.419608)
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Level5/Hover info box"]
+texture_filter = 1
 layout_mode = 0
 offset_left = 93.0
 offset_top = 82.0
@@ -8020,6 +8025,8 @@ position = Vector2(165, 100)
 scale = Vector2(0.5, 0.5)
 
 [node name="Orange Galaxy" type="AnimatedSprite2D" parent="Logo"]
+texture_filter = 1
+texture_repeat = 3
 position = Vector2(219, -43)
 scale = Vector2(3.01367, 3.01367)
 sprite_frames = SubResource("SpriteFrames_0ndaj")
@@ -8040,6 +8047,8 @@ deselect_on_focus_loss_enabled = false
 drag_and_drop_selection_enabled = false
 
 [node name="White Galaxy" type="AnimatedSprite2D" parent="Logo"]
+texture_filter = 1
+texture_repeat = 3
 position = Vector2(-214, -100)
 scale = Vector2(3.01367, 3.01367)
 sprite_frames = SubResource("SpriteFrames_4c0jg")
@@ -8047,6 +8056,7 @@ animation = &"new_animation"
 autoplay = "new_animation"
 
 [node name="LogoUnderline" type="Sprite2D" parent="Logo"]
+texture_filter = 1
 position = Vector2(8, -28)
 texture = ExtResource("14_7k58x")
 

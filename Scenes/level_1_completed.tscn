@@ -1,9 +1,9 @@
 [gd_scene load_steps=14 format=3 uid="uid://cv1unvvjroute"]
 
 [ext_resource type="Texture2D" uid="uid://c5h4m4bq3kpuy" path="res://Assets/MainMenu/starry-background.png" id="1_abxp7"]
-[ext_resource type="Texture2D" uid="uid://box1qdfq2ar46" path="res://Assets/Main-Character/Main character Idle.png" id="2_s72mw"]
-[ext_resource type="Texture2D" uid="uid://bt4ir15cxrjdw" path="res://Assets/Main-Character/Main character Jump.png" id="3_e0nfw"]
-[ext_resource type="Texture2D" uid="uid://c5h7qo116lbey" path="res://Assets/Main-Character/Main character Run.png" id="4_xsdq6"]
+[ext_resource type="Texture2D" uid="uid://box1qdfq2ar46" path="res://Assets/MainCharacter/Main character Idle.png" id="2_s72mw"]
+[ext_resource type="Texture2D" uid="uid://bt4ir15cxrjdw" path="res://Assets/MainCharacter/Main character Jump.png" id="3_e0nfw"]
+[ext_resource type="Texture2D" uid="uid://c5h7qo116lbey" path="res://Assets/MainCharacter/Main character Run.png" id="4_xsdq6"]
 [ext_resource type="Texture2D" uid="uid://ivqjak8odrhf" path="res://Assets/Common/Button.png" id="5_0uciv"]
 [ext_resource type="Texture2D" uid="uid://ksymtls3rnfl" path="res://Assets/Common/ButtonHover.png" id="6_2yw68"]
 [ext_resource type="Script" uid="uid://qka7mssvlc5" path="res://Scripts/level_1_completed/main_menu.gd" id="7_2yw68"]
@@ -125,7 +125,7 @@ theme_override_font_sizes/mono_font_size = 30
 theme_override_font_sizes/normal_font_size = 30
 theme_override_font_sizes/bold_font_size = 30
 bbcode_enabled = true
-text = "TEST"
+text = "Time remaining..."
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("9_s72mw")

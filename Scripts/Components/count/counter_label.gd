@@ -1,7 +1,6 @@
 extends Label
 
 class_name CounterLabel
-## Label node class that acts as a counter.
 
 var visibility = PlayerPerspectiveVisibilityManager.new(self)
 

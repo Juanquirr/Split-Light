@@ -7658,10 +7658,13 @@ texture = ExtResource("3_flxil")
 position = Vector2(512, 200)
 
 [node name="Orange Galaxy" type="AnimatedSprite2D" parent="Logo"]
+texture_filter = 1
+texture_repeat = 3
 position = Vector2(219, -43)
 scale = Vector2(3.01367, 3.01367)
 sprite_frames = SubResource("SpriteFrames_3h1jo")
 autoplay = "default"
+frame_progress = 0.384603
 
 [node name="SPLIT LIGHT" type="RichTextLabel" parent="Logo"]
 texture_filter = 1
@@ -7681,11 +7684,14 @@ deselect_on_focus_loss_enabled = false
 drag_and_drop_selection_enabled = false
 
 [node name="White Galaxy" type="AnimatedSprite2D" parent="Logo"]
+texture_filter = 1
+texture_repeat = 3
 position = Vector2(-214, -100)
 scale = Vector2(3.01367, 3.01367)
 sprite_frames = SubResource("SpriteFrames_h2n5b")
 animation = &"new_animation"
 autoplay = "new_animation"
+frame_progress = 0.579261
 
 [node name="LogoUnderline" type="Sprite2D" parent="Logo"]
 position = Vector2(8, -28)
@@ -7788,6 +7794,8 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="PlayersStage2" type="Sprite2D" parent="."]
+texture_filter = 1
+texture_repeat = 3
 position = Vector2(150, 612)
 scale = Vector2(1.08093, 1.04264)
 texture = ExtResource("7_u6r2q")
