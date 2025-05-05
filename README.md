@@ -2,7 +2,7 @@
 
 > Split Light is an Escape Room-style game where two characters with unique abilities are capable of solving puzzles of different natures.
 
-![Splash Screen](./Assets/Icons/SplashScreen.png)
+![Splash Screen](https://raw.githubusercontent.com/SkinnyDevi/Split-Light-Metadata/refs/heads/master/Icons/SplashScreen.png)
 
 ## Developers
 
@@ -36,7 +36,6 @@ Here you can find all designs and mockups made so far, from complete screens to 
 
 - [Initial screen and various components](https://www.figma.com/design/VT0UKK87N6LZgI05aA2SI9/Vistas---Split-Light?node-id=0-1&t=OkTcRE2eOXmAB1ab-1)
 
-
 ## Project Board
 
 ![TrelloLogo](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Flogos-world.net%2Fwp-content%2Fuploads%2F2021%2F03%2FTrello-Logo.png&f=1&nofb=1&ipt=a55725f1a03e6dc20a31a38aeae9175b82378c48935e164430c4f4e9d7b42b0e&ipo=images)
@@ -56,8 +55,6 @@ Godot has its own programming language (GDScript), which is easy to learn, with 
 ## Screenshots
 
 As game development progresses, we will add more game screenshots.
-
-![MainMenuView](./Assets/MainMenu/mainframe.png)
 
 ## Acknowledgements
 
