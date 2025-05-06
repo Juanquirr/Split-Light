@@ -7736,6 +7736,7 @@ scroll_active = false
 horizontal_alignment = 1
 
 [node name="Level1Button" type="TextureButton" parent="Level1" node_paths=PackedStringArray("planet_info_box")]
+visible = false
 offset_left = 119.0
 offset_top = 204.0
 offset_right = 221.0
@@ -7805,6 +7806,7 @@ scroll_active = false
 horizontal_alignment = 1
 
 [node name="Level2Button" type="TextureButton" parent="Level2" node_paths=PackedStringArray("planet_info_box")]
+visible = false
 layout_mode = 0
 offset_left = 201.0
 offset_top = 498.0
@@ -7874,6 +7876,7 @@ scroll_active = false
 horizontal_alignment = 1
 
 [node name="Level3Button" type="TextureButton" parent="Level3" node_paths=PackedStringArray("planet_info_box")]
+visible = false
 layout_mode = 0
 offset_left = 471.0
 offset_top = 570.0
@@ -7942,6 +7945,7 @@ scroll_active = false
 horizontal_alignment = 1
 
 [node name="Level4Button" type="TextureButton" parent="Level4" node_paths=PackedStringArray("planet_info_box")]
+visible = false
 layout_mode = 0
 offset_left = 703.0
 offset_top = 480.0
@@ -8011,6 +8015,7 @@ scroll_active = false
 horizontal_alignment = 1
 
 [node name="Level5Button" type="TextureButton" parent="Level5" node_paths=PackedStringArray("planet_info_box")]
+visible = false
 layout_mode = 0
 offset_left = 879.0
 offset_top = 318.0
