@@ -1,0 +1,249 @@
+[gd_scene load_steps=4 format=3 uid="uid://c2r50mlwpv0po"]
+
+[ext_resource type="Script" uid="uid://b1x0fjwkj1mun" path="res://Scripts/level_menu/multiplayer_dialog/multiplayer_mode_selector.gd" id="1_ccatl"]
+[ext_resource type="Texture2D" uid="uid://ivqjak8odrhf" path="res://Assets/Common/Button.png" id="1_xkws0"]
+[ext_resource type="FontFile" uid="uid://r0dmn3iwndr8" path="res://Assets/Fonts/yoster.ttf" id="2_bsqvc"]
+
+[node name="MultiplayerModeSelector" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -602.0
+offset_bottom = -477.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ccatl")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1024.0
+offset_bottom = 768.0
+color = Color(0.196078, 0.196078, 0.196078, 0.458824)
+
+[node name="GamemodeSelectorDialog" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="GamemodeSelectorDialog"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.248
+anchor_top = 1.253
+anchor_right = 1.248
+anchor_bottom = 1.253
+offset_left = 265.08
+offset_top = 225.88
+offset_right = 688.08
+offset_bottom = 402.88
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_xkws0")
+
+[node name="Label" type="RichTextLabel" parent="GamemodeSelectorDialog"]
+layout_mode = 0
+offset_left = 378.0
+offset_top = 314.0
+offset_right = 679.0
+offset_bottom = 346.0
+bbcode_enabled = true
+text = "[font_size=30][center][font=\"res://Assets/Fonts/yoster.ttf\"]Select a gamemode[/font][/center][/font_size]"
+
+[node name="Singleplayer" type="Button" parent="GamemodeSelectorDialog"]
+layout_mode = 0
+offset_left = 353.0
+offset_top = 391.0
+offset_right = 497.0
+offset_bottom = 424.0
+theme_override_fonts/font = ExtResource("2_bsqvc")
+theme_override_font_sizes/font_size = 16
+text = "Singleplayer"
+
+[node name="Multiplayer" type="Button" parent="GamemodeSelectorDialog"]
+layout_mode = 0
+offset_left = 553.0
+offset_top = 391.0
+offset_right = 697.0
+offset_bottom = 424.0
+theme_override_fonts/font = ExtResource("2_bsqvc")
+theme_override_font_sizes/font_size = 16
+text = "Multiplayer"
+
+[node name="MultiplayerConfigDialog" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="MultiplayerConfigDialog"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.248
+anchor_top = 1.253
+anchor_right = 1.248
+anchor_bottom = 1.253
+offset_left = 265.08
+offset_top = 225.88
+offset_right = 688.08
+offset_bottom = 402.88
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_xkws0")
+
+[node name="Label" type="RichTextLabel" parent="MultiplayerConfigDialog"]
+layout_mode = 0
+offset_left = 378.0
+offset_top = 314.0
+offset_right = 679.0
+offset_bottom = 346.0
+bbcode_enabled = true
+text = "[font_size=30][center][font=\"res://Assets/Fonts/yoster.ttf\"]Multiplayer[/font][/center][/font_size]"
+
+[node name="Host" type="Button" parent="MultiplayerConfigDialog"]
+layout_mode = 0
+offset_left = 353.0
+offset_top = 391.0
+offset_right = 497.0
+offset_bottom = 424.0
+theme_override_fonts/font = ExtResource("2_bsqvc")
+theme_override_font_sizes/font_size = 16
+text = "Host
+"
+
+[node name="Join" type="Button" parent="MultiplayerConfigDialog"]
+layout_mode = 0
+offset_left = 553.0
+offset_top = 391.0
+offset_right = 697.0
+offset_bottom = 424.0
+theme_override_fonts/font = ExtResource("2_bsqvc")
+theme_override_font_sizes/font_size = 16
+text = "Join
+"
+
+[node name="JoinRoomDialog" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="JoinRoomDialog"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.248
+anchor_top = 1.253
+anchor_right = 1.248
+anchor_bottom = 1.253
+offset_left = 265.08
+offset_top = 225.88
+offset_right = 688.08
+offset_bottom = 402.88
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_xkws0")
+
+[node name="Label" type="RichTextLabel" parent="JoinRoomDialog"]
+layout_mode = 0
+offset_left = 378.0
+offset_top = 314.0
+offset_right = 679.0
+offset_bottom = 346.0
+bbcode_enabled = true
+text = "[font_size=30][center][font=\"res://Assets/Fonts/yoster.ttf\"]Enter a room code[/font][/center][/font_size]"
+
+[node name="Cancel" type="Button" parent="JoinRoomDialog"]
+layout_mode = 0
+offset_left = 353.0
+offset_top = 391.0
+offset_right = 497.0
+offset_bottom = 424.0
+theme_override_fonts/font = ExtResource("2_bsqvc")
+theme_override_font_sizes/font_size = 16
+text = "Cancel"
+
+[node name="Join" type="Button" parent="JoinRoomDialog"]
+layout_mode = 0
+offset_left = 553.0
+offset_top = 391.0
+offset_right = 697.0
+offset_bottom = 424.0
+theme_override_fonts/font = ExtResource("2_bsqvc")
+theme_override_font_sizes/font_size = 16
+text = "Join
+"
+
+[node name="HostRoomDialog" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="HostRoomDialog"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.248
+anchor_top = 1.253
+anchor_right = 1.248
+anchor_bottom = 1.253
+offset_left = 265.08
+offset_top = 199.88
+offset_right = 688.08
+offset_bottom = 428.88
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_xkws0")
+
+[node name="Label" type="RichTextLabel" parent="HostRoomDialog"]
+layout_mode = 0
+offset_left = 373.0
+offset_top = 276.0
+offset_right = 684.0
+offset_bottom = 308.0
+bbcode_enabled = true
+text = "[font_size=30][center][font=\"res://Assets/Fonts/yoster.ttf\"][color=#d0d0d0]Your room code is[/color][/font][/center][/font_size]"
+
+[node name="RoomCodeLabel" type="RichTextLabel" parent="HostRoomDialog"]
+layout_mode = 0
+offset_left = 373.0
+offset_top = 310.0
+offset_right = 684.0
+offset_bottom = 342.0
+bbcode_enabled = true
+text = "[font_size=30][center][font=\"res://Assets/Fonts/yoster.ttf\"]code[/font][/center][/font_size]"
+
+[node name="RoomCodeLabel2" type="RichTextLabel" parent="HostRoomDialog"]
+layout_mode = 0
+offset_left = 373.0
+offset_top = 365.0
+offset_right = 684.0
+offset_bottom = 387.0
+bbcode_enabled = true
+text = "[font_size=20][center][font=\"res://Assets/Fonts/yoster.ttf\"]A player has connected![/font][/center][/font_size]"
+
+[node name="Cancel" type="Button" parent="HostRoomDialog"]
+layout_mode = 0
+offset_left = 353.0
+offset_top = 423.0
+offset_right = 497.0
+offset_bottom = 456.0
+theme_override_fonts/font = ExtResource("2_bsqvc")
+theme_override_font_sizes/font_size = 16
+text = "Cancel"
+
+[node name="Start" type="Button" parent="HostRoomDialog"]
+layout_mode = 0
+offset_left = 553.0
+offset_top = 423.0
+offset_right = 697.0
+offset_bottom = 456.0
+theme_override_fonts/font = ExtResource("2_bsqvc")
+theme_override_font_sizes/font_size = 16
+text = "Start"
+
+[connection signal="pressed" from="GamemodeSelectorDialog/Singleplayer" to="." method="on_singleplayer"]
+[connection signal="pressed" from="GamemodeSelectorDialog/Multiplayer" to="." method="on_multiplayer"]
+[connection signal="pressed" from="MultiplayerConfigDialog/Host" to="." method="on_host"]
+[connection signal="pressed" from="MultiplayerConfigDialog/Join" to="." method="on_join"]
+[connection signal="pressed" from="JoinRoomDialog/Cancel" to="." method="on_cancel"]
+[connection signal="pressed" from="HostRoomDialog/Cancel" to="." method="on_cancel"]
