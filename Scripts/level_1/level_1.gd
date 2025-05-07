@@ -1,11 +1,9 @@
 extends Control
 
-@onready var player1 = $Player1
+@onready var player1: PlayerInstance = $Player1
+@onready var player2: PlayerInstance = $Player2
 @onready var player_switch_manager = $PlayerSwitchManager
 @onready var label = $Count
-
-var player = preload("res://Scripts/Components/player/player_instance.gd")
-
 
 func _on_teleported_left(body):
 	if body == $Player1:

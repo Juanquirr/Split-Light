@@ -9,25 +9,32 @@ var CLIENT_ID := -1
 
 var SERVER: ENetMultiplayerPeer = ENetMultiplayerPeer.new()
 
+func debug_print_state():
+	print("IS MULTIPLAYER: %s" % IS_MULTIPLAYER)
+	print("IS HOST: %s" % IS_HOST)
+	print("IS CLIENT: %s" % IS_CLIENT)
+	print("PORT: %s" % PORT)
+	print("CLIENT ID: %s" % CLIENT_ID)
+
 func _reset_multiplayer_state():
-	IS_MULTIPLAYER = false
-	IS_HOST = false
-	IS_CLIENT = false
-	PORT = -1
-	CLIENT_ID = -1
+	self.IS_MULTIPLAYER = false
+	self.IS_HOST = false
+	self.IS_CLIENT = false
+	self.PORT = -1
+	self.CLIENT_ID = -1
 
 func _on_peer_connect(id: int):
 	print_debug("Peer connected: %s" % id)
-	CLIENT_ID = id
+	self.CLIENT_ID = id
 
 func _on_peer_disconnect(id: int):
 	print_debug("Peer disconnected: %s" % id)
-	CLIENT_ID = -1
+	self.CLIENT_ID = -1
 
 func close_multiplayer():
-	SERVER.close()
+	self.SERVER.close()
 	multiplayer.multiplayer_peer = null
-	_reset_multiplayer_state()
+	self._reset_multiplayer_state()
 	print_debug("Server closed.")
 
 func connect_server_signals():
@@ -44,7 +51,7 @@ func create_server() -> int:
 	self.PORT = port
 	self.IS_MULTIPLAYER = true
 	self.IS_HOST = true
-	self.multiplayer.multiplayer_peer = SERVER
+	multiplayer.multiplayer_peer = SERVER
 	self.connect_server_signals()
 	print_debug("Created server on port %s" % self.PORT)
 	return self.PORT
@@ -59,13 +66,7 @@ func join_server(port: int) -> bool:
 	self.PORT = port
 	self.IS_MULTIPLAYER = true
 	self.IS_CLIENT = true
-	self.multiplayer.multiplayer_peer = SERVER
+	multiplayer.multiplayer_peer = SERVER
+	self.CLIENT_ID = multiplayer.get_unique_id()
 	print_debug("Connected to server on port %s" % PORT)
 	return true
-
-func include_node_in_network(node: Node):
-	node.multiplayer.multiplayer_peer = SERVER
-
-func remove_node_from_network(client_node: Node):
-	client_node.multiplayer.multiplayer_peer = null
-	print_debug("Disconnected '%s' from server" % client_node.name)

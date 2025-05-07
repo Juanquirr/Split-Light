@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=4 uid="uid://b35e40yclrr4"]
+[gd_scene load_steps=43 format=4 uid="uid://b35e40yclrr4"]
 
 [ext_resource type="PackedScene" uid="uid://3kej1w4j6pkr" path="res://Scenes/main_character.tscn" id="1_8ffim"]
 [ext_resource type="Script" uid="uid://vv6j32fqj70f" path="res://Scripts/level_1/level_1.gd" id="1_chwpn"]
@@ -35,7 +35,6 @@
 [ext_resource type="Texture2D" uid="uid://d1q8kcb17nn7b" path="res://Assets/First level/Rat.png" id="33_ts4pv"]
 [ext_resource type="Texture2D" uid="uid://bn3urmfejybno" path="res://Assets/First level/YellowApple.png" id="34_7sml1"]
 [ext_resource type="Texture2D" uid="uid://dx0qw0updfjq1" path="res://Assets/First level/Orange Crush.png" id="35_bd6hb"]
-[ext_resource type="PackedScene" uid="uid://cy6on23locid3" path="res://Scenes/Components/multiplayer/multiplayer_scene.tscn" id="36_7sml1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uy8f0"]
 texture = ExtResource("1_xrdnt")
@@ -556,24 +555,6 @@ scale = Vector2(0.1, 0.1)
 texture = ExtResource("34_7sml1")
 flip_h = true
 
-[node name="multiplayer_scene" parent="." instance=ExtResource("36_7sml1")]
-position = Vector2(1540, 273)
-rotation = -0.785397
-scale = Vector2(0.1, 0.1)
-player_scene = ExtResource("2_xfk5q")
-
-[node name="join" parent="multiplayer_scene" index="0"]
-offset_left = -1598.07
-offset_top = -4879.04
-offset_right = 639.933
-offset_bottom = -3847.04
-
-[node name="host" parent="multiplayer_scene" index="1"]
-offset_left = -3577.97
-offset_top = -7707.46
-offset_right = -1454.97
-offset_bottom = -7210.46
-
 [connection signal="number_reached" from="Count" to="." method="_count_number_reached"]
 [connection signal="teleported" from="Teleporter_left" to="." method="_on_teleported_left"]
 [connection signal="teleported" from="Teleporter_right" to="." method="_on_teleported_right"]
@@ -586,4 +567,3 @@ offset_bottom = -7210.46
 [editable path="key"]
 [editable path="PauseMenu"]
 [editable path="ExitDoor"]
-[editable path="multiplayer_scene"]

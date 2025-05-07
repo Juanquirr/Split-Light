@@ -2,20 +2,16 @@ extends CharacterBody2D
 
 class_name PlayerInstance
 
-@export var SPEED = 650
-@export var JUMP_VELOCITY = -600
-@export var GRAVITY = 900
+@export var SPEED := 650
+@export var JUMP_VELOCITY := -600
+@export var GRAVITY := 900
 
 @export var animated_sprite: AnimatedSprite2D = null
-@export var is_active = false
-@export var direction = 0
+@export var is_active := false
+@export var direction: int = 0
 
-var _warned_no_animation_attached = false
-var _warned_empty_animation = false
-
-func _enter_tree() -> void:
-	if MultiplayerManager.IS_MULTIPLAYER:
-		set_multiplayer_authority(self.name.to_int())
+var _warned_no_animation_attached := false
+var _warned_empty_animation := false
 
 func is_active_player() -> bool:
 	return is_active
@@ -29,6 +25,14 @@ func animation_process():
 	if not self._warned_empty_animation and self.animated_sprite != null:
 		push_warning(self.name + " node instance doesn't have an animation playing.")
 		self._warned_empty_animation = true
+		
+func configure_multiplayer():
+	if not MultiplayerManager.IS_MULTIPLAYER: return
+	multiplayer.multiplayer_peer = MultiplayerManager.SERVER
+	
+func configure_as_client():
+	if not MultiplayerManager.IS_MULTIPLAYER: return
+	set_multiplayer_authority(MultiplayerManager.CLIENT_ID, true)
 		
 func _process_move_right():
 	if not InputManager.is_action_pressed("move_right"): return
@@ -53,13 +57,13 @@ func _process_vertical_gravity(delta: float):
 	if is_on_floor(): return
 	self.velocity.y += GRAVITY * delta
 	
-func client_handles_authority():
+func _client_handles_authority():
 	if not MultiplayerManager.IS_MULTIPLAYER: return true
 	return is_multiplayer_authority()
 	
 func _physics_process(delta: float):
 	self._process_vertical_gravity(delta)	
-	if self.is_active and self.client_handles_authority():
+	if self.is_active and self._client_handles_authority():
 		self.direction = 0
 		self._process_movement()
 		self._process_jump()

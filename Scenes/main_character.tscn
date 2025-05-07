@@ -190,6 +190,9 @@ fill_to = Vector2(0.867521, 0.188034)
 properties/0/path = NodePath(".:position")
 properties/0/spawn = true
 properties/0/replication_mode = 1
+properties/1/path = NodePath(".:direction")
+properties/1/spawn = true
+properties/1/replication_mode = 1
 
 [node name="Main Character" type="CharacterBody2D" node_paths=PackedStringArray("animated_sprite")]
 collision_layer = 2

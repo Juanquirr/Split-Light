@@ -1,7 +1,9 @@
 extends PlayerSwitchManager
 
+
 func _ready() -> void:
-	await get_tree().process_frame 
+	await get_tree().process_frame
+	
 	player1 = $"../Player1"
 	player2 = $"../Player2"
 	
@@ -12,4 +14,10 @@ func _ready() -> void:
 	]
 	player2_perspective_manager = [$"../Area2D".visibility_red_poem]
 	
-	super._ready()
+	if MultiplayerManager.IS_MULTIPLAYER and MultiplayerManager.IS_CLIENT:
+		set_active_player(player2)
+		disable_movement_player(player1)
+		disable_clues(player1)
+		emit_signal("player_changed", active_player)
+	else:
+		super._ready()
