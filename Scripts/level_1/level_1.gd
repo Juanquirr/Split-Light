@@ -4,6 +4,9 @@ extends Control
 @onready var player_switch_manager = $PlayerSwitchManager
 @onready var label = $Count
 
+var player = preload("res://Scripts/Components/player/player_instance.gd")
+
+
 func _on_teleported_left(body):
 	if body == $Player1:
 		$key.disable_level_visibility()

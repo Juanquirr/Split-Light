@@ -136,9 +136,9 @@ anchor_top = 1.253
 anchor_right = 1.248
 anchor_bottom = 1.253
 offset_left = 265.08
-offset_top = 225.88
+offset_top = 195.88
 offset_right = 688.08
-offset_bottom = 402.88
+offset_bottom = 432.88
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_xkws0")
@@ -146,18 +146,19 @@ texture = ExtResource("1_xkws0")
 [node name="Label" type="RichTextLabel" parent="JoinRoomDialog"]
 layout_mode = 0
 offset_left = 378.0
-offset_top = 314.0
+offset_top = 274.0
 offset_right = 679.0
-offset_bottom = 346.0
+offset_bottom = 306.0
+theme_override_colors/default_color = Color(0.656285, 0.656285, 0.656285, 1)
 bbcode_enabled = true
 text = "[font_size=30][center][font=\"res://Assets/Fonts/yoster.ttf\"]Enter a room code[/font][/center][/font_size]"
 
 [node name="Cancel" type="Button" parent="JoinRoomDialog"]
 layout_mode = 0
 offset_left = 353.0
-offset_top = 391.0
+offset_top = 423.0
 offset_right = 497.0
-offset_bottom = 424.0
+offset_bottom = 456.0
 theme_override_fonts/font = ExtResource("2_bsqvc")
 theme_override_font_sizes/font_size = 16
 text = "Cancel"
@@ -165,13 +166,26 @@ text = "Cancel"
 [node name="Join" type="Button" parent="JoinRoomDialog"]
 layout_mode = 0
 offset_left = 553.0
-offset_top = 391.0
+offset_top = 423.0
 offset_right = 697.0
-offset_bottom = 424.0
+offset_bottom = 456.0
 theme_override_fonts/font = ExtResource("2_bsqvc")
 theme_override_font_sizes/font_size = 16
 text = "Join
 "
+
+[node name="CodeInput" type="TextEdit" parent="JoinRoomDialog"]
+layout_mode = 0
+offset_left = 471.0
+offset_top = 337.0
+offset_right = 581.0
+offset_bottom = 380.0
+theme_override_fonts/font = ExtResource("2_bsqvc")
+theme_override_font_sizes/font_size = 30
+placeholder_text = "code"
+emoji_menu_enabled = false
+shortcut_keys_enabled = false
+drag_and_drop_selection_enabled = false
 
 [node name="HostRoomDialog" type="Control" parent="."]
 visible = false
@@ -212,7 +226,8 @@ offset_bottom = 342.0
 bbcode_enabled = true
 text = "[font_size=30][center][font=\"res://Assets/Fonts/yoster.ttf\"]code[/font][/center][/font_size]"
 
-[node name="RoomCodeLabel2" type="RichTextLabel" parent="HostRoomDialog"]
+[node name="PlayerConnectedLabel" type="RichTextLabel" parent="HostRoomDialog"]
+visible = false
 layout_mode = 0
 offset_left = 373.0
 offset_top = 365.0
@@ -241,9 +256,71 @@ theme_override_fonts/font = ExtResource("2_bsqvc")
 theme_override_font_sizes/font_size = 16
 text = "Start"
 
+[node name="WaitingForServerDialog" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="WaitingForServerDialog"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.248
+anchor_top = 1.253
+anchor_right = 1.248
+anchor_bottom = 1.253
+offset_left = 265.08
+offset_top = 199.88
+offset_right = 688.08
+offset_bottom = 428.88
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_xkws0")
+
+[node name="Label" type="RichTextLabel" parent="WaitingForServerDialog"]
+layout_mode = 0
+offset_left = 373.0
+offset_top = 319.0
+offset_right = 684.0
+offset_bottom = 409.0
+bbcode_enabled = true
+text = "[font_size=30][center][font=\"res://Assets/Fonts/yoster.ttf\"][color=#d0d0d0]Waiting for the server to respond. . .[/color][/font][/center][/font_size]"
+
+[node name="ClientConnectSuccessDialog" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="ClientConnectSuccessDialog"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.248
+anchor_top = 1.253
+anchor_right = 1.248
+anchor_bottom = 1.253
+offset_left = 265.08
+offset_top = 199.88
+offset_right = 688.08
+offset_bottom = 428.88
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_xkws0")
+
+[node name="Label" type="RichTextLabel" parent="ClientConnectSuccessDialog"]
+layout_mode = 0
+offset_left = 373.0
+offset_top = 319.0
+offset_right = 684.0
+offset_bottom = 409.0
+bbcode_enabled = true
+text = "[font_size=30][center][font=\"res://Assets/Fonts/yoster.ttf\"][color=#d0d0d0]You're in! Waiting for the host to start. . .[/color][/font][/center][/font_size]"
+
 [connection signal="pressed" from="GamemodeSelectorDialog/Singleplayer" to="." method="on_singleplayer"]
 [connection signal="pressed" from="GamemodeSelectorDialog/Multiplayer" to="." method="on_multiplayer"]
 [connection signal="pressed" from="MultiplayerConfigDialog/Host" to="." method="on_host"]
 [connection signal="pressed" from="MultiplayerConfigDialog/Join" to="." method="on_join"]
 [connection signal="pressed" from="JoinRoomDialog/Cancel" to="." method="on_cancel"]
+[connection signal="pressed" from="JoinRoomDialog/Join" to="." method="on_join_start"]
 [connection signal="pressed" from="HostRoomDialog/Cancel" to="." method="on_cancel"]
+[connection signal="pressed" from="HostRoomDialog/Start" to="." method="on_start_host"]

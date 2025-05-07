@@ -13,10 +13,9 @@ class_name PlayerInstance
 var _warned_no_animation_attached = false
 var _warned_empty_animation = false
 
-
-
-
-
+func _enter_tree() -> void:
+	if MultiplayerManager.IS_MULTIPLAYER:
+		set_multiplayer_authority(self.name.to_int())
 
 func is_active_player() -> bool:
 	return is_active
@@ -54,16 +53,19 @@ func _process_vertical_gravity(delta: float):
 	if is_on_floor(): return
 	self.velocity.y += GRAVITY * delta
 	
+func client_handles_authority():
+	if not MultiplayerManager.IS_MULTIPLAYER: return true
+	return is_multiplayer_authority()
+	
 func _physics_process(delta: float):
-
 	self._process_vertical_gravity(delta)	
-	if self.is_active:
+	if self.is_active and self.client_handles_authority():
 		self.direction = 0
 		self._process_movement()
 		self._process_jump()
 	elif is_on_floor():
 		self.velocity.x = 0
-		self.direction = 0		
+		self.direction = 0
 
 	self.animation_process()
 	move_and_slide()
