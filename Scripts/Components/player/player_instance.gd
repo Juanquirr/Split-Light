@@ -13,6 +13,11 @@ class_name PlayerInstance
 var _warned_no_animation_attached = false
 var _warned_empty_animation = false
 
+
+
+
+
+
 func is_active_player() -> bool:
 	return is_active
 	
@@ -50,8 +55,8 @@ func _process_vertical_gravity(delta: float):
 	self.velocity.y += GRAVITY * delta
 	
 func _physics_process(delta: float):
+
 	self._process_vertical_gravity(delta)	
-	
 	if self.is_active:
 		self.direction = 0
 		self._process_movement()

@@ -1,22 +1,22 @@
-[gd_scene load_steps=43 format=4 uid="uid://b35e40yclrr4"]
+[gd_scene load_steps=44 format=4 uid="uid://b35e40yclrr4"]
 
 [ext_resource type="PackedScene" uid="uid://3kej1w4j6pkr" path="res://Scenes/main_character.tscn" id="1_8ffim"]
 [ext_resource type="Script" uid="uid://vv6j32fqj70f" path="res://Scripts/level_1/level_1.gd" id="1_chwpn"]
-[ext_resource type="Texture2D" uid="uid://cvi4ajts0emuj" path="res://Assets/First Level/Dungeon Tile Set 1.PNG" id="1_xrdnt"]
-[ext_resource type="Texture2D" uid="uid://cu5yhpo4j7v57" path="res://Assets/First Level/cuadro3mujeres.png" id="2_wrinw"]
+[ext_resource type="Texture2D" uid="uid://cvi4ajts0emuj" path="res://Assets/First level/Dungeon Tile Set 1.PNG" id="1_xrdnt"]
+[ext_resource type="Texture2D" uid="uid://cu5yhpo4j7v57" path="res://Assets/First level/cuadro3mujeres.png" id="2_wrinw"]
 [ext_resource type="PackedScene" uid="uid://bqsxn12ajmun7" path="res://Scenes/reverend.tscn" id="2_xfk5q"]
-[ext_resource type="Texture2D" uid="uid://baurfcyyjlrc1" path="res://Assets/First Level/Closed_book.PNG" id="4_af3po"]
+[ext_resource type="Texture2D" uid="uid://baurfcyyjlrc1" path="res://Assets/First level/Closed_book.PNG" id="4_af3po"]
 [ext_resource type="Script" uid="uid://bv28nvdu6ccst" path="res://Scripts/Components/count/counter_label.gd" id="5_gcla0"]
-[ext_resource type="Texture2D" uid="uid://bvfhpmng83bhx" path="res://Assets/First Level/marco-vertical.png" id="6_6r07y"]
-[ext_resource type="Texture2D" uid="uid://b00cgm2f8lc8l" path="res://Assets/First Level/Santa Maria.png" id="7_6ioyp"]
+[ext_resource type="Texture2D" uid="uid://bvfhpmng83bhx" path="res://Assets/First level/marco-vertical.png" id="6_6r07y"]
+[ext_resource type="Texture2D" uid="uid://b00cgm2f8lc8l" path="res://Assets/First level/Santa Maria.png" id="7_6ioyp"]
 [ext_resource type="Script" uid="uid://betchdi7o8gx7" path="res://Scripts/level_1/player_switch_manager.gd" id="11_1fal7"]
 [ext_resource type="PackedScene" uid="uid://byfig72cx8tsq" path="res://Scenes/Components/player_switch_manager/player_switch_manager.tscn" id="11_af3po"]
 [ext_resource type="PackedScene" uid="uid://7047hw6dqf7h" path="res://Scenes/Components/teleporter/teleporter.tscn" id="11_oovug"]
 [ext_resource type="Script" uid="uid://b4bmahyley38r" path="res://Scripts/Interaction/interactive_book.gd" id="11_uy8f0"]
 [ext_resource type="Script" uid="uid://c6q1gssuclmou" path="res://Scripts/level_1/teleporter_left.gd" id="12_6ssoq"]
-[ext_resource type="Texture2D" uid="uid://l7hhufg1rfop" path="res://Assets/First Level/black_poem.png" id="13_6r07y"]
+[ext_resource type="Texture2D" uid="uid://l7hhufg1rfop" path="res://Assets/First level/black_poem.png" id="13_6r07y"]
 [ext_resource type="Script" uid="uid://dpuqqunjvsfe1" path="res://Scripts/level_1/teleporter_right.gd" id="13_imks0"]
-[ext_resource type="Texture2D" uid="uid://rkpg71ao6qrh" path="res://Assets/First Level/red_poem.png" id="14_6ioyp"]
+[ext_resource type="Texture2D" uid="uid://rkpg71ao6qrh" path="res://Assets/First level/red_poem.png" id="14_6ioyp"]
 [ext_resource type="FontFile" uid="uid://r0dmn3iwndr8" path="res://Assets/Fonts/yoster.ttf" id="14_oovug"]
 [ext_resource type="PackedScene" uid="uid://dfpa2ywr1hfch" path="res://Scenes/Components/timer/timer_label.tscn" id="16_8i23i"]
 [ext_resource type="PackedScene" uid="uid://bxwd08bcmtq47" path="res://Scenes/Components/key/key.tscn" id="17_pjppf"]
@@ -25,16 +25,17 @@
 [ext_resource type="PackedScene" uid="uid://bxaxp10vw5kkc" path="res://Scenes/Components/door/door.tscn" id="19_yltlr"]
 [ext_resource type="Script" uid="uid://npqvody8odd0" path="res://Scripts/level_1/timer_label.gd" id="22_gcla0"]
 [ext_resource type="Script" uid="uid://708rnu10tgph" path="res://Scripts/level_1/exit_door.gd" id="23_sda17"]
-[ext_resource type="Texture2D" uid="uid://ckrvusb2t02us" path="res://Assets/First Level/mesaverde.png" id="26_u0op5"]
-[ext_resource type="Texture2D" uid="uid://bgo4mbvcse3un" path="res://Assets/First Level/pxArt (8).png" id="27_1f27d"]
-[ext_resource type="Texture2D" uid="uid://on7cjvw3my51" path="res://Assets/First Level/cadenaspixelart.png" id="28_pm77i"]
-[ext_resource type="Texture2D" uid="uid://ca22ofpwex40i" path="res://Assets/First Level/flower.png" id="29_x5u8r"]
-[ext_resource type="Texture2D" uid="uid://b6v0643a8r8o1" path="res://Assets/First Level/Closed_book_brow.PNG" id="30_nwpk5"]
-[ext_resource type="Texture2D" uid="uid://k4fs0vyryq5g" path="res://Assets/First Level/Closed_book_blue.PNG" id="31_lk3dh"]
-[ext_resource type="Texture2D" uid="uid://os8h5yfgyu1g" path="res://Assets/First Level/candels.png" id="32_ts4pv"]
-[ext_resource type="Texture2D" uid="uid://d1q8kcb17nn7b" path="res://Assets/First Level/Rat.png" id="33_ts4pv"]
-[ext_resource type="Texture2D" uid="uid://bn3urmfejybno" path="res://Assets/First Level/YellowApple.png" id="34_7sml1"]
-[ext_resource type="Texture2D" uid="uid://dx0qw0updfjq1" path="res://Assets/First Level/Orange Crush.png" id="35_bd6hb"]
+[ext_resource type="Texture2D" uid="uid://ckrvusb2t02us" path="res://Assets/First level/mesaverde.png" id="26_u0op5"]
+[ext_resource type="Texture2D" uid="uid://bgo4mbvcse3un" path="res://Assets/First level/pxArt (8).png" id="27_1f27d"]
+[ext_resource type="Texture2D" uid="uid://on7cjvw3my51" path="res://Assets/First level/cadenaspixelart.png" id="28_pm77i"]
+[ext_resource type="Texture2D" uid="uid://ca22ofpwex40i" path="res://Assets/First level/flower.png" id="29_x5u8r"]
+[ext_resource type="Texture2D" uid="uid://b6v0643a8r8o1" path="res://Assets/First level/Closed_book_brow.PNG" id="30_nwpk5"]
+[ext_resource type="Texture2D" uid="uid://k4fs0vyryq5g" path="res://Assets/First level/Closed_book_blue.PNG" id="31_lk3dh"]
+[ext_resource type="Texture2D" uid="uid://os8h5yfgyu1g" path="res://Assets/First level/candels.png" id="32_ts4pv"]
+[ext_resource type="Texture2D" uid="uid://d1q8kcb17nn7b" path="res://Assets/First level/Rat.png" id="33_ts4pv"]
+[ext_resource type="Texture2D" uid="uid://bn3urmfejybno" path="res://Assets/First level/YellowApple.png" id="34_7sml1"]
+[ext_resource type="Texture2D" uid="uid://dx0qw0updfjq1" path="res://Assets/First level/Orange Crush.png" id="35_bd6hb"]
+[ext_resource type="PackedScene" uid="uid://cy6on23locid3" path="res://Scenes/Components/multiplayer/multiplayer_scene.tscn" id="36_7sml1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uy8f0"]
 texture = ExtResource("1_xrdnt")
@@ -555,6 +556,24 @@ scale = Vector2(0.1, 0.1)
 texture = ExtResource("34_7sml1")
 flip_h = true
 
+[node name="multiplayer_scene" parent="." instance=ExtResource("36_7sml1")]
+position = Vector2(1540, 273)
+rotation = -0.785397
+scale = Vector2(0.1, 0.1)
+player_scene = ExtResource("2_xfk5q")
+
+[node name="join" parent="multiplayer_scene" index="0"]
+offset_left = -1598.07
+offset_top = -4879.04
+offset_right = 639.933
+offset_bottom = -3847.04
+
+[node name="host" parent="multiplayer_scene" index="1"]
+offset_left = -3577.97
+offset_top = -7707.46
+offset_right = -1454.97
+offset_bottom = -7210.46
+
 [connection signal="number_reached" from="Count" to="." method="_count_number_reached"]
 [connection signal="teleported" from="Teleporter_left" to="." method="_on_teleported_left"]
 [connection signal="teleported" from="Teleporter_right" to="." method="_on_teleported_right"]
@@ -567,3 +586,4 @@ flip_h = true
 [editable path="key"]
 [editable path="PauseMenu"]
 [editable path="ExitDoor"]
+[editable path="multiplayer_scene"]

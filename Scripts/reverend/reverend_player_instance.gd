@@ -1,5 +1,6 @@
 extends PlayerInstance
 
+	
 func animation_process():
 	if not is_on_floor():
 		self.animated_sprite.play("reverend_jump")

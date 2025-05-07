@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://3kej1w4j6pkr"]
+[gd_scene load_steps=33 format=3 uid="uid://3kej1w4j6pkr"]
 
 [ext_resource type="Script" uid="uid://ck8p6xo4yfghc" path="res://Scripts/main_character/main_player_instance.gd" id="1_nlild"]
 [ext_resource type="Texture2D" uid="uid://box1qdfq2ar46" path="res://Assets/MainCharacter/Main character Idle.png" id="2_nlild"]
@@ -186,6 +186,11 @@ fill = 1
 fill_from = Vector2(0.521368, 0.474359)
 fill_to = Vector2(0.867521, 0.188034)
 
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_nlild"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+
 [node name="Main Character" type="CharacterBody2D" node_paths=PackedStringArray("animated_sprite")]
 collision_layer = 2
 script = ExtResource("1_nlild")
@@ -206,6 +211,7 @@ position = Vector2(-3.5, 5.5)
 shape = SubResource("RectangleShape2D_s4j3i")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+visibility_layer = 0
 limit_top = 0
 limit_bottom = 0
 
@@ -216,6 +222,9 @@ position = Vector2(3, 3)
 scale = Vector2(8.50196, 8.50196)
 color = Color(1, 0.819608, 0, 1)
 texture = SubResource("GradientTexture2D_vmi10")
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_nlild")
 
 [connection signal="area_entered" from="Inventory" to="Inventory" method="_on_area_entered"]
 [connection signal="area_exited" from="Inventory" to="." method="_on_inventory_area_exited"]

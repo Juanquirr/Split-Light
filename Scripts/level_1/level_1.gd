@@ -9,7 +9,7 @@ func _on_teleported_left(body):
 		$key.disable_level_visibility()
 		$key.make_invisible()
 		$Count.sub_count()
-
+	
 func _on_teleported_right(body):
 	if body == $Player1:
 		$key.disable_level_visibility()
