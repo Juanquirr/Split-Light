@@ -42,7 +42,7 @@ func connect_server_signals():
 	multiplayer.peer_disconnected.connect(_on_peer_disconnect)
 
 func create_server() -> int:
-	var port = randi_range(1024, 65535)
+	var port = randi_range(49152, 65535)
 	var error := SERVER.create_server(port, 1)
 	if error != OK:
 		push_error("Could not create server: %s" % error)
