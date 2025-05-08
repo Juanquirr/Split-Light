@@ -6,7 +6,8 @@ var levels: Dictionary = {}
 
 var game_data: Dictionary = {
 	"InputMap": {},
-	"levels": {}
+	"levels": {},
+	"time": {}
 }
 
 func _ready() -> void:
@@ -106,6 +107,6 @@ func deserialize_input_event(data: Dictionary) -> InputEvent:
 func on_level_completed(level_name: String) -> void:
 	levels[level_name] = true
 	store_game_data()
-	
+
 func is_level_completed(level_name: String) -> bool:
 	return levels.get(level_name, false) 

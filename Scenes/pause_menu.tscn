@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" uid="uid://2ls1dlswxhb3" path="res://Scripts/game_manager/pause_menu.gd" id="1_emv3i"]
 [ext_resource type="FontFile" uid="uid://r0dmn3iwndr8" path="res://Assets/Fonts/yoster.ttf" id="2_k0w1u"]
-[ext_resource type="Script" path="res://Scripts/restart.gd" id="3_myy0f"]
-[ext_resource type="Script" path="res://Scripts/exit.gd" id="3_vmyb1"]
+[ext_resource type="Script" uid="uid://lmxbxh6gmf77" path="res://Scripts/restart.gd" id="3_myy0f"]
+[ext_resource type="Script" uid="uid://2iysv5mharo8" path="res://Scripts/exit.gd" id="3_vmyb1"]
 [ext_resource type="Texture2D" uid="uid://ivqjak8odrhf" path="res://Assets/Common/Button.png" id="4_myy0f"]
-[ext_resource type="Script" path="res://Scripts/controls.gd" id="4_sjs17"]
+[ext_resource type="Script" uid="uid://cq02oe2udoha0" path="res://Scripts/controls.gd" id="4_sjs17"]
 [ext_resource type="Texture2D" uid="uid://ksymtls3rnfl" path="res://Assets/Common/ButtonHover.png" id="5_sjs17"]
 [ext_resource type="Script" uid="uid://hj76bdvnx34g" path="res://Scripts/input_settings.gd" id="7_sjs17"]
 
