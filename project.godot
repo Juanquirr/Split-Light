@@ -28,6 +28,7 @@ InputManager="*res://Scripts/Components/player/player_switch_manager/input_manag
 SceneManager="*res://Scripts/Components/managers/scene_manager.gd"
 GetFinalTime="*res://Scripts/get_final_time.gd"
 MultiplayerManager="*res://Scripts/Components/managers/multiplayer_manager.gd"
+SaveLoadManager="*res://Scripts/SaveLoadManager.gd"
 
 [display]
 
