@@ -2,10 +2,11 @@ extends Node
 
 var save_path = "user://save_game.dat"
 
-var levels := []
- 
+var levels: Dictionary = {}
+
 var game_data: Dictionary = {
-	"InputMap": {}
+	"InputMap": {},
+	"levels": {}
 }
 
 func _ready() -> void:
@@ -21,13 +22,15 @@ func store_game_data() -> void:
 			if event_data:
 				input_map_data[action].append(event_data)
 	game_data["InputMap"] = input_map_data
+	game_data["levels"] = levels
+	
 	var save_file = FileAccess.open(save_path, FileAccess.WRITE)
 	if save_file == null:
 		print("Error: Could not open the file for writing: ", FileAccess.get_open_error())
 		return
 	save_file.store_var(game_data, true)
 	save_file.close()
-
+	print("Game data and levels stored at: ", save_path)
 
 func load_game_data() -> void:
 	if not FileAccess.file_exists(save_path):
@@ -39,11 +42,9 @@ func load_game_data() -> void:
 		print("Error: Could not open the file for reading: ", FileAccess.get_open_error())
 		return
 	
-	# Cargar datos
 	game_data = save_file.get_var(true)
 	save_file.close()
 	
-	# Restaurar InputMap si existe
 	if game_data.has("InputMap"):
 		var saved_input_map = game_data["InputMap"]
 		for action in saved_input_map.keys():
@@ -57,6 +58,9 @@ func load_game_data() -> void:
 					var event = deserialize_input_event(event_data)
 					if event:
 						InputMap.action_add_event(action, event)
+	
+	if game_data.has("levels"):
+		levels = game_data["levels"]
 
 func serialize_input_event(event: InputEvent) -> Dictionary:
 	if event is InputEventKey:
@@ -77,7 +81,6 @@ func serialize_input_event(event: InputEvent) -> Dictionary:
 		}
 	return {}
 
-
 func deserialize_input_event(data: Dictionary) -> InputEvent:
 	if not data is Dictionary or not data.has("type"):
 		return null
@@ -97,3 +100,12 @@ func deserialize_input_event(data: Dictionary) -> InputEvent:
 		event.double_click = data.get("double_click", false)
 		return event
 	return null
+	
+
+
+func on_level_completed(level_name: String) -> void:
+	levels[level_name] = true
+	store_game_data()
+	
+func is_level_completed(level_name: String) -> bool:
+	return levels.get(level_name, false) 
