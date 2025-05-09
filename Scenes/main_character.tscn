@@ -1,9 +1,9 @@
 [gd_scene load_steps=33 format=3 uid="uid://3kej1w4j6pkr"]
 
 [ext_resource type="Script" uid="uid://ck8p6xo4yfghc" path="res://Scripts/main_character/main_player_instance.gd" id="1_nlild"]
-[ext_resource type="Texture2D" uid="uid://box1qdfq2ar46" path="res://Assets/Abot/Abot Idle.png" id="2_nlild"]
-[ext_resource type="Texture2D" uid="uid://bt4ir15cxrjdw" path="res://Assets/Abot/Abot Jump.png" id="3_q6spo"]
-[ext_resource type="Texture2D" uid="uid://c5h7qo116lbey" path="res://Assets/Abot/Abot Run.png" id="4_fsers"]
+[ext_resource type="Texture2D" uid="uid://box1qdfq2ar46" path="res://Assets/Characters/Abot/Abot Idle.png" id="2_nlild"]
+[ext_resource type="Texture2D" uid="uid://bt4ir15cxrjdw" path="res://Assets/Characters/Abot/Abot Jump.png" id="3_q6spo"]
+[ext_resource type="Texture2D" uid="uid://c5h7qo116lbey" path="res://Assets/Characters/Abot/Abot Run.png" id="4_fsers"]
 [ext_resource type="PackedScene" uid="uid://d1byaawikdyfu" path="res://Scenes/Components/inventory/inventory.tscn" id="5_024ki"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_jkush"]
