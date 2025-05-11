@@ -22,7 +22,10 @@ class_name MultiplayerDialog
 
 func terminate_dialog():
 	if MultiplayerManager.IS_MULTIPLAYER:
-		MultiplayerManager.close_multiplayer()
+		if MultiplayerManager.IS_HOST:
+			MultiplayerManager.close_multiplayer()
+		else:
+			MultiplayerManager.disconnect_from_server()
 	
 	self.queue_free()
 

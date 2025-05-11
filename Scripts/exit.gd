@@ -26,7 +26,7 @@ func _on_confirm_quit_pressed() -> void:
 			MultiplayerManager.disconnect_from_server()
 		elif MultiplayerManager.IS_HOST:
 			_force_server_quit.rpc_id(MultiplayerManager.CLIENT_ID)
-			await wait(1)
+			await wait(0.25)
 			MultiplayerManager.close_multiplayer()
 	
 	SceneManager.change_to_scene(SceneManager.GameScenes.MAIN_MENU)

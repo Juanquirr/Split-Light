@@ -1,6 +1,6 @@
 extends Node
 
-var save_path = "user://save_game.dat"
+const SAVE_PATH = "user://save_game.dat"
 
 var levels: Dictionary = {}
 
@@ -19,49 +19,52 @@ func store_game_data() -> void:
 	for action in InputMap.get_actions():
 		input_map_data[action] = []
 		for event in InputMap.action_get_events(action):
-			var event_data = serialize_input_event(event)
+			var event_data := serialize_input_event(event)
 			if event_data:
 				input_map_data[action].append(event_data)
+				
 	game_data["InputMap"] = input_map_data
 	game_data["levels"] = levels
 	
-	var save_file = FileAccess.open(save_path, FileAccess.WRITE)
+	var save_file = FileAccess.open(SAVE_PATH, FileAccess.WRITE)
 	if save_file == null:
-		print("Error: Could not open the file for writing: ", FileAccess.get_open_error())
+		push_error("Error: Could not open the file for writing: ", FileAccess.get_open_error())
 		return
+		
 	save_file.store_var(game_data, true)
 	save_file.close()
-	print("Game data and levels stored at: ", save_path)
+	print_debug("Game data and levels stored at: ", SAVE_PATH)
 
 func load_game_data() -> void:
-	if not FileAccess.file_exists(save_path):
-		print("Save file not found: ", save_path)
+	if not FileAccess.file_exists(SAVE_PATH):
+		push_warning("Save file not found: ", SAVE_PATH)
 		return
 	
-	var save_file = FileAccess.open(save_path, FileAccess.READ)
+	var save_file := FileAccess.open(SAVE_PATH, FileAccess.READ)
 	if save_file == null:
-		print("Error: Could not open the file for reading: ", FileAccess.get_open_error())
+		push_error("Error: Could not open the file for reading: ", FileAccess.get_open_error())
 		return
 	
 	game_data = save_file.get_var(true)
 	save_file.close()
 	
-	if game_data.has("InputMap"):
-		var saved_input_map = game_data["InputMap"]
-		for action in saved_input_map.keys():
-			if not InputMap.has_action(action):
-				InputMap.add_action(action)
-			else:
-				InputMap.action_erase_events(action)
-			
-			for event_data in saved_input_map[action]:
-				if event_data is Dictionary:
-					var event = deserialize_input_event(event_data)
-					if event:
-						InputMap.action_add_event(action, event)
-	
 	if game_data.has("levels"):
 		levels = game_data["levels"]
+	
+	if not game_data.has("InputMap"): return
+	
+	var saved_input_map = game_data["InputMap"]
+	for action in saved_input_map.keys():
+		if not InputMap.has_action(action):
+			InputMap.add_action(action)
+		else:
+			InputMap.action_erase_events(action)
+			
+		for event_data in saved_input_map[action]:
+			if event_data is not Dictionary: continue
+			var event := deserialize_input_event(event_data)
+			if event:
+				InputMap.action_add_event(action, event)
 
 func serialize_input_event(event: InputEvent) -> Dictionary:
 	if event is InputEventKey:
@@ -80,6 +83,7 @@ func serialize_input_event(event: InputEvent) -> Dictionary:
 			"button_index": event.button_index,
 			"double_click": event.double_click
 		}
+	
 	return {}
 
 func deserialize_input_event(data: Dictionary) -> InputEvent:
@@ -100,9 +104,8 @@ func deserialize_input_event(data: Dictionary) -> InputEvent:
 		event.button_index = data.get("button_index", 0)
 		event.double_click = data.get("double_click", false)
 		return event
-	return null
 	
-
+	return null
 
 func on_level_completed(level_name: String) -> void:
 	levels[level_name] = true
