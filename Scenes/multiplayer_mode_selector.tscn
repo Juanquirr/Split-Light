@@ -135,10 +135,10 @@ anchor_left = 1.248
 anchor_top = 1.253
 anchor_right = 1.248
 anchor_bottom = 1.253
-offset_left = 265.08
-offset_top = 195.88
-offset_right = 688.08
-offset_bottom = 432.88
+offset_left = 236.08
+offset_top = 166.88
+offset_right = 717.08
+offset_bottom = 461.88
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_xkws0")
@@ -146,19 +146,19 @@ texture = ExtResource("1_xkws0")
 [node name="Label" type="RichTextLabel" parent="JoinRoomDialog"]
 layout_mode = 0
 offset_left = 378.0
-offset_top = 274.0
+offset_top = 234.0
 offset_right = 679.0
-offset_bottom = 306.0
+offset_bottom = 266.0
 theme_override_colors/default_color = Color(0.656285, 0.656285, 0.656285, 1)
 bbcode_enabled = true
-text = "[font_size=30][center][font=\"res://Assets/Fonts/yoster.ttf\"]Enter a room code[/font][/center][/font_size]"
+text = "[font_size=22][center][font=\"res://Assets/Fonts/yoster.ttf\"]Enter the server details[/font][/center][/font_size]"
 
 [node name="Cancel" type="Button" parent="JoinRoomDialog"]
 layout_mode = 0
 offset_left = 353.0
-offset_top = 423.0
+offset_top = 447.0
 offset_right = 497.0
-offset_bottom = 456.0
+offset_bottom = 480.0
 theme_override_fonts/font = ExtResource("2_bsqvc")
 theme_override_font_sizes/font_size = 16
 text = "Cancel"
@@ -166,23 +166,38 @@ text = "Cancel"
 [node name="Join" type="Button" parent="JoinRoomDialog"]
 layout_mode = 0
 offset_left = 553.0
-offset_top = 423.0
+offset_top = 447.0
 offset_right = 697.0
-offset_bottom = 456.0
+offset_bottom = 480.0
 theme_override_fonts/font = ExtResource("2_bsqvc")
 theme_override_font_sizes/font_size = 16
 text = "Join
 "
 
-[node name="CodeInput" type="TextEdit" parent="JoinRoomDialog"]
+[node name="ServerIpInput" type="LineEdit" parent="JoinRoomDialog"]
 layout_mode = 0
-offset_left = 471.0
-offset_top = 337.0
-offset_right = 581.0
-offset_bottom = 380.0
+offset_left = 378.0
+offset_top = 297.0
+offset_right = 674.0
+offset_bottom = 340.0
 theme_override_fonts/font = ExtResource("2_bsqvc")
 theme_override_font_sizes/font_size = 30
-placeholder_text = "code"
+placeholder_text = "server IP"
+alignment = 1
+emoji_menu_enabled = false
+shortcut_keys_enabled = false
+drag_and_drop_selection_enabled = false
+
+[node name="PortInput" type="LineEdit" parent="JoinRoomDialog"]
+layout_mode = 0
+offset_left = 471.0
+offset_top = 361.0
+offset_right = 581.0
+offset_bottom = 404.0
+theme_override_fonts/font = ExtResource("2_bsqvc")
+theme_override_font_sizes/font_size = 30
+placeholder_text = "port"
+alignment = 1
 emoji_menu_enabled = false
 shortcut_keys_enabled = false
 drag_and_drop_selection_enabled = false
@@ -200,61 +215,143 @@ anchor_left = 1.248
 anchor_top = 1.253
 anchor_right = 1.248
 anchor_bottom = 1.253
-offset_left = 265.08
-offset_top = 199.88
-offset_right = 688.08
-offset_bottom = 428.88
+offset_left = 95.08
+offset_top = 104.88
+offset_right = 858.08
+offset_bottom = 523.88
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_xkws0")
 
-[node name="Label" type="RichTextLabel" parent="HostRoomDialog"]
+[node name="Title" type="RichTextLabel" parent="HostRoomDialog"]
 layout_mode = 0
-offset_left = 373.0
-offset_top = 276.0
-offset_right = 684.0
-offset_bottom = 308.0
+offset_left = 338.0
+offset_top = 188.0
+offset_right = 719.0
+offset_bottom = 220.0
 bbcode_enabled = true
-text = "[font_size=30][center][font=\"res://Assets/Fonts/yoster.ttf\"][color=#d0d0d0]Your room code is[/color][/font][/center][/font_size]"
-
-[node name="RoomCodeLabel" type="RichTextLabel" parent="HostRoomDialog"]
-layout_mode = 0
-offset_left = 373.0
-offset_top = 310.0
-offset_right = 684.0
-offset_bottom = 342.0
-bbcode_enabled = true
-text = "[font_size=30][center][font=\"res://Assets/Fonts/yoster.ttf\"]code[/font][/center][/font_size]"
+text = "[font_size=30][center][font=\"res://Assets/Fonts/yoster.ttf\"][color=#d0d0d0]Share with you friend![/color][/font][/center][/font_size]"
 
 [node name="PlayerConnectedLabel" type="RichTextLabel" parent="HostRoomDialog"]
 visible = false
 layout_mode = 0
 offset_left = 373.0
-offset_top = 365.0
+offset_top = 429.0
 offset_right = 684.0
-offset_bottom = 387.0
+offset_bottom = 451.0
 bbcode_enabled = true
 text = "[font_size=20][center][font=\"res://Assets/Fonts/yoster.ttf\"]A player has connected![/font][/center][/font_size]"
 
-[node name="Cancel" type="Button" parent="HostRoomDialog"]
+[node name="PortInfo" type="RichTextLabel" parent="HostRoomDialog"]
+layout_mode = 0
+offset_left = 464.0
+offset_top = 357.0
+offset_right = 817.0
+offset_bottom = 392.0
+bbcode_enabled = true
+text = "[font_size=15][center][font=\"res://Assets/Fonts/yoster.ttf\"][color=#a1a1a1]Default port: 49359
+Ports must be between 1024 and 65535[/color][/font][/center][/font_size]"
+
+[node name="ServerHandlerButtons" type="Control" parent="HostRoomDialog"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Cancel" type="Button" parent="HostRoomDialog/ServerHandlerButtons"]
 layout_mode = 0
 offset_left = 353.0
-offset_top = 423.0
+offset_top = 495.0
 offset_right = 497.0
-offset_bottom = 456.0
+offset_bottom = 528.0
 theme_override_fonts/font = ExtResource("2_bsqvc")
 theme_override_font_sizes/font_size = 16
 text = "Cancel"
 
-[node name="Start" type="Button" parent="HostRoomDialog"]
+[node name="Start" type="Button" parent="HostRoomDialog/ServerHandlerButtons"]
 layout_mode = 0
 offset_left = 553.0
-offset_top = 423.0
+offset_top = 495.0
 offset_right = 697.0
-offset_bottom = 456.0
+offset_bottom = 528.0
 theme_override_fonts/font = ExtResource("2_bsqvc")
 theme_override_font_sizes/font_size = 16
-text = "Start"
+text = "Start Server"
+
+[node name="ServerStarterButtons" type="Control" parent="HostRoomDialog"]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Cancel" type="Button" parent="HostRoomDialog/ServerStarterButtons"]
+layout_mode = 0
+offset_left = 353.0
+offset_top = 495.0
+offset_right = 497.0
+offset_bottom = 528.0
+theme_override_fonts/font = ExtResource("2_bsqvc")
+theme_override_font_sizes/font_size = 16
+text = "Cancel"
+
+[node name="Start" type="Button" parent="HostRoomDialog/ServerStarterButtons"]
+layout_mode = 0
+offset_left = 553.0
+offset_top = 495.0
+offset_right = 697.0
+offset_bottom = 528.0
+theme_override_fonts/font = ExtResource("2_bsqvc")
+theme_override_font_sizes/font_size = 16
+disabled = true
+text = "Start Level"
+
+[node name="ServerIpLabel" type="RichTextLabel" parent="HostRoomDialog"]
+layout_mode = 0
+offset_left = 290.0
+offset_top = 254.0
+offset_right = 473.0
+offset_bottom = 286.0
+bbcode_enabled = true
+text = "[font_size=30][center][font=\"res://Assets/Fonts/yoster.ttf\"][color=#a0a0a0]Server IP:[/color][/font][/center][/font_size]"
+
+[node name="ServerIpInput" type="LineEdit" parent="HostRoomDialog"]
+layout_mode = 0
+offset_left = 490.0
+offset_top = 249.0
+offset_right = 786.0
+offset_bottom = 292.0
+theme_override_fonts/font = ExtResource("2_bsqvc")
+theme_override_font_sizes/font_size = 30
+placeholder_text = "server IP"
+alignment = 1
+emoji_menu_enabled = false
+shortcut_keys_enabled = false
+drag_and_drop_selection_enabled = false
+
+[node name="PortLabel" type="RichTextLabel" parent="HostRoomDialog"]
+layout_mode = 0
+offset_left = 332.0
+offset_top = 310.0
+offset_right = 431.0
+offset_bottom = 342.0
+bbcode_enabled = true
+text = "[font_size=30][center][font=\"res://Assets/Fonts/yoster.ttf\"][color=#a0a0a0]Port:[/color][/font][/center][/font_size]"
+
+[node name="PortInput" type="LineEdit" parent="HostRoomDialog"]
+layout_mode = 0
+offset_left = 490.0
+offset_top = 305.0
+offset_right = 786.0
+offset_bottom = 348.0
+theme_override_fonts/font = ExtResource("2_bsqvc")
+theme_override_font_sizes/font_size = 30
+placeholder_text = "port"
+alignment = 1
+max_length = 5
+emoji_menu_enabled = false
+virtual_keyboard_type = 2
+shortcut_keys_enabled = false
+drag_and_drop_selection_enabled = false
+caret_blink = true
 
 [node name="WaitingForServerDialog" type="Control" parent="."]
 visible = false
@@ -322,5 +419,7 @@ text = "[font_size=30][center][font=\"res://Assets/Fonts/yoster.ttf\"][color=#d0
 [connection signal="pressed" from="MultiplayerConfigDialog/Join" to="." method="on_join"]
 [connection signal="pressed" from="JoinRoomDialog/Cancel" to="." method="on_cancel"]
 [connection signal="pressed" from="JoinRoomDialog/Join" to="." method="on_join_start"]
-[connection signal="pressed" from="HostRoomDialog/Cancel" to="." method="on_cancel"]
-[connection signal="pressed" from="HostRoomDialog/Start" to="." method="on_start_host"]
+[connection signal="pressed" from="HostRoomDialog/ServerHandlerButtons/Cancel" to="." method="on_cancel"]
+[connection signal="pressed" from="HostRoomDialog/ServerHandlerButtons/Start" to="." method="on_host_start_server"]
+[connection signal="pressed" from="HostRoomDialog/ServerStarterButtons/Cancel" to="." method="on_cancel"]
+[connection signal="pressed" from="HostRoomDialog/ServerStarterButtons/Start" to="." method="on_start_host"]

@@ -13,6 +13,9 @@ func finish_level():
 func _process(_delta):
 	if not InputManager.is_action_just_pressed("Interact"): return
 	for player in players_inside:
-		if player.is_active_player() && (key == null || key.get_key_status()):
+		var allow_finish = player.is_active_player() && (key == null || key.get_key_status())
+		if not allow_finish: continue
+		if MultiplayerManager.IS_MULTIPLAYER:
 			finish_level.rpc_id(MultiplayerManager.CLIENT_ID)
-			finish_level()
+		
+		finish_level()
