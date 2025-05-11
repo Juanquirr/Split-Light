@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://bqsxn12ajmun7"]
+[gd_scene load_steps=33 format=3 uid="uid://bqsxn12ajmun7"]
 
 [ext_resource type="Script" uid="uid://0l6brjd02vug" path="res://Scripts/reverend/reverend_player_instance.gd" id="1_3fly1"]
 [ext_resource type="Texture2D" uid="uid://omte8hj7348p" path="res://Assets/Characters/Reverend/Reverend Idle.png" id="2_dgubp"]
@@ -186,6 +186,26 @@ fill = 1
 fill_from = Vector2(0.521368, 0.474359)
 fill_to = Vector2(0.867521, 0.188034)
 
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_4dqf5"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+properties/1/path = NodePath(".:direction")
+properties/1/spawn = true
+properties/1/replication_mode = 1
+properties/2/path = NodePath("Movement:animation")
+properties/2/spawn = true
+properties/2/replication_mode = 1
+properties/3/path = NodePath("Movement:flip_h")
+properties/3/spawn = true
+properties/3/replication_mode = 1
+properties/4/path = NodePath("Movement:flip_v")
+properties/4/spawn = true
+properties/4/replication_mode = 1
+properties/5/path = NodePath("Movement:frame")
+properties/5/spawn = true
+properties/5/replication_mode = 1
+
 [node name="Player2" type="CharacterBody2D" node_paths=PackedStringArray("animated_sprite")]
 collision_layer = 2
 script = ExtResource("1_3fly1")
@@ -215,3 +235,6 @@ position = Vector2(3, 3)
 scale = Vector2(8.50196, 8.50196)
 color = Color(0.937241, 4.52429e-06, 0.572678, 1)
 texture = SubResource("GradientTexture2D_os74a")
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_4dqf5")
