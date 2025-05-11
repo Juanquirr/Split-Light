@@ -6,6 +6,8 @@ func _ready() -> void:
 		if MultiplayerManager.IS_HOST:
 			update_client_time()
 	update_label_time()
+	SaveLoadManager.on_level_completed("level_1")
+
 
 func update_client_time():
 	rpc_id(MultiplayerManager.CLIENT_ID, "receive_number", GetFinalTime.get_final_time())
@@ -14,6 +16,7 @@ func update_client_time():
 func receive_number(number: int):
 	GetFinalTime.set_final_time(number)
 	update_label_time()
+	SaveLoadManager.on_level_completed("level_1")
 
 func update_label_time():
 	var time_remaining = GetFinalTime.get_final_time()

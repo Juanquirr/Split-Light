@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cv1unvvjroute"]
+[gd_scene load_steps=14 format=3 uid="uid://cv1unvvjroute"]
 
 [ext_resource type="Texture2D" uid="uid://c5h4m4bq3kpuy" path="res://Assets/MainMenu/starry-background.png" id="1_abxp7"]
 [ext_resource type="Texture2D" uid="uid://box1qdfq2ar46" path="res://Assets/Characters/Abot/Abot Idle.png" id="2_s72mw"]
@@ -38,11 +38,6 @@ animations = [{
 "name": &"default",
 "speed": 3.0
 }]
-
-[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_s72mw"]
-properties/0/path = NodePath("TimeLeft:text")
-properties/0/spawn = true
-properties/0/replication_mode = 1
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -134,8 +129,5 @@ text = "Time remaining..."
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("9_s72mw")
-
-[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
-replication_config = SubResource("SceneReplicationConfig_s72mw")
 
 [connection signal="pressed" from="TextureButton" to="TextureButton" method="_on_pressed"]
