@@ -1,8 +1,5 @@
 extends TextureButton
 
-func wait(seconds: float) -> void:
-	await get_tree().create_timer(seconds).timeout
-
 func _on_pressed():
 	if MultiplayerManager.IS_MULTIPLAYER:
 		if MultiplayerManager.IS_CLIENT:
