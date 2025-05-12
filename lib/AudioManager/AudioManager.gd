@@ -7,7 +7,11 @@ extends Node2D
 ##
 ## @tutorial: https://www.youtube.com/watch?v=Egf2jgET3nQ
 
-var sound_effect_dict: Dictionary = {} ## Loads all registered SoundEffects on ready as a reference.
+## Loads all registered [SoundEffects] on ready as a reference.
+var sound_effect_dict: Dictionary = {} 
+
+## Loads all registered [VariantSoundEffects] on ready as a reference.
+var variant_sound_effect_dict: Dictionary = {}
 
 ## Stores all possible [SoundEffects] that can be played.
 @export var sound_effects: Array[SoundEffect] 
@@ -19,7 +23,7 @@ func _ready() -> void:
 		sound_effect_dict[sound_effect.type] = sound_effect
 	
 	for variant_sound_effect: VariantSoundEffect in variant_sound_effects:
-		sound_effect_dict[variant_sound_effect.type] = variant_sound_effect
+		variant_sound_effect_dict[variant_sound_effect.type] = variant_sound_effect
 
 
 ## Method to generate a new audio instance.
@@ -59,7 +63,7 @@ func _define_audio_instance(
 	
 func create_variant_audio(type: VariantSoundEffect.VARIANT_SOUND_EFFECT_TYPE) -> void:
 	if sound_effect_dict.has(type):
-		var sound_effect: VariantSoundEffect = sound_effect_dict[type]
+		var sound_effect: VariantSoundEffect = variant_sound_effect_dict[type]
 		if not sound_effect.has_open_limit(): return
 		
 		sound_effect.change_audio_count(1)
@@ -72,7 +76,7 @@ func create_variant_audio(type: VariantSoundEffect.VARIANT_SOUND_EFFECT_TYPE) ->
 
 func create_2d_variant_audio_at_location(location: Vector2, type: VariantSoundEffect.VARIANT_SOUND_EFFECT_TYPE) -> void:
 	if sound_effect_dict.has(type):
-		var sound_effect: VariantSoundEffect = sound_effect_dict[type]
+		var sound_effect: VariantSoundEffect = variant_sound_effect_dict[type]
 		if not sound_effect.has_open_limit(): return
 		
 		sound_effect.change_audio_count(1)
