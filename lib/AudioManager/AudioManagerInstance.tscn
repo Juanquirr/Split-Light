@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://bo8axprub1pdg"]
+
+[ext_resource type="Script" uid="uid://bxuhmuh7ux44m" path="res://lib/AudioManager/AudioManager.gd" id="1_oarm3"]
+[ext_resource type="Script" uid="uid://ca5hvco441wld" path="res://lib/AudioManager/SoundEffectSetting.gd" id="2_3vsyy"]
+
+[sub_resource type="Resource" id="Resource_rvts4"]
+script = ExtResource("2_3vsyy")
+limit = 1
+type = 0
+volume = 0.0
+pitch_scale = 1.0
+pitch_randomness = 0.0
+metadata/_custom_type_script = "uid://ca5hvco441wld"
+
+[node name="AudioManagerInstance" type="Node2D"]
+script = ExtResource("1_oarm3")
+sound_effects = Array[ExtResource("2_3vsyy")]([SubResource("Resource_rvts4")])
