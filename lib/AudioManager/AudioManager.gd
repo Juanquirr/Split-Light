@@ -43,7 +43,7 @@ func _define_audio_instance(
 		audio_instance.stream = sound_effect.sound_effect
 	elif sound_effect is VariantSoundEffect:
 		var random_sound_index = randi_range(1, sound_effect.variant_amount())
-		audio_instance.stream = sound_effect.sound_variants[random_sound_index]
+		audio_instance.stream = sound_effect.sound_variants[random_sound_index-1]
 	elif sound_effect is AudioStream:
 		audio_instance.stream = sound_effect
 	else:
