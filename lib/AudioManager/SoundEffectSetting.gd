@@ -7,7 +7,9 @@ class_name SoundEffect
 enum SOUND_EFFECT_TYPE {
 	ON_KEY_GRAB,
 	ON_KEY_DROP,
-	ON_TELEPORT
+	ON_TELEPORT,
+	ON_BOOK_OPEN,
+	ON_BOOK_CLOSE
 }
 
 @export_range(0, 10) var limit: int = 5 ## Maximum number of this SoundEffect to play simultaneously before culled.
