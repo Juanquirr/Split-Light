@@ -16,6 +16,7 @@ func init(target_teleporter: Area2D, teleporter_direction: ExitDirection):
 	self.direction = teleporter_direction
 
 func _on_body_entered(body: PhysicsBody2D):
+	AudioManagerInstance.create_audio(SoundEffect.SOUND_EFFECT_TYPE.ON_TELEPORT)
 	var relative_height = body.global_position.y - self.global_position.y  
 	var relative_x = body.global_position.x - self.global_position.x  
 	emit_signal("teleported", body)
