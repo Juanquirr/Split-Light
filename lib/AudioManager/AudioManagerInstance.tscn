@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bo8axprub1pdg"]
+[gd_scene load_steps=17 format=3 uid="uid://bo8axprub1pdg"]
 
 [ext_resource type="Script" uid="uid://bxuhmuh7ux44m" path="res://lib/AudioManager/AudioManager.gd" id="1_oarm3"]
 [ext_resource type="Script" uid="uid://ca5hvco441wld" path="res://lib/AudioManager/SoundEffectSetting.gd" id="2_nmrk3"]
@@ -11,6 +11,7 @@
 [ext_resource type="AudioStream" uid="uid://b8tgum1olntnj" path="res://Assets/Sounds/Effects/step/stone4.ogg" id="6_kh1q1"]
 [ext_resource type="AudioStream" uid="uid://cc3e7krs61ssm" path="res://Assets/Sounds/Effects/step/stone5.ogg" id="7_xu5v1"]
 [ext_resource type="AudioStream" uid="uid://bacyf5ssu4pat" path="res://Assets/Sounds/Effects/step/stone6.ogg" id="8_kyfub"]
+[ext_resource type="AudioStream" uid="uid://dlk0ydgiufjkr" path="res://Assets/Sounds/Effects/portal/teleport.mp3" id="9_osqjv"]
 
 [sub_resource type="Resource" id="Resource_xu5v1"]
 script = ExtResource("2_nmrk3")
@@ -32,6 +33,16 @@ pitch_scale = 1.0
 pitch_randomness = 0.0
 metadata/_custom_type_script = "uid://ca5hvco441wld"
 
+[sub_resource type="Resource" id="Resource_mqulx"]
+script = ExtResource("2_nmrk3")
+limit = 2
+type = 2
+sound_effect = ExtResource("9_osqjv")
+volume = -1.846
+pitch_scale = 1.0
+pitch_randomness = 0.0
+metadata/_custom_type_script = "uid://ca5hvco441wld"
+
 [sub_resource type="Resource" id="Resource_rvts4"]
 script = ExtResource("3_p3c4e")
 limit = 1
@@ -44,5 +55,5 @@ metadata/_custom_type_script = "uid://dectxygt7wgxb"
 
 [node name="AudioManagerInstance" type="Node2D"]
 script = ExtResource("1_oarm3")
-sound_effects = Array[ExtResource("2_nmrk3")]([SubResource("Resource_xu5v1"), SubResource("Resource_kyfub")])
+sound_effects = Array[ExtResource("2_nmrk3")]([SubResource("Resource_xu5v1"), SubResource("Resource_kyfub"), SubResource("Resource_mqulx")])
 variant_sound_effects = Array[ExtResource("3_p3c4e")]([SubResource("Resource_rvts4")])
