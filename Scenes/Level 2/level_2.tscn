@@ -1,10 +1,10 @@
-[gd_scene load_steps=11 format=4 uid="uid://b8ea5kw5sm13v"]
+[gd_scene load_steps=13 format=4 uid="uid://b8ea5kw5sm13v"]
 
 [ext_resource type="PackedScene" uid="uid://c4e6wyfc51ig8" path="res://Scenes/Components/wood_bridge/wood_bridge.tscn" id="1_aqquj"]
 [ext_resource type="Texture2D" uid="uid://dmqx5y6ygd6v8" path="res://Assets/Level 2/asset_forest.png" id="1_xqi6i"]
 [ext_resource type="Texture2D" uid="uid://dla68ffow3seg" path="res://Assets/Level 2/Background_2.png" id="2_hmoyl"]
-[ext_resource type="PackedScene" uid="uid://bgfom7vx76fd2" path="res://Scenes/Level 2/aaliyah.tscn" id="3_aqquj"]
 [ext_resource type="PackedScene" uid="uid://cpy8kkqmvbjyw" path="res://Scenes/Components/lever/lever.tscn" id="3_0kjcb"]
+[ext_resource type="PackedScene" uid="uid://bgfom7vx76fd2" path="res://Scenes/Level 2/aaliyah.tscn" id="3_aqquj"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_xqi6i"]
 
@@ -1252,6 +1252,7 @@ tile_set = SubResource("TileSet_fkuja")
 position = Vector2(425, 415)
 scale = Vector2(4, 4)
 is_active = true
+
 [node name="Scenes" type="TileMapLayer" parent="."]
 
 [node name="Lever" parent="Scenes" instance=ExtResource("3_0kjcb")]
