@@ -29,6 +29,7 @@ SceneManager="*res://Scripts/Components/managers/scene_manager.gd"
 GetFinalTime="*res://Scripts/get_final_time.gd"
 MultiplayerManager="*res://Scripts/Components/managers/multiplayer_manager.gd"
 SaveLoadManager="*res://Scripts/SaveLoadManager.gd"
+AudioManagerInstance="*res://lib/AudioManager/AudioManagerInstance.tscn"
 
 [display]
 

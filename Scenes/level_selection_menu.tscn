@@ -7725,7 +7725,7 @@ A dark moon stranded on the edge of this galaxy.
 scroll_active = false
 horizontal_alignment = 1
 script = ExtResource("9_ir6ig")
-level_name = "level_1"
+save_level_name = "level_1"
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="Level1/Hover info box"]
 layout_mode = 0
