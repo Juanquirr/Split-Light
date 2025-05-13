@@ -27,8 +27,8 @@ script = ExtResource("3_u0yxr")
 script = ExtResource("4_2goke")
 
 [node name="stalactite_sprite" type="Sprite2D" parent="."]
-position = Vector2(301.75, 356.75)
-scale = Vector2(1.011, 1.09163)
+position = Vector2(102, 115)
+scale = Vector2(0.344755, 0.349529)
 texture = ExtResource("4_4yg7v")
 
 [node name="Area2d" type="Area2D" parent="."]
@@ -36,7 +36,7 @@ visibility_layer = 3
 collision_mask = 3
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2d"]
-polygon = PackedVector2Array(-56, -1, -23, 34, -6, 76, 4, 121, 8, 169, 17, 230, 29, 230, 39, 182, 52, 107, 66, 51, 118, 14, 119, -5)
+polygon = PackedVector2Array(-20, 0, 40, -1, 40, 6, 37, 6, 37, 7, 33, 7, 33, 9, 30, 9, 30, 10, 29, 10, 29, 12, 28, 12, 28, 13, 26, 13, 26, 14, 23, 14, 23, 16, 22, 16, 22, 19, 21, 19, 21, 23, 19, 23, 19, 30, 18, 30, 18, 35, 16, 35, 16, 41, 15, 41, 15, 45, 13, 45, 13, 55, 12, 55, 12, 60, 11, 60, 11, 67, 10, 67, 10, 75, 8, 75, 8, 80, 6, 80, 6, 76, 5, 76, 5, 63, 4, 63, 4, 56, 3, 56, 3, 40, 1, 40, 1, 35, 0, 35, 0, 29, -2, 29, -2, 25, -3, 25, -3, 21, -5, 21, -5, 20, -6, 20, -6, 17, -7, 17, -7, 12, -9, 13, -9, 11, -10, 11, -10, 8, -11, 8, -11, 7, -13, 7, -13, 5, -15, 5, -16, 4)
 
 [connection signal="area_entered" from="Area2d" to="state_machine/fallingstate" method="_on_area_2d_area_entered"]
 [connection signal="body_entered" from="Area2d" to="state_machine/fallingstate" method="_on_body_entered"]

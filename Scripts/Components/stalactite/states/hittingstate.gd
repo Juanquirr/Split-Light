@@ -23,7 +23,7 @@ func enter() -> void:
 		if parent is RigidBody2D:
 			initial_position = parent.global_position
 		else:
-			push_error("Parent no es RigidBody2D")
+			push_error("Parent is not RigidBody2D")
 
 		timer = 0.0
 		fading = false
