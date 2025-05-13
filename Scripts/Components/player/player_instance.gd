@@ -13,10 +13,12 @@ class_name PlayerInstance
 var _warned_no_animation_attached := false
 var _warned_empty_animation := false
 
+var _current_scene_name := ""
+
 func is_active_player() -> bool:
 	return is_active
 	
-func animation_process():
+func animation_process() -> void:
 	if self.animated_sprite == null and not self._warned_no_animation_attached: 
 		push_warning(self.name + " node instance doesn't have an AnimationSprite2D instance attached.")
 		self._warned_no_animation_attached = true
@@ -26,6 +28,9 @@ func animation_process():
 		push_warning(self.name + " node instance doesn't have an animation playing.")
 		self._warned_empty_animation = true
 		
+func sound_process() -> void:
+	pass
+
 func configure_multiplayer():
 	if not MultiplayerManager.IS_MULTIPLAYER: return
 	multiplayer.multiplayer_peer = MultiplayerManager.SERVER
@@ -61,6 +66,14 @@ func _client_handles_authority():
 	if not MultiplayerManager.IS_MULTIPLAYER: return true
 	return is_multiplayer_authority()
 	
+func _ready() -> void:
+	var scene_path = get_tree().current_scene.scene_file_path
+	self._current_scene_name = scene_path.get_file().get_basename()
+	
+func _process(_delta: float) -> void:
+	self.animation_process()
+	self.sound_process()
+	
 func _physics_process(delta: float):
 	self._process_vertical_gravity(delta)	
 	if self.is_active and self._client_handles_authority():
@@ -71,5 +84,4 @@ func _physics_process(delta: float):
 		self.velocity.x = 0
 		self.direction = 0
 
-	self.animation_process()
 	move_and_slide()

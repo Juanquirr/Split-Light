@@ -334,7 +334,7 @@ scale = Vector2(0.1, 0.1)
 texture = ExtResource("7_6ioyp")
 
 [node name="Player1" parent="." instance=ExtResource("1_8ffim")]
-z_index = 1
+z_index = 2
 position = Vector2(381, 168)
 scale = Vector2(6, 6)
 is_active = true
@@ -492,7 +492,6 @@ scale = Vector2(0.136704, 0.0643626)
 texture = ExtResource("32_ts4pv")
 
 [node name="GlobalShadow" type="PointLight2D" parent="."]
-visible = false
 position = Vector2(664, -24)
 scale = Vector2(75.6445, 13.7539)
 energy = 0.4
