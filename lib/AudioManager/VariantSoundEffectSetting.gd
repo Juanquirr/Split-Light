@@ -5,7 +5,8 @@ class_name VariantSoundEffect
 
 ## Stores sound types that contain different sounds to be trigger to add variance.
 enum VARIANT_SOUND_EFFECT_TYPE {
-	ON_STONE_WALK
+	ON_STONE_WALK,
+	ON_WOOD_WALK
 }
 
 ## Maximum number of this SoundEffect to play simultaneously before culled.

@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bo8axprub1pdg"]
+[gd_scene load_steps=24 format=3 uid="uid://bo8axprub1pdg"]
 
 [ext_resource type="Script" uid="uid://bxuhmuh7ux44m" path="res://lib/AudioManager/AudioManager.gd" id="1_oarm3"]
 [ext_resource type="Script" uid="uid://ca5hvco441wld" path="res://lib/AudioManager/SoundEffectSetting.gd" id="2_nmrk3"]
@@ -12,6 +12,12 @@
 [ext_resource type="AudioStream" uid="uid://cc3e7krs61ssm" path="res://Assets/Sounds/Effects/step/stone5.ogg" id="7_xu5v1"]
 [ext_resource type="AudioStream" uid="uid://bacyf5ssu4pat" path="res://Assets/Sounds/Effects/step/stone6.ogg" id="8_kyfub"]
 [ext_resource type="AudioStream" uid="uid://dlk0ydgiufjkr" path="res://Assets/Sounds/Effects/portal/teleport.mp3" id="9_osqjv"]
+[ext_resource type="AudioStream" uid="uid://cp066wf3m8ukf" path="res://Assets/Sounds/Effects/step/wood1.ogg" id="13_ltw0k"]
+[ext_resource type="AudioStream" uid="uid://dt4rk1jnlkhkw" path="res://Assets/Sounds/Effects/step/wood2.ogg" id="14_q8vuj"]
+[ext_resource type="AudioStream" uid="uid://c2mkhu8ad0t1c" path="res://Assets/Sounds/Effects/step/wood3.ogg" id="15_vwnaf"]
+[ext_resource type="AudioStream" uid="uid://ocrk20jxhla3" path="res://Assets/Sounds/Effects/step/wood4.ogg" id="16_d47pa"]
+[ext_resource type="AudioStream" uid="uid://jbj04v7uf2jy" path="res://Assets/Sounds/Effects/step/wood5.ogg" id="17_qnfrp"]
+[ext_resource type="AudioStream" uid="uid://i5c2a70ocdgy" path="res://Assets/Sounds/Effects/step/wood6.ogg" id="18_ib634"]
 
 [sub_resource type="Resource" id="Resource_xu5v1"]
 script = ExtResource("2_nmrk3")
@@ -53,7 +59,17 @@ pitch_scale = 0.9
 pitch_randomness = 0.0
 metadata/_custom_type_script = "uid://dectxygt7wgxb"
 
+[sub_resource type="Resource" id="Resource_iujpo"]
+script = ExtResource("3_p3c4e")
+limit = 1
+type = 1
+sound_variants = Array[AudioStream]([ExtResource("13_ltw0k"), ExtResource("14_q8vuj"), ExtResource("15_vwnaf"), ExtResource("16_d47pa"), ExtResource("17_qnfrp"), ExtResource("18_ib634")])
+volume = -6.0
+pitch_scale = 1.0
+pitch_randomness = 0.0
+metadata/_custom_type_script = "uid://dectxygt7wgxb"
+
 [node name="AudioManagerInstance" type="Node2D"]
 script = ExtResource("1_oarm3")
 sound_effects = Array[ExtResource("2_nmrk3")]([SubResource("Resource_xu5v1"), SubResource("Resource_kyfub"), SubResource("Resource_mqulx")])
-variant_sound_effects = Array[ExtResource("3_p3c4e")]([SubResource("Resource_rvts4")])
+variant_sound_effects = Array[ExtResource("3_p3c4e")]([SubResource("Resource_rvts4"), SubResource("Resource_iujpo")])
