@@ -1,0 +1,39 @@
+[gd_scene load_steps=3 format=3 uid="uid://ijl18akyg77a"]
+
+[ext_resource type="PackedScene" uid="uid://3kej1w4j6pkr" path="res://Scenes/abot.tscn" id="1_l8yqo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_psp6s"]
+size = Vector2(461, 20)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Main Character" parent="." instance=ExtResource("1_l8yqo")]
+position = Vector2(152, 184)
+
+[node name="SueloRojo" type="StaticBody2D" parent="."]
+position = Vector2(0, -8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SueloRojo"]
+position = Vector2(225.5, 336)
+shape = SubResource("RectangleShape2D_psp6s")
+
+[node name="ColorRect" type="ColorRect" parent="SueloRojo"]
+offset_top = 328.0
+offset_right = 464.0
+offset_bottom = 352.0
+color = Color(1, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="SueloRojo2" type="StaticBody2D" parent="."]
+position = Vector2(576, 1184)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SueloRojo2"]
+position = Vector2(224, 336)
+shape = SubResource("RectangleShape2D_psp6s")
+
+[node name="ColorRect" type="ColorRect" parent="SueloRojo2"]
+offset_top = 328.0
+offset_right = 464.0
+offset_bottom = 352.0
+color = Color(1, 0, 0, 1)
+metadata/_edit_use_anchors_ = true

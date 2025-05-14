@@ -1548,7 +1548,7 @@ scale = Vector2(0.136704, 0.0643626)
 texture = ExtResource("32_ts4pv")
 
 [node name="GlobalShadow" type="PointLight2D" parent="."]
-position = Vector2(661, -24)
+position = Vector2(580, -24)
 scale = Vector2(75.6445, 13.7539)
 energy = 0.4
 blend_mode = 1

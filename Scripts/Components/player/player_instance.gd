@@ -5,13 +5,15 @@ class_name PlayerInstance
 @export var SPEED := 650
 @export var JUMP_VELOCITY := -600
 @export var GRAVITY := 900
+@export var max_air_time := 1.6
 
 @export var animated_sprite: AnimatedSprite2D = null
-@export var is_active := false
+@export var is_active := true
 @export var direction: int = 0
 
 var _warned_no_animation_attached := false
 var _warned_empty_animation := false
+var air_time := 0.0
 
 var _current_scene_name := ""
 
@@ -75,7 +77,15 @@ func _process(_delta: float) -> void:
 	self.sound_process()
 	
 func _physics_process(delta: float):
-	self._process_vertical_gravity(delta)	
+	self._process_vertical_gravity(delta)
+	
+	if is_on_floor():
+		air_time = 0.0
+	else:
+		air_time += delta
+		if air_time > max_air_time:
+			print("game over")
+	
 	if self.is_active and self._client_handles_authority():
 		self.direction = 0
 		self._process_movement()

@@ -1,0 +1,135 @@
+[gd_scene load_steps=5 format=3 uid="uid://dwin1ecgemtr3"]
+
+[ext_resource type="Script" uid="uid://c5n2etj17befl" path="res://Scripts/lock_screen.gd" id="1_8hiqv"]
+[ext_resource type="Texture2D" uid="uid://b5x638ie822go" path="res://Assets/Level 2/candado.png" id="2_o65ij"]
+[ext_resource type="FontFile" uid="uid://r0dmn3iwndr8" path="res://Assets/Fonts/yoster.ttf" id="3_o65ij"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o65ij"]
+bg_color = Color(0.244776, 0.244776, 0.244776, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+
+[node name="LockScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_8hiqv")
+
+[node name="TriesLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 768.0
+offset_top = 64.0
+offset_right = 960.0
+offset_bottom = 128.0
+theme_override_fonts/font = ExtResource("3_o65ij")
+theme_override_font_sizes/font_size = 40
+text = "Tries: 3"
+horizontal_alignment = 2
+
+[node name="Locker" type="Sprite2D" parent="."]
+position = Vector2(512, 344)
+scale = Vector2(0.871583, 0.824022)
+texture = ExtResource("2_o65ij")
+
+[node name="DigitsContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 320.0
+offset_top = 344.0
+offset_right = 704.0
+offset_bottom = 633.0
+
+[node name="ResultLabel" type="Label" parent="DigitsContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_o65ij")
+theme_override_font_sizes/font_size = 35
+text = "Code"
+horizontal_alignment = 1
+
+[node name="Space1" type="Label" parent="DigitsContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+
+[node name="Digit1" type="HBoxContainer" parent="DigitsContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="BtnMinus" type="Button" parent="DigitsContainer/Digit1"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_o65ij")
+theme_override_font_sizes/font_size = 40
+text = "<"
+
+[node name="LabelValue" type="Label" parent="DigitsContainer/Digit1"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_o65ij")
+theme_override_font_sizes/font_size = 40
+text = "          0          "
+horizontal_alignment = 1
+
+[node name="BtnPlus" type="Button" parent="DigitsContainer/Digit1"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_o65ij")
+theme_override_font_sizes/font_size = 40
+text = ">"
+
+[node name="Digit2" type="HBoxContainer" parent="DigitsContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="BtnMinus" type="Button" parent="DigitsContainer/Digit2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_o65ij")
+theme_override_font_sizes/font_size = 40
+text = "<"
+
+[node name="LabelValue" type="Label" parent="DigitsContainer/Digit2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_o65ij")
+theme_override_font_sizes/font_size = 40
+text = "          0          "
+horizontal_alignment = 1
+
+[node name="BtnPlus" type="Button" parent="DigitsContainer/Digit2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_o65ij")
+theme_override_font_sizes/font_size = 40
+text = ">"
+
+[node name="Digit3" type="HBoxContainer" parent="DigitsContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="BtnMinus" type="Button" parent="DigitsContainer/Digit3"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_o65ij")
+theme_override_font_sizes/font_size = 40
+text = "<"
+
+[node name="LabelValue" type="Label" parent="DigitsContainer/Digit3"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_o65ij")
+theme_override_font_sizes/font_size = 40
+text = "          0          "
+horizontal_alignment = 1
+
+[node name="BtnPlus" type="Button" parent="DigitsContainer/Digit3"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_o65ij")
+theme_override_font_sizes/font_size = 40
+text = ">"
+
+[node name="Space2" type="Label" parent="DigitsContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 5
+
+[node name="CheckButton" type="Button" parent="DigitsContainer"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("3_o65ij")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_o65ij")
+text = "Check"
