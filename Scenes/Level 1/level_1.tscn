@@ -1474,6 +1474,12 @@ layout_mode = 1
 icon_alignment = 1
 text_direction = 1
 
+[node name="ConfirmRestartScreen" parent="PauseMenu" index="4"]
+visible = true
+
+[node name="InputSettings" parent="PauseMenu" index="5"]
+visible = true
+
 [node name="ExitDoor" parent="." instance=ExtResource("19_yltlr")]
 position = Vector2(617, 107)
 collision_mask = 3
