@@ -11,8 +11,8 @@ enum GameScenes {
 const SCENE_LIST = {
 	GameScenes.MAIN_MENU: "main_menu",
 	GameScenes.LEVEL_SELECTOR: "level_selection_menu",
-	GameScenes.LEVEL_1: "level_1",
-	GameScenes.LEVEL_1_COMPLETED: "level_1_completed",
+	GameScenes.LEVEL_1: "Level 1/level_1",
+	GameScenes.LEVEL_1_COMPLETED: "Level 1/level_1_completed",
 	GameScenes.GAME_OVER: "game_over_menu"
 }
 

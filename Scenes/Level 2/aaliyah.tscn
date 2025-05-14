@@ -1,0 +1,247 @@
+[gd_scene load_steps=34 format=3 uid="uid://bgfom7vx76fd2"]
+
+[ext_resource type="Script" uid="uid://c4rw2tpjtyabu" path="res://Scripts/Level 2/aaliyah_player_instance.gd" id="1_feslt"]
+[ext_resource type="Texture2D" uid="uid://bjqltx711aotd" path="res://Assets/Characters/Aaliyah/Aaliyah Idle.png" id="2_rmmnf"]
+[ext_resource type="Texture2D" uid="uid://cdskl583gqtkw" path="res://Assets/Characters/Aaliyah/Aaliyah Run.png" id="3_feslt"]
+[ext_resource type="Texture2D" uid="uid://cgclrstxnc848" path="res://Assets/Characters/Aaliyah/Aaliyah Jump.png" id="3_yhxox"]
+[ext_resource type="PackedScene" uid="uid://d1byaawikdyfu" path="res://Scenes/Components/inventory/inventory.tscn" id="5_qfknq"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_jkush"]
+light_mode = 1
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_feslt"]
+atlas = ExtResource("2_rmmnf")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yhxox"]
+atlas = ExtResource("2_rmmnf")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_alht4"]
+atlas = ExtResource("2_rmmnf")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cbvfs"]
+atlas = ExtResource("2_rmmnf")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_503us"]
+atlas = ExtResource("2_rmmnf")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_se62v"]
+atlas = ExtResource("2_rmmnf")
+region = Rect2(240, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e6jtq"]
+atlas = ExtResource("2_rmmnf")
+region = Rect2(288, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ars4u"]
+atlas = ExtResource("2_rmmnf")
+region = Rect2(336, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5n7al"]
+atlas = ExtResource("2_rmmnf")
+region = Rect2(384, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_08q3b"]
+atlas = ExtResource("2_rmmnf")
+region = Rect2(432, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4is4h"]
+atlas = ExtResource("3_yhxox")
+region = Rect2(0, 0, 51, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t60x5"]
+atlas = ExtResource("3_yhxox")
+region = Rect2(51, 0, 51, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qe5kq"]
+atlas = ExtResource("3_yhxox")
+region = Rect2(102, 0, 51, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1qufr"]
+atlas = ExtResource("3_yhxox")
+region = Rect2(153, 0, 51, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ww7sg"]
+atlas = ExtResource("3_yhxox")
+region = Rect2(204, 0, 51, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ri6jc"]
+atlas = ExtResource("3_yhxox")
+region = Rect2(255, 0, 51, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t4sjf"]
+atlas = ExtResource("3_feslt")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o35rq"]
+atlas = ExtResource("3_feslt")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yoe0t"]
+atlas = ExtResource("3_feslt")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ue81t"]
+atlas = ExtResource("3_feslt")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qptr0"]
+atlas = ExtResource("3_feslt")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_an2vr"]
+atlas = ExtResource("3_feslt")
+region = Rect2(240, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k3pvn"]
+atlas = ExtResource("3_feslt")
+region = Rect2(288, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jpo1k"]
+atlas = ExtResource("3_feslt")
+region = Rect2(336, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k46vw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_feslt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yhxox")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_alht4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cbvfs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_503us")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_se62v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e6jtq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ars4u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5n7al")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_08q3b")
+}],
+"loop": true,
+"name": &"aaliyah_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4is4h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t60x5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qe5kq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1qufr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ww7sg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ri6jc")
+}],
+"loop": true,
+"name": &"aaliyah_jump",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t4sjf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o35rq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yoe0t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ue81t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qptr0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_an2vr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k3pvn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jpo1k")
+}],
+"loop": true,
+"name": &"aaliyah_run",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s4j3i"]
+size = Vector2(30, 33)
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_nlild"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+properties/1/path = NodePath(".:direction")
+properties/1/spawn = true
+properties/1/replication_mode = 1
+properties/2/path = NodePath("Movement:animation")
+properties/2/spawn = true
+properties/2/replication_mode = 1
+properties/3/path = NodePath("Movement:flip_h")
+properties/3/spawn = true
+properties/3/replication_mode = 1
+properties/4/path = NodePath("Movement:flip_v")
+properties/4/spawn = true
+properties/4/replication_mode = 1
+properties/5/path = NodePath("Movement:frame")
+properties/5/spawn = true
+properties/5/replication_mode = 1
+
+[node name="Aaliyah" type="CharacterBody2D" node_paths=PackedStringArray("animated_sprite")]
+collision_layer = 2
+script = ExtResource("1_feslt")
+animated_sprite = NodePath("Movement")
+
+[node name="Movement" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_jkush")
+scale = Vector2(1, 1)
+sprite_frames = SubResource("SpriteFrames_k46vw")
+animation = &"aaliyah_jump"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_s4j3i")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+visibility_layer = 0
+
+[node name="Inventory" parent="." instance=ExtResource("5_qfknq")]
+position = Vector2(0, -1)
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_nlild")
+
+[connection signal="area_entered" from="Inventory" to="Inventory" method="_on_area_entered"]
+[connection signal="area_exited" from="Inventory" to="." method="_on_inventory_area_exited"]
+[connection signal="area_exited" from="Inventory" to="Inventory" method="_on_area_exited"]

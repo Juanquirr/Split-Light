@@ -1,9 +1,12 @@
-[gd_scene load_steps=29 format=4 uid="uid://b8ea5kw5sm13v"]
+[gd_scene load_steps=33 format=4 uid="uid://b8ea5kw5sm13v"]
 
+[ext_resource type="PackedScene" uid="uid://c4e6wyfc51ig8" path="res://Scenes/Components/wood_bridge/wood_bridge.tscn" id="1_aqquj"]
 [ext_resource type="Texture2D" uid="uid://dmqx5y6ygd6v8" path="res://Assets/Level 2/asset_forest.png" id="1_xqi6i"]
 [ext_resource type="Texture2D" uid="uid://dla68ffow3seg" path="res://Assets/Level 2/Background_2.png" id="2_hmoyl"]
 [ext_resource type="Texture2D" uid="uid://bsrfnpemrcf0r" path="res://Assets/Level 2/coast redwoods.png" id="3_0kjcb"]
+[ext_resource type="PackedScene" uid="uid://bgfom7vx76fd2" path="res://Scenes/Level 2/aaliyah.tscn" id="3_afqff"]
 [ext_resource type="Texture2D" uid="uid://cs0kn3e2esglr" path="res://Assets/Level 2/tileset.png" id="3_aqquj"]
+[ext_resource type="PackedScene" uid="uid://cpy8kkqmvbjyw" path="res://Scenes/Components/lever/lever.tscn" id="3_fff2f"]
 [ext_resource type="Texture2D" uid="uid://e78somfvhp61" path="res://Assets/Level 2/coastredwoodfullpix.png" id="4_7tgn6"]
 [ext_resource type="Texture2D" uid="uid://bywgsk38tw67f" path="res://Assets/Level 2/bushhpix.png" id="5_7tgn6"]
 [ext_resource type="Texture2D" uid="uid://bfq7gu4m8s3x2" path="res://Assets/Level 2/pacificpix.png" id="6_q72jt"]
@@ -1827,6 +1830,8 @@ texture = ExtResource("3_aqquj")
 sources/0 = SubResource("TileSetAtlasSource_7tgn6")
 sources/1 = SubResource("TileSetAtlasSource_52e5h")
 
+[sub_resource type="TileSet" id="TileSet_fkuja"]
+
 [node name="PlaygroundEarth" type="Node2D"]
 
 [node name="Background" type="TileMapLayer" parent="."]
@@ -2240,3 +2245,22 @@ texture = ExtResource("10_akkmf")
 position = Vector2(783, 210)
 scale = Vector2(0.589559, 0.379648)
 texture = ExtResource("13_akkmf")
+
+[node name="Characters" type="TileMapLayer" parent="."]
+tile_set = SubResource("TileSet_fkuja")
+
+[node name="Aaliyah" parent="Characters" instance=ExtResource("3_afqff")]
+position = Vector2(425, 415)
+scale = Vector2(4, 4)
+is_active = true
+
+[node name="Scenes" type="TileMapLayer" parent="."]
+
+[node name="Lever" parent="Scenes" instance=ExtResource("3_fff2f")]
+position = Vector2(2284, 461)
+scale = Vector2(0.453789, 0.453789)
+
+[node name="WoodBridge" parent="Scenes/Lever" instance=ExtResource("1_aqquj")]
+z_index = 2
+position = Vector2(-3204.13, 855.023)
+scale = Vector2(2.20367, 2.20367)

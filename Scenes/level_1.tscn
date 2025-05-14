@@ -335,11 +335,14 @@ texture = ExtResource("7_6ioyp")
 
 [node name="Player1" parent="." instance=ExtResource("1_8ffim")]
 z_index = 2
-position = Vector2(617, 175)
+position = Vector2(381, 168)
+scale = Vector2(6, 6)
+is_active = true
 
 [node name="Player2" parent="." instance=ExtResource("9_ts4pv")]
 z_index = 2
-position = Vector2(803, 176)
+position = Vector2(831, 168)
+scale = Vector2(6, 6)
 JUMP_VELOCITY = -300
 GRAVITY = 1000
 
@@ -373,15 +376,15 @@ texture = ExtResource("4_af3po")
 
 [node name="BlackPoem" type="Sprite2D" parent="Area2D"]
 z_index = 2
-position = Vector2(-17639.2, 7023.3)
+position = Vector2(-17207.7, 12607.1)
 scale = Vector2(6.35575, 4.83441)
 texture = ExtResource("13_6r07y")
 
 [node name="Camera2D" type="Camera2D" parent="Area2D"]
-position = Vector2(-17710.9, 7034.43)
+position = Vector2(-17279.4, 12618.2)
 
 [node name="RedPoem" type="Sprite2D" parent="Area2D"]
-position = Vector2(-17696.6, 7012.17)
+position = Vector2(-17265.1, 12595.9)
 scale = Vector2(6.29986, 4.80316)
 texture = ExtResource("14_6ioyp")
 

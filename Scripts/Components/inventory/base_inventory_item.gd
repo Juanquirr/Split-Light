@@ -2,10 +2,14 @@ extends InventoryItemInterface
 
 class_name BaseInventoryItem
 
+signal touched_floor
+
 var velocity: Vector2 = Vector2(0, 0) 
 @export var GRAVITY: float = 1000  
 var raycast: RayCast2D  
 var parent_node: Node2D
+
+var has_emitted_signal := false
 
 func _init(icon: Sprite2D, init_parent_node: Node2D) -> void:
 	super._init(icon) 
@@ -26,6 +30,7 @@ func drop(start_position: Vector2):
 	self.parent_node.position = start_position
 	self.velocity = Vector2.ZERO  
 	self.raycast.enabled = true
+	self.has_emitted_signal = false
 		
 func _process(delta: float) -> void:
 		if not self.raycast.enabled:
@@ -38,4 +43,8 @@ func _process(delta: float) -> void:
 			var collision_point = self.raycast.get_collision_point()
 			self.parent_node.global_position.y = collision_point.y
 			self.velocity = Vector2.ZERO
+			if not self.has_emitted_signal:
+				emit_signal("touched_floor")
+				self.has_emitted_signal = true
+			
 			self.raycast.enabled = false

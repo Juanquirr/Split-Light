@@ -24,6 +24,16 @@ func _on_body_exited(body: Node2D):
 			open_book_for_player.erase(body)
 		update_poem_visibility()
 
+func play_book_open_sound():
+	AudioManagerInstance.create_audio(
+		SoundEffect.SOUND_EFFECT_TYPE.ON_BOOK_OPEN
+	)
+
+func play_book_close_sound():
+	AudioManagerInstance.create_audio(
+		SoundEffect.SOUND_EFFECT_TYPE.ON_BOOK_CLOSE
+	)
+
 func _process(_delta):
 	if not Input.is_action_just_pressed("Interact"): return
 	for player in players_inside:
@@ -36,6 +46,7 @@ func _process(_delta):
 			player.get_node("Camera2D").enabled = true
 			player.get_node("Camera2D").make_current()
 			$Camera2D.enabled = false
+			self.play_book_close_sound()
 		else:
 			InputManager.block_action("switch_player")
 			$Camera2D.enabled = true
@@ -44,6 +55,7 @@ func _process(_delta):
 			player.set_process_input(false)
 			player.set_physics_process(false)
 			player.get_node("Camera2D").enabled = false
+			self.play_book_open_sound()
 			
 		update_poem_visibility()
 
