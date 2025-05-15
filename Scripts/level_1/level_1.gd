@@ -1,4 +1,4 @@
-extends Control
+extends Node2D
 
 @onready var player1: PlayerInstance = $Player1
 @onready var player2: PlayerInstance = $Player2
