@@ -51,9 +51,10 @@ func _process_move_left():
 	self.direction = -1
 	self.animated_sprite.flip_h = true
 
-func _process_jump():
-	if not (InputManager.is_action_pressed("jump") and is_on_floor()): return
+func _process_jump() -> bool:
+	if not (InputManager.is_action_pressed("jump") and is_on_floor()): return false
 	self.velocity.y = JUMP_VELOCITY
+	return true
 	
 func _process_movement():
 	self._process_move_right()

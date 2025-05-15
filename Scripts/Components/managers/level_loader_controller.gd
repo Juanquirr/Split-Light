@@ -11,9 +11,9 @@ var multiplayer_config_dialog := preload("res://Scenes/multiplayer_mode_selector
 func _ready() -> void:
 	self.planet_info_box.visible = false
 
+
 func load_level():
 	if not self.level_active: return
-	
 	var dialog: MultiplayerDialog = multiplayer_config_dialog.instantiate()
 	dialog.target_scene = self.target_scene
 	$"../../MultiplayerDialogHolder".add_child(dialog)

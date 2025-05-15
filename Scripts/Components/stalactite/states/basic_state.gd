@@ -9,7 +9,6 @@ var parent: RigidBody2D
 var original_position := Vector2.ZERO
 
 func _ready() -> void:
-	# Obtener el nodo abuelo, asegurándonos de que sea un RigidBody2D
 	parent = get_parent().get_parent()
 	original_position = $"../../stalactite_sprite".position
 	if parent is RigidBody2D:
@@ -23,11 +22,8 @@ func enter() -> void:
 		parent.freeze = true
 		parent.global_position = initial_position
 
-		
-
 func exit() -> void:
 	if parent:
-		# Descongelar el RigidBody al salir del estado
 		parent.freeze = false
 
 func update() -> void:

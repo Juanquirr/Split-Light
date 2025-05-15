@@ -5,7 +5,8 @@ enum GameScenes {
 	LEVEL_SELECTOR,
 	LEVEL_1,
 	LEVEL_1_COMPLETED,
-	GAME_OVER
+	GAME_OVER,
+	LEVEL_2
 }
 
 const SCENE_LIST = {
@@ -13,7 +14,8 @@ const SCENE_LIST = {
 	GameScenes.LEVEL_SELECTOR: "level_selection_menu",
 	GameScenes.LEVEL_1: "Level 1/level_1",
 	GameScenes.LEVEL_1_COMPLETED: "Level 1/level_1_completed",
-	GameScenes.GAME_OVER: "game_over_menu"
+	GameScenes.GAME_OVER: "game_over_menu",
+	GameScenes.LEVEL_2: "Level 2/level_2"
 }
 
 const SCENES_PATH = "res://Scenes/"
