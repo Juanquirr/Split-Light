@@ -12,12 +12,12 @@
 [ext_resource type="AudioStream" uid="uid://cc3e7krs61ssm" path="res://Assets/Sounds/Effects/step/stone5.ogg" id="7_xu5v1"]
 [ext_resource type="AudioStream" uid="uid://bacyf5ssu4pat" path="res://Assets/Sounds/Effects/step/stone6.ogg" id="8_kyfub"]
 [ext_resource type="AudioStream" uid="uid://dlk0ydgiufjkr" path="res://Assets/Sounds/Effects/portal/teleport.mp3" id="9_osqjv"]
-[ext_resource type="AudioStream" uid="uid://cp066wf3m8ukf" path="res://Assets/Sounds/Effects/step/wood1.ogg" id="13_ltw0k"]
-[ext_resource type="AudioStream" uid="uid://dt4rk1jnlkhkw" path="res://Assets/Sounds/Effects/step/wood2.ogg" id="14_q8vuj"]
-[ext_resource type="AudioStream" uid="uid://c2mkhu8ad0t1c" path="res://Assets/Sounds/Effects/step/wood3.ogg" id="15_vwnaf"]
-[ext_resource type="AudioStream" uid="uid://ocrk20jxhla3" path="res://Assets/Sounds/Effects/step/wood4.ogg" id="16_d47pa"]
-[ext_resource type="AudioStream" uid="uid://jbj04v7uf2jy" path="res://Assets/Sounds/Effects/step/wood5.ogg" id="17_qnfrp"]
-[ext_resource type="AudioStream" uid="uid://i5c2a70ocdgy" path="res://Assets/Sounds/Effects/step/wood6.ogg" id="18_ib634"]
+[ext_resource type="AudioStream" uid="uid://bam8od1yscimu" path="res://Assets/Sounds/Effects/step/wood1.ogg" id="13_ltw0k"]
+[ext_resource type="AudioStream" uid="uid://baikpb7dt1qbu" path="res://Assets/Sounds/Effects/step/wood2.ogg" id="14_q8vuj"]
+[ext_resource type="AudioStream" uid="uid://dsngd6b6xw7gm" path="res://Assets/Sounds/Effects/step/wood3.ogg" id="15_vwnaf"]
+[ext_resource type="AudioStream" uid="uid://bp88yxf5c6a2y" path="res://Assets/Sounds/Effects/step/wood4.ogg" id="16_d47pa"]
+[ext_resource type="AudioStream" uid="uid://do1c7htutdwcd" path="res://Assets/Sounds/Effects/step/wood5.ogg" id="17_qnfrp"]
+[ext_resource type="AudioStream" uid="uid://dy2y0gorp0gba" path="res://Assets/Sounds/Effects/step/wood6.ogg" id="18_ib634"]
 
 [sub_resource type="Resource" id="Resource_xu5v1"]
 script = ExtResource("2_nmrk3")
