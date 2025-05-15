@@ -1463,10 +1463,18 @@ script = ExtResource("22_gcla0")
 
 [node name="PauseMenu" parent="." instance=ExtResource("18_pjppf")]
 visible = false
+z_index = 99
+layout_mode = 1
 
 [node name="Continue" parent="PauseMenu/VBoxContainer" index="1"]
 icon_alignment = 1
 text_direction = 1
+
+[node name="ConfirmRestartScreen" parent="PauseMenu" index="4"]
+visible = true
+
+[node name="InputSettings" parent="PauseMenu" index="5"]
+visible = true
 
 [node name="ExitDoor" parent="." instance=ExtResource("19_yltlr")]
 position = Vector2(617, 107)

@@ -1,0 +1,70 @@
+[gd_scene load_steps=7 format=3 uid="uid://6tocuqnbi43y"]
+
+[ext_resource type="Script" uid="uid://jxeauoc34bxi" path="res://Scripts/Components/rotation_puzzle/rotation_puzzle.gd" id="1_lcly6"]
+[ext_resource type="Texture2D" uid="uid://cfloppklfc234" path="res://Assets/Level 2/arrow_bow.png" id="2_o7hfe"]
+[ext_resource type="Script" uid="uid://bgjnje2ynp34b" path="res://Scripts/Components/rotation_puzzle/rotation_puzzle_item.gd" id="3_o7hfe"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o7hfe"]
+size = Vector2(606.593, 678.272)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vd6pw"]
+size = Vector2(513.521, 621.782)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6nhiu"]
+size = Vector2(568.272, 694.575)
+
+[node name="RotationPuzzle" type="Node2D"]
+z_index = 2
+script = ExtResource("1_lcly6")
+
+[node name="first_item" type="Sprite2D" parent="."]
+position = Vector2(1.52588e-05, 1)
+rotation = 2.48186
+scale = Vector2(0.205813, 0.205813)
+texture = ExtResource("2_o7hfe")
+script = ExtResource("3_o7hfe")
+
+[node name="Area2D" type="Area2D" parent="first_item"]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="first_item/Area2D"]
+position = Vector2(-1.11902, 4.36813)
+shape = SubResource("RectangleShape2D_o7hfe")
+
+[node name="second_item" type="Sprite2D" parent="."]
+position = Vector2(292, -1.99998)
+rotation = 2.48186
+scale = Vector2(0.189129, 0.189129)
+texture = ExtResource("2_o7hfe")
+script = ExtResource("3_o7hfe")
+
+[node name="Area2D" type="Area2D" parent="second_item"]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="second_item/Area2D"]
+position = Vector2(10.4642, -13.8784)
+shape = SubResource("RectangleShape2D_vd6pw")
+
+[node name="third_item" type="Sprite2D" parent="."]
+position = Vector2(586.38, 2.07893)
+rotation = 2.48186
+scale = Vector2(0.184913, 0.184913)
+texture = ExtResource("2_o7hfe")
+script = ExtResource("3_o7hfe")
+
+[node name="Area2D" type="Area2D" parent="third_item"]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="third_item/Area2D"]
+position = Vector2(7.03918, 6.16846)
+shape = SubResource("RectangleShape2D_6nhiu")
+
+[connection signal="body_entered" from="first_item/Area2D" to="first_item" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="first_item/Area2D" to="first_item" method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="second_item/Area2D" to="second_item" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="second_item/Area2D" to="second_item" method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="third_item/Area2D" to="third_item" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="third_item/Area2D" to="third_item" method="_on_area_2d_body_exited"]
