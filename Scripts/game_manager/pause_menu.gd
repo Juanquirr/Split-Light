@@ -1,5 +1,20 @@
 extends Control
 
+@onready var confirm_quit_screen: Control = $ConfirmQuitScreen
+@onready var confirm_restart_screen: Control = $ConfirmRestartScreen
+@onready var input_settings_screen: Control = $InputSettings
+@onready var main_pause_screen: VBoxContainer = $VBoxContainer
+@onready var main_pause_bg: ColorRect = $ColorRect
+@onready var pause_black_bg: ColorRect = $Black
+
+func _reset_state():
+	self.confirm_quit_screen.visible = false
+	self.confirm_restart_screen.visible = false
+	self.input_settings_screen.visible = false
+	self.pause_black_bg.visible = false
+	self.main_pause_screen.visible = true
+	self.main_pause_bg.visible = true
+
 func _input(event):
 	if event.is_action_pressed("pause"):
 		if not visible:
@@ -23,12 +38,5 @@ func pause():
 
 func unpause():
 	visible = false
+	self._reset_state()
 	get_tree().paused = false
-	
-func restart():
-	unpause()
-	SceneManager.change_to_scene(SceneManager.GameScenes.LEVEL_1)
-
-func exit_game():
-	unpause()
-	SceneManager.change_to_scene(SceneManager.GameScenes.MAIN_MENU)
