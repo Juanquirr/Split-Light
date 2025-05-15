@@ -8,6 +8,10 @@ func _ready() -> void:
 @rpc("any_peer", "call_remote")
 func finish_level():
 	emit_signal("level_end")
+	var is_host_or_singleplayer := (MultiplayerManager.IS_MULTIPLAYER and MultiplayerManager.IS_HOST) or not MultiplayerManager.IS_MULTIPLAYER;
+	if is_host_or_singleplayer:
+		AudioManagerInstance.create_audio(SoundEffect.SOUND_EFFECT_TYPE.ON_DOOR_OPEN)
+	
 	SceneManager.change_to_scene(self.target_scene)
 	
 func _process(_delta):
