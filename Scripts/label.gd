@@ -23,7 +23,7 @@ func separed_digit(numero: int) -> Array:
 
 func to_roman(number):
 	if number == 0:
-		return "N"  # Los romanos usaban "nulla" o "N" para representar cero
+		return "N"
 
 	var roman_numerals = [
 		[900, "CM"], [500, "D"], [400, "CD"], [100, "C"],

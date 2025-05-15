@@ -1260,10 +1260,14 @@ horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("4_0kjcb")
 
-[node name="LockScreen" parent="CodeLabel/Label" instance=ExtResource("5_0kjcb")]
-offset_left = -688.0
-offset_top = -288.0
-offset_right = -648.0
-offset_bottom = -248.0
-
 [node name="Camera2D" type="Camera2D" parent="CodeLabel/Label"]
+
+[node name="LockScreen" parent="CodeLabel/Label" instance=ExtResource("5_0kjcb")]
+layout_mode = 1
+offset_left = -1928.0
+offset_top = 24.0
+offset_right = -1888.0
+offset_bottom = 64.0
+
+[node name="Camera2D" type="Camera2D" parent="CodeLabel/Label/LockScreen"]
+position = Vector2(8, 8)
