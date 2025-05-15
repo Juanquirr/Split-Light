@@ -11,6 +11,7 @@ enum SOUND_EFFECT_TYPE {
 	ON_BOOK_OPEN,
 	ON_BOOK_CLOSE,
 	ON_ABOT_JUMP,
+	ON_TASK_COMPLETE_1
 }
 
 @export_range(0, 10) var limit: int = 5 ## Maximum number of this SoundEffect to play simultaneously before culled.

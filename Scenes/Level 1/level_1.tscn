@@ -1468,6 +1468,7 @@ script = ExtResource("22_gcla0")
 
 [node name="PauseMenu" parent="." instance=ExtResource("18_pjppf")]
 visible = false
+z_index = 99
 layout_mode = 1
 
 [node name="Continue" parent="PauseMenu/VBoxContainer" index="1"]
