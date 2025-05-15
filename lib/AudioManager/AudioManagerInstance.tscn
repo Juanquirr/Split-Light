@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://bo8axprub1pdg"]
+[gd_scene load_steps=26 format=3 uid="uid://bo8axprub1pdg"]
 
 [ext_resource type="Script" uid="uid://bxuhmuh7ux44m" path="res://lib/AudioManager/AudioManager.gd" id="1_oarm3"]
 [ext_resource type="Script" uid="uid://ca5hvco441wld" path="res://lib/AudioManager/SoundEffectSetting.gd" id="2_nmrk3"]
@@ -13,7 +13,10 @@
 [ext_resource type="AudioStream" uid="uid://7cvpjkewen6j" path="res://Assets/Sounds/Effects/book/book_close.mp3" id="7_tm5vn"]
 [ext_resource type="AudioStream" uid="uid://cc3e7krs61ssm" path="res://Assets/Sounds/Effects/step/stone5.ogg" id="7_xu5v1"]
 [ext_resource type="AudioStream" uid="uid://bacyf5ssu4pat" path="res://Assets/Sounds/Effects/step/stone6.ogg" id="8_kyfub"]
+[ext_resource type="AudioStream" uid="uid://bkfwys6d3xej2" path="res://Assets/Sounds/Effects/jump/abot_jump.mp3" id="8_onbiv"]
 [ext_resource type="AudioStream" uid="uid://dlk0ydgiufjkr" path="res://Assets/Sounds/Effects/portal/teleport.mp3" id="9_osqjv"]
+[ext_resource type="AudioStream" uid="uid://1hh7jjsemydj" path="res://Assets/Sounds/Effects/jump/reverend_jump1.mp3" id="15_rbitm"]
+[ext_resource type="AudioStream" uid="uid://d2obcapviaaoe" path="res://Assets/Sounds/Effects/jump/reverend_jump2.mp3" id="16_onbiv"]
 
 [sub_resource type="Resource" id="Resource_xu5v1"]
 script = ExtResource("2_nmrk3")
@@ -65,6 +68,16 @@ pitch_scale = 1.0
 pitch_randomness = 0.25
 metadata/_custom_type_script = "uid://ca5hvco441wld"
 
+[sub_resource type="Resource" id="Resource_ltw0k"]
+script = ExtResource("2_nmrk3")
+limit = 1
+type = 5
+sound_effect = ExtResource("8_onbiv")
+volume = -7.0
+pitch_scale = 1.0
+pitch_randomness = 0.1
+metadata/_custom_type_script = "uid://ca5hvco441wld"
+
 [sub_resource type="Resource" id="Resource_rvts4"]
 script = ExtResource("3_p3c4e")
 limit = 1
@@ -75,7 +88,17 @@ pitch_scale = 0.9
 pitch_randomness = 0.0
 metadata/_custom_type_script = "uid://dectxygt7wgxb"
 
+[sub_resource type="Resource" id="Resource_rbitm"]
+script = ExtResource("3_p3c4e")
+limit = 1
+type = 1
+sound_variants = Array[AudioStream]([ExtResource("15_rbitm"), ExtResource("16_onbiv")])
+volume = -5.0
+pitch_scale = 1.1
+pitch_randomness = 0.05
+metadata/_custom_type_script = "uid://dectxygt7wgxb"
+
 [node name="AudioManagerInstance" type="Node2D"]
 script = ExtResource("1_oarm3")
-sound_effects = Array[ExtResource("2_nmrk3")]([SubResource("Resource_xu5v1"), SubResource("Resource_kyfub"), SubResource("Resource_mqulx"), SubResource("Resource_tm5vn"), SubResource("Resource_3ujss")])
-variant_sound_effects = Array[ExtResource("3_p3c4e")]([SubResource("Resource_rvts4")])
+sound_effects = Array[ExtResource("2_nmrk3")]([SubResource("Resource_xu5v1"), SubResource("Resource_kyfub"), SubResource("Resource_mqulx"), SubResource("Resource_tm5vn"), SubResource("Resource_3ujss"), SubResource("Resource_ltw0k")])
+variant_sound_effects = Array[ExtResource("3_p3c4e")]([SubResource("Resource_rvts4"), SubResource("Resource_rbitm")])
