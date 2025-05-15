@@ -1,4 +1,4 @@
-[gd_scene load_steps=1079 format=3 uid="uid://dknywhhef7a6o"]
+[gd_scene load_steps=1080 format=3 uid="uid://dknywhhef7a6o"]
 
 [ext_resource type="Texture2D" uid="uid://c5h4m4bq3kpuy" path="res://Assets/MainMenu/starry-background.png" id="1_c6u4o"]
 [ext_resource type="Script" uid="uid://4r6h7iwnoow6" path="res://Scripts/level_menu/load_selection_menu.gd" id="1_vftvl"]
@@ -14,6 +14,7 @@
 [ext_resource type="Script" uid="uid://cxmhvt57mc6iy" path="res://Scripts/Components/managers/level_loader_controller.gd" id="9_vftvl"]
 [ext_resource type="Texture2D" uid="uid://ksymtls3rnfl" path="res://Assets/Common/ButtonHover.png" id="10_4yviu"]
 [ext_resource type="Script" uid="uid://klwselc2jsa4" path="res://Scripts/main_menu/back_button.gd" id="11_m4w1s"]
+[ext_resource type="Script" uid="uid://cgldigwjbe718" path="res://Scripts/planet_available.gd" id="12_8fj52"]
 [ext_resource type="Texture2D" uid="uid://b6a8ndqcek1o7" path="res://Assets/RenderedPlanets/RedGalaxy.png" id="12_xt3q6"]
 [ext_resource type="Texture2D" uid="uid://bf0yyj3vj55rs" path="res://Assets/RenderedPlanets/WhiteGalaxy.png" id="13_us2ug"]
 [ext_resource type="Texture2D" uid="uid://b6r4kt8bwnbd1" path="res://Assets/MainMenu/logo underline.png" id="14_7k58x"]
@@ -7754,9 +7755,7 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="EarthPlanet" type="AnimatedSprite2D" parent="Level2"]
-visible = false
-modulate = Color(0.158472, 0.158472, 0.158472, 1)
+[node name="EarthPlanet" type="AnimatedSprite2D" parent="Level2" node_paths=PackedStringArray("level_button")]
 texture_filter = 1
 texture_repeat = 3
 position = Vector2(253, 551)
@@ -7765,6 +7764,9 @@ scale = Vector2(1.6, 1.6)
 sprite_frames = SubResource("SpriteFrames_wt5eh")
 autoplay = "default"
 frame_progress = 0.769041
+script = ExtResource("12_8fj52")
+prevent_level = "level_1"
+level_button = NodePath("../Level2Button")
 
 [node name="Hover info box" type="Control" parent="Level2"]
 layout_mode = 3
@@ -7786,7 +7788,7 @@ color = Color(0.133333, 0.133333, 0.133333, 0.419608)
 texture_filter = 1
 layout_mode = 0
 offset_left = 93.0
-offset_top = 82.0
+offset_top = 63.0
 offset_right = 247.0
 offset_bottom = 200.0
 bbcode_enabled = true
@@ -7796,9 +7798,10 @@ A populated planet full of different kinds of creatures and lifeforms.
 [/color][/center][/font][/font_size]"
 scroll_active = false
 horizontal_alignment = 1
+script = ExtResource("9_ir6ig")
+save_level_name = "level_2"
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="Level2/Hover info box"]
-visible = false
 layout_mode = 0
 offset_left = 143.0
 offset_top = 244.0
@@ -7819,7 +7822,7 @@ offset_bottom = 602.0
 mouse_default_cursor_shape = 2
 script = ExtResource("9_vftvl")
 planet_info_box = NodePath("../Hover info box")
-level_active = false
+target_scene = 5
 
 [node name="Level3" type="Control" parent="."]
 anchors_preset = 0

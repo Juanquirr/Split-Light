@@ -13,4 +13,5 @@ func _ready() -> void:
 	self.bbcode_enabled = true
 	var completed = SaveLoadManager.is_level_completed(save_level_name)
 	var bbtext = self._get_complete_status_text(completed)
-	self.text += bbtext_template % bbtext
+	self.text += bbtext_template % bbtext 
+	
