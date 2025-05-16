@@ -12,6 +12,7 @@ collision_mask = 3
 script = ExtResource("1_fmc0o")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(6, 6)
 shape = SubResource("RectangleShape2D_2ympu")
 
 [node name="Slot1" type="Control" parent="."]
