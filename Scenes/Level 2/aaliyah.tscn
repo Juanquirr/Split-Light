@@ -234,6 +234,7 @@ shape = SubResource("RectangleShape2D_s4j3i")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 visibility_layer = 0
+limit_smoothed = true
 
 [node name="Inventory" parent="." instance=ExtResource("5_qfknq")]
 position = Vector2(0, -1)

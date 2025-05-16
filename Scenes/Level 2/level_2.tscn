@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=4 uid="uid://b8ea5kw5sm13v"]
+[gd_scene load_steps=43 format=4 uid="uid://b8ea5kw5sm13v"]
 
 [ext_resource type="PackedScene" uid="uid://c4e6wyfc51ig8" path="res://Scenes/Components/wood_bridge/wood_bridge.tscn" id="1_aqquj"]
 [ext_resource type="Texture2D" uid="uid://dmqx5y6ygd6v8" path="res://Assets/Level 2/asset_forest.png" id="1_xqi6i"]
@@ -27,6 +27,8 @@
 [ext_resource type="PackedScene" uid="uid://3kej1w4j6pkr" path="res://Scenes/abot.tscn" id="20_q8w0c"]
 [ext_resource type="PackedScene" uid="uid://byfig72cx8tsq" path="res://Scenes/Components/player_switch_manager/player_switch_manager.tscn" id="21_e55te"]
 [ext_resource type="Script" uid="uid://di2pivw6nfplu" path="res://Scripts/Level 2/player_switch_manager.gd" id="22_0w14c"]
+[ext_resource type="Script" uid="uid://k6ffexa6disc" path="res://Scripts/space_ship.gd" id="28_ins2x"]
+[ext_resource type="Texture2D" uid="uid://dsjnwx3rhqrxs" path="res://Assets/Level 2/Spaceship.png" id="28_kdihc"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_xqi6i"]
 
@@ -1840,6 +1842,9 @@ sources/1 = SubResource("TileSetAtlasSource_52e5h")
 
 [sub_resource type="TileSet" id="TileSet_fkuja"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ins2x"]
+size = Vector2(504.11, 301.849)
+
 [node name="PlaygroundEarth" type="Node2D"]
 
 [node name="Background" type="TileMapLayer" parent="."]
@@ -2274,12 +2279,16 @@ script = ExtResource("4_0kjcb")
 
 [node name="LockScreen" parent="CodeLabel/Label" instance=ExtResource("5_0kjcb")]
 layout_mode = 1
-offset_left = -1912.0
-offset_top = 0.0
-offset_right = -1872.0
-offset_bottom = 40.0
+offset_left = -3152.0
+offset_top = 480.0
+offset_right = -3112.0
+offset_bottom = 520.0
+
+[node name="Camera2D" type="Camera2D" parent="CodeLabel/Label/LockScreen"]
+position = Vector2(16, 0)
 
 [node name="Camera2D" type="Camera2D" parent="CodeLabel/Label"]
+position = Vector2(-64, -8)
 
 [node name="Characters" type="TileMapLayer" parent="."]
 tile_set = SubResource("TileSet_fkuja")
@@ -2306,3 +2315,24 @@ scale = Vector2(0.453789, 0.453789)
 z_index = 2
 position = Vector2(-3204.13, 855.023)
 scale = Vector2(2.20367, 2.20367)
+
+[node name="SpaceShip" type="TileMapLayer" parent="."]
+
+[node name="Area2D" type="Area2D" parent="SpaceShip"]
+position = Vector2(904, 1400)
+scale = Vector2(0.365, 0.365)
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("28_ins2x")
+
+[node name="SpaceShip" type="Sprite2D" parent="SpaceShip/Area2D"]
+position = Vector2(-0.000334439, 0)
+scale = Vector2(1, 1)
+texture = ExtResource("28_kdihc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpaceShip/Area2D"]
+position = Vector2(32.8767, -221.678)
+shape = SubResource("RectangleShape2D_ins2x")
+
+[connection signal="body_entered" from="SpaceShip/Area2D" to="SpaceShip/Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="SpaceShip/Area2D" to="SpaceShip/Area2D" method="_on_body_exited"]
