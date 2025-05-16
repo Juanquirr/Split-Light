@@ -1,6 +1,5 @@
 extends Node2D
 
-
 var activable_item : SwitchInteractiveInterface
 var players_inside: Array[PlayerInstance] = []
 var active := false

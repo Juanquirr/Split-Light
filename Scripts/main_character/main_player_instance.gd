@@ -12,6 +12,12 @@ func _ready() -> void:
 	
 	configure_multiplayer()
 	
+func _process_jump() -> bool:
+	var processed = super._process_jump()
+	if not processed: return false
+	AudioManagerInstance.create_audio(SoundEffect.SOUND_EFFECT_TYPE.ON_ABOT_JUMP)
+	return true
+	
 func sound_process_level1():
 	
 	is_on_wood = false
@@ -26,7 +32,7 @@ func sound_process_level1():
 		else:
 			AudioManagerInstance.create_variant_audio(VariantSoundEffect.VARIANT_SOUND_EFFECT_TYPE.ON_WOOD_WALK)
 
-func sound_process() -> void:
+func sound_process() -> void:	
 	match self._current_scene_name:
 		"level_1":
 			sound_process_level1()

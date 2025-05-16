@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://sckje2kscadd"]
+
+[ext_resource type="Script" uid="uid://dlilr6bbdjd0r" path="res://Scripts/Components/rotation_puzzle/rotation_puzzle_random_solution.gd" id="1_b8fk8"]
+[ext_resource type="Texture2D" uid="uid://cfloppklfc234" path="res://Assets/Level 2/arrow_bow.png" id="1_fdwms"]
+[ext_resource type="PackedScene" uid="uid://6tocuqnbi43y" path="res://Scenes/Components/rotation_puzzle/rotation_puzzle.tscn" id="1_pcy07"]
+[ext_resource type="Script" uid="uid://ew85tk2ri4ac" path="res://Scripts/Components/rotation_puzzle/rotation_puzzle_random_solution_item.gd" id="3_b8fk8"]
+
+[node name="RotationPuzzleRandomSolution" type="Node2D"]
+script = ExtResource("1_b8fk8")
+
+[node name="first_item_solution" type="Sprite2D" parent="."]
+z_index = 2
+position = Vector2(0, 3)
+rotation = 2.48186
+scale = Vector2(0.209478, 0.209478)
+texture = ExtResource("1_fdwms")
+script = ExtResource("3_b8fk8")
+
+[node name="second_item_solution" type="Sprite2D" parent="."]
+z_index = 2
+position = Vector2(312.126, 2.04319)
+rotation = 2.48186
+scale = Vector2(0.232932, 0.232932)
+texture = ExtResource("1_fdwms")
+script = ExtResource("3_b8fk8")
+
+[node name="third_item_solution" type="Sprite2D" parent="."]
+z_index = 2
+position = Vector2(584.585, -0.485752)
+rotation = 2.48186
+scale = Vector2(0.200121, 0.200121)
+texture = ExtResource("1_fdwms")
+script = ExtResource("3_b8fk8")
+
+[node name="RotationPuzzle" parent="." instance=ExtResource("1_pcy07")]
+position = Vector2(0, 228)

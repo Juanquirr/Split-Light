@@ -12,6 +12,12 @@ func _ready() -> void:
 	configure_multiplayer()
 	configure_as_client()
 	
+func _process_jump() -> bool:
+	var processed = super._process_jump()
+	if not processed: return false
+	AudioManagerInstance.create_variant_audio(VariantSoundEffect.VARIANT_SOUND_EFFECT_TYPE.ON_REVEREND_JUMP)
+	return true
+	
 func sound_process() -> void:
 	
 	is_on_wood = false

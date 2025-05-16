@@ -175,7 +175,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s4j3i"]
-size = Vector2(114, 184)
+size = Vector2(32, 36)
 
 [sub_resource type="Gradient" id="Gradient_os74a"]
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
@@ -215,13 +215,11 @@ animated_sprite = NodePath("Movement")
 [node name="Movement" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_os74a")
-position = Vector2(0, 2)
-scale = Vector2(6.27618, 6.27618)
 sprite_frames = SubResource("SpriteFrames_k46vw")
 animation = &"reverend_idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-7, 11)
+position = Vector2(0, -2)
 shape = SubResource("RectangleShape2D_s4j3i")
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -231,8 +229,8 @@ limit_bottom = 0
 [node name="Inventory" parent="." instance=ExtResource("13_0kjde")]
 
 [node name="PointLight2D2" type="PointLight2D" parent="."]
-position = Vector2(3, 3)
-scale = Vector2(8.50196, 8.50196)
+position = Vector2(-4.76837e-07, -7.15256e-07)
+scale = Vector2(1.625, 1.625)
 color = Color(0.937241, 4.52429e-06, 0.572678, 1)
 texture = SubResource("GradientTexture2D_os74a")
 

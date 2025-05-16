@@ -21,6 +21,7 @@ class KeyPerspectiveManager extends PlayerPerspectiveManagerInterface:
 var interaction_manager: KeyPerspectiveManager
 var is_taken = false
 var can_be_taken = true
+var _first_visible_time := false
 var level_visibility_enabled = true
 var player_visibility_enabled = true
 var inventory_item: BaseInventoryItem
@@ -59,6 +60,11 @@ func make_visible():
 	if self.level_visibility_enabled && self.player_visibility_enabled && not self.is_taken:
 		self.visible = true
 		self.collision_layer = 1
+		
+		if not _first_visible_time:
+			AudioManagerInstance.create_audio(SoundEffect.SOUND_EFFECT_TYPE.ON_TASK_COMPLETE_1)
+			self._first_visible_time = true
+	
 	elif self.is_taken && self.visible:
 		self.visible = false
 
