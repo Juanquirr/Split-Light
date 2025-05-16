@@ -3,7 +3,6 @@ extends Node
 const SAVE_PATH = "user://save_game.dat"
 
 var levels: Dictionary = {}
-
 var game_data: Dictionary = {
 	"InputMap": {},
 	"levels": {},
@@ -50,6 +49,9 @@ func load_game_data() -> void:
 	
 	if game_data.has("levels"):
 		levels = game_data["levels"]
+	
+	if game_data.has("time"):
+		game_data["time"] = game_data["time"]
 	
 	if not game_data.has("InputMap"): return
 	
@@ -112,4 +114,46 @@ func on_level_completed(level_name: String) -> void:
 	store_game_data()
 
 func is_level_completed(level_name: String) -> bool:
-	return levels.get(level_name, false) 
+	return levels.get(level_name, false)
+
+func save_level_time(level_name: String, time_string: String):
+	if not is_valid_time_format(time_string):
+		push_error("Invalid time format: ", time_string, ". Expected mm:ss:ms")
+		return false
+	
+	var current_time = game_data["time"].get(level_name, "99:99:99")
+	if compare_times(time_string, current_time) > 0:
+		game_data["time"][level_name] = time_string
+		store_game_data()
+		print("true")
+		return true
+	return false
+
+func get_level_time(level_name: String):
+	return game_data["time"].get(level_name, "99:99:99")
+
+func is_valid_time_format(time_string: String) -> bool:
+	var regex = RegEx.new()
+	regex.compile("^\\d{2}:\\d{2}:\\d{2}$")
+	return regex.search(time_string) != null
+
+func compare_times(time1: String, time2: String) -> int:
+	var t1_parts = time1.split(":")
+	var t2_parts = time2.split(":")
+	
+	var t1_minutes = int(t1_parts[0])
+	var t1_seconds = int(t1_parts[1])
+	var t1_milliseconds = int(t1_parts[2]) * 10
+	
+	var t2_minutes = int(t2_parts[0])
+	var t2_seconds = int(t2_parts[1])
+	var t2_milliseconds = int(t2_parts[2]) * 10
+	
+	var t1_total_ms = t1_minutes * 60000 + t1_seconds * 1000 + t1_milliseconds
+	var t2_total_ms = t2_minutes * 60000 + t2_seconds * 1000 + t2_milliseconds
+	
+	if t1_total_ms < t2_total_ms:
+		return true
+	elif t1_total_ms > t2_total_ms:
+		return false
+	return false
