@@ -4,8 +4,8 @@ var activable_item : SwitchInteractiveInterface
 var players_inside: Array[PlayerInstance] = []
 var active := false
 func _ready() -> void:
-	if get_child_count() > 3:
-		activable_item = get_child(3)
+	if get_child_count() > 4:
+		activable_item = get_child(4)
 
 func _process(_delta):
 	if not Input.is_action_just_pressed("Interact"): return
@@ -31,6 +31,7 @@ func desactivate():
 	activable_item.desactive()
 
 
+	
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if is_instance_of(body, PlayerInstance):
 		players_inside.append(body)
