@@ -1532,12 +1532,18 @@ z_index = 2
 position = Vector2(617, 175)
 scale = Vector2(6, 6)
 
+[node name="Inventory" parent="Characters/Player1" index="3"]
+scale = Vector2(0.166, 0.166)
+
 [node name="Player2" parent="Characters" instance=ExtResource("9_ts4pv")]
 z_index = 2
 position = Vector2(803, 176)
 scale = Vector2(6, 6)
 JUMP_VELOCITY = -300
 GRAVITY = 1000
+
+[node name="Inventory" parent="Characters/Player2" index="3"]
+scale = Vector2(0.166, 0.166)
 
 [node name="PlayerSwitchManager" parent="Characters" instance=ExtResource("11_af3po")]
 script = ExtResource("11_1fal7")
@@ -1650,6 +1656,10 @@ visible = true
 [connection signal="level_end" from="Mechanisms/ExitDoor" to="Mechanisms/TimerLabel" method="set_remaining_time"]
 [connection signal="number_reached" from="Mechanisms/Count" to="." method="_count_number_reached"]
 
+[editable path="Characters/Player1"]
+[editable path="Characters/Player1/Inventory"]
+[editable path="Characters/Player2"]
+[editable path="Characters/Player2/Inventory"]
 [editable path="Mechanisms/Teleporter_left"]
 [editable path="Mechanisms/Teleporter_right"]
 [editable path="Mechanisms/key"]
