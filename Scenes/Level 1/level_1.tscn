@@ -1538,7 +1538,7 @@ scale = Vector2(0.166, 0.166)
 [node name="Player2" parent="Characters" instance=ExtResource("9_ts4pv")]
 z_index = 2
 position = Vector2(803, 176)
-scale = Vector2(6, 6)
+scale = Vector2(8, 8)
 JUMP_VELOCITY = -300
 GRAVITY = 1000
 
