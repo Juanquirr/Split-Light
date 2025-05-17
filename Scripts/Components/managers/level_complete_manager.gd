@@ -25,5 +25,6 @@ func complete_sound_manager():
 			AudioManagerInstance.create_audio(SoundEffect.SOUND_EFFECT_TYPE.ON_WIN_LEVEL_2)
 
 func _ready() -> void:
+	BackgroundAudioManagerInstance.stop_active_audio()
 	self.level_complete_text.text = TEXT_COMPLETE_TEMPLATE % str(level_number)
 	self.complete_sound_manager()

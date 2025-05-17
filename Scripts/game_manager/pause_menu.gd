@@ -14,6 +14,7 @@ func _reset_state():
 	self.pause_black_bg.visible = false
 	self.main_pause_screen.visible = true
 	self.main_pause_bg.visible = true
+	BackgroundAudioManagerInstance.resume_active_audio()
 
 func _input(event):
 	if event.is_action_pressed("pause"):
@@ -33,6 +34,7 @@ func show_pause_menu():
 		position = screen_center - Vector2(1572, 388)
 
 func pause():
+	BackgroundAudioManagerInstance.pause_active_audio()
 	get_tree().paused = true
 	visible = true
 

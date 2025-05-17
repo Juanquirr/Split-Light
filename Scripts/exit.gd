@@ -20,13 +20,14 @@ func _force_server_quit():
 
 func _on_confirm_quit_pressed() -> void:
 	PauseMenu.unpause()
+	BackgroundAudioManagerInstance.stop_active_audio()
 	
 	if MultiplayerManager.IS_MULTIPLAYER:
 		if MultiplayerManager.IS_CLIENT:
 			MultiplayerManager.disconnect_from_server()
 		elif MultiplayerManager.IS_HOST:
 			_force_server_quit.rpc_id(MultiplayerManager.CLIENT_ID)
-			await wait(0.25)
+			await wait(0.2)
 			MultiplayerManager.close_multiplayer()
 	
 	SceneManager.change_to_scene(SceneManager.GameScenes.MAIN_MENU)
