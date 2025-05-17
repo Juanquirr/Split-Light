@@ -18,7 +18,7 @@ func _process_jump() -> bool:
 	AudioManagerInstance.create_audio(SoundEffect.SOUND_EFFECT_TYPE.ON_ABOT_JUMP)
 	return true
 	
-func sound_process_level1():
+func sound_process_level2():
 	
 	is_on_wood = false
 	for i in get_slide_collision_count():
@@ -32,10 +32,18 @@ func sound_process_level1():
 		else:
 			AudioManagerInstance.create_variant_audio(VariantSoundEffect.VARIANT_SOUND_EFFECT_TYPE.ON_WOOD_WALK)
 
+func sound_process_level1():
+	if self.direction != 0 and is_on_floor():
+		AudioManagerInstance.create_variant_audio(VariantSoundEffect.VARIANT_SOUND_EFFECT_TYPE.ON_STONE_WALK)
+	
+
 func sound_process() -> void:	
 	match self._current_scene_name:
 		"level_1":
 			sound_process_level1()
+		"level_2":
+			sound_process_level2()
+	
 
 func animation_process() -> void:
 	if not is_on_floor():
