@@ -1538,7 +1538,7 @@ scale = Vector2(0.166, 0.166)
 [node name="Player2" parent="Characters" instance=ExtResource("9_ts4pv")]
 z_index = 2
 position = Vector2(803, 176)
-scale = Vector2(8, 8)
+scale = Vector2(6, 6)
 JUMP_VELOCITY = -300
 GRAVITY = 1000
 
@@ -1642,12 +1642,6 @@ z_index = 99
 [node name="Continue" parent="PauseMenu/VBoxContainer" index="1"]
 icon_alignment = 1
 text_direction = 1
-
-[node name="ConfirmRestartScreen" parent="PauseMenu" index="4"]
-visible = true
-
-[node name="InputSettings" parent="PauseMenu" index="5"]
-visible = true
 
 [connection signal="teleported" from="Mechanisms/Teleporter_left" to="." method="_on_teleported_left"]
 [connection signal="teleported" from="Mechanisms/Teleporter_right" to="." method="_on_teleported_right"]

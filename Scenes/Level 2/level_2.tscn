@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=4 uid="uid://b8ea5kw5sm13v"]
+[gd_scene load_steps=39 format=4 uid="uid://b8ea5kw5sm13v"]
 
 [ext_resource type="PackedScene" uid="uid://c4e6wyfc51ig8" path="res://Scenes/Components/wood_bridge/wood_bridge.tscn" id="1_aqquj"]
 [ext_resource type="Texture2D" uid="uid://dmqx5y6ygd6v8" path="res://Assets/Level 2/asset_forest.png" id="1_xqi6i"]
@@ -26,6 +26,7 @@
 [ext_resource type="Script" uid="uid://di2pivw6nfplu" path="res://Scripts/Level 2/player_switch_manager.gd" id="22_0w14c"]
 [ext_resource type="PackedScene" uid="uid://sckje2kscadd" path="res://Scenes/Components/rotation_puzzle/rotation_puzzle_random_solution.tscn" id="26_4dy1a"]
 [ext_resource type="PackedScene" uid="uid://b6x3h25wyurd2" path="res://Scenes/Components/stalactite/stalactite.tscn" id="26_ins2x"]
+[ext_resource type="PackedScene" uid="uid://cpv8jgrj32l7s" path="res://Scenes/pause_menu.tscn" id="27_qie7t"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_xqi6i"]
 
@@ -3987,9 +3988,18 @@ position = Vector2(2847, 1698)
 rotation = 2.61799
 scale = Vector2(0.468466, 0.481464)
 
+[node name="PauseMenu" parent="." instance=ExtResource("27_qie7t")]
+visible = false
+z_index = 99
+
+[node name="Continue" parent="PauseMenu/VBoxContainer" index="1"]
+icon_alignment = 1
+text_direction = 1
+
 [editable path="Decoration/decoration2/stalactite4"]
 [editable path="Decoration/decoration2/stalactite9"]
 [editable path="Characters/Player1"]
 [editable path="Characters/Player2"]
 [editable path="Scenes/RotationPuzzleRandomSolution"]
 [editable path="Scenes/RotationPuzzleRandomSolution/RotationPuzzle"]
+[editable path="PauseMenu"]
