@@ -226,7 +226,6 @@ animated_sprite = NodePath("Movement")
 [node name="Movement" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_jkush")
-scale = Vector2(1, 1)
 sprite_frames = SubResource("SpriteFrames_k46vw")
 animation = &"aaliyah_jump"
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://bo8axprub1pdg"]
+[gd_scene load_steps=37 format=3 uid="uid://bo8axprub1pdg"]
 
 [ext_resource type="Script" uid="uid://bxuhmuh7ux44m" path="res://lib/AudioManager/AudioManager.gd" id="1_oarm3"]
 [ext_resource type="Script" uid="uid://ca5hvco441wld" path="res://lib/AudioManager/SoundEffectSetting.gd" id="2_nmrk3"]
@@ -9,11 +9,22 @@
 [ext_resource type="AudioStream" uid="uid://cafgfcghmyi28" path="res://Assets/Sounds/Effects/step/stone2.ogg" id="4_p3c4e"]
 [ext_resource type="AudioStream" uid="uid://0mumrlqoasg2" path="res://Assets/Sounds/Effects/step/stone3.ogg" id="5_nmrk3"]
 [ext_resource type="AudioStream" uid="uid://b8tgum1olntnj" path="res://Assets/Sounds/Effects/step/stone4.ogg" id="6_kh1q1"]
-[ext_resource type="AudioStream" uid="uid://c8uoded2xpfn2" path="res://Assets/Sounds/Effects/book/book_open.mp3" id="6_kyfub"]
-[ext_resource type="AudioStream" uid="uid://7cvpjkewen6j" path="res://Assets/Sounds/Effects/book/book_close.mp3" id="7_tm5vn"]
+[ext_resource type="AudioStream" uid="uid://cnexqbfv10p7k" path="res://Assets/Sounds/Effects/book/book_open.mp3" id="6_kyfub"]
+[ext_resource type="AudioStream" uid="uid://blhulhr3jxdl" path="res://Assets/Sounds/Effects/book/book_close.mp3" id="7_tm5vn"]
 [ext_resource type="AudioStream" uid="uid://cc3e7krs61ssm" path="res://Assets/Sounds/Effects/step/stone5.ogg" id="7_xu5v1"]
 [ext_resource type="AudioStream" uid="uid://bacyf5ssu4pat" path="res://Assets/Sounds/Effects/step/stone6.ogg" id="8_kyfub"]
+[ext_resource type="AudioStream" uid="uid://bkfwys6d3xej2" path="res://Assets/Sounds/Effects/jump/abot_jump.mp3" id="8_onbiv"]
+[ext_resource type="AudioStream" uid="uid://bbpqrrlggmb2j" path="res://Assets/Sounds/Effects/finish/task_complete_1.mp3" id="9_ltw0k"]
 [ext_resource type="AudioStream" uid="uid://dlk0ydgiufjkr" path="res://Assets/Sounds/Effects/portal/teleport.mp3" id="9_osqjv"]
+[ext_resource type="AudioStream" uid="uid://ieu5kg4i57oc" path="res://Assets/Sounds/Effects/furniture/door_open.mp3" id="10_q8vuj"]
+[ext_resource type="AudioStream" uid="uid://bam8od1yscimu" path="res://Assets/Sounds/Effects/step/wood1.ogg" id="13_ltw0k"]
+[ext_resource type="AudioStream" uid="uid://baikpb7dt1qbu" path="res://Assets/Sounds/Effects/step/wood2.ogg" id="14_q8vuj"]
+[ext_resource type="AudioStream" uid="uid://1hh7jjsemydj" path="res://Assets/Sounds/Effects/jump/reverend_jump1.mp3" id="15_rbitm"]
+[ext_resource type="AudioStream" uid="uid://dsngd6b6xw7gm" path="res://Assets/Sounds/Effects/step/wood3.ogg" id="15_vwnaf"]
+[ext_resource type="AudioStream" uid="uid://bp88yxf5c6a2y" path="res://Assets/Sounds/Effects/step/wood4.ogg" id="16_d47pa"]
+[ext_resource type="AudioStream" uid="uid://d2obcapviaaoe" path="res://Assets/Sounds/Effects/jump/reverend_jump2.mp3" id="16_onbiv"]
+[ext_resource type="AudioStream" uid="uid://do1c7htutdwcd" path="res://Assets/Sounds/Effects/step/wood5.ogg" id="17_qnfrp"]
+[ext_resource type="AudioStream" uid="uid://dy2y0gorp0gba" path="res://Assets/Sounds/Effects/step/wood6.ogg" id="18_ib634"]
 
 [sub_resource type="Resource" id="Resource_xu5v1"]
 script = ExtResource("2_nmrk3")
@@ -65,6 +76,36 @@ pitch_scale = 1.0
 pitch_randomness = 0.25
 metadata/_custom_type_script = "uid://ca5hvco441wld"
 
+[sub_resource type="Resource" id="Resource_ltw0k"]
+script = ExtResource("2_nmrk3")
+limit = 1
+type = 5
+sound_effect = ExtResource("8_onbiv")
+volume = -7.0
+pitch_scale = 1.0
+pitch_randomness = 0.1
+metadata/_custom_type_script = "uid://ca5hvco441wld"
+
+[sub_resource type="Resource" id="Resource_q8vuj"]
+script = ExtResource("2_nmrk3")
+limit = 1
+type = 6
+sound_effect = ExtResource("9_ltw0k")
+volume = -4.0
+pitch_scale = 1.0
+pitch_randomness = 0.0
+metadata/_custom_type_script = "uid://ca5hvco441wld"
+
+[sub_resource type="Resource" id="Resource_vwnaf"]
+script = ExtResource("2_nmrk3")
+limit = 1
+type = 7
+sound_effect = ExtResource("10_q8vuj")
+volume = -4.0
+pitch_scale = 1.0
+pitch_randomness = 0.0
+metadata/_custom_type_script = "uid://ca5hvco441wld"
+
 [sub_resource type="Resource" id="Resource_rvts4"]
 script = ExtResource("3_p3c4e")
 limit = 1
@@ -75,7 +116,26 @@ pitch_scale = 0.9
 pitch_randomness = 0.0
 metadata/_custom_type_script = "uid://dectxygt7wgxb"
 
+[sub_resource type="Resource" id="Resource_iujpo"]
+script = ExtResource("3_p3c4e")
+limit = 1
+type = 1
+sound_variants = Array[AudioStream]([ExtResource("13_ltw0k"), ExtResource("14_q8vuj"), ExtResource("15_vwnaf"), ExtResource("16_d47pa"), ExtResource("17_qnfrp"), ExtResource("18_ib634")])
+volume = -6.0
+pitch_scale = 1.0
+pitch_randomness = 0.0
+
+[sub_resource type="Resource" id="Resource_rbitm"]
+script = ExtResource("3_p3c4e")
+limit = 1
+type = 2
+sound_variants = Array[AudioStream]([ExtResource("15_rbitm"), ExtResource("16_onbiv")])
+volume = -5.0
+pitch_scale = 1.1
+pitch_randomness = 0.05
+metadata/_custom_type_script = "uid://dectxygt7wgxb"
+
 [node name="AudioManagerInstance" type="Node2D"]
 script = ExtResource("1_oarm3")
-sound_effects = Array[ExtResource("2_nmrk3")]([SubResource("Resource_xu5v1"), SubResource("Resource_kyfub"), SubResource("Resource_mqulx"), SubResource("Resource_tm5vn"), SubResource("Resource_3ujss")])
-variant_sound_effects = Array[ExtResource("3_p3c4e")]([SubResource("Resource_rvts4")])
+sound_effects = Array[ExtResource("2_nmrk3")]([SubResource("Resource_xu5v1"), SubResource("Resource_kyfub"), SubResource("Resource_mqulx"), SubResource("Resource_tm5vn"), SubResource("Resource_3ujss"), SubResource("Resource_ltw0k"), SubResource("Resource_q8vuj"), SubResource("Resource_vwnaf")])
+variant_sound_effects = Array[ExtResource("3_p3c4e")]([SubResource("Resource_rvts4"), SubResource("Resource_iujpo"), SubResource("Resource_rbitm")])

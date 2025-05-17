@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://cpy8kkqmvbjyw"]
+[gd_scene load_steps=6 format=3 uid="uid://cpy8kkqmvbjyw"]
 
 [ext_resource type="Script" uid="uid://dwop5eq2pq8jq" path="res://Scripts/lever/lever.gd" id="1_o3afr"]
 [ext_resource type="Texture2D" uid="uid://dn0q1jqoofjcx" path="res://Assets/Level 2/LeverLeft.png" id="2_dkjg2"]
-[ext_resource type="Texture2D" uid="uid://dbkyjpfb6m5qi" path="res://Assets/Level 2/LeverRight.png" id="3_4xeg6"]
+[ext_resource type="Texture2D" uid="uid://bnb2dvmq3uiuk" path="res://Assets/Level 2/Lever_Right.png" id="3_jqeyo"]
+[ext_resource type="Texture2D" uid="uid://b5b68dna47ble" path="res://Assets/Level 2/Base_lever.png" id="4_4xeg6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dkjg2"]
 size = Vector2(98, 87)
@@ -11,15 +12,20 @@ size = Vector2(98, 87)
 script = ExtResource("1_o3afr")
 
 [node name="active_sprite" type="Sprite2D" parent="."]
-position = Vector2(-1, 2.00002)
+position = Vector2(-2, 2.00002)
 scale = Vector2(0.181818, 0.181818)
 texture = ExtResource("2_dkjg2")
 
 [node name="inactive_sprite" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(3.94881e-05, 1.57327)
+position = Vector2(-0.999999, 1.57575)
 scale = Vector2(0.181818, 0.181818)
-texture = ExtResource("3_4xeg6")
+texture = ExtResource("3_jqeyo")
+
+[node name="Base_lever" type="Sprite2D" parent="."]
+position = Vector2(-1.28125, -0.573537)
+scale = Vector2(0.208491, 0.210056)
+texture = ExtResource("4_4xeg6")
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 3
