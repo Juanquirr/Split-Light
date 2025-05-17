@@ -125,8 +125,8 @@ func save_level_time(level_name: String, time_string: String):
 	if compare_times(time_string, current_time) > 0:
 		game_data["time"][level_name] = time_string
 		store_game_data()
-		print("true")
 		return true
+		
 	return false
 
 func get_level_time(level_name: String):
