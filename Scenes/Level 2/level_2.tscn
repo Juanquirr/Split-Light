@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=4 uid="uid://b8ea5kw5sm13v"]
+[gd_scene load_steps=43 format=4 uid="uid://b7kchubr521cp"]
 
 [ext_resource type="PackedScene" uid="uid://c4e6wyfc51ig8" path="res://Scenes/Components/wood_bridge/wood_bridge.tscn" id="1_aqquj"]
 [ext_resource type="Texture2D" uid="uid://dmqx5y6ygd6v8" path="res://Assets/Level 2/asset_forest.png" id="1_xqi6i"]
@@ -2279,10 +2279,10 @@ script = ExtResource("4_0kjcb")
 
 [node name="LockScreen" parent="CodeLabel/Label" instance=ExtResource("5_0kjcb")]
 layout_mode = 1
-offset_left = -3152.0
-offset_top = 480.0
-offset_right = -3112.0
-offset_bottom = 520.0
+offset_left = -2120.0
+offset_top = -32.0
+offset_right = -2080.0
+offset_bottom = 8.0
 
 [node name="Camera2D" type="Camera2D" parent="CodeLabel/Label/LockScreen"]
 position = Vector2(16, 0)
@@ -2327,7 +2327,6 @@ script = ExtResource("28_ins2x")
 
 [node name="SpaceShip" type="Sprite2D" parent="SpaceShip/Area2D"]
 position = Vector2(-0.000334439, 0)
-scale = Vector2(1, 1)
 texture = ExtResource("28_kdihc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SpaceShip/Area2D"]
