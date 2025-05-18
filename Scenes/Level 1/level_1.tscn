@@ -1,7 +1,7 @@
 [gd_scene load_steps=196 format=4 uid="uid://b35e40yclrr4"]
 
 [ext_resource type="PackedScene" uid="uid://3kej1w4j6pkr" path="res://Scenes/abot.tscn" id="1_8ffim"]
-[ext_resource type="Script" uid="uid://vv6j32fqj70f" path="res://Scripts/level_1/level_1.gd" id="1_chwpn"]
+[ext_resource type="Script" uid="uid://vv6j32fqj70f" path="res://Scripts/Level 1/level_1.gd" id="1_chwpn"]
 [ext_resource type="Texture2D" uid="uid://cvi4ajts0emuj" path="res://Assets/Level 1/Dungeon Tile Set 1.PNG" id="1_xrdnt"]
 [ext_resource type="Texture2D" uid="uid://cu5yhpo4j7v57" path="res://Assets/Level 1/cuadro3mujeres.png" id="2_wrinw"]
 [ext_resource type="Texture2D" uid="uid://baurfcyyjlrc1" path="res://Assets/Level 1/Closed_book.PNG" id="4_af3po"]
@@ -9,22 +9,22 @@
 [ext_resource type="Texture2D" uid="uid://bvfhpmng83bhx" path="res://Assets/Level 1/marco-vertical.png" id="6_6r07y"]
 [ext_resource type="Texture2D" uid="uid://b00cgm2f8lc8l" path="res://Assets/Level 1/Santa Maria.png" id="7_6ioyp"]
 [ext_resource type="PackedScene" uid="uid://bqsxn12ajmun7" path="res://Scenes/Level 1/reverend.tscn" id="9_ts4pv"]
-[ext_resource type="Script" uid="uid://betchdi7o8gx7" path="res://Scripts/level_1/player_switch_manager.gd" id="11_1fal7"]
+[ext_resource type="Script" uid="uid://betchdi7o8gx7" path="res://Scripts/Level 1/player_switch_manager.gd" id="11_1fal7"]
 [ext_resource type="PackedScene" uid="uid://byfig72cx8tsq" path="res://Scenes/Components/player_switch_manager/player_switch_manager.tscn" id="11_af3po"]
 [ext_resource type="PackedScene" uid="uid://7047hw6dqf7h" path="res://Scenes/Components/teleporter/teleporter.tscn" id="11_oovug"]
 [ext_resource type="Script" uid="uid://b4bmahyley38r" path="res://Scripts/Interaction/interactive_book.gd" id="11_uy8f0"]
-[ext_resource type="Script" uid="uid://c6q1gssuclmou" path="res://Scripts/level_1/teleporter_left.gd" id="12_6ssoq"]
+[ext_resource type="Script" uid="uid://c6q1gssuclmou" path="res://Scripts/Level 1/teleporter_left.gd" id="12_6ssoq"]
 [ext_resource type="Texture2D" uid="uid://l7hhufg1rfop" path="res://Assets/Level 1/black_poem.png" id="13_6r07y"]
-[ext_resource type="Script" uid="uid://dpuqqunjvsfe1" path="res://Scripts/level_1/teleporter_right.gd" id="13_imks0"]
+[ext_resource type="Script" uid="uid://dpuqqunjvsfe1" path="res://Scripts/Level 1/teleporter_right.gd" id="13_imks0"]
 [ext_resource type="Texture2D" uid="uid://rkpg71ao6qrh" path="res://Assets/Level 1/red_poem.png" id="14_6ioyp"]
 [ext_resource type="FontFile" uid="uid://r0dmn3iwndr8" path="res://Assets/Fonts/yoster.ttf" id="14_oovug"]
 [ext_resource type="PackedScene" uid="uid://dfpa2ywr1hfch" path="res://Scenes/Components/timer/timer_label.tscn" id="16_8i23i"]
 [ext_resource type="PackedScene" uid="uid://bxwd08bcmtq47" path="res://Scenes/Components/key/key.tscn" id="17_pjppf"]
 [ext_resource type="PackedScene" uid="uid://cpv8jgrj32l7s" path="res://Scenes/pause_menu.tscn" id="18_pjppf"]
-[ext_resource type="Script" uid="uid://d0651ynjb7x2p" path="res://Scripts/level_1/key.gd" id="19_dlmop"]
+[ext_resource type="Script" uid="uid://d0651ynjb7x2p" path="res://Scripts/Level 1/key.gd" id="19_dlmop"]
 [ext_resource type="PackedScene" uid="uid://bxaxp10vw5kkc" path="res://Scenes/Components/door/door.tscn" id="19_yltlr"]
-[ext_resource type="Script" uid="uid://npqvody8odd0" path="res://Scripts/level_1/timer_label.gd" id="22_gcla0"]
-[ext_resource type="Script" uid="uid://708rnu10tgph" path="res://Scripts/level_1/exit_door.gd" id="23_sda17"]
+[ext_resource type="Script" uid="uid://npqvody8odd0" path="res://Scripts/Level 1/timer_label.gd" id="22_gcla0"]
+[ext_resource type="Script" uid="uid://708rnu10tgph" path="res://Scripts/Level 1/exit_door.gd" id="23_sda17"]
 [ext_resource type="Texture2D" uid="uid://ckrvusb2t02us" path="res://Assets/Level 1/mesaverde.png" id="26_u0op5"]
 [ext_resource type="Texture2D" uid="uid://bgo4mbvcse3un" path="res://Assets/Level 1/pxArt (8).png" id="27_1f27d"]
 [ext_resource type="Texture2D" uid="uid://on7cjvw3my51" path="res://Assets/Level 1/cadenaspixelart.png" id="28_pm77i"]
@@ -1642,12 +1642,6 @@ z_index = 99
 [node name="Continue" parent="PauseMenu/VBoxContainer" index="1"]
 icon_alignment = 1
 text_direction = 1
-
-[node name="ConfirmRestartScreen" parent="PauseMenu" index="4"]
-visible = true
-
-[node name="InputSettings" parent="PauseMenu" index="5"]
-visible = true
 
 [connection signal="teleported" from="Mechanisms/Teleporter_left" to="." method="_on_teleported_left"]
 [connection signal="teleported" from="Mechanisms/Teleporter_right" to="." method="_on_teleported_right"]

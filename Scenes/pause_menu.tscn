@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://ivqjak8odrhf" path="res://Assets/Common/Button.png" id="4_myy0f"]
 [ext_resource type="Script" uid="uid://cq02oe2udoha0" path="res://Scripts/controls.gd" id="4_sjs17"]
 [ext_resource type="Texture2D" uid="uid://ksymtls3rnfl" path="res://Assets/Common/ButtonHover.png" id="5_sjs17"]
-[ext_resource type="Script" uid="uid://hj76bdvnx34g" path="res://Scripts/input_settings.gd" id="7_sjs17"]
+[ext_resource type="PackedScene" uid="uid://c73m5qmydetg6" path="res://Scenes/settings_screen.tscn" id="8_u8tnp"]
 
 [node name="PauseMenu" type="Control"]
 process_mode = 3
@@ -334,7 +334,7 @@ bbcode_enabled = true
 text = "[font_size=30][font=\"res://Assets/Fonts/yoster.ttf\"][center]Yes[/center][/font][/font_size]"
 scroll_active = false
 
-[node name="InputSettings" type="Control" parent="."]
+[node name="SettingsScreen" parent="." node_paths=PackedStringArray("main_pause_menu", "main_pause_menu_box", "pause_menu_bg") instance=ExtResource("8_u8tnp")]
 visible = false
 layout_mode = 1
 anchors_preset = 8
@@ -342,89 +342,15 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+offset_left = -512.0
+offset_top = -384.0
+offset_right = -512.0
+offset_bottom = -384.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("7_sjs17")
-
-[node name="TitleLabel" type="Label" parent="InputSettings"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -336.0
-offset_top = -344.0
-offset_right = 399.0
-offset_bottom = -284.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 8
-size_flags_vertical = 8
-theme_override_fonts/font = ExtResource("2_k0w1u")
-theme_override_font_sizes/font_size = 60
-text = "CONTROLS   "
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Scroll" type="ScrollContainer" parent="InputSettings"]
-custom_minimum_size = Vector2(0, 500)
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -450.0
-offset_top = -256.0
-offset_right = 450.0
-offset_bottom = 256.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="ActionList" type="VBoxContainer" parent="InputSettings/Scroll"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="Cancel Quit" type="TextureButton" parent="InputSettings"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -96.0
-offset_top = 272.0
-offset_right = 101.0
-offset_bottom = 345.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_default_cursor_shape = 2
-texture_normal = ExtResource("4_myy0f")
-texture_hover = ExtResource("5_sjs17")
-
-[node name="RichTextLabel" type="RichTextLabel" parent="InputSettings/Cancel Quit"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -91.0
-offset_top = -15.5
-offset_right = 91.0
-offset_bottom = 15.5
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-bbcode_enabled = true
-text = "[font_size=30][font=\"res://Assets/Fonts/yoster.ttf\"][center]Go back[/center][/font][/font_size]"
-scroll_active = false
+main_pause_menu = NodePath("../VBoxContainer")
+main_pause_menu_box = NodePath("../ColorRect")
+pause_menu_bg = NodePath("../Black")
 
 [connection signal="pressed" from="VBoxContainer/Continue" to="." method="unpause"]
 [connection signal="pressed" from="VBoxContainer/Restart" to="VBoxContainer/Restart" method="_on_pressed"]
@@ -434,4 +360,3 @@ scroll_active = false
 [connection signal="pressed" from="ConfirmQuitScreen/Confirm Buttons/Confirm Quit" to="VBoxContainer/Exit" method="_on_confirm_quit_pressed"]
 [connection signal="pressed" from="ConfirmRestartScreen/Confirm Buttons/Cancel Quit" to="VBoxContainer/Restart" method="_on_cancel_quit_pressed"]
 [connection signal="pressed" from="ConfirmRestartScreen/Confirm Buttons/Confirm Quit" to="VBoxContainer/Restart" method="_on_confirm_quit_pressed"]
-[connection signal="pressed" from="InputSettings/Cancel Quit" to="VBoxContainer/Controls" method="_on_cancel_quit_pressed"]

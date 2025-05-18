@@ -29,7 +29,7 @@ func _on_area_2d_area_entered(_area: Area2D) -> void:
 
 
 func _on_body_entered(body: Node2D) -> void:
-	if body.has_method("hit"):
-		body.hit()
+	if body.has_method("die") and body is PlayerInstance:
+		body.die()
 	emit_signal("Transitioned", self, next_state_name)
 	

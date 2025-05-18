@@ -1,0 +1,192 @@
+[gd_scene load_steps=8 format=3 uid="uid://c73m5qmydetg6"]
+
+[ext_resource type="Script" uid="uid://ytoviqasag8d" path="res://Scripts/settings_screen/settings_controller.gd" id="1_1e15r"]
+[ext_resource type="FontFile" uid="uid://r0dmn3iwndr8" path="res://Assets/Fonts/yoster.ttf" id="1_85ujs"]
+[ext_resource type="Script" uid="uid://bg3a2rtbwndjd" path="res://Scripts/settings_screen/pause_menu_setting_screen_controller.gd" id="1_r3rfl"]
+[ext_resource type="Script" uid="uid://bfqkwixwn0bd4" path="res://Scripts/settings_screen/sound_option_screen.gd" id="2_bu2iy"]
+[ext_resource type="Script" uid="uid://hj76bdvnx34g" path="res://Scripts/input_settings.gd" id="3_ieuc7"]
+[ext_resource type="Texture2D" uid="uid://ivqjak8odrhf" path="res://Assets/Common/Button.png" id="4_1e15r"]
+[ext_resource type="Texture2D" uid="uid://ksymtls3rnfl" path="res://Assets/Common/ButtonHover.png" id="5_r3rfl"]
+
+[node name="SettingsScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_r3rfl")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1024.0
+offset_bottom = 768.0
+color = Color(0, 0, 0, 0.945098)
+
+[node name="SoundScreen" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 1024.0
+offset_bottom = 768.0
+script = ExtResource("2_bu2iy")
+
+[node name="SliderEntry" type="Control" parent="SoundScreen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -473.5
+offset_top = -236.0
+offset_right = 473.5
+offset_bottom = -196.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BGMusic" type="Label" parent="SoundScreen/SliderEntry"]
+layout_mode = 0
+offset_right = 344.0
+offset_bottom = 26.0
+theme_override_fonts/font = ExtResource("1_85ujs")
+theme_override_font_sizes/font_size = 25
+text = "Background Music"
+
+[node name="BGMusicSlider" type="HSlider" parent="SoundScreen/SliderEntry"]
+layout_mode = 0
+offset_left = 760.0
+offset_top = 8.0
+offset_right = 941.0
+offset_bottom = 24.0
+value = 100.0
+
+[node name="SliderEntry2" type="Control" parent="SoundScreen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -473.5
+offset_top = -196.0
+offset_right = 473.5
+offset_bottom = -156.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BGMusic" type="Label" parent="SoundScreen/SliderEntry2"]
+layout_mode = 0
+offset_right = 344.0
+offset_bottom = 26.0
+theme_override_fonts/font = ExtResource("1_85ujs")
+theme_override_font_sizes/font_size = 25
+text = "Sound Effects"
+
+[node name="SFXSlider" type="HSlider" parent="SoundScreen/SliderEntry2"]
+layout_mode = 0
+offset_left = 760.0
+offset_top = 8.0
+offset_right = 941.0
+offset_bottom = 24.0
+value = 100.0
+
+[node name="InputSettings" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_right = 1024.0
+offset_bottom = 768.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_ieuc7")
+
+[node name="Scroll" type="ScrollContainer" parent="InputSettings"]
+custom_minimum_size = Vector2(0, 500)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -450.0
+offset_top = -256.0
+offset_right = 450.0
+offset_bottom = 256.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ActionList" type="VBoxContainer" parent="InputSettings/Scroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ScreenButtons" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 406.0
+offset_top = 15.0
+offset_right = 1430.0
+offset_bottom = 65.0
+grow_vertical = 2
+script = ExtResource("1_1e15r")
+
+[node name="SoundTab" type="Button" parent="ScreenButtons"]
+layout_mode = 0
+offset_right = 100.0
+offset_bottom = 50.0
+mouse_default_cursor_shape = 2
+theme_override_fonts/font = ExtResource("1_85ujs")
+text = "Sound"
+
+[node name="ControlsTab" type="Button" parent="ScreenButtons"]
+layout_mode = 0
+offset_left = 112.0
+offset_right = 212.0
+offset_bottom = 50.0
+mouse_default_cursor_shape = 2
+theme_override_fonts/font = ExtResource("1_85ujs")
+text = "Controls
+"
+
+[node name="Cancel Quit" type="TextureButton" parent="ScreenButtons"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -480.0
+offset_top = 614.0
+offset_right = -283.0
+offset_bottom = 687.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.75, 0.75)
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("4_1e15r")
+texture_hover = ExtResource("5_r3rfl")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ScreenButtons/Cancel Quit"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -91.0
+offset_top = -15.5
+offset_right = 91.0
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "[font_size=30][font=\"res://Assets/Fonts/yoster.ttf\"][center]Go back[/center][/font][/font_size]"
+scroll_active = false
+
+[connection signal="value_changed" from="SoundScreen/SliderEntry/BGMusicSlider" to="SoundScreen" method="_on_bg_music_drag"]
+[connection signal="value_changed" from="SoundScreen/SliderEntry2/SFXSlider" to="SoundScreen" method="_on_sfx_drag"]
+[connection signal="pressed" from="ScreenButtons/SoundTab" to="ScreenButtons" method="_on_sound_tab_clicked"]
+[connection signal="pressed" from="ScreenButtons/ControlsTab" to="ScreenButtons" method="_on_input_tab_clicked"]
+[connection signal="pressed" from="ScreenButtons/Cancel Quit" to="ScreenButtons" method="hide_settings_screen"]
