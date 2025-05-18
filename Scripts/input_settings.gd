@@ -67,8 +67,6 @@ func _input(event: InputEvent) -> void:
 			awaiting_action = &""
 			awaiting_button = null
 			SaveLoadManager.store_game_data()
-			
-			
 
 func _create_button_theme() -> Theme:
 	var button_theme := Theme.new()

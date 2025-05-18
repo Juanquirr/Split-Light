@@ -2,7 +2,7 @@ extends Control
 
 @onready var confirm_quit_screen: Control = $ConfirmQuitScreen
 @onready var confirm_restart_screen: Control = $ConfirmRestartScreen
-@onready var input_settings_screen: Control = $InputSettings
+@onready var input_settings_screen: Control = $SettingsScreen
 @onready var main_pause_screen: VBoxContainer = $VBoxContainer
 @onready var main_pause_bg: ColorRect = $ColorRect
 @onready var pause_black_bg: ColorRect = $Black

@@ -13,6 +13,13 @@ func _ready() -> void:
 	for bg_audio in background_music:
 		background_music_dict[bg_audio.type] = bg_audio
 
+func get_global_audio_modifier() -> float:
+	return SaveLoadManager.get_bg_music_audio_level() / 100.0
+
+func update_global_audio_volume():
+	if active_instance == null: return
+	active_instance.volume_linear = get_global_audio_modifier()
+
 func _define_audio_instance(
 	audio_instance: AudioStreamPlayer,
 	bg_music: BackgroundAudio, 
@@ -20,6 +27,7 @@ func _define_audio_instance(
 	
 	audio_instance.stream = bg_music.audio_track
 	audio_instance.volume_db = bg_music.volume
+	audio_instance.volume_linear = get_global_audio_modifier()
 	audio_instance.finished.connect(bg_music.on_audio_finished)
 	
 	return audio_instance

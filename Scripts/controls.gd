@@ -1,6 +1,6 @@
 extends Button
 
-@onready var InputSettings = $"../../InputSettings"
+@onready var SettingsScreen = $"../../SettingsScreen"
 @onready var PauseMenu = $"../.."
 @onready var PauseMenuColor = $"../../ColorRect"
 @onready var Pause = $"../../VBoxContainer"
@@ -10,10 +10,10 @@ func _on_pressed() -> void:
 	PauseMenuColor.hide()
 	Pause.hide()
 	Black.show()
-	InputSettings.show()
+	SettingsScreen.show()
 
 func _on_cancel_quit_pressed() -> void:
-	InputSettings.hide()
+	SettingsScreen.hide()
 	Black.hide()
 	PauseMenuColor.show()
 	Pause.show()

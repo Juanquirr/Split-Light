@@ -6,11 +6,26 @@ var levels: Dictionary = {}
 var game_data: Dictionary = {
 	"InputMap": {},
 	"levels": {},
-	"time": {}
+	"time": {},
+	"settings": {},
 }
 
 func _ready() -> void:
 	load_game_data()
+	
+func save_bg_music_audio_level(volume: int):
+	game_data["settings"]["bg_music"] = volume
+	store_game_data()
+
+func get_bg_music_audio_level() -> int:
+	return game_data["settings"].get("bg_music", 100)
+
+func save_sfx_audio_level(volume: int):
+	game_data["settings"]["sfx_audio"] = volume
+	store_game_data()
+
+func get_sfx_audio_level():
+	return game_data["settings"].get("sfx_audio", 100)
 
 func store_game_data() -> void:
 	var input_map_data := {}
@@ -52,6 +67,14 @@ func load_game_data() -> void:
 	
 	if game_data.has("time"):
 		game_data["time"] = game_data["time"]
+		
+	if game_data.has("settings"):
+		game_data["settings"] = game_data["settings"]
+	else:
+		game_data["settings"] = {
+			"bg_music": 100,
+			"sfx_audio": 100
+		}
 	
 	if not game_data.has("InputMap"): return
 	
