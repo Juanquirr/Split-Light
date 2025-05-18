@@ -3998,6 +3998,9 @@ z_index = 99
 icon_alignment = 1
 text_direction = 1
 
+[node name="SettingsScreen" parent="PauseMenu" index="5"]
+z_index = 99
+
 [editable path="Decoration/decoration2/stalactite4"]
 [editable path="Decoration/decoration2/stalactite9"]
 [editable path="Characters/Player1"]
