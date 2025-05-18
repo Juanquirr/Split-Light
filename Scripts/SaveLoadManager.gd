@@ -47,7 +47,6 @@ func store_game_data() -> void:
 		
 	save_file.store_var(game_data, true)
 	save_file.close()
-	print_debug("Game data and levels stored at: ", SAVE_PATH)
 
 func load_game_data() -> void:
 	if not FileAccess.file_exists(SAVE_PATH):
