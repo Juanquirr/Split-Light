@@ -15,8 +15,8 @@ class TestSceneManager:
 		# Verify SCENE_LIST contains correct mappings
 		assert_eq(SceneManager.SCENE_LIST[SceneManager.GameScenes.MAIN_MENU], "main_menu", "MAIN_MENU should map to 'main_menu'")
 		assert_eq(SceneManager.SCENE_LIST[SceneManager.GameScenes.LEVEL_SELECTOR], "level_selection_menu", "LEVEL_SELECTOR should map to 'level_selection_menu'")
-		assert_eq(SceneManager.SCENE_LIST[SceneManager.GameScenes.LEVEL_1], "level_1", "LEVEL_1 should map to 'level_1'")
-		assert_eq(SceneManager.SCENE_LIST[SceneManager.GameScenes.LEVEL_1_COMPLETED], "level_1_completed", "LEVEL_1_COMPLETED should map to 'level_1_completed'")
+		assert_eq(SceneManager.SCENE_LIST[SceneManager.GameScenes.LEVEL_1], "Level 1/level_1", "LEVEL_1 should map to 'level_1'")
+		assert_eq(SceneManager.SCENE_LIST[SceneManager.GameScenes.LEVEL_1_COMPLETED], "Level 1/level_1_completed", "LEVEL_1_COMPLETED should map to 'level_1_completed'")
 		assert_eq(SceneManager.SCENE_LIST[SceneManager.GameScenes.GAME_OVER], "game_over_menu", "GAME_OVER should map to 'game_over_menu'")
 
 	func test_scene_list_completeness():
