@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://b6x3h25wyurd2"]
 
-[ext_resource type="Script" uid="uid://bd1vapkyt3k0y" path="res://addons/StateMachine/state_machine.gd" id="1_uma3b"]
+[ext_resource type="Script" uid="uid://by56avlu1wkpw" path="res://addons/StateMachine/state_machine.gd" id="1_uma3b"]
 [ext_resource type="Script" uid="uid://cn7uft34myh7o" path="res://Scripts/Components/stalactite/states/basic_state.gd" id="2_2goke"]
 [ext_resource type="Script" uid="uid://d0slpi61coxk8" path="res://Scripts/Components/stalactite/states/falling_state.gd" id="3_u0yxr"]
 [ext_resource type="Script" uid="uid://bdtkraysobegt" path="res://Scripts/Components/stalactite/states/hittingstate.gd" id="4_2goke"]

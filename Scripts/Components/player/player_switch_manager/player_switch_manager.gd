@@ -23,8 +23,8 @@ func _process(_delta: float):
 	if MultiplayerManager.IS_MULTIPLAYER:
 		return
 	
-	var has_players = player1 != null && player2 != null
-	if InputManager.is_action_just_pressed("switch_player") && has_players: 
+	if InputManager.is_action_just_pressed("switch_player"):
+	
 		if active_player == player1:
 			change_active_player(player2)
 		else:

@@ -2,7 +2,7 @@ extends Control
 
 @onready var confirm_quit_screen: Control = $ConfirmQuitScreen
 @onready var confirm_restart_screen: Control = $ConfirmRestartScreen
-@onready var input_settings_screen: Control = $InputSettings
+@onready var input_settings_screen: Control = $SettingsScreen
 @onready var main_pause_screen: VBoxContainer = $VBoxContainer
 @onready var main_pause_bg: ColorRect = $ColorRect
 @onready var pause_black_bg: ColorRect = $Black
@@ -14,6 +14,7 @@ func _reset_state():
 	self.pause_black_bg.visible = false
 	self.main_pause_screen.visible = true
 	self.main_pause_bg.visible = true
+	BackgroundAudioManagerInstance.resume_active_audio()
 
 func _input(event):
 	if event.is_action_pressed("pause"):
@@ -33,6 +34,7 @@ func show_pause_menu():
 		position = screen_center - Vector2(1572, 388)
 
 func pause():
+	BackgroundAudioManagerInstance.pause_active_audio()
 	get_tree().paused = true
 	visible = true
 

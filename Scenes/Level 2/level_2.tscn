@@ -1,17 +1,15 @@
-[gd_scene load_steps=46 format=4 uid="uid://b8ea5kw5sm13v"]
+[gd_scene load_steps=40 format=4 uid="uid://b8ea5kw5sm13v"]
 
 [ext_resource type="PackedScene" uid="uid://c4e6wyfc51ig8" path="res://Scenes/Components/wood_bridge/wood_bridge.tscn" id="1_aqquj"]
+[ext_resource type="Script" uid="uid://bfv6up8n8g3w1" path="res://Scripts/Level 2/level_2.gd" id="1_kdihc"]
 [ext_resource type="Texture2D" uid="uid://dmqx5y6ygd6v8" path="res://Assets/Level 2/asset_forest.png" id="1_xqi6i"]
 [ext_resource type="Texture2D" uid="uid://dla68ffow3seg" path="res://Assets/Level 2/Background_2.png" id="2_hmoyl"]
 [ext_resource type="Texture2D" uid="uid://bsrfnpemrcf0r" path="res://Assets/Level 2/coast redwoods.png" id="3_0kjcb"]
 [ext_resource type="PackedScene" uid="uid://bgfom7vx76fd2" path="res://Scenes/Level 2/aaliyah.tscn" id="3_afqff"]
 [ext_resource type="Texture2D" uid="uid://cs0kn3e2esglr" path="res://Assets/Level 2/tileset.png" id="3_aqquj"]
 [ext_resource type="PackedScene" uid="uid://cpy8kkqmvbjyw" path="res://Scenes/Components/lever/lever.tscn" id="3_fff2f"]
-[ext_resource type="Texture2D" uid="uid://jxcttkygw5i1" path="res://Assets/Level 2/minerals/columCrystal2pix.png" id="3_kdihc"]
 [ext_resource type="Texture2D" uid="uid://e78somfvhp61" path="res://Assets/Level 2/coastredwoodfullpix.png" id="4_7tgn6"]
-[ext_resource type="Texture2D" uid="uid://ce21y1lgj3sgw" path="res://Assets/Level 2/minerals/amethyst2pix.png" id="4_ins2x"]
 [ext_resource type="Texture2D" uid="uid://bywgsk38tw67f" path="res://Assets/Level 2/bushhpix.png" id="5_7tgn6"]
-[ext_resource type="Texture2D" uid="uid://dyr171srgcqp5" path="res://Assets/Level 2/minerals/amethystpix.png" id="5_gqcw6"]
 [ext_resource type="Texture2D" uid="uid://bfq7gu4m8s3x2" path="res://Assets/Level 2/pacificpix.png" id="6_q72jt"]
 [ext_resource type="Texture2D" uid="uid://uk5bk3b7pl6q" path="res://Assets/Level 2/statueown.png" id="7_dvvw4"]
 [ext_resource type="Texture2D" uid="uid://d5d8wscjxsh5" path="res://Assets/Level 2/totem3pix.png" id="7_f0v0c"]
@@ -21,19 +19,15 @@
 [ext_resource type="Texture2D" uid="uid://ce7tenyjn3x0d" path="res://Assets/Level 2/timbleberrypix.png" id="11_awl78"]
 [ext_resource type="Texture2D" uid="uid://c66qphagcvuix" path="res://Assets/Level 2/pinesappix.png" id="12_tyfnv"]
 [ext_resource type="Texture2D" uid="uid://7an47vufbbto" path="res://Assets/Level 2/coastredwoodfullpix_.png" id="13_akkmf"]
-[ext_resource type="Texture2D" uid="uid://dqy1x4mui2ic4" path="res://Assets/Level 2/minerals/columCrystal3pix.png" id="13_q1lif"]
 [ext_resource type="Texture2D" uid="uid://g6a7p1y51ib1" path="res://Assets/Level 2/totem2pix.png" id="14_oh684"]
-[ext_resource type="Texture2D" uid="uid://qh4062ubh8wc" path="res://Assets/Level 2/minerals/smokyquartzpix.png" id="14_q1lif"]
 [ext_resource type="Texture2D" uid="uid://ccmtmc5t0yycf" path="res://Assets/Level 2/totem1pix14.png" id="15_o4euo"]
 [ext_resource type="Texture2D" uid="uid://d3jnjmahg0ev3" path="res://Assets/Level 2/totem4pix.png" id="16_q7lgt"]
 [ext_resource type="PackedScene" uid="uid://3kej1w4j6pkr" path="res://Scenes/abot.tscn" id="20_q8w0c"]
 [ext_resource type="PackedScene" uid="uid://byfig72cx8tsq" path="res://Scenes/Components/player_switch_manager/player_switch_manager.tscn" id="21_e55te"]
 [ext_resource type="Script" uid="uid://di2pivw6nfplu" path="res://Scripts/Level 2/player_switch_manager.gd" id="22_0w14c"]
-[ext_resource type="Texture2D" uid="uid://ce56no8gl25vo" path="res://Assets/Level 2/minerals/quartz2.png" id="22_twul6"]
-[ext_resource type="Texture2D" uid="uid://imj6sa1gpy3y" path="res://Assets/Level 2/minerals/columCrystal5pix.png" id="23_oqsbs"]
-[ext_resource type="Texture2D" uid="uid://bl7yi5vbe1fs6" path="res://Assets/Level 2/minerals/columCrystal4pix.png" id="25_rohmv"]
+[ext_resource type="PackedScene" uid="uid://sckje2kscadd" path="res://Scenes/Components/rotation_puzzle/rotation_puzzle_random_solution.tscn" id="26_4dy1a"]
 [ext_resource type="PackedScene" uid="uid://b6x3h25wyurd2" path="res://Scenes/Components/stalactite/stalactite.tscn" id="26_ins2x"]
-[ext_resource type="Texture2D" uid="uid://chw2nbrte6x7" path="res://Assets/Level 2/minerals/tigereyepix.png" id="31_twul6"]
+[ext_resource type="PackedScene" uid="uid://cpv8jgrj32l7s" path="res://Scenes/pause_menu.tscn" id="27_qie7t"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_xqi6i"]
 
@@ -1846,6 +1840,7 @@ sources/1 = SubResource("TileSetAtlasSource_52e5h")
 [sub_resource type="TileSet" id="TileSet_fkuja"]
 
 [node name="PlaygroundEarth" type="Node2D"]
+script = ExtResource("1_kdihc")
 
 [node name="Background" type="TileMapLayer" parent="."]
 texture_filter = 1
@@ -1858,7 +1853,6 @@ self_modulate = Color(0.573802, 0.345938, 0.189983, 1)
 position = Vector2(1206.79, 1049.29)
 rotation = -2.09438
 scale = Vector2(0.399193, -0.276804)
-texture = ExtResource("4_ins2x")
 
 [node name="Amethyst2Pix5" type="Sprite2D" parent="Background"]
 modulate = Color(0.929715, 0.929715, 0.929715, 1)
@@ -1866,7 +1860,6 @@ self_modulate = Color(0.573802, 0.345938, 0.189983, 1)
 position = Vector2(1594.96, 1437.71)
 rotation = -4.45058
 scale = Vector2(-0.374357, -0.270661)
-texture = ExtResource("4_ins2x")
 
 [node name="ColumCrystal2Pix" type="Sprite2D" parent="Background"]
 modulate = Color(0.810923, 0.705794, 0.820568, 1)
@@ -1874,7 +1867,6 @@ self_modulate = Color(0.898922, 0.545823, 0.725199, 1)
 position = Vector2(104.061, 948.956)
 rotation = -3.14159
 scale = Vector2(0.138323, -0.212081)
-texture = ExtResource("3_kdihc")
 
 [node name="ColumCrystal2Pix5" type="Sprite2D" parent="Background"]
 modulate = Color(0.97784, 0.964286, 0.978951, 1)
@@ -1882,7 +1874,6 @@ self_modulate = Color(0.898922, 0.545823, 0.725199, 1)
 position = Vector2(1971, 1473)
 rotation = -3.92699
 scale = Vector2(-0.668308, -0.149428)
-texture = ExtResource("3_kdihc")
 
 [node name="ColumCrystal2Pix4" type="Sprite2D" parent="Background"]
 modulate = Color(0.971517, 0.954109, 0.972951, 1)
@@ -1891,7 +1882,6 @@ z_index = 1
 position = Vector2(1724.97, 999.841)
 rotation = -2.87979
 scale = Vector2(0.281352, -0.398628)
-texture = ExtResource("3_kdihc")
 
 [node name="ColumCrystal2Pix3" type="Sprite2D" parent="Background"]
 modulate = Color(0.810923, 0.705794, 0.820568, 1)
@@ -1900,7 +1890,6 @@ z_index = 1
 position = Vector2(497.991, 945.831)
 rotation = 0.785397
 scale = Vector2(-0.301958, -0.280036)
-texture = ExtResource("3_kdihc")
 
 [node name="ColumCrystal2Pix2" type="Sprite2D" parent="Background"]
 modulate = Color(0.851337, 0.812558, 0.891409, 1)
@@ -1908,7 +1897,6 @@ self_modulate = Color(0.898922, 0.545823, 0.725199, 1)
 position = Vector2(65.3835, 977.795)
 rotation = -3.66519
 scale = Vector2(-0.123135, 0.124305)
-texture = ExtResource("3_kdihc")
 
 [node name="Amethyst2Pix" type="Sprite2D" parent="Background"]
 modulate = Color(0.560955, 0.560955, 0.560955, 1)
@@ -1916,7 +1904,6 @@ self_modulate = Color(0.77812, 0.325244, 0.576822, 1)
 position = Vector2(-74, 932.03)
 rotation = -3.14159
 scale = Vector2(0.32947, -0.301562)
-texture = ExtResource("4_ins2x")
 
 [node name="Amethyst2Pix2" type="Sprite2D" parent="Background"]
 modulate = Color(0.85098, 0.85098, 0.85098, 1)
@@ -1924,7 +1911,6 @@ self_modulate = Color(0.879887, 0.474975, 0.687859, 1)
 position = Vector2(-95, 934)
 rotation = 3.14159
 scale = Vector2(0.077719, -0.0566966)
-texture = ExtResource("4_ins2x")
 
 [node name="Amethystpix" type="Sprite2D" parent="Background"]
 modulate = Color(0.783523, 0.783523, 0.783523, 1)
@@ -1932,7 +1918,6 @@ self_modulate = Color(0.648223, 0.419355, 0.784122, 1)
 position = Vector2(39, 949)
 rotation = 0.785397
 scale = Vector2(0.0636102, 0.0675711)
-texture = ExtResource("5_gqcw6")
 
 [node name="Amethystpix4" type="Sprite2D" parent="Background"]
 modulate = Color(0.556953, 0.556953, 0.556953, 1)
@@ -1940,7 +1925,6 @@ self_modulate = Color(0.648223, 0.419355, 0.784122, 1)
 position = Vector2(-54.6073, 868.216)
 rotation = -2.09439
 scale = Vector2(0.0438666, 0.0289601)
-texture = ExtResource("5_gqcw6")
 
 [node name="Amethystpix2" type="Sprite2D" parent="Background"]
 modulate = Color(0.851769, 0.851769, 0.851769, 1)
@@ -1948,7 +1932,6 @@ self_modulate = Color(0.66676, 0.442547, 0.801063, 1)
 position = Vector2(-84, 887.297)
 rotation = 1.57079
 scale = Vector2(0.11618, 0.0636841)
-texture = ExtResource("5_gqcw6")
 
 [node name="Amethystpix6" type="Sprite2D" parent="Background"]
 modulate = Color(0.851769, 0.851769, 0.851769, 1)
@@ -1956,7 +1939,6 @@ self_modulate = Color(0.554213, 0.278792, 0.547105, 1)
 position = Vector2(1906.95, 1122.34)
 rotation = 1.57079
 scale = Vector2(0.241131, 0.187267)
-texture = ExtResource("5_gqcw6")
 
 [node name="Amethystpix3" type="Sprite2D" parent="Background"]
 modulate = Color(0.783523, 0.783523, 0.783523, 1)
@@ -1964,7 +1946,6 @@ self_modulate = Color(0.648223, 0.419355, 0.784122, 1)
 position = Vector2(-42, 911)
 rotation = -1.0472
 scale = Vector2(0.0546882, 0.0289601)
-texture = ExtResource("5_gqcw6")
 
 [node name="Amethystpix5" type="Sprite2D" parent="Background"]
 modulate = Color(0.783523, 0.783523, 0.783523, 1)
@@ -1972,7 +1953,6 @@ self_modulate = Color(0.648223, 0.419355, 0.784122, 1)
 position = Vector2(405.215, 727.215)
 rotation = -3.92699
 scale = Vector2(0.0546882, 0.0326284)
-texture = ExtResource("5_gqcw6")
 
 [node name="Bushhpix5" type="Sprite2D" parent="Background"]
 modulate = Color(0.476239, 0.630248, 0.193982, 1)
@@ -2056,7 +2036,6 @@ self_modulate = Color(0.955228, 0.783542, 0.863295, 1)
 position = Vector2(133, 980)
 rotation = 6.26573
 scale = Vector2(0.214924, 0.18543)
-texture = ExtResource("13_q1lif")
 
 [node name="ColumCrystal3Pix5" type="Sprite2D" parent="Background"]
 modulate = Color(0.614507, 0.450496, 0.682391, 1)
@@ -2064,7 +2043,6 @@ self_modulate = Color(0.955228, 0.783542, 0.863295, 1)
 position = Vector2(810.798, 1176.15)
 rotation = 6.28318
 scale = Vector2(0.562883, 0.577899)
-texture = ExtResource("13_q1lif")
 
 [node name="ColumCrystal3Pix2" type="Sprite2D" parent="Background"]
 modulate = Color(0.611765, 0.454902, 0.670588, 1)
@@ -2072,7 +2050,6 @@ self_modulate = Color(0.955228, 0.783542, 0.863295, 1)
 position = Vector2(591.441, 944.766)
 rotation = 6.54498
 scale = Vector2(0.210097, 0.238495)
-texture = ExtResource("13_q1lif")
 
 [node name="ColumCrystal3Pix3" type="Sprite2D" parent="Background"]
 modulate = Color(0.565661, 0.410793, 0.62351, 1)
@@ -2081,7 +2058,6 @@ z_index = 1
 position = Vector2(1176.58, 952.906)
 rotation = 8.90117
 scale = Vector2(0.210097, 0.296113)
-texture = ExtResource("13_q1lif")
 
 [node name="ColumCrystal3Pix4" type="Sprite2D" parent="Background"]
 modulate = Color(0.421184, 0.290482, 0.469662, 1)
@@ -2089,47 +2065,40 @@ self_modulate = Color(0.90053, 0.720563, 0.874037, 1)
 position = Vector2(1172, 950.221)
 rotation = 9.42476
 scale = Vector2(0.210097, 0.220881)
-texture = ExtResource("13_q1lif")
 
 [node name="Smokyquartzpix" type="Sprite2D" parent="Background"]
 modulate = Color(0.784314, 0.52549, 0.482353, 1)
 position = Vector2(1504.53, 1064.3)
 rotation = 0.300533
 scale = Vector2(0.175037, 0.343037)
-texture = ExtResource("14_q1lif")
 
 [node name="Smokyquartzpix2" type="Sprite2D" parent="Background"]
 modulate = Color(0.784368, 0.525127, 0.482185, 1)
 z_index = 1
 position = Vector2(1515, 1059.94)
 scale = Vector2(-0.175, 0.29927)
-texture = ExtResource("14_q1lif")
 
 [node name="Smokyquartzpix3" type="Sprite2D" parent="Background"]
 modulate = Color(0.784368, 0.525127, 0.482185, 1)
 position = Vector2(1526.05, 1063.24)
 rotation = -0.261799
 scale = Vector2(0.178983, 0.316579)
-texture = ExtResource("14_q1lif")
 
 [node name="Smokyquartzpix4" type="Sprite2D" parent="Background"]
 modulate = Color(0.784368, 0.525127, 0.482185, 1)
 position = Vector2(1302, 1059)
 scale = Vector2(0.062219, 0.17995)
-texture = ExtResource("14_q1lif")
 
 [node name="Smokyquartzpix6" type="Sprite2D" parent="Background"]
 modulate = Color(0.784368, 0.525127, 0.482185, 1)
 position = Vector2(2923.56, 1668.44)
 rotation = 0.785397
 scale = Vector2(0.122018, 0.143779)
-texture = ExtResource("14_q1lif")
 
 [node name="Smokyquartzpix5" type="Sprite2D" parent="Background"]
 modulate = Color(0.784368, 0.525127, 0.482185, 1)
 position = Vector2(1702, 1086)
 scale = Vector2(0.062219, 0.0827548)
-texture = ExtResource("14_q1lif")
 
 [node name="Salpix3" type="Sprite2D" parent="."]
 modulate = Color(0.817521, 0.817521, 0.817521, 1)
@@ -2157,7 +2126,6 @@ self_modulate = Color(0.879887, 0.474975, 0.687859, 1)
 position = Vector2(33.5946, 978.149)
 rotation = -2.09438
 scale = Vector2(0.0283412, -0.0273619)
-texture = ExtResource("4_ins2x")
 
 [node name="Decoration" type="TileMapLayer" parent="."]
 z_index = 1
@@ -2405,7 +2373,6 @@ modulate = Color(0.95158, 0.95158, 0.95158, 1)
 self_modulate = Color(0.70874, 0.45287, 0.692578, 1)
 position = Vector2(240.5, 1079.66)
 scale = Vector2(0.0666666, 0.127957)
-texture = ExtResource("22_twul6")
 
 [node name="Quartz11" type="Sprite2D" parent="Decoration"]
 modulate = Color(0.912289, 0.912289, 0.912289, 1)
@@ -2413,7 +2380,6 @@ self_modulate = Color(0.717799, 0.453685, 0.257934, 1)
 position = Vector2(1271, 1082)
 rotation = -0.261799
 scale = Vector2(0.0475043, 0.0626951)
-texture = ExtResource("22_twul6")
 
 [node name="Quartz3" type="Sprite2D" parent="Decoration/Quartz11"]
 modulate = Color(0.912289, 0.912289, 0.912289, 1)
@@ -2422,7 +2388,6 @@ position = Vector2(-116.7, -10.7081)
 rotation = -0.126178
 scale = Vector2(0.973666, 1.41714)
 skew = -0.388859
-texture = ExtResource("22_twul6")
 
 [node name="Quartz5" type="Sprite2D" parent="Decoration/Quartz11"]
 modulate = Color(0.912289, 0.912289, 0.912289, 1)
@@ -2431,27 +2396,23 @@ position = Vector2(82.3184, -2.3418)
 rotation = 0.126178
 scale = Vector2(0.973666, 1.10991)
 skew = 0.388859
-texture = ExtResource("22_twul6")
 
 [node name="Quartz6" type="Sprite2D" parent="Decoration/Quartz11"]
 modulate = Color(0.912289, 0.912289, 0.912289, 1)
 self_modulate = Color(0.717799, 0.453685, 0.257934, 1)
 position = Vector2(55.4151, -65.1105)
-texture = ExtResource("22_twul6")
 
 [node name="Quartz7" type="Sprite2D" parent="Decoration/Quartz11"]
 modulate = Color(0.912289, 0.912289, 0.912289, 1)
 self_modulate = Color(0.717799, 0.453685, 0.257934, 1)
 position = Vector2(-39.1524, -121.086)
 scale = Vector2(1.33794, 1.41094)
-texture = ExtResource("22_twul6")
 
 [node name="Quartz2" type="Sprite2D" parent="Decoration/Quartz11"]
 modulate = Color(0.912289, 0.912289, 0.912289, 1)
 self_modulate = Color(0.717799, 0.453685, 0.257934, 1)
 position = Vector2(58.7314, 104.132)
 scale = Vector2(1.57771, 0.925641)
-texture = ExtResource("22_twul6")
 
 [node name="Quartz4" type="Sprite2D" parent="Decoration/Quartz11"]
 modulate = Color(0.912289, 0.912289, 0.912289, 1)
@@ -2459,7 +2420,6 @@ self_modulate = Color(0.717799, 0.453685, 0.257934, 1)
 position = Vector2(-114.917, 88.4297)
 rotation = -0.261799
 scale = Vector2(1.32557, 0.890635)
-texture = ExtResource("22_twul6")
 
 [node name="Quartz14" type="Sprite2D" parent="Decoration"]
 modulate = Color(0.912289, 0.912289, 0.912289, 1)
@@ -2467,7 +2427,6 @@ self_modulate = Color(0.717799, 0.453685, 0.257934, 1)
 position = Vector2(1734, 1717)
 rotation = -0.261799
 scale = Vector2(0.0475043, 0.0626951)
-texture = ExtResource("22_twul6")
 
 [node name="Quartz3" type="Sprite2D" parent="Decoration/Quartz14"]
 modulate = Color(0.912289, 0.912289, 0.912289, 1)
@@ -2476,7 +2435,6 @@ position = Vector2(-82.404, -198.37)
 rotation = -0.126178
 scale = Vector2(0.973666, 1.41714)
 skew = -0.388859
-texture = ExtResource("22_twul6")
 
 [node name="Quartz5" type="Sprite2D" parent="Decoration/Quartz14"]
 modulate = Color(0.912289, 0.912289, 0.912289, 1)
@@ -2485,14 +2443,12 @@ position = Vector2(82.3184, -2.3418)
 rotation = 0.126178
 scale = Vector2(0.973666, 1.10991)
 skew = 0.388859
-texture = ExtResource("22_twul6")
 
 [node name="Quartz6" type="Sprite2D" parent="Decoration/Quartz14"]
 modulate = Color(0.912289, 0.912289, 0.912289, 1)
 self_modulate = Color(0.717799, 0.453685, 0.257934, 1)
 position = Vector2(2.91928, -131.507)
 rotation = 0.785397
-texture = ExtResource("22_twul6")
 
 [node name="Quartz7" type="Sprite2D" parent="Decoration/Quartz14"]
 modulate = Color(0.912289, 0.912289, 0.912289, 1)
@@ -2500,7 +2456,6 @@ self_modulate = Color(0.717799, 0.453685, 0.257934, 1)
 position = Vector2(288.656, 108.145)
 rotation = 0.523598
 scale = Vector2(1.33794, 1.41094)
-texture = ExtResource("22_twul6")
 
 [node name="Quartz2" type="Sprite2D" parent="Decoration/Quartz14"]
 modulate = Color(0.912289, 0.912289, 0.912289, 1)
@@ -2508,7 +2463,6 @@ self_modulate = Color(0.717799, 0.453685, 0.257934, 1)
 position = Vector2(58.7314, 104.132)
 rotation = 0.785397
 scale = Vector2(1.57771, 0.925641)
-texture = ExtResource("22_twul6")
 
 [node name="Quartz4" type="Sprite2D" parent="Decoration/Quartz14"]
 modulate = Color(0.912289, 0.912289, 0.912289, 1)
@@ -2516,14 +2470,12 @@ self_modulate = Color(0.717799, 0.453685, 0.257934, 1)
 position = Vector2(-190.373, -287.947)
 rotation = 1.03953
 scale = Vector2(1.32557, 1.25878)
-texture = ExtResource("22_twul6")
 
 [node name="Quartz12" type="Sprite2D" parent="Decoration"]
 modulate = Color(0.912289, 0.912289, 0.912289, 1)
 self_modulate = Color(0.717799, 0.453685, 0.257934, 1)
 position = Vector2(1210.47, 1081)
 scale = Vector2(0.0747319, 0.0626951)
-texture = ExtResource("22_twul6")
 
 [node name="Quartz3" type="Sprite2D" parent="Decoration/Quartz12"]
 modulate = Color(0.912289, 0.912289, 0.912289, 1)
@@ -2532,7 +2484,6 @@ position = Vector2(-95.8164, 26.1895)
 rotation = -0.126178
 scale = Vector2(0.973666, 1.10991)
 skew = -0.388859
-texture = ExtResource("22_twul6")
 
 [node name="Quartz5" type="Sprite2D" parent="Decoration/Quartz12"]
 modulate = Color(0.912289, 0.912289, 0.912289, 1)
@@ -2541,27 +2492,23 @@ position = Vector2(82.3184, -2.3418)
 rotation = 0.126178
 scale = Vector2(0.973666, 1.10991)
 skew = 0.388859
-texture = ExtResource("22_twul6")
 
 [node name="Quartz6" type="Sprite2D" parent="Decoration/Quartz12"]
 modulate = Color(0.912289, 0.912289, 0.912289, 1)
 self_modulate = Color(0.717799, 0.453685, 0.257934, 1)
 position = Vector2(73.976, -79.7523)
-texture = ExtResource("22_twul6")
 
 [node name="Quartz7" type="Sprite2D" parent="Decoration/Quartz12"]
 modulate = Color(0.912289, 0.912289, 0.912289, 1)
 self_modulate = Color(0.717799, 0.453685, 0.257934, 1)
 position = Vector2(-19.6923, 47.8483)
 scale = Vector2(1.33794, 1.0089)
-texture = ExtResource("22_twul6")
 
 [node name="Quartz2" type="Sprite2D" parent="Decoration/Quartz12"]
 modulate = Color(0.912289, 0.912289, 0.912289, 1)
 self_modulate = Color(0.717799, 0.453685, 0.257934, 1)
 position = Vector2(167.643, 111.65)
 scale = Vector2(1.57771, 0.925641)
-texture = ExtResource("22_twul6")
 
 [node name="Quartz4" type="Sprite2D" parent="Decoration/Quartz12"]
 modulate = Color(0.912289, 0.912289, 0.912289, 1)
@@ -2569,7 +2516,6 @@ self_modulate = Color(0.717799, 0.453685, 0.257934, 1)
 position = Vector2(-178.911, 109.895)
 rotation = -0.261799
 scale = Vector2(0.797183, 0.860412)
-texture = ExtResource("22_twul6")
 
 [node name="Quartz9" type="Sprite2D" parent="Decoration"]
 modulate = Color(0.727428, 0.727429, 0.727427, 1)
@@ -2577,7 +2523,6 @@ self_modulate = Color(0.70874, 0.45287, 0.692578, 1)
 z_index = -1
 position = Vector2(474.5, 1073.66)
 scale = Vector2(0.105882, 0.149743)
-texture = ExtResource("22_twul6")
 
 [node name="Quartz10" type="Sprite2D" parent="Decoration"]
 modulate = Color(0.727428, 0.727429, 0.727427, 1)
@@ -2586,7 +2531,6 @@ z_index = -1
 position = Vector2(501.25, 1083.33)
 rotation = 0.785397
 scale = Vector2(0.107843, 0.147335)
-texture = ExtResource("22_twul6")
 
 [node name="FlowersForDie" type="Node2D" parent="Decoration"]
 modulate = Color(0.832019, 0.576409, 0.756254, 1)
@@ -2604,7 +2548,6 @@ position = Vector2(1072.73, -471.332)
 rotation = 2.73966
 scale = Vector2(1.8782, 1.44712)
 skew = -0.34827
-texture = ExtResource("23_oqsbs")
 
 [node name="ColumCrystal5Pix5" type="Sprite2D" parent="Decoration/FlowersForDie/FlowerDie0"]
 modulate = Color(0.839161, 0.798463, 0.884734, 1)
@@ -2613,7 +2556,6 @@ position = Vector2(1180.9, -466.097)
 rotation = 2.54759
 scale = Vector2(1.49436, 1.63342)
 skew = -0.382814
-texture = ExtResource("23_oqsbs")
 
 [node name="ColumCrystal5Pix" type="Sprite2D" parent="Decoration/FlowersForDie/FlowerDie0"]
 modulate = Color(0.839161, 0.798463, 0.884734, 1)
@@ -2622,7 +2564,6 @@ position = Vector2(991.504, -521.856)
 rotation = 2.73966
 scale = Vector2(1.8524, 1.1194)
 skew = -0.34827
-texture = ExtResource("23_oqsbs")
 
 [node name="ColumCrystal5Pix3" type="Sprite2D" parent="Decoration/FlowersForDie/FlowerDie0"]
 modulate = Color(0.839161, 0.798463, 0.884734, 1)
@@ -2631,7 +2572,6 @@ position = Vector2(977.689, -634.008)
 rotation = -2.76982
 scale = Vector2(1.51056, 1.08847)
 skew = 0.335539
-texture = ExtResource("23_oqsbs")
 
 [node name="ColumCrystal5Pix6" type="Sprite2D" parent="Decoration/FlowersForDie/FlowerDie0"]
 modulate = Color(0.839161, 0.798463, 0.884734, 1)
@@ -2640,7 +2580,6 @@ position = Vector2(1309.36, -477.664)
 rotation = 0.371774
 scale = Vector2(1.46958, -1.13325)
 skew = 0.335539
-texture = ExtResource("23_oqsbs")
 
 [node name="ColumCrystal5Pix4" type="Sprite2D" parent="Decoration/FlowersForDie/FlowerDie0"]
 modulate = Color(0.839161, 0.798463, 0.884734, 1)
@@ -2648,7 +2587,6 @@ self_modulate = Color(0.986236, 0.930265, 0.954794, 1)
 position = Vector2(966.375, -557.984)
 rotation = 3.14159
 scale = Vector2(1.57277, 0.881741)
-texture = ExtResource("23_oqsbs")
 
 [node name="FlowerDie14" type="Node2D" parent="Decoration/FlowersForDie"]
 position = Vector2(1985.78, 2429.68)
@@ -2661,7 +2599,6 @@ position = Vector2(1189.55, -446.867)
 rotation = 2.09439
 scale = Vector2(1.77318, 1.66776)
 skew = -0.34827
-texture = ExtResource("23_oqsbs")
 
 [node name="ColumCrystal5Pix5" type="Sprite2D" parent="Decoration/FlowersForDie/FlowerDie14"]
 modulate = Color(0.839161, 0.798463, 0.884734, 1)
@@ -2670,7 +2607,6 @@ position = Vector2(1228.77, -518.727)
 rotation = 1.83259
 scale = Vector2(1.57059, 1.70422)
 skew = -0.382814
-texture = ExtResource("23_oqsbs")
 
 [node name="ColumCrystal5Pix" type="Sprite2D" parent="Decoration/FlowersForDie/FlowerDie14"]
 modulate = Color(0.839161, 0.798463, 0.884734, 1)
@@ -2679,7 +2615,6 @@ position = Vector2(1129.44, -513.932)
 rotation = 2.35619
 scale = Vector2(1.49908, 1.35189)
 skew = -0.34827
-texture = ExtResource("23_oqsbs")
 
 [node name="ColumCrystal5Pix6" type="Sprite2D" parent="Decoration/FlowersForDie/FlowerDie14"]
 modulate = Color(0.839161, 0.798463, 0.884734, 1)
@@ -2688,7 +2623,6 @@ position = Vector2(1330.55, -550.25)
 rotation = 0.371774
 scale = Vector2(1.26336, -0.885881)
 skew = 0.335539
-texture = ExtResource("23_oqsbs")
 
 [node name="ColumCrystal5Pix4" type="Sprite2D" parent="Decoration/FlowersForDie/FlowerDie14"]
 modulate = Color(0.839161, 0.798463, 0.884734, 1)
@@ -2696,7 +2630,6 @@ self_modulate = Color(0.986236, 0.930265, 0.954794, 1)
 position = Vector2(1144.73, -621.36)
 rotation = 3.40339
 scale = Vector2(0.99416, 1.27196)
-texture = ExtResource("23_oqsbs")
 
 [node name="FlowerDie1" type="Node2D" parent="Decoration/FlowersForDie"]
 position = Vector2(710.19, 3651.41)
@@ -2709,7 +2642,6 @@ position = Vector2(1091.27, -507.62)
 rotation = 2.73966
 scale = Vector2(1.54315, 1.22557)
 skew = -0.34827
-texture = ExtResource("23_oqsbs")
 
 [node name="ColumCrystal5Pix5" type="Sprite2D" parent="Decoration/FlowersForDie/FlowerDie1"]
 modulate = Color(0.839161, 0.798463, 0.884734, 1)
@@ -2718,7 +2650,6 @@ position = Vector2(1196.98, -549.293)
 rotation = 2.54759
 scale = Vector2(0.998939, 1.46507)
 skew = -0.382814
-texture = ExtResource("23_oqsbs")
 
 [node name="ColumCrystal5Pix" type="Sprite2D" parent="Decoration/FlowersForDie/FlowerDie1"]
 modulate = Color(0.839161, 0.798463, 0.884734, 1)
@@ -2727,7 +2658,6 @@ position = Vector2(1075.7, -582.543)
 rotation = 2.73966
 scale = Vector2(1.5706, 0.828171)
 skew = -0.34827
-texture = ExtResource("23_oqsbs")
 
 [node name="ColumCrystal5Pix3" type="Sprite2D" parent="Decoration/FlowersForDie/FlowerDie1"]
 modulate = Color(0.839161, 0.798463, 0.884734, 1)
@@ -2736,7 +2666,6 @@ position = Vector2(1070.56, -669.065)
 rotation = -2.76982
 scale = Vector2(1.15537, 0.890581)
 skew = 0.335539
-texture = ExtResource("23_oqsbs")
 
 [node name="ColumCrystal5Pix6" type="Sprite2D" parent="Decoration/FlowersForDie/FlowerDie1"]
 modulate = Color(0.839161, 0.798463, 0.884734, 1)
@@ -2745,7 +2674,6 @@ position = Vector2(1292.72, -561.434)
 rotation = 0.371774
 scale = Vector2(1.05669, -0.785254)
 skew = 0.335539
-texture = ExtResource("23_oqsbs")
 
 [node name="ColumCrystal5Pix4" type="Sprite2D" parent="Decoration/FlowersForDie/FlowerDie1"]
 modulate = Color(0.839161, 0.798463, 0.884734, 1)
@@ -2753,7 +2681,6 @@ self_modulate = Color(0.986236, 0.930265, 0.954794, 1)
 position = Vector2(1054.12, -597.583)
 rotation = 3.14159
 scale = Vector2(1.21027, 0.575915)
-texture = ExtResource("23_oqsbs")
 
 [node name="FlowerDie8" type="Node2D" parent="Decoration/FlowersForDie"]
 position = Vector2(710.19, 3651.41)
@@ -2766,7 +2693,6 @@ position = Vector2(2013.74, -232.438)
 rotation = 2.73966
 scale = Vector2(1.54315, 1.22557)
 skew = -0.34827
-texture = ExtResource("23_oqsbs")
 
 [node name="ColumCrystal5Pix4" type="Sprite2D" parent="Decoration/FlowersForDie/FlowerDie8"]
 modulate = Color(0.839161, 0.798463, 0.884734, 1)
@@ -2775,7 +2701,6 @@ position = Vector2(1975.51, -245.956)
 rotation = 2.73966
 scale = Vector2(1.54315, 1.22557)
 skew = -0.34827
-texture = ExtResource("23_oqsbs")
 
 [node name="ColumCrystal5Pix5" type="Sprite2D" parent="Decoration/FlowersForDie/FlowerDie8"]
 modulate = Color(0.839161, 0.798463, 0.884734, 1)
@@ -2784,7 +2709,6 @@ position = Vector2(2069.21, -255.752)
 rotation = 2.54759
 scale = Vector2(0.998939, 1.46507)
 skew = -0.382814
-texture = ExtResource("23_oqsbs")
 
 [node name="ColumCrystal5Pix" type="Sprite2D" parent="Decoration/FlowersForDie/FlowerDie8"]
 modulate = Color(0.839161, 0.798463, 0.884734, 1)
@@ -2793,7 +2717,6 @@ position = Vector2(1973.63, -289.548)
 rotation = 2.73966
 scale = Vector2(1.5706, 0.828171)
 skew = -0.34827
-texture = ExtResource("23_oqsbs")
 
 [node name="ColumCrystal5Pix3" type="Sprite2D" parent="Decoration/FlowersForDie/FlowerDie8"]
 modulate = Color(0.839161, 0.798463, 0.884734, 1)
@@ -2802,7 +2725,6 @@ position = Vector2(2002.36, -340.718)
 rotation = -3.14159
 scale = Vector2(1.15537, 0.890581)
 skew = 0.335539
-texture = ExtResource("23_oqsbs")
 
 [node name="ColumCrystal5Pix6" type="Sprite2D" parent="Decoration/FlowersForDie/FlowerDie8"]
 modulate = Color(0.839161, 0.798463, 0.884734, 1)
@@ -2811,7 +2733,6 @@ position = Vector2(2149.56, -294.804)
 rotation = 0.785397
 scale = Vector2(1.05669, -0.785254)
 skew = 0.335539
-texture = ExtResource("23_oqsbs")
 
 [node name="FlowerDie6" type="Node2D" parent="Decoration/FlowersForDie"]
 modulate = Color(0.699653, 0.699653, 0.699653, 1)
@@ -2826,7 +2747,6 @@ position = Vector2(1826.71, -8852.75)
 rotation = 3.40339
 scale = Vector2(0.6, 0.88)
 skew = -0.34827
-texture = ExtResource("23_oqsbs")
 
 [node name="ColumCrystal5Pix5" type="Sprite2D" parent="Decoration/FlowersForDie/FlowerDie6"]
 modulate = Color(0.839161, 0.798463, 0.884734, 1)
@@ -2835,7 +2755,6 @@ position = Vector2(1863.04, -8852.17)
 rotation = 2.87979
 scale = Vector2(0.6, 0.88)
 skew = -0.382814
-texture = ExtResource("23_oqsbs")
 
 [node name="ColumCrystal5Pix" type="Sprite2D" parent="Decoration/FlowersForDie/FlowerDie6"]
 modulate = Color(0.839161, 0.798463, 0.884734, 1)
@@ -2844,7 +2763,6 @@ position = Vector2(1787.15, -8881.29)
 rotation = 3.40339
 scale = Vector2(0.6, 0.88)
 skew = -0.34827
-texture = ExtResource("23_oqsbs")
 
 [node name="ColumCrystal5Pix3" type="Sprite2D" parent="Decoration/FlowersForDie/FlowerDie6"]
 modulate = Color(0.839161, 0.798463, 0.884734, 1)
@@ -2854,7 +2772,6 @@ position = Vector2(1818.38, -8910.82)
 rotation = -2.09439
 scale = Vector2(0.242572, 0.935012)
 skew = 0.335539
-texture = ExtResource("23_oqsbs")
 
 [node name="ColumCrystal5Pix6" type="Sprite2D" parent="Decoration/FlowersForDie/FlowerDie6"]
 modulate = Color(0.839161, 0.798463, 0.884734, 1)
@@ -2863,7 +2780,6 @@ position = Vector2(1910.86, -8865.93)
 rotation = 3.40339
 scale = Vector2(-0.453, 0.554)
 skew = 0.335539
-texture = ExtResource("23_oqsbs")
 
 [node name="ColumCrystal5Pix4" type="Sprite2D" parent="Decoration/FlowersForDie/FlowerDie6"]
 modulate = Color(0.839161, 0.798463, 0.884734, 1)
@@ -2871,7 +2787,6 @@ self_modulate = Color(0.986236, 0.930265, 0.954794, 1)
 position = Vector2(1784.16, -8895.82)
 rotation = 3.66519
 scale = Vector2(0.490547, 0.793998)
-texture = ExtResource("23_oqsbs")
 
 [node name="FlowerDie7" type="Node2D" parent="Decoration/FlowersForDie"]
 modulate = Color(0.699653, 0.699653, 0.699653, 1)
@@ -2886,7 +2801,6 @@ position = Vector2(2069.68, -8700.29)
 rotation = 2.87979
 scale = Vector2(1.78903, 2.05929)
 skew = -0.34827
-texture = ExtResource("23_oqsbs")
 
 [node name="ColumCrystal5Pix9" type="Sprite2D" parent="Decoration/FlowersForDie/FlowerDie7"]
 modulate = Color(0.839161, 0.798463, 0.884734, 1)
@@ -2895,7 +2809,6 @@ position = Vector2(2180.63, -8746.92)
 rotation = 3.14159
 scale = Vector2(0.856114, 2.64971)
 skew = -0.34827
-texture = ExtResource("23_oqsbs")
 
 [node name="ColumCrystal5Pix7" type="Sprite2D" parent="Decoration/FlowersForDie/FlowerDie7"]
 modulate = Color(0.839161, 0.798463, 0.884734, 1)
@@ -2904,7 +2817,6 @@ position = Vector2(2128.09, -8796.16)
 rotation = 4.18878
 scale = Vector2(0.655609, 3.34653)
 skew = -0.34827
-texture = ExtResource("23_oqsbs")
 
 [node name="ColumCrystal5Pix11" type="Sprite2D" parent="Decoration/FlowersForDie/FlowerDie7"]
 modulate = Color(0.839161, 0.798463, 0.884734, 1)
@@ -2913,7 +2825,6 @@ position = Vector2(2154.91, -8860.26)
 rotation = 4.45058
 scale = Vector2(0.653682, 3.45741)
 skew = -0.34827
-texture = ExtResource("23_oqsbs")
 
 [node name="ColumCrystal5Pix10" type="Sprite2D" parent="Decoration/FlowersForDie/FlowerDie7"]
 modulate = Color(0.839161, 0.798463, 0.884734, 1)
@@ -2922,7 +2833,6 @@ position = Vector2(2181.74, -8924.37)
 rotation = 4.45058
 scale = Vector2(0.833288, 3.59389)
 skew = -0.34827
-texture = ExtResource("23_oqsbs")
 
 [node name="ColumCrystal5Pix8" type="Sprite2D" parent="Decoration/FlowersForDie/FlowerDie7"]
 modulate = Color(0.839161, 0.798463, 0.884734, 1)
@@ -2931,7 +2841,6 @@ position = Vector2(2258.07, -8744.06)
 rotation = 2.61799
 scale = Vector2(0.947501, 2.25625)
 skew = -0.34827
-texture = ExtResource("23_oqsbs")
 
 [node name="ColumCrystal5Pix6" type="Sprite2D" parent="Decoration/FlowersForDie/FlowerDie7"]
 modulate = Color(0.839161, 0.798463, 0.884734, 1)
@@ -2940,7 +2849,6 @@ position = Vector2(2412.08, -8836.79)
 rotation = 3.40339
 scale = Vector2(-1.53679, 0.964341)
 skew = 0.335539
-texture = ExtResource("23_oqsbs")
 
 [node name="ColumCrystal5Pix4" type="Sprite2D" parent="Decoration/FlowersForDie/FlowerDie7"]
 modulate = Color(0.839161, 0.798463, 0.884734, 1)
@@ -2948,7 +2856,6 @@ self_modulate = Color(0.986236, 0.930265, 0.954794, 1)
 position = Vector2(2145.41, -8924.95)
 rotation = 3.40339
 scale = Vector2(1.98012, 1.04143)
-texture = ExtResource("23_oqsbs")
 
 [node name="ColumCrystal5Pix5" type="Sprite2D" parent="Decoration/FlowersForDie/FlowerDie7"]
 modulate = Color(0.839161, 0.798463, 0.884734, 1)
@@ -2956,7 +2863,6 @@ self_modulate = Color(0.986236, 0.930265, 0.954794, 1)
 position = Vector2(2379.53, -8780.84)
 rotation = 3.40339
 scale = Vector2(-1.05904, 1.21969)
-texture = ExtResource("23_oqsbs")
 
 [node name="FlowerDie11" type="Node2D" parent="Decoration/FlowersForDie"]
 modulate = Color(0.699653, 0.699653, 0.699653, 1)
@@ -2971,7 +2877,6 @@ position = Vector2(2069.68, -8700.29)
 rotation = 2.87979
 scale = Vector2(1.78903, 2.05929)
 skew = -0.34827
-texture = ExtResource("23_oqsbs")
 
 [node name="ColumCrystal5Pix9" type="Sprite2D" parent="Decoration/FlowersForDie/FlowerDie11"]
 modulate = Color(0.839161, 0.798463, 0.884734, 1)
@@ -2980,7 +2885,6 @@ position = Vector2(2123.26, -8736.54)
 rotation = 3.14159
 scale = Vector2(0.856114, 2.64971)
 skew = -0.34827
-texture = ExtResource("23_oqsbs")
 
 [node name="ColumCrystal5Pix7" type="Sprite2D" parent="Decoration/FlowersForDie/FlowerDie11"]
 modulate = Color(0.839161, 0.798463, 0.884734, 1)
@@ -2989,7 +2893,6 @@ position = Vector2(2156.76, -8786.02)
 rotation = 4.18878
 scale = Vector2(0.655609, 3.34653)
 skew = -0.34827
-texture = ExtResource("23_oqsbs")
 
 [node name="ColumCrystal5Pix11" type="Sprite2D" parent="Decoration/FlowersForDie/FlowerDie11"]
 modulate = Color(0.839161, 0.798463, 0.884734, 1)
@@ -2998,7 +2901,6 @@ position = Vector2(2154.91, -8860.26)
 rotation = 4.45058
 scale = Vector2(0.653682, 3.45741)
 skew = -0.34827
-texture = ExtResource("23_oqsbs")
 
 [node name="ColumCrystal5Pix10" type="Sprite2D" parent="Decoration/FlowersForDie/FlowerDie11"]
 modulate = Color(0.839161, 0.798463, 0.884734, 1)
@@ -3007,7 +2909,6 @@ position = Vector2(2181.74, -8924.37)
 rotation = 4.45058
 scale = Vector2(0.833288, 3.59389)
 skew = -0.34827
-texture = ExtResource("23_oqsbs")
 
 [node name="ColumCrystal5Pix8" type="Sprite2D" parent="Decoration/FlowersForDie/FlowerDie11"]
 modulate = Color(0.839161, 0.798463, 0.884734, 1)
@@ -3016,7 +2917,6 @@ position = Vector2(2173, -8768.02)
 rotation = 2.61799
 scale = Vector2(0.947501, 2.25625)
 skew = -0.34827
-texture = ExtResource("23_oqsbs")
 
 [node name="ColumCrystal5Pix6" type="Sprite2D" parent="Decoration/FlowersForDie/FlowerDie11"]
 modulate = Color(0.839161, 0.798463, 0.884734, 1)
@@ -3025,7 +2925,6 @@ position = Vector2(2263.88, -8827.87)
 rotation = 3.92699
 scale = Vector2(-1.53679, 0.964341)
 skew = 0.335539
-texture = ExtResource("23_oqsbs")
 
 [node name="ColumCrystal5Pix4" type="Sprite2D" parent="Decoration/FlowersForDie/FlowerDie11"]
 modulate = Color(0.839161, 0.798463, 0.884734, 1)
@@ -3033,7 +2932,6 @@ self_modulate = Color(0.986236, 0.930265, 0.954794, 1)
 position = Vector2(2145.41, -8924.95)
 rotation = 3.40339
 scale = Vector2(1.98012, 1.04143)
-texture = ExtResource("23_oqsbs")
 
 [node name="ColumCrystal5Pix5" type="Sprite2D" parent="Decoration/FlowersForDie/FlowerDie11"]
 modulate = Color(0.839161, 0.798463, 0.884734, 1)
@@ -3041,7 +2939,6 @@ self_modulate = Color(0.986236, 0.930265, 0.954794, 1)
 position = Vector2(2379.53, -8780.84)
 rotation = 3.40339
 scale = Vector2(-1.05904, 1.21969)
-texture = ExtResource("23_oqsbs")
 
 [node name="FlowerDie2" type="Node2D" parent="Decoration/FlowersForDie"]
 position = Vector2(1326.42, 4043.01)
@@ -3054,7 +2951,6 @@ position = Vector2(1150.21, -526.539)
 rotation = 2.73966
 scale = Vector2(1.14454, 1.28389)
 skew = -0.34827
-texture = ExtResource("23_oqsbs")
 
 [node name="ColumCrystal5Pix5" type="Sprite2D" parent="Decoration/FlowersForDie/FlowerDie2"]
 modulate = Color(0.839161, 0.798463, 0.884734, 1)
@@ -3063,7 +2959,6 @@ position = Vector2(1222.3, -567.896)
 rotation = 2.54759
 scale = Vector2(0.785569, 1.45205)
 skew = -0.382814
-texture = ExtResource("23_oqsbs")
 
 [node name="ColumCrystal5Pix" type="Sprite2D" parent="Decoration/FlowersForDie/FlowerDie2"]
 modulate = Color(0.839161, 0.798463, 0.884734, 1)
@@ -3072,7 +2967,6 @@ position = Vector2(1075.7, -582.544)
 rotation = 2.73966
 scale = Vector2(1.5706, 0.828171)
 skew = -0.34827
-texture = ExtResource("23_oqsbs")
 
 [node name="ColumCrystal5Pix3" type="Sprite2D" parent="Decoration/FlowersForDie/FlowerDie2"]
 modulate = Color(0.839161, 0.798463, 0.884734, 1)
@@ -3081,7 +2975,6 @@ position = Vector2(1112.17, -678.293)
 rotation = -2.76982
 scale = Vector2(0.973844, 0.646797)
 skew = 0.33554
-texture = ExtResource("23_oqsbs")
 
 [node name="ColumCrystal5Pix6" type="Sprite2D" parent="Decoration/FlowersForDie/FlowerDie2"]
 modulate = Color(0.839161, 0.798463, 0.884734, 1)
@@ -3090,7 +2983,6 @@ position = Vector2(1293.49, -587.902)
 rotation = 0.371774
 scale = Vector2(0.938978, -0.528844)
 skew = 0.335539
-texture = ExtResource("23_oqsbs")
 
 [node name="ColumCrystal5Pix4" type="Sprite2D" parent="Decoration/FlowersForDie/FlowerDie2"]
 modulate = Color(0.839161, 0.798463, 0.884734, 1)
@@ -3098,7 +2990,6 @@ self_modulate = Color(0.986236, 0.930265, 0.954794, 1)
 position = Vector2(1064.74, -615.878)
 rotation = 3.14159
 scale = Vector2(1.13923, 0.678967)
-texture = ExtResource("23_oqsbs")
 
 [node name="FlowerDie10" type="Node2D" parent="Decoration/FlowersForDie"]
 modulate = Color(0.77084, 0.770839, 0.770839, 1)
@@ -3112,7 +3003,6 @@ position = Vector2(1150.21, -526.539)
 rotation = 2.73966
 scale = Vector2(1.14454, 1.28389)
 skew = -0.34827
-texture = ExtResource("23_oqsbs")
 
 [node name="ColumCrystal5Pix5" type="Sprite2D" parent="Decoration/FlowersForDie/FlowerDie10"]
 modulate = Color(0.839161, 0.798463, 0.884734, 1)
@@ -3121,7 +3011,6 @@ position = Vector2(1222.3, -567.896)
 rotation = 2.54759
 scale = Vector2(0.785569, 1.45205)
 skew = -0.382814
-texture = ExtResource("23_oqsbs")
 
 [node name="ColumCrystal5Pix" type="Sprite2D" parent="Decoration/FlowersForDie/FlowerDie10"]
 modulate = Color(0.839161, 0.798463, 0.884734, 1)
@@ -3130,7 +3019,6 @@ position = Vector2(1075.7, -582.544)
 rotation = 2.73966
 scale = Vector2(1.5706, 0.828171)
 skew = -0.34827
-texture = ExtResource("23_oqsbs")
 
 [node name="ColumCrystal5Pix3" type="Sprite2D" parent="Decoration/FlowersForDie/FlowerDie10"]
 modulate = Color(0.839161, 0.798463, 0.884734, 1)
@@ -3139,7 +3027,6 @@ position = Vector2(1112.17, -678.293)
 rotation = -3.14159
 scale = Vector2(0.973844, 0.646797)
 skew = 0.33554
-texture = ExtResource("23_oqsbs")
 
 [node name="ColumCrystal5Pix6" type="Sprite2D" parent="Decoration/FlowersForDie/FlowerDie10"]
 modulate = Color(0.839161, 0.798463, 0.884734, 1)
@@ -3148,7 +3035,6 @@ position = Vector2(1266.28, -588.841)
 rotation = 0.371774
 scale = Vector2(0.788139, -0.621489)
 skew = 0.335539
-texture = ExtResource("23_oqsbs")
 
 [node name="ColumCrystal5Pix4" type="Sprite2D" parent="Decoration/FlowersForDie/FlowerDie10"]
 modulate = Color(0.839161, 0.798463, 0.884734, 1)
@@ -3156,7 +3042,6 @@ self_modulate = Color(0.986236, 0.930265, 0.954794, 1)
 position = Vector2(1064.74, -615.878)
 rotation = 3.14159
 scale = Vector2(1.13923, 0.678967)
-texture = ExtResource("23_oqsbs")
 
 [node name="FlowerDie9" type="Node2D" parent="Decoration/FlowersForDie"]
 z_index = -1
@@ -3170,7 +3055,6 @@ position = Vector2(-2969.09, 1519.05)
 rotation = 6.28318
 scale = Vector2(1.24323, 0.624136)
 skew = -0.34827
-texture = ExtResource("23_oqsbs")
 
 [node name="ColumCrystal5Pix7" type="Sprite2D" parent="Decoration/FlowersForDie/FlowerDie9"]
 modulate = Color(0.839161, 0.798463, 0.884734, 1)
@@ -3179,7 +3063,6 @@ position = Vector2(-3125.37, 1463.55)
 rotation = 8.11577
 scale = Vector2(-1.12711, 1.12823)
 skew = -0.34827
-texture = ExtResource("23_oqsbs")
 
 [node name="ColumCrystal5Pix5" type="Sprite2D" parent="Decoration/FlowersForDie/FlowerDie9"]
 modulate = Color(0.839161, 0.798463, 0.884734, 1)
@@ -3188,7 +3071,6 @@ position = Vector2(-3153.54, 1438.03)
 rotation = 1.309
 scale = Vector2(-0.465552, 0.960354)
 skew = -0.382814
-texture = ExtResource("23_oqsbs")
 
 [node name="ColumCrystal5Pix" type="Sprite2D" parent="Decoration/FlowersForDie/FlowerDie9"]
 modulate = Color(0.839161, 0.798463, 0.884734, 1)
@@ -3197,7 +3079,6 @@ position = Vector2(-3011.45, 1446.15)
 rotation = 5.40834
 scale = Vector2(1.36033, -1.21692)
 skew = -0.34827
-texture = ExtResource("23_oqsbs")
 
 [node name="ColumCrystal5Pix3" type="Sprite2D" parent="Decoration/FlowersForDie/FlowerDie9"]
 modulate = Color(0.839161, 0.798463, 0.884734, 1)
@@ -3206,7 +3087,6 @@ position = Vector2(-3081.49, 1583.15)
 rotation = -5.49778
 scale = Vector2(0.831707, 0.80942)
 skew = 0.33554
-texture = ExtResource("23_oqsbs")
 
 [node name="ColumCrystal5Pix6" type="Sprite2D" parent="Decoration/FlowersForDie/FlowerDie9"]
 modulate = Color(0.839161, 0.798463, 0.884734, 1)
@@ -3215,7 +3095,6 @@ position = Vector2(-3185.33, 1451.93)
 rotation = -2.35619
 scale = Vector2(0.75455, -0.909035)
 skew = 0.335539
-texture = ExtResource("23_oqsbs")
 
 [node name="ColumCrystal5Pix4" type="Sprite2D" parent="Decoration/FlowersForDie/FlowerDie9"]
 modulate = Color(0.839161, 0.798463, 0.884734, 1)
@@ -3223,7 +3102,6 @@ self_modulate = Color(0.986236, 0.930265, 0.954794, 1)
 position = Vector2(-3029.24, 1560.18)
 rotation = 6.54498
 scale = Vector2(1.11159, 0.519479)
-texture = ExtResource("23_oqsbs")
 
 [node name="FlowerDie3" type="Node2D" parent="Decoration/FlowersForDie"]
 position = Vector2(5209.51, -3353.16)
@@ -3236,7 +3114,6 @@ position = Vector2(5077.05, -7221.77)
 rotation = 3.14159
 scale = Vector2(1.14454, 1.28389)
 skew = -0.34827
-texture = ExtResource("23_oqsbs")
 
 [node name="ColumCrystal5Pix7" type="Sprite2D" parent="Decoration/FlowersForDie/FlowerDie3"]
 modulate = Color(0.839161, 0.798463, 0.884734, 1)
@@ -3245,7 +3122,6 @@ position = Vector2(5006.77, -7277.04)
 rotation = 3.14159
 scale = Vector2(1.14454, 1.28389)
 skew = -0.34827
-texture = ExtResource("23_oqsbs")
 
 [node name="ColumCrystal5Pix5" type="Sprite2D" parent="Decoration/FlowersForDie/FlowerDie3"]
 modulate = Color(0.839161, 0.798463, 0.884734, 1)
@@ -3254,7 +3130,6 @@ position = Vector2(5158.2, -7220.19)
 rotation = 2.87979
 scale = Vector2(0.785569, 1.45205)
 skew = -0.382814
-texture = ExtResource("23_oqsbs")
 
 [node name="ColumCrystal5Pix" type="Sprite2D" parent="Decoration/FlowersForDie/FlowerDie3"]
 modulate = Color(0.839161, 0.798463, 0.884734, 1)
@@ -3263,7 +3138,6 @@ position = Vector2(5013.97, -7300.15)
 rotation = 3.14159
 scale = Vector2(1.5706, 0.828171)
 skew = -0.34827
-texture = ExtResource("23_oqsbs")
 
 [node name="ColumCrystal5Pix6" type="Sprite2D" parent="Decoration/FlowersForDie/FlowerDie3"]
 modulate = Color(0.839161, 0.798463, 0.884734, 1)
@@ -3272,7 +3146,6 @@ position = Vector2(5253.24, -7262.12)
 rotation = 0.523598
 scale = Vector2(0.938978, -0.781778)
 skew = 0.335539
-texture = ExtResource("23_oqsbs")
 
 [node name="ColumCrystal5Pix4" type="Sprite2D" parent="Decoration/FlowersForDie/FlowerDie3"]
 modulate = Color(0.839161, 0.798463, 0.884734, 1)
@@ -3280,7 +3153,6 @@ self_modulate = Color(0.986236, 0.930265, 0.954794, 1)
 position = Vector2(4992.68, -7349.83)
 rotation = 3.40339
 scale = Vector2(1.13923, 0.678967)
-texture = ExtResource("23_oqsbs")
 
 [node name="ColumCrystal5Pix3" type="Sprite2D" parent="Decoration/FlowersForDie/FlowerDie3"]
 modulate = Color(0.839161, 0.798463, 0.884734, 1)
@@ -3289,7 +3161,6 @@ position = Vector2(5054.16, -7412.82)
 rotation = -2.35619
 scale = Vector2(0.840456, 0.802352)
 skew = 0.33554
-texture = ExtResource("23_oqsbs")
 
 [node name="FlowerDie4" type="Node2D" parent="Decoration/FlowersForDie"]
 position = Vector2(5209.51, -3353.16)
@@ -3302,7 +3173,6 @@ position = Vector2(4281.47, -7908.27)
 rotation = 3.14159
 scale = Vector2(1.14454, 1.28389)
 skew = -0.34827
-texture = ExtResource("23_oqsbs")
 
 [node name="ColumCrystal5Pix7" type="Sprite2D" parent="Decoration/FlowersForDie/FlowerDie4"]
 modulate = Color(0.839161, 0.798463, 0.884734, 1)
@@ -3311,7 +3181,6 @@ position = Vector2(4244.62, -7940.58)
 rotation = 3.14159
 scale = Vector2(1.14454, 1.28389)
 skew = -0.34827
-texture = ExtResource("23_oqsbs")
 
 [node name="ColumCrystal5Pix5" type="Sprite2D" parent="Decoration/FlowersForDie/FlowerDie4"]
 modulate = Color(0.839161, 0.798463, 0.884734, 1)
@@ -3320,7 +3189,6 @@ position = Vector2(4353.63, -7907.82)
 rotation = 2.87979
 scale = Vector2(0.785569, 1.45205)
 skew = -0.382814
-texture = ExtResource("23_oqsbs")
 
 [node name="ColumCrystal5Pix" type="Sprite2D" parent="Decoration/FlowersForDie/FlowerDie4"]
 modulate = Color(0.839161, 0.798463, 0.884734, 1)
@@ -3329,7 +3197,6 @@ position = Vector2(4265.93, -7973.83)
 rotation = 3.14159
 scale = Vector2(1.38125, 0.828171)
 skew = -0.34827
-texture = ExtResource("23_oqsbs")
 
 [node name="ColumCrystal5Pix4" type="Sprite2D" parent="Decoration/FlowersForDie/FlowerDie4"]
 modulate = Color(0.839161, 0.798463, 0.884734, 1)
@@ -3337,7 +3204,6 @@ self_modulate = Color(0.986236, 0.930265, 0.954794, 1)
 position = Vector2(4260.54, -7999.79)
 rotation = 3.40339
 scale = Vector2(1.13923, 0.678967)
-texture = ExtResource("23_oqsbs")
 
 [node name="FlowerDie12" type="Node2D" parent="Decoration/FlowersForDie"]
 position = Vector2(6754.4, 6139.1)
@@ -3350,7 +3216,6 @@ position = Vector2(4272.12, -7996.44)
 rotation = 3.14159
 scale = Vector2(1.06026, 1.13363)
 skew = -0.34827
-texture = ExtResource("23_oqsbs")
 
 [node name="ColumCrystal5Pix7" type="Sprite2D" parent="Decoration/FlowersForDie/FlowerDie12"]
 modulate = Color(0.839161, 0.798463, 0.884734, 1)
@@ -3359,7 +3224,6 @@ position = Vector2(4254.25, -8046.21)
 rotation = 3.14159
 scale = Vector2(0.848072, 0.886833)
 skew = -0.34827
-texture = ExtResource("23_oqsbs")
 
 [node name="ColumCrystal5Pix5" type="Sprite2D" parent="Decoration/FlowersForDie/FlowerDie12"]
 modulate = Color(0.839161, 0.798463, 0.884734, 1)
@@ -3368,7 +3232,6 @@ position = Vector2(4323.7, -8021.81)
 rotation = 2.87979
 scale = Vector2(0.882153, 1.36473)
 skew = -0.382814
-texture = ExtResource("23_oqsbs")
 
 [node name="ColumCrystal5Pix" type="Sprite2D" parent="Decoration/FlowersForDie/FlowerDie12"]
 modulate = Color(0.839161, 0.798463, 0.884734, 1)
@@ -3377,7 +3240,6 @@ position = Vector2(4262.85, -8079.11)
 rotation = 3.14159
 scale = Vector2(1.09117, 0.598895)
 skew = -0.34827
-texture = ExtResource("23_oqsbs")
 
 [node name="ColumCrystal5Pix4" type="Sprite2D" parent="Decoration/FlowersForDie/FlowerDie12"]
 modulate = Color(0.839161, 0.798463, 0.884734, 1)
@@ -3385,7 +3247,6 @@ self_modulate = Color(0.986236, 0.930265, 0.954794, 1)
 position = Vector2(4282.55, -8133.99)
 rotation = 3.92699
 scale = Vector2(0.738981, 0.91177)
-texture = ExtResource("23_oqsbs")
 
 [node name="FlowerDie13" type="Node2D" parent="Decoration/FlowersForDie"]
 position = Vector2(5862.76, -2796.29)
@@ -3398,7 +3259,6 @@ position = Vector2(4299.68, -8016.07)
 rotation = 3.66519
 scale = Vector2(1.05918, 1.19569)
 skew = -0.34827
-texture = ExtResource("23_oqsbs")
 
 [node name="ColumCrystal5Pix7" type="Sprite2D" parent="Decoration/FlowersForDie/FlowerDie13"]
 modulate = Color(0.839161, 0.798463, 0.884734, 1)
@@ -3407,7 +3267,6 @@ position = Vector2(4308.28, -8019.16)
 rotation = 3.92699
 scale = Vector2(0.848072, 0.886833)
 skew = -0.34827
-texture = ExtResource("23_oqsbs")
 
 [node name="ColumCrystal5Pix5" type="Sprite2D" parent="Decoration/FlowersForDie/FlowerDie13"]
 modulate = Color(0.839161, 0.798463, 0.884734, 1)
@@ -3416,7 +3275,6 @@ position = Vector2(4327.38, -7981.74)
 rotation = 3.14159
 scale = Vector2(0.829979, 0.667783)
 skew = -0.382814
-texture = ExtResource("23_oqsbs")
 
 [node name="ColumCrystal5Pix" type="Sprite2D" parent="Decoration/FlowersForDie/FlowerDie13"]
 modulate = Color(0.839161, 0.798463, 0.884734, 1)
@@ -3425,7 +3283,6 @@ position = Vector2(4312.09, -8077.88)
 rotation = 3.66519
 scale = Vector2(0.969668, 0.678134)
 skew = -0.34827
-texture = ExtResource("23_oqsbs")
 
 [node name="ColumCrystal5Pix4" type="Sprite2D" parent="Decoration/FlowersForDie/FlowerDie13"]
 modulate = Color(0.839161, 0.798463, 0.884734, 1)
@@ -3433,7 +3290,6 @@ self_modulate = Color(0.986236, 0.930265, 0.954794, 1)
 position = Vector2(4352.83, -8081.98)
 rotation = 4.18878
 scale = Vector2(0.644156, 0.657337)
-texture = ExtResource("23_oqsbs")
 
 [node name="FlowerDie5" type="Node2D" parent="Decoration/FlowersForDie"]
 position = Vector2(5800.8, -2559.9)
@@ -3446,7 +3302,6 @@ position = Vector2(4185.7, -7865.87)
 rotation = 3.14159
 scale = Vector2(1.14454, 1.28389)
 skew = -0.34827
-texture = ExtResource("23_oqsbs")
 
 [node name="ColumCrystal5Pix7" type="Sprite2D" parent="Decoration/FlowersForDie/FlowerDie5"]
 modulate = Color(0.839161, 0.798463, 0.884734, 1)
@@ -3455,7 +3310,6 @@ position = Vector2(4122.32, -7913.13)
 rotation = 3.40339
 scale = Vector2(1.14454, 1.28389)
 skew = -0.34827
-texture = ExtResource("23_oqsbs")
 
 [node name="ColumCrystal5Pix5" type="Sprite2D" parent="Decoration/FlowersForDie/FlowerDie5"]
 modulate = Color(0.839161, 0.798463, 0.884734, 1)
@@ -3464,7 +3318,6 @@ position = Vector2(4231.32, -7880.37)
 rotation = 3.14159
 scale = Vector2(0.785569, 1.45205)
 skew = -0.382814
-texture = ExtResource("23_oqsbs")
 
 [node name="ColumCrystal5Pix6" type="Sprite2D" parent="Decoration/FlowersForDie/FlowerDie5"]
 modulate = Color(0.839161, 0.798463, 0.884734, 1)
@@ -3473,7 +3326,6 @@ position = Vector2(4258.22, -7907.27)
 rotation = 1.83259
 scale = Vector2(0.942577, 1.22429)
 skew = -0.382814
-texture = ExtResource("23_oqsbs")
 
 [node name="ColumCrystal5Pix" type="Sprite2D" parent="Decoration/FlowersForDie/FlowerDie5"]
 modulate = Color(0.839161, 0.798463, 0.884734, 1)
@@ -3482,7 +3334,6 @@ position = Vector2(4143.62, -7946.38)
 rotation = 3.40339
 scale = Vector2(1.38125, 0.828171)
 skew = -0.34827
-texture = ExtResource("23_oqsbs")
 
 [node name="ColumCrystal5Pix4" type="Sprite2D" parent="Decoration/FlowersForDie/FlowerDie5"]
 modulate = Color(0.839161, 0.798463, 0.884734, 1)
@@ -3490,7 +3341,6 @@ self_modulate = Color(0.986236, 0.930265, 0.954794, 1)
 position = Vector2(4143.13, -7965.26)
 rotation = 3.66519
 scale = Vector2(1.06009, 0.678967)
-texture = ExtResource("23_oqsbs")
 
 [node name="Coastredwoodfullpix3" type="Sprite2D" parent="Decoration"]
 modulate = Color(0.939954, 0.850943, 0.818861, 1)
@@ -3529,7 +3379,6 @@ self_modulate = Color(0.694522, 0.485664, 0.722595, 1)
 position = Vector2(44, 977)
 rotation = 0.261799
 scale = Vector2(0.0271147, 0.0572745)
-texture = ExtResource("22_twul6")
 
 [node name="Quartz3" type="Sprite2D" parent="Decoration/Quartz4"]
 modulate = Color(0.821789, 0.821789, 0.821789, 1)
@@ -3538,7 +3387,6 @@ position = Vector2(-95.8164, 26.1895)
 rotation = -0.126178
 scale = Vector2(0.973666, 1.10991)
 skew = -0.388859
-texture = ExtResource("22_twul6")
 
 [node name="Quartz5" type="Sprite2D" parent="Decoration/Quartz4"]
 modulate = Color(0.821789, 0.821789, 0.821789, 1)
@@ -3547,19 +3395,16 @@ position = Vector2(82.3184, -2.3418)
 rotation = 0.126178
 scale = Vector2(0.973666, 1.10991)
 skew = 0.388859
-texture = ExtResource("22_twul6")
 
 [node name="Quartz6" type="Sprite2D" parent="Decoration/Quartz4"]
 modulate = Color(0.821789, 0.821789, 0.821789, 1)
 self_modulate = Color(0.694522, 0.485664, 0.722595, 1)
 position = Vector2(-4.93945, -38.9717)
-texture = ExtResource("22_twul6")
 
 [node name="Quartz2" type="Sprite2D" parent="Decoration/Quartz4"]
 self_modulate = Color(0.694522, 0.485664, 0.722595, 1)
 position = Vector2(-22.0566, 60.9863)
 scale = Vector2(1.57771, 0.925641)
-texture = ExtResource("22_twul6")
 
 [node name="Quartz8" type="Sprite2D" parent="Decoration"]
 modulate = Color(0.977779, 0.96355, 0.984125, 1)
@@ -3567,7 +3412,6 @@ self_modulate = Color(0.694522, 0.485664, 0.722595, 1)
 position = Vector2(1962, 1714)
 rotation = 0.261799
 scale = Vector2(0.0271147, 0.0572745)
-texture = ExtResource("22_twul6")
 
 [node name="Quartz3" type="Sprite2D" parent="Decoration/Quartz8"]
 modulate = Color(0.821789, 0.821789, 0.821789, 1)
@@ -3576,7 +3420,6 @@ position = Vector2(-95.8164, 26.1895)
 rotation = -0.126178
 scale = Vector2(0.973666, 1.10991)
 skew = -0.388859
-texture = ExtResource("22_twul6")
 
 [node name="Quartz9" type="Sprite2D" parent="Decoration/Quartz8"]
 modulate = Color(0.821789, 0.821789, 0.821789, 1)
@@ -3585,7 +3428,6 @@ position = Vector2(8.85938, -254.182)
 rotation = 0.523598
 scale = Vector2(1.23981, 1.10991)
 skew = -0.388859
-texture = ExtResource("22_twul6")
 
 [node name="Quartz8" type="Sprite2D" parent="Decoration/Quartz8"]
 modulate = Color(0.821789, 0.821789, 0.821789, 1)
@@ -3594,7 +3436,6 @@ position = Vector2(-105, -185.514)
 rotation = 0.523598
 scale = Vector2(1.23981, 1.10991)
 skew = -0.388859
-texture = ExtResource("22_twul6")
 
 [node name="Quartz10" type="Sprite2D" parent="Decoration/Quartz8"]
 modulate = Color(0.821789, 0.821789, 0.821789, 1)
@@ -3603,7 +3444,6 @@ position = Vector2(-264.027, -129.189)
 rotation = 0.523598
 scale = Vector2(1.23981, 1.10991)
 skew = -0.388859
-texture = ExtResource("22_twul6")
 
 [node name="Quartz11" type="Sprite2D" parent="Decoration/Quartz8"]
 modulate = Color(0.821789, 0.821789, 0.821789, 1)
@@ -3612,7 +3452,6 @@ position = Vector2(-413.509, -56.0003)
 rotation = 0.523598
 scale = Vector2(1.23981, 1.10991)
 skew = -0.388859
-texture = ExtResource("22_twul6")
 
 [node name="Quartz7" type="Sprite2D" parent="Decoration/Quartz8"]
 modulate = Color(0.821789, 0.821789, 0.821789, 1)
@@ -3621,7 +3460,6 @@ position = Vector2(104.313, -85.5332)
 rotation = 0.523598
 scale = Vector2(1.23981, 1.10991)
 skew = -0.388859
-texture = ExtResource("22_twul6")
 
 [node name="Quartz4" type="Sprite2D" parent="Decoration/Quartz8"]
 modulate = Color(0.821789, 0.821789, 0.821789, 1)
@@ -3630,7 +3468,6 @@ position = Vector2(-83.351, -79.8059)
 rotation = -0.126178
 scale = Vector2(1.23981, 1.10991)
 skew = -0.388859
-texture = ExtResource("22_twul6")
 
 [node name="Quartz5" type="Sprite2D" parent="Decoration/Quartz8"]
 modulate = Color(0.821789, 0.821789, 0.821789, 1)
@@ -3639,20 +3476,17 @@ position = Vector2(64.2596, 46.076)
 rotation = 0.126178
 scale = Vector2(0.973666, 1.10991)
 skew = 0.388859
-texture = ExtResource("22_twul6")
 
 [node name="Quartz6" type="Sprite2D" parent="Decoration/Quartz8"]
 modulate = Color(0.821789, 0.821789, 0.821789, 1)
 self_modulate = Color(0.694522, 0.485664, 0.722595, 1)
 position = Vector2(-187.664, 5.72946)
-texture = ExtResource("22_twul6")
 
 [node name="Quartz2" type="Sprite2D" parent="Decoration/Quartz8"]
 self_modulate = Color(0.694522, 0.485664, 0.722595, 1)
 position = Vector2(-287.547, -35.8264)
 rotation = 0.261799
 scale = Vector2(1.57771, 0.925641)
-texture = ExtResource("22_twul6")
 
 [node name="Quartz15" type="Sprite2D" parent="Decoration"]
 modulate = Color(0.977779, 0.96355, 0.984125, 1)
@@ -3660,7 +3494,6 @@ self_modulate = Color(0.694522, 0.485664, 0.722595, 1)
 position = Vector2(324, 1097)
 rotation = 0.261799
 scale = Vector2(-0.000106332, 0.0572745)
-texture = ExtResource("22_twul6")
 
 [node name="Quartz3" type="Sprite2D" parent="Decoration/Quartz15"]
 modulate = Color(0.821789, 0.821789, 0.821789, 1)
@@ -3669,7 +3502,6 @@ position = Vector2(-95.8164, 26.1895)
 rotation = -0.126178
 scale = Vector2(0.973666, 1.10991)
 skew = -0.388859
-texture = ExtResource("22_twul6")
 
 [node name="Quartz9" type="Sprite2D" parent="Decoration/Quartz15"]
 modulate = Color(0.821789, 0.821789, 0.821789, 1)
@@ -3678,7 +3510,6 @@ position = Vector2(8.85938, -254.182)
 rotation = 0.523598
 scale = Vector2(1.23981, 1.10991)
 skew = -0.388859
-texture = ExtResource("22_twul6")
 
 [node name="Quartz8" type="Sprite2D" parent="Decoration/Quartz15"]
 modulate = Color(0.821789, 0.821789, 0.821789, 1)
@@ -3687,7 +3518,6 @@ position = Vector2(-105, -185.514)
 rotation = 0.523598
 scale = Vector2(1.23981, 1.10991)
 skew = -0.388859
-texture = ExtResource("22_twul6")
 
 [node name="Quartz10" type="Sprite2D" parent="Decoration/Quartz15"]
 modulate = Color(0.821789, 0.821789, 0.821789, 1)
@@ -3696,7 +3526,6 @@ position = Vector2(-264.027, -129.189)
 rotation = 0.523598
 scale = Vector2(1.23981, 1.10991)
 skew = -0.388859
-texture = ExtResource("22_twul6")
 
 [node name="Quartz11" type="Sprite2D" parent="Decoration/Quartz15"]
 modulate = Color(0.821789, 0.821789, 0.821789, 1)
@@ -3705,7 +3534,6 @@ position = Vector2(-413.509, -56.0003)
 rotation = 0.523598
 scale = Vector2(1.23981, 1.10991)
 skew = -0.388859
-texture = ExtResource("22_twul6")
 
 [node name="Quartz7" type="Sprite2D" parent="Decoration/Quartz15"]
 modulate = Color(0.821789, 0.821789, 0.821789, 1)
@@ -3714,7 +3542,6 @@ position = Vector2(104.313, -85.5332)
 rotation = 0.523598
 scale = Vector2(1.23981, 1.10991)
 skew = -0.388859
-texture = ExtResource("22_twul6")
 
 [node name="Quartz4" type="Sprite2D" parent="Decoration/Quartz15"]
 modulate = Color(0.821789, 0.821789, 0.821789, 1)
@@ -3723,7 +3550,6 @@ position = Vector2(-83.351, -79.8059)
 rotation = -0.126178
 scale = Vector2(1.23981, 1.10991)
 skew = -0.388859
-texture = ExtResource("22_twul6")
 
 [node name="Quartz5" type="Sprite2D" parent="Decoration/Quartz15"]
 modulate = Color(0.821789, 0.821789, 0.821789, 1)
@@ -3732,20 +3558,17 @@ position = Vector2(64.2596, 46.076)
 rotation = 0.126178
 scale = Vector2(0.973666, 1.10991)
 skew = 0.388859
-texture = ExtResource("22_twul6")
 
 [node name="Quartz6" type="Sprite2D" parent="Decoration/Quartz15"]
 modulate = Color(0.821789, 0.821789, 0.821789, 1)
 self_modulate = Color(0.694522, 0.485664, 0.722595, 1)
 position = Vector2(-187.664, 5.72946)
-texture = ExtResource("22_twul6")
 
 [node name="Quartz2" type="Sprite2D" parent="Decoration/Quartz15"]
 self_modulate = Color(0.694522, 0.485664, 0.722595, 1)
 position = Vector2(-287.547, -35.8264)
 rotation = 0.261799
 scale = Vector2(1.57771, 0.925641)
-texture = ExtResource("22_twul6")
 
 [node name="Quartz13" type="Sprite2D" parent="Decoration"]
 modulate = Color(0.977779, 0.96355, 0.984125, 1)
@@ -3753,7 +3576,6 @@ self_modulate = Color(0.694522, 0.485664, 0.722595, 1)
 position = Vector2(1129, 1361)
 rotation = -1.83259
 scale = Vector2(0.0271147, 0.0572745)
-texture = ExtResource("22_twul6")
 
 [node name="Quartz3" type="Sprite2D" parent="Decoration/Quartz13"]
 modulate = Color(0.821789, 0.821789, 0.821789, 1)
@@ -3762,7 +3584,6 @@ position = Vector2(-95.8164, 26.1895)
 rotation = -0.126178
 scale = Vector2(0.973666, 1.10991)
 skew = -0.388859
-texture = ExtResource("22_twul6")
 
 [node name="Quartz9" type="Sprite2D" parent="Decoration/Quartz13"]
 modulate = Color(0.821789, 0.821789, 0.821789, 1)
@@ -3771,7 +3592,6 @@ position = Vector2(8.85938, -254.182)
 rotation = 0.523598
 scale = Vector2(1.23981, 1.10991)
 skew = -0.388859
-texture = ExtResource("22_twul6")
 
 [node name="Quartz8" type="Sprite2D" parent="Decoration/Quartz13"]
 modulate = Color(0.821789, 0.821789, 0.821789, 1)
@@ -3780,7 +3600,6 @@ position = Vector2(-105, -185.514)
 rotation = 0.523598
 scale = Vector2(1.23981, 1.10991)
 skew = -0.388859
-texture = ExtResource("22_twul6")
 
 [node name="Quartz10" type="Sprite2D" parent="Decoration/Quartz13"]
 modulate = Color(0.821789, 0.821789, 0.821789, 1)
@@ -3789,7 +3608,6 @@ position = Vector2(-264.027, -129.189)
 rotation = 0.523598
 scale = Vector2(1.23981, 1.10991)
 skew = -0.388859
-texture = ExtResource("22_twul6")
 
 [node name="Quartz11" type="Sprite2D" parent="Decoration/Quartz13"]
 modulate = Color(0.821789, 0.821789, 0.821789, 1)
@@ -3798,7 +3616,6 @@ position = Vector2(-413.509, -56.0003)
 rotation = 0.523598
 scale = Vector2(1.23981, 1.10991)
 skew = -0.388859
-texture = ExtResource("22_twul6")
 
 [node name="Quartz7" type="Sprite2D" parent="Decoration/Quartz13"]
 modulate = Color(0.821789, 0.821789, 0.821789, 1)
@@ -3807,7 +3624,6 @@ position = Vector2(104.313, -85.5332)
 rotation = 0.523598
 scale = Vector2(1.23981, 1.10991)
 skew = -0.388859
-texture = ExtResource("22_twul6")
 
 [node name="Quartz4" type="Sprite2D" parent="Decoration/Quartz13"]
 modulate = Color(0.821789, 0.821789, 0.821789, 1)
@@ -3816,7 +3632,6 @@ position = Vector2(-83.351, -79.8059)
 rotation = -0.126178
 scale = Vector2(1.23981, 1.10991)
 skew = -0.388859
-texture = ExtResource("22_twul6")
 
 [node name="Quartz5" type="Sprite2D" parent="Decoration/Quartz13"]
 modulate = Color(0.821789, 0.821789, 0.821789, 1)
@@ -3825,20 +3640,17 @@ position = Vector2(64.2596, 46.076)
 rotation = 0.126178
 scale = Vector2(0.973666, 1.10991)
 skew = 0.388859
-texture = ExtResource("22_twul6")
 
 [node name="Quartz6" type="Sprite2D" parent="Decoration/Quartz13"]
 modulate = Color(0.821789, 0.821789, 0.821789, 1)
 self_modulate = Color(0.694522, 0.485664, 0.722595, 1)
 position = Vector2(-187.664, 5.72946)
-texture = ExtResource("22_twul6")
 
 [node name="Quartz2" type="Sprite2D" parent="Decoration/Quartz13"]
 self_modulate = Color(0.694522, 0.485664, 0.722595, 1)
 position = Vector2(-287.547, -35.8264)
 rotation = 0.261799
 scale = Vector2(1.57771, 0.925641)
-texture = ExtResource("22_twul6")
 
 [node name="Quartz5" type="Sprite2D" parent="Decoration"]
 modulate = Color(0.912289, 0.912289, 0.912289, 1)
@@ -3846,7 +3658,6 @@ self_modulate = Color(0.717799, 0.453685, 0.257934, 1)
 position = Vector2(-61, 1126)
 rotation = 2.74786
 scale = Vector2(0.0396739, 0.0572745)
-texture = ExtResource("22_twul6")
 
 [node name="Quartz3" type="Sprite2D" parent="Decoration/Quartz5"]
 modulate = Color(0.912289, 0.912289, 0.912289, 1)
@@ -3855,7 +3666,6 @@ position = Vector2(-95.8164, 26.1895)
 rotation = -0.126178
 scale = Vector2(0.973666, 1.10991)
 skew = -0.388859
-texture = ExtResource("22_twul6")
 
 [node name="Quartz5" type="Sprite2D" parent="Decoration/Quartz5"]
 modulate = Color(0.912289, 0.912289, 0.912289, 1)
@@ -3864,20 +3674,17 @@ position = Vector2(82.3184, -2.3418)
 rotation = 0.126178
 scale = Vector2(0.973666, 1.10991)
 skew = 0.388859
-texture = ExtResource("22_twul6")
 
 [node name="Quartz6" type="Sprite2D" parent="Decoration/Quartz5"]
 modulate = Color(0.912289, 0.912289, 0.912289, 1)
 self_modulate = Color(0.717799, 0.453685, 0.257934, 1)
 position = Vector2(-4.93945, -38.9717)
-texture = ExtResource("22_twul6")
 
 [node name="Quartz2" type="Sprite2D" parent="Decoration/Quartz5"]
 modulate = Color(0.912289, 0.912289, 0.912289, 1)
 self_modulate = Color(0.717799, 0.453685, 0.257934, 1)
 position = Vector2(-22.0566, 60.9863)
 scale = Vector2(1.57771, 0.925641)
-texture = ExtResource("22_twul6")
 
 [node name="Quartz4" type="Sprite2D" parent="Decoration/Quartz5"]
 modulate = Color(0.912289, 0.912289, 0.912289, 1)
@@ -3885,7 +3692,6 @@ self_modulate = Color(0.717799, 0.453685, 0.257934, 1)
 position = Vector2(-221.827, 48.0038)
 rotation = -0.261799
 scale = Vector2(0.797183, 0.860412)
-texture = ExtResource("22_twul6")
 
 [node name="Quartz6" type="Sprite2D" parent="Decoration"]
 modulate = Color(0.93408, 0.93408, 0.93408, 1)
@@ -3893,7 +3699,6 @@ self_modulate = Color(0.717799, 0.453685, 0.257934, 1)
 position = Vector2(-65, 1141)
 rotation = 1.57079
 scale = Vector2(0.0396739, 0.0572745)
-texture = ExtResource("22_twul6")
 
 [node name="Quartz3" type="Sprite2D" parent="Decoration/Quartz6"]
 modulate = Color(0.821789, 0.821789, 0.821789, 1)
@@ -3902,7 +3707,6 @@ position = Vector2(-95.8164, 26.1895)
 rotation = -0.126178
 scale = Vector2(0.973666, 1.10991)
 skew = -0.388859
-texture = ExtResource("22_twul6")
 
 [node name="Quartz5" type="Sprite2D" parent="Decoration/Quartz6"]
 modulate = Color(0.821789, 0.821789, 0.821789, 1)
@@ -3911,19 +3715,16 @@ position = Vector2(82.3184, -2.3418)
 rotation = 0.126178
 scale = Vector2(0.973666, 1.10991)
 skew = 0.388859
-texture = ExtResource("22_twul6")
 
 [node name="Quartz6" type="Sprite2D" parent="Decoration/Quartz6"]
 modulate = Color(0.821789, 0.821789, 0.821789, 1)
 self_modulate = Color(0.717799, 0.453685, 0.257934, 1)
 position = Vector2(-4.93945, -38.9717)
-texture = ExtResource("22_twul6")
 
 [node name="Quartz2" type="Sprite2D" parent="Decoration/Quartz6"]
 self_modulate = Color(0.717799, 0.453685, 0.257934, 1)
 position = Vector2(-22.0566, 60.9863)
 scale = Vector2(1.57771, 0.925641)
-texture = ExtResource("22_twul6")
 
 [node name="decoration2" type="TileMapLayer" parent="Decoration"]
 position = Vector2(0, -1)
@@ -3966,7 +3767,6 @@ position = Vector2(-10081.1, 15446.4)
 rotation = -3.66519
 scale = Vector2(-2.05819, -3.55498)
 skew = 0.225882
-texture = ExtResource("25_rohmv")
 
 [node name="stalactite" parent="Decoration/decoration2" instance=ExtResource("26_ins2x")]
 modulate = Color(0.435294, 0.247059, 0.270588, 1)
@@ -3976,12 +3776,15 @@ gravity_scale = 2.0
 
 [node name="stalactite4" parent="Decoration/decoration2" instance=ExtResource("26_ins2x")]
 modulate = Color(0.435294, 0.247059, 0.270588, 1)
-position = Vector2(763, 802)
+position = Vector2(753, 802)
 gravity_scale = 0.67
+
+[node name="basicstate" parent="Decoration/decoration2/stalactite4/state_machine" index="0"]
+wait_time = 3.0
 
 [node name="stalactite5" parent="Decoration/decoration2" instance=ExtResource("26_ins2x")]
 modulate = Color(0.435294, 0.247059, 0.270588, 1)
-position = Vector2(962, 800)
+position = Vector2(1031, 800)
 gravity_scale = 2.371
 
 [node name="stalactite6" parent="Decoration/decoration2" instance=ExtResource("26_ins2x")]
@@ -3996,8 +3799,11 @@ gravity_scale = 2.371
 
 [node name="stalactite9" parent="Decoration/decoration2" instance=ExtResource("26_ins2x")]
 modulate = Color(0.435294, 0.247059, 0.270588, 1)
-position = Vector2(828, 801)
+position = Vector2(873, 801)
 mass = 0.518
+
+[node name="basicstate" parent="Decoration/decoration2/stalactite9/state_machine" index="0"]
+wait_time = 5.0
 
 [node name="stalactite11" parent="Decoration/decoration2" instance=ExtResource("26_ins2x")]
 modulate = Color(0.435294, 0.247059, 0.270588, 1)
@@ -4006,14 +3812,8 @@ mass = 0.518
 
 [node name="stalactite10" parent="Decoration/decoration2" instance=ExtResource("26_ins2x")]
 modulate = Color(0.435294, 0.247059, 0.270588, 1)
-position = Vector2(915, 799)
+position = Vector2(959, 799)
 gravity_scale = 1.5
-
-[node name="stalactite2" parent="Decoration/decoration2" instance=ExtResource("26_ins2x")]
-modulate = Color(0.435294, 0.247059, 0.270588, 1)
-position = Vector2(683, 799)
-mass = 1.484
-gravity_scale = 3.0
 
 [node name="Salpix3" type="Sprite2D" parent="Decoration"]
 modulate = Color(0.817521, 0.817521, 0.817521, 1)
@@ -4060,9 +3860,21 @@ position = Vector2(389, 908)
 scale = Vector2(4, 4)
 is_active = true
 
+[node name="Camera2D" parent="Characters/Player1" index="2"]
+limit_top = -10000000
+limit_bottom = 10000000
+
+[node name="Inventory" parent="Characters/Player1" index="3"]
+z_index = 50
+scale = Vector2(0.25, 0.25)
+
 [node name="Player2" parent="Characters" instance=ExtResource("3_afqff")]
 position = Vector2(425, 415)
 scale = Vector2(4, 4)
+
+[node name="Inventory" parent="Characters/Player2" index="3"]
+z_index = 50
+scale = Vector2(0.25, 0.25)
 
 [node name="PlayerSwitchManager" parent="Characters" instance=ExtResource("21_e55te")]
 script = ExtResource("22_0w14c")
@@ -4070,6 +3882,7 @@ script = ExtResource("22_0w14c")
 [node name="Scenes" type="TileMapLayer" parent="."]
 
 [node name="Lever" parent="Scenes" instance=ExtResource("3_fff2f")]
+z_index = 2
 position = Vector2(2284, 461)
 scale = Vector2(0.453789, 0.453789)
 
@@ -4078,13 +3891,31 @@ z_index = 2
 position = Vector2(-3204.13, 1093.02)
 scale = Vector2(2.20367, 2.20367)
 
+[node name="RotationPuzzleRandomSolution" parent="Scenes" instance=ExtResource("26_4dy1a")]
+z_index = 2
+position = Vector2(372, -1006)
+
+[node name="first_item_solution" parent="Scenes/RotationPuzzleRandomSolution" index="0"]
+position = Vector2(939, 1931)
+
+[node name="second_item_solution" parent="Scenes/RotationPuzzleRandomSolution" index="1"]
+position = Vector2(1101, 1932)
+
+[node name="third_item_solution" parent="Scenes/RotationPuzzleRandomSolution" index="2"]
+position = Vector2(1205, 1929)
+
+[node name="RotationPuzzle" parent="Scenes/RotationPuzzleRandomSolution" index="3"]
+position = Vector2(714, 1390)
+
+[node name="first_item" parent="Scenes/RotationPuzzleRandomSolution/RotationPuzzle" index="0"]
+position = Vector2(55, -2.38419e-07)
+
 [node name="ColumCrystal4Pix" type="Sprite2D" parent="."]
 modulate = Color(0.735652, 0.545092, 0.748826, 1)
 self_modulate = Color(0.97182, 0.860244, 0.909667, 1)
 position = Vector2(258.327, 1061.99)
 rotation = -4.18878
 scale = Vector2(-0.151799, -0.22477)
-texture = ExtResource("25_rohmv")
 
 [node name="ColumCrystal4Pix2" type="Sprite2D" parent="."]
 modulate = Color(0.775173, 0.600507, 0.786737, 1)
@@ -4092,7 +3923,6 @@ self_modulate = Color(0.950636, 0.753029, 0.843861, 1)
 position = Vector2(393.754, 1028.49)
 rotation = -4.18878
 scale = Vector2(-0.51398, -0.477175)
-texture = ExtResource("25_rohmv")
 
 [node name="ColumCrystal4Pix3" type="Sprite2D" parent="."]
 modulate = Color(0.595457, 0.395848, 0.610436, 1)
@@ -4100,7 +3930,6 @@ self_modulate = Color(0.950636, 0.753029, 0.843861, 1)
 position = Vector2(1075, 1476)
 rotation = -3.40339
 scale = Vector2(-0.51398, -0.477175)
-texture = ExtResource("25_rohmv")
 
 [node name="ColumCrystal4Pix4" type="Sprite2D" parent="."]
 modulate = Color(0.595457, 0.395848, 0.610436, 1)
@@ -4108,14 +3937,12 @@ self_modulate = Color(0.950636, 0.753029, 0.843861, 1)
 position = Vector2(1095, 1491)
 rotation = -3.40339
 scale = Vector2(-0.51398, -0.477175)
-texture = ExtResource("25_rohmv")
 
 [node name="ColumCrystal5Pix" type="Sprite2D" parent="."]
 modulate = Color(0.682353, 0.419608, 0.917647, 1)
 position = Vector2(1241, 1034)
 rotation = 4.18878
 scale = Vector2(0.517779, 0.269219)
-texture = ExtResource("23_oqsbs")
 
 [node name="Node2D" type="Node2D" parent="."]
 modulate = Color(0.967654, 0.911983, 0.945648, 1)
@@ -4126,7 +3953,6 @@ self_modulate = Color(0.950636, 0.753029, 0.843861, 1)
 position = Vector2(1844.96, 1378.13)
 rotation = 1.04721
 scale = Vector2(1.36891, -1.56126)
-texture = ExtResource("25_rohmv")
 
 [node name="ColumCrystal4Pix6" type="Sprite2D" parent="Node2D"]
 modulate = Color(0.766364, 0.587635, 0.778321, 1)
@@ -4134,38 +3960,48 @@ self_modulate = Color(0.950636, 0.753029, 0.843861, 1)
 position = Vector2(1889.93, 1384.89)
 rotation = 2.3562
 scale = Vector2(1.52794, 1.32393)
-texture = ExtResource("25_rohmv")
 
 [node name="ColumCrystal4Pix" type="Sprite2D" parent="Node2D"]
 self_modulate = Color(0.693482, 0.463041, 0.624926, 1)
 position = Vector2(1645, 981)
 rotation = -0.785397
 scale = Vector2(0.532622, 0.576351)
-texture = ExtResource("25_rohmv")
 
 [node name="ColumCrystal4Pix2" type="Sprite2D" parent="Node2D"]
 self_modulate = Color(0.581407, 0.36389, 0.518229, 1)
 position = Vector2(979.364, 1477.64)
 rotation = 0.523598
 scale = Vector2(-0.353243, 0.635524)
-texture = ExtResource("25_rohmv")
 
 [node name="ColumCrystal4Pix3" type="Sprite2D" parent="Node2D"]
 self_modulate = Color(0.581407, 0.36389, 0.518229, 1)
 position = Vector2(684, 1444)
 rotation = 1.11546
 scale = Vector2(-0.455361, 0.623412)
-texture = ExtResource("25_rohmv")
 
 [node name="Tigereyepix" type="Sprite2D" parent="."]
 modulate = Color(0.781538, 0.79745, 0.781982, 1)
 position = Vector2(1418.75, 1043.31)
 scale = Vector2(0.58721, 0.481464)
-texture = ExtResource("31_twul6")
 
 [node name="Tigereyepix2" type="Sprite2D" parent="."]
 modulate = Color(0.781538, 0.79745, 0.781982, 1)
 position = Vector2(2847, 1698)
 rotation = 2.61799
 scale = Vector2(0.468466, 0.481464)
-texture = ExtResource("31_twul6")
+
+[node name="PauseMenu" parent="." instance=ExtResource("27_qie7t")]
+visible = false
+z_index = 99
+
+[node name="Continue" parent="PauseMenu/VBoxContainer" index="1"]
+icon_alignment = 1
+text_direction = 1
+
+[editable path="Decoration/decoration2/stalactite4"]
+[editable path="Decoration/decoration2/stalactite9"]
+[editable path="Characters/Player1"]
+[editable path="Characters/Player2"]
+[editable path="Scenes/RotationPuzzleRandomSolution"]
+[editable path="Scenes/RotationPuzzleRandomSolution/RotationPuzzle"]
+[editable path="PauseMenu"]
