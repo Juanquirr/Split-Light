@@ -1,4 +1,4 @@
-[gd_scene load_steps=1083 format=3 uid="uid://di1phytr0o74x"]
+[gd_scene load_steps=1084 format=3 uid="uid://di1phytr0o74x"]
 
 [ext_resource type="Script" uid="uid://dbhmwpkn06k08" path="res://Scripts/main_menu_animation.gd" id="1_m3bi6"]
 [ext_resource type="Texture2D" uid="uid://b6r4kt8bwnbd1" path="res://Assets/MainMenu/logo underline.png" id="2_o4ajm"]
@@ -22,6 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://b47dpsuy2ch3g" path="res://lib/PixelPlanets/GasPlanetLayers/GasPlanetLayers.tscn" id="17_mkpwh"]
 [ext_resource type="PackedScene" uid="uid://deyy6w0ssnedu" path="res://lib/PixelPlanets/NoAtmosphere/NoAtmosphere.tscn" id="18_4nkqq"]
 [ext_resource type="PackedScene" uid="uid://chh0bjjvjt2v8" path="res://lib/PixelPlanets/LandMasses/LandMasses.tscn" id="21_6dk6o"]
+[ext_resource type="PackedScene" uid="uid://c73m5qmydetg6" path="res://Scenes/settings_screen.tscn" id="23_jr6u5"]
 
 [sub_resource type="Animation" id="Animation_m3bi6"]
 length = 0.001
@@ -8092,6 +8093,9 @@ mouse_filter = 2
 bbcode_enabled = true
 text = "[font_size=30][font=\"res://Assets/Fonts/yoster.ttf\"][center]Yes[/center][/font][/font_size]"
 scroll_active = false
+
+[node name="SettingsScreen" parent="." instance=ExtResource("23_jr6u5")]
+visible = false
 
 [connection signal="ready" from="." to="." method="_on_ready"]
 [connection signal="animation_finished" from="SelectionLevelAnimation" to="VBoxContainer/Play Button" method="_on_animation_player_animation_finished"]

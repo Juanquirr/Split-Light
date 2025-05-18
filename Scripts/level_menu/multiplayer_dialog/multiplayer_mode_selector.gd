@@ -37,6 +37,7 @@ func on_singleplayer():
 	if MultiplayerManager.IS_MULTIPLAYER:
 		MultiplayerManager.close_multiplayer()
 	
+	BackgroundAudioManagerInstance.stop_active_audio()
 	SceneManager.change_to_scene(target_scene)
 	
 func on_multiplayer():
@@ -113,10 +114,12 @@ func on_cancel():
 	
 func on_start_host():
 	host_start.rpc()
+	BackgroundAudioManagerInstance.stop_active_audio()
 	SceneManager.change_to_scene(self.target_scene)
 	
 @rpc("authority", "call_remote")
 func host_start():
+	BackgroundAudioManagerInstance.stop_active_audio()
 	SceneManager.change_to_scene(self.target_scene)
 
 @rpc("any_peer", "call_remote")

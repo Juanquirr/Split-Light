@@ -6,6 +6,9 @@ extends Node2D
 @onready var label = $Mechanisms/Count
 @onready var key = $Mechanisms/key
 
+func _ready() -> void:
+	BackgroundAudioManagerInstance.play_bg_music(BackgroundAudio.BACKGROUND_AUDIO_TYPE.LEVEL_1_THEME)
+
 func _on_teleported_left(body):
 	if body == player1:
 		key.disable_level_visibility()

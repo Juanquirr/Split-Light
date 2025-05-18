@@ -1,0 +1,137 @@
+[gd_scene load_steps=15 format=3 uid="uid://dxgw1t0vqra6h"]
+
+[ext_resource type="Texture2D" uid="uid://c5h4m4bq3kpuy" path="res://Assets/MainMenu/starry-background.png" id="1_a3dpf"]
+[ext_resource type="Script" uid="uid://td4h18qgegwi" path="res://Scripts/Components/managers/level_complete_manager.gd" id="1_qw8pv"]
+[ext_resource type="Texture2D" uid="uid://box1qdfq2ar46" path="res://Assets/Characters/Abot/Abot Idle.png" id="2_qw8pv"]
+[ext_resource type="Texture2D" uid="uid://bt4ir15cxrjdw" path="res://Assets/Characters/Abot/Abot Jump.png" id="3_tx2m1"]
+[ext_resource type="Texture2D" uid="uid://c5h7qo116lbey" path="res://Assets/Characters/Abot/Abot Run.png" id="4_cooqe"]
+[ext_resource type="Texture2D" uid="uid://ivqjak8odrhf" path="res://Assets/Common/Button.png" id="5_yfj0h"]
+[ext_resource type="Texture2D" uid="uid://ksymtls3rnfl" path="res://Assets/Common/ButtonHover.png" id="6_p4dbv"]
+[ext_resource type="Script" uid="uid://qka7mssvlc5" path="res://Scripts/level_complete/main_menu.gd" id="7_bvlhv"]
+[ext_resource type="FontFile" uid="uid://r0dmn3iwndr8" path="res://Assets/Fonts/yoster.ttf" id="8_f0eoj"]
+[ext_resource type="Script" uid="uid://rv6wn4fki3vn" path="res://Scripts/Components/timer/time_left.gd" id="9_h12tv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x1314"]
+atlas = ExtResource("2_qw8pv")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s72mw"]
+atlas = ExtResource("3_tx2m1")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e0nfw"]
+atlas = ExtResource("4_cooqe")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xsdq6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x1314")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s72mw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e0nfw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[node name="LevelCompleteRoot" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qw8pv")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(512, 384)
+texture = ExtResource("1_a3dpf")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_direction = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -320.0
+offset_top = -320.0
+offset_right = 328.0
+offset_bottom = -128.0
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+text = "[font_size=90][center][font=\"res://Assets/Fonts/yoster.ttf\"]LEVEL X COMPLETED[/font][/center][/font_size]"
+
+[node name="PlayerAnimationPlaceHolder" type="AnimatedSprite2D" parent="."]
+visible = false
+texture_filter = 1
+position = Vector2(512, 408)
+scale = Vector2(5.68919, 5.68919)
+sprite_frames = SubResource("SpriteFrames_xsdq6")
+autoplay = "default"
+frame_progress = 0.707756
+
+[node name="TextureButton" type="TextureButton" parent="."]
+modulate = Color(1, 0.647059, 0.415686, 1)
+self_modulate = Color(1, 0.647059, 0.415686, 1)
+layout_mode = 0
+offset_left = 376.0
+offset_top = 560.0
+offset_right = 573.0
+offset_bottom = 633.0
+scale = Vector2(1.4, 1.4)
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("5_yfj0h")
+texture_hover = ExtResource("6_p4dbv")
+script = ExtResource("7_bvlhv")
+
+[node name="MainMenu" type="Label" parent="TextureButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -42.0
+offset_top = -11.5
+offset_right = 42.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("8_f0eoj")
+theme_override_font_sizes/font_size = 25
+text = "Main Menu"
+
+[node name="TimeLeft" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -272.0
+offset_top = -96.0
+offset_right = 272.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/normal_font = ExtResource("8_f0eoj")
+theme_override_font_sizes/bold_italics_font_size = 30
+theme_override_font_sizes/italics_font_size = 30
+theme_override_font_sizes/mono_font_size = 30
+theme_override_font_sizes/normal_font_size = 30
+theme_override_font_sizes/bold_font_size = 30
+bbcode_enabled = true
+text = "Time remaining..."
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("9_h12tv")
+
+[connection signal="pressed" from="TextureButton" to="TextureButton" method="_on_pressed"]

@@ -30,6 +30,7 @@ GetFinalTime="*res://Scripts/get_final_time.gd"
 MultiplayerManager="*res://Scripts/Components/managers/multiplayer_manager.gd"
 SaveLoadManager="*res://Scripts/SaveLoadManager.gd"
 AudioManagerInstance="*res://lib/AudioManager/AudioManagerInstance.tscn"
+BackgroundAudioManagerInstance="*res://lib/AudioManager/BackgroundAudioManagerInstance.tscn"
 
 [display]
 

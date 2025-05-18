@@ -25,6 +25,8 @@ func _ready() -> void:
 	for variant_sound_effect: VariantSoundEffect in variant_sound_effects:
 		variant_sound_effect_dict[variant_sound_effect.type] = variant_sound_effect
 
+func get_global_audio_modifier() -> float:
+	return SaveLoadManager.get_sfx_audio_level() / 100.0
 
 ## Method to generate a new audio instance.
 ## [br]
@@ -54,6 +56,7 @@ func _define_audio_instance(
 		push_error("Error when defining sound effect for %s" % sound_effect)
 	
 	audio_instance.volume_db = sound_effect.volume
+	audio_instance.volume_linear = get_global_audio_modifier()
 	audio_instance.pitch_scale = sound_effect.pitch_scale
 	audio_instance.pitch_scale += randf_range(-sound_effect.pitch_randomness, sound_effect.pitch_randomness)
 	audio_instance.finished.connect(sound_effect.on_audio_finished)

@@ -16,7 +16,7 @@ func _ready() -> void:
 func enter() -> void:
 	
 	if parent:
-		parent.freeze = true
+		parent.set_deferred("freeze", true)
 		parent.linear_velocity = Vector2.ZERO
 		parent.angular_velocity = 0.0
 

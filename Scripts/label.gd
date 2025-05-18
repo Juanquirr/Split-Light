@@ -1,10 +1,9 @@
 extends Label
 
 
-
 func _ready():
 	randomize()
-	var number = randi() % 1000  # Número entre 0 y 999
+	var number = (randi() % 900) + 100  # Número entre 0 y 999
 	var roman = to_roman(number)
 	text = roman
 	if get_child_count()>0:
