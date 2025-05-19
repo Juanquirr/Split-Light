@@ -101,4 +101,3 @@ func _physics_process(delta: float):
 func die():
 	return
 	SceneManager.change_to_scene(die_scene)
-	

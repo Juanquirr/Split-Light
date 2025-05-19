@@ -12,4 +12,4 @@ func _on_cancel_quit_pressed() -> void:
 func _on_confirm_quit_pressed() -> void:
 	PauseMenu.unpause()
 	BackgroundAudioManagerInstance.stop_active_audio()
-	SceneManager.change_to_scene(SceneManager.GameScenes.LEVEL_1)
+	SceneManager.change_to_scene(PauseMenu.restart_level)

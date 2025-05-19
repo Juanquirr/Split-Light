@@ -4259,6 +4259,7 @@ offset_bottom = 8.0
 
 [node name="Camera2D" type="Camera2D" parent="CodeLabel/Label/LockScreen"]
 position = Vector2(16, 0)
+enabled = false
 
 [node name="Camera2D" type="Camera2D" parent="CodeLabel/Label"]
 position = Vector2(-64, -8)
@@ -4526,6 +4527,7 @@ occluder = SubResource("OccluderPolygon2D_2n5d7")
 [node name="PauseMenu" parent="." instance=ExtResource("27_qie7t")]
 visible = false
 z_index = 99
+restart_level = 5
 
 [node name="Continue" parent="PauseMenu/VBoxContainer" index="1"]
 icon_alignment = 1

@@ -7,6 +7,8 @@ extends Control
 @onready var main_pause_bg: ColorRect = $ColorRect
 @onready var pause_black_bg: ColorRect = $Black
 
+@export var restart_level: SceneManager.GameScenes
+
 func _reset_state():
 	self.confirm_quit_screen.visible = false
 	self.confirm_restart_screen.visible = false
