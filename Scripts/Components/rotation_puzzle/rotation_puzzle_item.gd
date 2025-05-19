@@ -1,7 +1,7 @@
 extends Sprite2D
 
 var players_inside: Array[PlayerInstance] = []
-var sprite_rotation := 0.0
+var sprite_rotation := 142.2
 
 
 func update_sprite_rotation():

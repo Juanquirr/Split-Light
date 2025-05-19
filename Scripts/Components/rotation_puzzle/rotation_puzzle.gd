@@ -77,7 +77,6 @@ func check_target_list():
 
 func puzzle_completed():
 	emit_signal("rotation_puzzle_completed")
-	print("completado")
 
 
 func child_change(child):

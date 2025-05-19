@@ -1,6 +1,8 @@
 extends Control
 
 @export var expected = [0, 0, 0]
+@onready var animation_player = $"../../../AnimationLevel2"
+@onready var player1 = $"../../../Characters/Player1"
 
 @onready var digits = [
 	{
@@ -65,6 +67,10 @@ func _on_check_pressed():
 		result_label.text = "Correct"
 		result_label.add_theme_color_override("font_color", Color.GREEN)
 		check_button.disabled = true
+		player1.visible = false
+		animation_player.current_animation = "spaceship_ship"
+		animation_player.play("spaceship_ship")
+		
 	else:
 		tries_left -= 1
 		tries_label.text = "Tries: %d" % tries_left
