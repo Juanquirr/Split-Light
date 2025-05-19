@@ -34,7 +34,6 @@ func show_pause_menu():
 			position = screen_center - Vector2(1572, 388)
 		else:
 			position = screen_center
-			print(get_tree().current_scene.name)
 
 func pause():
 	BackgroundAudioManagerInstance.pause_active_audio()

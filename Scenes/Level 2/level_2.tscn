@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=4 uid="uid://b8ea5kw5sm13v"]
+[gd_scene load_steps=53 format=4 uid="uid://b8ea5kw5sm13v"]
 
 [ext_resource type="PackedScene" uid="uid://c4e6wyfc51ig8" path="res://Scenes/Components/wood_bridge/wood_bridge.tscn" id="1_aqquj"]
 [ext_resource type="Script" uid="uid://bfv6up8n8g3w1" path="res://Scripts/Level 2/level_2.gd" id="1_kdihc"]
@@ -1848,6 +1848,30 @@ sources/1 = SubResource("TileSetAtlasSource_52e5h")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ins2x"]
 size = Vector2(504.11, 301.849)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_oqsbs"]
+polygon = PackedVector2Array(-16.1044, -32, -16.1044, -28.2346, -15.8868, -27.9835, -12.84, -27.9835, -12.84, -26.1008, -9.35798, -25.9753, -9.14035, -20.0761, -5.87594, -20.0761, -5.87594, -11.9176, -2.17628, -9.90937, -2.17628, -3.88465, 1.30576, -3.88465, 1.30576, 4.0228, 4.57018, 4.14831, 4.57018, 6.15655, 11.7519, 6.15655, 11.7519, 9.04339, 19.8041, 9.04339, 35.038, 9.04339, 34.3851, -32)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_7y74l"]
+polygon = PackedVector2Array(-19.8041, -32, -19.5865, -26.2263, -16.3221, -26.1008, -16.1044, -21.9588, -12.84, -21.9588, -12.6224, -17.9423, -9.35798, -17.9423, -9.14035, -6.14392, -5.87594, -6.0184, -5.44069, -1.87641, -2.3939, -1.87641, -2.3939, 6.03103, -2.3939, 9.922, -31.3384, 17.955, -33.5146, 18.0805, -33.0794, -32)
+
+[sub_resource type="Gradient" id="Gradient_rohmv"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_t3pfu"]
+gradient = SubResource("Gradient_rohmv")
+fill = 1
+fill_from = Vector2(0.512821, 0.5)
+fill_to = Vector2(0.508547, 0)
+
+[sub_resource type="Gradient" id="Gradient_oqsbs"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_rohmv"]
+gradient = SubResource("Gradient_oqsbs")
+fill = 1
+fill_from = Vector2(0.508547, 0.491453)
+fill_to = Vector2(0.880342, 0.149573)
 
 [node name="PlaygroundEarth" type="Node2D"]
 script = ExtResource("1_kdihc")
@@ -4045,6 +4069,43 @@ modulate = Color(0.781538, 0.79745, 0.781982, 1)
 position = Vector2(2847, 1698)
 rotation = 2.61799
 scale = Vector2(0.468466, 0.481464)
+
+[node name="Node2D2" type="Node2D" parent="."]
+position = Vector2(-304, 571)
+
+[node name="CaveShadow" type="ColorRect" parent="Node2D2"]
+z_index = 10
+offset_right = 3433.0
+offset_bottom = 1658.0
+color = Color(0.117647, 0.117647, 0.117647, 0.556863)
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="Node2D2"]
+z_index = 1
+position = Vector2(602, 163.95)
+scale = Vector2(4.59501, 7.96718)
+occluder = SubResource("OccluderPolygon2D_oqsbs")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Node2D2"]
+z_index = 1
+position = Vector2(602, 163.95)
+scale = Vector2(4.59501, 7.96718)
+occluder = SubResource("OccluderPolygon2D_7y74l")
+
+[node name="LuzCelestial" type="PointLight2D" parent="Node2D2"]
+position = Vector2(603, 222)
+rotation = -0.523598
+scale = Vector2(5.99492, 11.2897)
+color = Color(1, 0.681617, 0.418086, 1)
+energy = 2.0
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_t3pfu")
+
+[node name="SpaceshipShadow" type="PointLight2D" parent="Node2D2"]
+position = Vector2(2675.38, 935.844)
+scale = Vector2(30.543, 16.9951)
+energy = 3.0
+blend_mode = 1
+texture = SubResource("GradientTexture2D_rohmv")
 
 [node name="PauseMenu" parent="." instance=ExtResource("27_qie7t")]
 visible = false
