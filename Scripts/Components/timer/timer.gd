@@ -4,12 +4,17 @@ class_name LevelTimer
 const TIME = 0
 
 signal time_out
+
+var game_over_scene: SceneManager.GameScenes
 var timer_time: float = TIME
 var running = true
 
 func set_timer(time):
 	timer_time = time
 	update_timer_label()
+	
+func set_game_over_scene(scene: SceneManager.GameScenes):
+	self.game_over_scene = scene
 
 func _ready():
 	add_theme_color_override("font_color", Color(1, 1, 1))
@@ -27,7 +32,7 @@ func _process(delta: float):
 			emit_signal("time_out")
 		update_timer_label()
 	else:
-		SceneManager.change_to_scene(SceneManager.GameScenes.GAME_OVER)
+		SceneManager.change_to_scene(game_over_scene)
 
 func reset_timer():
 	timer_time = TIME

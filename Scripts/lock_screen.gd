@@ -4,6 +4,7 @@ extends Control
 @onready var animation_player = $"../../../AnimationLevel2"
 @onready var player1 = $"../../../Characters/Player1"
 @onready var spaceship_bg := $"../../SpaceShipBGLock"
+@onready var timer_component := $"../../../Mechanics/TimerLabel"
 
 
 @onready var digits = [
@@ -29,8 +30,8 @@ extends Control
 
 @onready var result_label = $DigitsContainer/ResultLabel
 @onready var check_button = $DigitsContainer/CheckButton
-@onready var tries_label = $TriesLabel
-var tries_left = 3
+@onready var attempts_label = $TriesLabel
+var attempts_left = 3
 
 func _ready():
 	check_button.pressed.connect(_on_check_pressed)
@@ -58,8 +59,8 @@ func wait(seconds: float) -> void:
 
 @rpc("any_peer", "call_local")
 func goto_win_scene(animation_name: String):
-	print("goto_scene ", animation_name)
 	if animation_name != "spaceship_ship": return
+	timer_component.set_remaining_time()
 	SceneManager.change_to_scene(SceneManager.GameScenes.LEVEL_2_COMPLETED)
 
 func _play_spaceship_animation():
@@ -82,10 +83,11 @@ func _on_lock_guess_correct():
 	_play_spaceship_animation()
 
 func _on_check_pressed():
-	if tries_left <= 0:
+	if attempts_left <= 0:
 		return
 
 	var correct = true
+	print(expected)
 
 	for i in range(3):
 		if digits[i]["value"] != expected[i]:
@@ -95,10 +97,10 @@ func _on_check_pressed():
 	if correct:
 		self._on_lock_guess_correct()
 	else:
-		tries_left -= 1
-		tries_label.text = "Tries: %d" % tries_left
+		attempts_left -= 1
+		attempts_label.text = "Attempts: %d" % attempts_left
 
-		if tries_left == 0:
+		if attempts_left == 0:
 			result_label.text = "Game Over"
 			result_label.add_theme_color_override("font_color", Color.RED)
 			check_button.disabled = true

@@ -1,4 +1,4 @@
-[gd_scene load_steps=71 format=4 uid="uid://b8ea5kw5sm13v"]
+[gd_scene load_steps=73 format=4 uid="uid://b8ea5kw5sm13v"]
 
 [ext_resource type="PackedScene" uid="uid://c4e6wyfc51ig8" path="res://Scenes/Components/wood_bridge/wood_bridge.tscn" id="1_aqquj"]
 [ext_resource type="Script" uid="uid://bfv6up8n8g3w1" path="res://Scripts/Level 2/level_2.gd" id="1_kdihc"]
@@ -42,6 +42,8 @@
 [ext_resource type="Script" uid="uid://k6ffexa6disc" path="res://Scripts/space_ship.gd" id="28_ins2x"]
 [ext_resource type="Texture2D" uid="uid://dsjnwx3rhqrxs" path="res://Assets/Level 2/Spaceship.png" id="28_kdihc"]
 [ext_resource type="Texture2D" uid="uid://chw2nbrte6x7" path="res://Assets/Level 2/minerals/tigereyepix.png" id="41_2n5d7"]
+[ext_resource type="PackedScene" uid="uid://dfpa2ywr1hfch" path="res://Scenes/Components/timer/timer_label.tscn" id="41_anj5n"]
+[ext_resource type="Script" uid="uid://npqvody8odd0" path="res://Scripts/Level 1/timer_label.gd" id="42_ljwnd"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_xqi6i"]
 
@@ -4239,6 +4241,7 @@ tile_set = SubResource("TileSet_7tgn6")
 
 [node name="SpaceShipBGLock" type="Sprite2D" parent="CodeLabel"]
 modulate = Color(0.340339, 0.340339, 0.340339, 1)
+z_index = -99
 position = Vector2(-1355, 1552)
 scale = Vector2(2.46125, 2.46125)
 texture = ExtResource("28_kdihc")
@@ -4360,6 +4363,15 @@ position = Vector2(124, 5)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Mechanics/StaticBody2D"]
 position = Vector2(57, 232)
 shape = SubResource("RectangleShape2D_2n5d7")
+
+[node name="TimerLabel" parent="Mechanics" instance=ExtResource("41_anj5n")]
+offset_left = 927.0
+offset_top = 176.0
+offset_right = 1204.0
+offset_bottom = 253.0
+script = ExtResource("42_ljwnd")
+LEVEL_TIME = 180
+GAME_OVER_SCENE = 7
 
 [node name="SpaceShip" type="TileMapLayer" parent="."]
 position = Vector2(1640, 192)
