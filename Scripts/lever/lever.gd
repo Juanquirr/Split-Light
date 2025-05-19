@@ -1,5 +1,8 @@
 extends Node2D
 
+@onready var numberShadow = $"../../Lights/NumberShadow"
+@onready var numberLight = $"../../Lights/NumberLight"
+
 var activable_item : SwitchInteractiveInterface
 var players_inside: Array[PlayerInstance] = []
 var active := false
@@ -15,11 +18,15 @@ func _process(_delta):
 			active = false
 			$inactive_sprite.visible = false
 			$active_sprite.visible = true
+			numberShadow.visible = true
+			numberLight.visible = false
 			desactivate()
 		else:
 			active = true
 			$active_sprite.visible = false
 			$inactive_sprite.visible = true
+			numberShadow.visible = false
+			numberLight.visible = true
 			activate()
 		
 			
