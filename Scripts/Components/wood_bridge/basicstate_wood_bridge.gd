@@ -36,4 +36,10 @@ func physics_update() -> void:
 func activate():
 	var sprite = $"../../Sprite2D"
 	sprite.position = original_position
+	change_state.rpc()
+	emit_signal("Transitioned", self, next_state_name)
+
+
+@rpc("any_peer", "call_remote")
+func change_state():
 	emit_signal("Transitioned", self, next_state_name)

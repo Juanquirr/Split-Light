@@ -1,22 +1,45 @@
 extends Node2D
 
+class_name RotationPuzzleComponent
+
 @onready var first_item = $first_item
 @onready var second_item = $second_item
 @onready var third_item = $third_item
 @onready var items_list := [first_item, second_item, third_item]
 
+@export var use_test_puzzle := true
 
 var link_dict := {}
-var link_list_index := {}
+@export var link_list_index := {}
 @export var degree_target_list := [0,0,0]  
 
 signal rotation_puzzle_completed
 
 func _ready() -> void:
 	randomize()
-	rotate_items_randomly()
-	randomly_link_item_rotations()
+	
+	if use_test_puzzle:
+		mock_puzzle()
+	else:
+		rotate_items_randomly()
+		randomly_link_item_rotations()
+	
 
+
+func mock_puzzle():
+	link_dict = {
+		first_item: second_item,
+		second_item: third_item,
+		third_item: first_item
+	}
+	
+	link_list_index = {
+		0: 1,
+		1: 2,
+		2: 0
+	}
+	
+	push_warning("Using test puzzle.")
 
 func randomly_link_item_rotations():
 	for index in range(items_list.size()):
@@ -50,8 +73,11 @@ func check_target_list():
 	for index in range(items_list.size()):
 		if abs(abs(int(fmod(items_list[index].sprite_rotation - 142.2, 360.0))) - abs(int(degree_target_list[index]))) > 0.5:
 			return
-	emit_signal("rotation_puzzle_completed")
+	puzzle_completed()
 
+func puzzle_completed():
+	emit_signal("rotation_puzzle_completed")
+	print("completado")
 
 
 func child_change(child):

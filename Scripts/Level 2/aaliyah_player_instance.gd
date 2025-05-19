@@ -8,6 +8,7 @@ func _ready() -> void:
 	self.GRAVITY = 900
 
 	configure_multiplayer()
+	configure_as_client()
 
 func animation_process():
 	if not is_on_floor():

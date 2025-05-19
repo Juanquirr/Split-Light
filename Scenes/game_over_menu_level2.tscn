@@ -1,23 +1,19 @@
-[gd_scene load_steps=7 format=3 uid="uid://ygju8mh2r6jn"]
+[gd_scene load_steps=7 format=3 uid="uid://oogxp8m00kjp"]
 
-[ext_resource type="Script" uid="uid://caqe6p26485qn" path="res://Scripts/game_over_menu/try_again.gd" id="1_arass"]
-[ext_resource type="Texture2D" uid="uid://c5h4m4bq3kpuy" path="res://Assets/MainMenu/starry-background.png" id="1_thk71"]
-[ext_resource type="Script" uid="uid://stqf741t81mc" path="res://Scripts/game_over_menu/main_menu.gd" id="2_i22rp"]
-[ext_resource type="Texture2D" uid="uid://ivqjak8odrhf" path="res://Assets/Common/Button.png" id="4_jfp0r"]
-[ext_resource type="Texture2D" uid="uid://ksymtls3rnfl" path="res://Assets/Common/ButtonHover.png" id="5_h05y8"]
-[ext_resource type="FontFile" uid="uid://r0dmn3iwndr8" path="res://Assets/Fonts/yoster.ttf" id="6_w552w"]
+[ext_resource type="Texture2D" uid="uid://c5h4m4bq3kpuy" path="res://Assets/MainMenu/starry-background.png" id="1_jtvfv"]
+[ext_resource type="Texture2D" uid="uid://ivqjak8odrhf" path="res://Assets/Common/Button.png" id="2_riuad"]
+[ext_resource type="Texture2D" uid="uid://ksymtls3rnfl" path="res://Assets/Common/ButtonHover.png" id="3_wop5n"]
+[ext_resource type="Script" uid="uid://caqe6p26485qn" path="res://Scripts/game_over_menu/try_again.gd" id="4_cy6bo"]
+[ext_resource type="FontFile" uid="uid://r0dmn3iwndr8" path="res://Assets/Fonts/yoster.ttf" id="5_bnvww"]
+[ext_resource type="Script" uid="uid://stqf741t81mc" path="res://Scripts/game_over_menu/main_menu.gd" id="6_7b0y4"]
 
-[node name="GameOverMenu" type="Control"]
+[node name="GameOverMenuLevel2" type="Control"]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+anchors_preset = 0
 
 [node name="Starry-background" type="Sprite2D" parent="."]
 position = Vector2(512, 384)
-texture = ExtResource("1_thk71")
+texture = ExtResource("1_jtvfv")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 layout_mode = 1
@@ -26,10 +22,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -324.0
-offset_top = -192.0
-offset_right = 324.0
-offset_bottom = -64.0
+offset_left = 200.0
+offset_top = 212.0
+offset_right = 848.0
+offset_bottom = 340.0
 grow_horizontal = 2
 grow_vertical = 2
 bbcode_enabled = true
@@ -47,10 +43,10 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.4, 1.4)
 mouse_default_cursor_shape = 2
-texture_normal = ExtResource("4_jfp0r")
-texture_hover = ExtResource("5_h05y8")
-script = ExtResource("1_arass")
-target_scene = 2
+texture_normal = ExtResource("2_riuad")
+texture_hover = ExtResource("3_wop5n")
+script = ExtResource("4_cy6bo")
+target_scene = 5
 
 [node name="Label" type="Label" parent="TryAgainButton"]
 layout_mode = 1
@@ -65,7 +61,7 @@ offset_right = 43.5
 offset_bottom = 8.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("6_w552w")
+theme_override_fonts/font = ExtResource("5_bnvww")
 text = "TRY AGAIN"
 horizontal_alignment = 1
 
@@ -80,9 +76,9 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.4, 1.4)
 mouse_default_cursor_shape = 2
-texture_normal = ExtResource("4_jfp0r")
-texture_hover = ExtResource("5_h05y8")
-script = ExtResource("2_i22rp")
+texture_normal = ExtResource("2_riuad")
+texture_hover = ExtResource("3_wop5n")
+script = ExtResource("6_7b0y4")
 
 [node name="Label" type="Label" parent="MainMenuButton"]
 layout_mode = 1
@@ -97,7 +93,7 @@ offset_right = 43.0
 offset_bottom = 8.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("6_w552w")
+theme_override_fonts/font = ExtResource("5_bnvww")
 text = "MAIN MENU"
 horizontal_alignment = 1
 

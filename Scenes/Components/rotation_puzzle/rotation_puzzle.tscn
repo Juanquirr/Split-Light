@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://6tocuqnbi43y"]
+[gd_scene load_steps=8 format=3 uid="uid://6tocuqnbi43y"]
 
 [ext_resource type="Script" uid="uid://jxeauoc34bxi" path="res://Scripts/Components/rotation_puzzle/rotation_puzzle.gd" id="1_lcly6"]
 [ext_resource type="Texture2D" uid="uid://cfloppklfc234" path="res://Assets/Level 2/arrow_bow.png" id="2_o7hfe"]
@@ -12,6 +12,14 @@ size = Vector2(513.521, 621.782)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6nhiu"]
 size = Vector2(568.272, 694.575)
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_o7hfe"]
+properties/0/path = NodePath(".:degree_target_list")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+properties/1/path = NodePath(".:link_list_index")
+properties/1/spawn = true
+properties/1/replication_mode = 1
 
 [node name="RotationPuzzle" type="Node2D"]
 z_index = 2
@@ -61,6 +69,9 @@ collision_mask = 3
 [node name="CollisionShape2D" type="CollisionShape2D" parent="third_item/Area2D"]
 position = Vector2(7.03918, 6.16846)
 shape = SubResource("RectangleShape2D_6nhiu")
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_o7hfe")
 
 [connection signal="body_entered" from="first_item/Area2D" to="first_item" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="first_item/Area2D" to="first_item" method="_on_area_2d_body_exited"]

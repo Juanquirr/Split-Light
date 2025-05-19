@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=4 uid="uid://b8ea5kw5sm13v"]
+[gd_scene load_steps=57 format=4 uid="uid://b8ea5kw5sm13v"]
 
 [ext_resource type="PackedScene" uid="uid://c4e6wyfc51ig8" path="res://Scenes/Components/wood_bridge/wood_bridge.tscn" id="1_aqquj"]
 [ext_resource type="Script" uid="uid://bfv6up8n8g3w1" path="res://Scripts/Level 2/level_2.gd" id="1_kdihc"]
@@ -1854,6 +1854,9 @@ sources/1 = SubResource("TileSetAtlasSource_52e5h")
 [sub_resource type="TileSet" id="TileSet_7tgn6"]
 
 [sub_resource type="TileSet" id="TileSet_fkuja"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2n5d7"]
+size = Vector2(134, 484)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ins2x"]
 size = Vector2(504.11, 301.849)
@@ -4115,6 +4118,7 @@ tile_set = SubResource("TileSet_fkuja")
 position = Vector2(389, 908)
 scale = Vector2(4, 4)
 max_air_time = 0.8
+die_scene = 6
 
 [node name="Camera2D" parent="Characters/Player1" index="2"]
 limit_top = -10000000
@@ -4124,12 +4128,22 @@ limit_bottom = 10000000
 z_index = 50
 scale = Vector2(0.25, 0.25)
 
+[node name="CollisionShape2D" parent="Characters/Player1/Inventory" index="0"]
+scale = Vector2(0.25, 0.25)
+
 [node name="Player2" parent="Characters" instance=ExtResource("3_afqff")]
 position = Vector2(425, 415)
 scale = Vector2(4, 4)
+die_scene = 6
+
+[node name="Camera2D" parent="Characters/Player2" index="2"]
+limit_top = 0
 
 [node name="Inventory" parent="Characters/Player2" index="3"]
 z_index = 50
+scale = Vector2(0.25, 0.25)
+
+[node name="CollisionShape2D" parent="Characters/Player2/Inventory" index="0"]
 scale = Vector2(0.25, 0.25)
 
 [node name="PlayerSwitchManager" parent="Characters" instance=ExtResource("21_e55te")]
@@ -4165,6 +4179,13 @@ position = Vector2(714, 1390)
 
 [node name="first_item" parent="Scenes/RotationPuzzleRandomSolution/RotationPuzzle" index="0"]
 position = Vector2(55, -2.38419e-07)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Scenes"]
+position = Vector2(124, 5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Scenes/StaticBody2D"]
+position = Vector2(57, 232)
+shape = SubResource("RectangleShape2D_2n5d7")
 
 [node name="SpaceShip" type="TileMapLayer" parent="."]
 position = Vector2(1640, 192)
@@ -4225,6 +4246,7 @@ texture = ExtResource("25_2kiia")
 
 [node name="Node2D" type="Node2D" parent="."]
 modulate = Color(0.967654, 0.911983, 0.945648, 1)
+position = Vector2(29, 6)
 
 [node name="ColumCrystal4Pix5" type="Sprite2D" parent="Node2D"]
 modulate = Color(0.746065, 0.559109, 0.758854, 1)
@@ -4277,7 +4299,9 @@ text_direction = 1
 [editable path="Decoration/decoration2/stalactite4"]
 [editable path="Decoration/decoration2/stalactite9"]
 [editable path="Characters/Player1"]
+[editable path="Characters/Player1/Inventory"]
 [editable path="Characters/Player2"]
+[editable path="Characters/Player2/Inventory"]
 [editable path="Scenes/RotationPuzzleRandomSolution"]
 [editable path="Scenes/RotationPuzzleRandomSolution/RotationPuzzle"]
 [editable path="PauseMenu"]

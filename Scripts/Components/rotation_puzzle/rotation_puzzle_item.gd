@@ -7,6 +7,7 @@ var sprite_rotation := 0.0
 func update_sprite_rotation():
 	sprite_rotation = rotation_degrees
 
+@rpc("any_peer","call_remote")
 func rotate_90_degrees() -> void:
 	var tween := create_tween()
 	sprite_rotation += 90
@@ -26,6 +27,7 @@ func _process(_delta):
 	for player in players_inside:
 		if not player.is_active_player(): continue
 		rotate_90_degrees()
+		rotate_90_degrees.rpc_id(1)
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if is_instance_of(body, PlayerInstance):
