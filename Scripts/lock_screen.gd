@@ -3,6 +3,8 @@ extends Control
 @export var expected = [0, 0, 0]
 @onready var animation_player = $"../../../AnimationLevel2"
 @onready var player1 = $"../../../Characters/Player1"
+@onready var spaceship_bg := $"../../SpaceShipBGLock"
+
 
 @onready var digits = [
 	{
@@ -46,11 +48,38 @@ func _change_digit(digit, delta):
 	digit["label"].text = space + str(digit["value"]) + space
 
 func _style_label(label):
-
 	var stylebox = StyleBoxFlat.new()
 	stylebox.bg_color = Color.WHITE
 	label.add_theme_stylebox_override("normal", stylebox)
 	label.add_theme_color_override("font_color", Color.BLACK)
+
+func wait(seconds: float) -> void:
+	await get_tree().create_timer(seconds).timeout
+
+@rpc("any_peer", "call_local")
+func goto_win_scene(animation_name: String):
+	print("goto_scene ", animation_name)
+	if animation_name != "spaceship_ship": return
+	SceneManager.change_to_scene(SceneManager.GameScenes.LEVEL_2_COMPLETED)
+
+func _play_spaceship_animation():
+	animation_player.current_animation = "spaceship_ship"
+	animation_player.connect("animation_finished", goto_win_scene)
+	animation_player.play("spaceship_ship")
+
+func _on_lock_guess_correct():
+	result_label.text = "Correct"
+	result_label.add_theme_color_override("font_color", Color.GREEN)
+	check_button.disabled = true
+	player1.visible = false
+	AudioManagerInstance.create_audio(SoundEffect.SOUND_EFFECT_TYPE.ON_TASK_COMPLETE_1)
+	await wait(1)
+	$Camera2D.enabled = false
+	spaceship_bg.visible = false
+	var spaceship_cam := $"../../../SpaceShip/Area2D/SpaceShip/SpaceshipEndingCam"
+	spaceship_cam.enabled = true
+	spaceship_cam.make_current()
+	_play_spaceship_animation()
 
 func _on_check_pressed():
 	if tries_left <= 0:
@@ -64,13 +93,7 @@ func _on_check_pressed():
 			break
 
 	if correct:
-		result_label.text = "Correct"
-		result_label.add_theme_color_override("font_color", Color.GREEN)
-		check_button.disabled = true
-		player1.visible = false
-		animation_player.current_animation = "spaceship_ship"
-		animation_player.play("spaceship_ship")
-		
+		self._on_lock_guess_correct()
 	else:
 		tries_left -= 1
 		tries_label.text = "Tries: %d" % tries_left

@@ -27,15 +27,14 @@ func _process(_delta):
 	for player in players_inside:
 		if not player.is_active_player(): continue
 		rotate_90_degrees()
-		rotate_90_degrees.rpc_id(1)
+		
+		if MultiplayerManager.IS_MULTIPLAYER:
+			rotate_90_degrees.rpc_id(1)
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if is_instance_of(body, PlayerInstance):
 		players_inside.append(body)
-		
-
 
 func _on_area_2d_body_exited(body: Node2D) -> void:
 	if body in players_inside:
 		players_inside.erase(body)
-		

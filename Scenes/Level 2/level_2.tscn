@@ -1859,7 +1859,7 @@ sources/1 = SubResource("TileSetAtlasSource_52e5h")
 size = Vector2(134, 484)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ins2x"]
-size = Vector2(504.11, 301.849)
+size = Vector2(504.11, 731.507)
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_oqsbs"]
 polygon = PackedVector2Array(-16.1044, -32, -16.1044, -28.2346, -15.8868, -27.9835, -12.84, -27.9835, -12.84, -25.9753, -9.35798, -25.9753, -5.87594, -22.8374, -5.87594, -19.9506, -5.87594, -11.9176, -2.17627, -11.9176, 1.30576, -11.9176, 1.30576, -9.90941, -2.17627, -9.90941, -2.3939, -3.75918, 1.30576, -3.88465, 1.30576, 4.0228, 4.57018, 4.14831, 4.57018, 6.15655, 11.7519, 6.15655, 11.7519, 9.04339, 19.8041, 9.04339, 35.038, 9.04339, 34.3851, -32)
@@ -1922,7 +1922,6 @@ tracks/0/keys = {
 [sub_resource type="Animation" id="Animation_2n5d7"]
 resource_name = "spaceship_ship"
 length = 3.0
-loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -4062,12 +4061,12 @@ texture = ExtResource("27_slab7")
 
 [node name="stalactite6" parent="Decoration/decoration2" instance=ExtResource("26_ins2x")]
 modulate = Color(0.435294, 0.247059, 0.270588, 1)
-position = Vector2(1413, 803)
+position = Vector2(1381, 803)
 gravity_scale = 2.371
 
 [node name="stalactite9" parent="Decoration/decoration2" instance=ExtResource("26_ins2x")]
 modulate = Color(0.435294, 0.247059, 0.270588, 1)
-position = Vector2(1560, 807)
+position = Vector2(1528, 802)
 gravity_scale = 2.371
 
 [node name="stalactite8" parent="Decoration/decoration2" instance=ExtResource("26_ins2x")]
@@ -4223,6 +4222,7 @@ texture = ExtResource("27_slab7")
 
 [node name="Tigereyepix" type="Sprite2D" parent="Decoration"]
 modulate = Color(0.781538, 0.79745, 0.781982, 1)
+z_index = -1
 position = Vector2(1418.75, 1042.31)
 scale = Vector2(0.58721, 0.481464)
 texture = ExtResource("41_2n5d7")
@@ -4236,6 +4236,12 @@ texture = ExtResource("41_2n5d7")
 
 [node name="CodeLabel" type="TileMapLayer" parent="."]
 tile_set = SubResource("TileSet_7tgn6")
+
+[node name="SpaceShipBGLock" type="Sprite2D" parent="CodeLabel"]
+modulate = Color(0.340339, 0.340339, 0.340339, 1)
+position = Vector2(-1355, 1552)
+scale = Vector2(2.46125, 2.46125)
+texture = ExtResource("28_kdihc")
 
 [node name="Label" type="Label" parent="CodeLabel"]
 self_modulate = Color(0.54971, 0.351846, 0.0768829, 1)
@@ -4263,6 +4269,7 @@ enabled = false
 
 [node name="Camera2D" type="Camera2D" parent="CodeLabel/Label"]
 position = Vector2(-64, -8)
+enabled = false
 
 [node name="Characters" type="TileMapLayer" parent="."]
 z_index = 5
@@ -4271,8 +4278,8 @@ tile_set = SubResource("TileSet_fkuja")
 [node name="Player1" parent="Characters" instance=ExtResource("20_q8w0c")]
 position = Vector2(215, 1014)
 scale = Vector2(4, 4)
-max_air_time = 0.8
-die_scene = 6
+MAX_AIR_TIME = 1.2
+die_scene = 7
 
 [node name="Camera2D" parent="Characters/Player1" index="2"]
 limit_top = -10000000
@@ -4288,7 +4295,7 @@ scale = Vector2(0.25, 0.25)
 [node name="Player2" parent="Characters" instance=ExtResource("3_afqff")]
 position = Vector2(425, 415)
 scale = Vector2(4, 4)
-die_scene = 6
+die_scene = 7
 
 [node name="Camera2D" parent="Characters/Player2" index="2"]
 limit_top = 0
@@ -4303,54 +4310,54 @@ scale = Vector2(0.25, 0.25)
 [node name="PlayerSwitchManager" parent="Characters" instance=ExtResource("21_e55te")]
 script = ExtResource("22_0w14c")
 
-[node name="Scenes" type="TileMapLayer" parent="."]
+[node name="Mechanics" type="TileMapLayer" parent="."]
 
-[node name="Lever" parent="Scenes" instance=ExtResource("3_fff2f")]
+[node name="Lever" parent="Mechanics" instance=ExtResource("3_fff2f")]
 z_index = 2
 position = Vector2(2204, 374)
 scale = Vector2(0.453789, 0.453789)
 
-[node name="active_sprite" parent="Scenes/Lever" index="0"]
+[node name="active_sprite" parent="Mechanics/Lever" index="0"]
 rotation = 4.71239
 
-[node name="inactive_sprite" parent="Scenes/Lever" index="1"]
+[node name="inactive_sprite" parent="Mechanics/Lever" index="1"]
 rotation = 4.71239
 
-[node name="Base_lever" parent="Scenes/Lever" index="2"]
+[node name="Base_lever" parent="Mechanics/Lever" index="2"]
 position = Vector2(-4.4076, -2.39611e-05)
 rotation = 4.71239
 
-[node name="Area2D" parent="Scenes/Lever" index="3"]
+[node name="Area2D" parent="Mechanics/Lever" index="3"]
 position = Vector2(-2.20367, 0)
 
-[node name="WoodBridge" parent="Scenes/Lever" instance=ExtResource("1_aqquj")]
+[node name="WoodBridge" parent="Mechanics/Lever" instance=ExtResource("1_aqquj")]
 z_index = 2
 position = Vector2(-3021.23, 1020.3)
 scale = Vector2(2.20367, 2.20367)
 
-[node name="RotationPuzzleRandomSolution" parent="Scenes" instance=ExtResource("26_4dy1a")]
+[node name="RotationPuzzleRandomSolution" parent="Mechanics" instance=ExtResource("26_4dy1a")]
 z_index = 2
 position = Vector2(372, -1006)
 
-[node name="first_item_solution" parent="Scenes/RotationPuzzleRandomSolution" index="0"]
+[node name="first_item_solution" parent="Mechanics/RotationPuzzleRandomSolution" index="0"]
 position = Vector2(939, 1931)
 
-[node name="second_item_solution" parent="Scenes/RotationPuzzleRandomSolution" index="1"]
+[node name="second_item_solution" parent="Mechanics/RotationPuzzleRandomSolution" index="1"]
 position = Vector2(1101, 1932)
 
-[node name="third_item_solution" parent="Scenes/RotationPuzzleRandomSolution" index="2"]
+[node name="third_item_solution" parent="Mechanics/RotationPuzzleRandomSolution" index="2"]
 position = Vector2(1253, 1929)
 
-[node name="RotationPuzzle" parent="Scenes/RotationPuzzleRandomSolution" index="3"]
+[node name="RotationPuzzle" parent="Mechanics/RotationPuzzleRandomSolution" index="3"]
 position = Vector2(714, 1390)
 
-[node name="first_item" parent="Scenes/RotationPuzzleRandomSolution/RotationPuzzle" index="0"]
+[node name="first_item" parent="Mechanics/RotationPuzzleRandomSolution/RotationPuzzle" index="0"]
 position = Vector2(55, -2.38419e-07)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Scenes"]
+[node name="StaticBody2D" type="StaticBody2D" parent="Mechanics"]
 position = Vector2(124, 5)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Scenes/StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mechanics/StaticBody2D"]
 position = Vector2(57, 232)
 shape = SubResource("RectangleShape2D_2n5d7")
 
@@ -4368,88 +4375,27 @@ script = ExtResource("28_ins2x")
 position = Vector2(-0.000334439, 0)
 texture = ExtResource("28_kdihc")
 
+[node name="SpaceshipEndingCam" type="Camera2D" parent="SpaceShip/Area2D/SpaceShip"]
+position = Vector2(32.8765, -27.3972)
+scale = Vector2(2.73973, 2.73973)
+enabled = false
+zoom = Vector2(0.85, 0.85)
+limit_left = 0
+limit_top = 0
+limit_right = 3500
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SpaceShip/Area2D"]
-position = Vector2(32.8767, -221.678)
+position = Vector2(32.877, -6.84912)
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_ins2x")
-
-[node name="ColumCrystal4Pix" type="Sprite2D" parent="."]
-modulate = Color(0.735652, 0.545092, 0.748826, 1)
-self_modulate = Color(0.97182, 0.860244, 0.909667, 1)
-position = Vector2(258.327, 1061.99)
-rotation = -4.18878
-scale = Vector2(-0.151799, -0.22477)
-texture = ExtResource("27_slab7")
-
-[node name="ColumCrystal4Pix3" type="Sprite2D" parent="."]
-modulate = Color(0.595457, 0.395848, 0.610436, 1)
-self_modulate = Color(0.950636, 0.753029, 0.843861, 1)
-position = Vector2(1075, 1476)
-rotation = -3.40339
-scale = Vector2(-0.51398, -0.477175)
-texture = ExtResource("27_slab7")
-
-[node name="ColumCrystal4Pix4" type="Sprite2D" parent="."]
-modulate = Color(0.595457, 0.395848, 0.610436, 1)
-self_modulate = Color(0.950636, 0.753029, 0.843861, 1)
-position = Vector2(1095, 1491)
-rotation = -3.40339
-scale = Vector2(-0.51398, -0.477175)
-texture = ExtResource("27_slab7")
-
-[node name="ColumCrystal5Pix" type="Sprite2D" parent="."]
-modulate = Color(0.682353, 0.419608, 0.917647, 1)
-position = Vector2(1241, 1034)
-rotation = 4.18878
-scale = Vector2(0.517779, 0.269219)
-texture = ExtResource("25_2kiia")
-
-[node name="Node2D" type="Node2D" parent="."]
-modulate = Color(0.967654, 0.911983, 0.945648, 1)
-position = Vector2(29, 6)
-
-[node name="ColumCrystal4Pix5" type="Sprite2D" parent="Node2D"]
-modulate = Color(0.746065, 0.559109, 0.758854, 1)
-self_modulate = Color(0.950636, 0.753029, 0.843861, 1)
-position = Vector2(1844.96, 1378.13)
-rotation = 1.04721
-scale = Vector2(1.36891, -1.56126)
-texture = ExtResource("27_slab7")
-
-[node name="ColumCrystal4Pix6" type="Sprite2D" parent="Node2D"]
-modulate = Color(0.766364, 0.587635, 0.778321, 1)
-self_modulate = Color(0.950636, 0.753029, 0.843861, 1)
-position = Vector2(1889.93, 1384.89)
-rotation = 2.3562
-scale = Vector2(1.52794, 1.32393)
-texture = ExtResource("27_slab7")
-
-[node name="ColumCrystal4Pix" type="Sprite2D" parent="Node2D"]
-self_modulate = Color(0.693482, 0.463041, 0.624926, 1)
-position = Vector2(1645, 981)
-rotation = -0.785397
-scale = Vector2(0.532622, 0.576351)
-texture = ExtResource("27_slab7")
-
-[node name="ColumCrystal4Pix2" type="Sprite2D" parent="Node2D"]
-self_modulate = Color(0.581407, 0.36389, 0.518229, 1)
-position = Vector2(979.364, 1477.64)
-rotation = 0.523598
-scale = Vector2(-0.353243, 0.635524)
-texture = ExtResource("27_slab7")
-
-[node name="ColumCrystal4Pix3" type="Sprite2D" parent="Node2D"]
-self_modulate = Color(0.581407, 0.36389, 0.518229, 1)
-position = Vector2(684, 1444)
-rotation = 1.11546
-scale = Vector2(-0.455361, 0.623412)
-texture = ExtResource("27_slab7")
 
 [node name="Lights" type="TileMapLayer" parent="."]
 position = Vector2(-304, 571)
 
 [node name="CaveShadow" type="ColorRect" parent="Lights"]
 z_index = 10
-offset_right = 3433.0
+offset_left = -140.0
+offset_right = 4081.0
 offset_bottom = 1658.0
 color = Color(0.117647, 0.117647, 0.117647, 0.556863)
 
@@ -4548,7 +4494,7 @@ libraries = {
 [editable path="Characters/Player1/Inventory"]
 [editable path="Characters/Player2"]
 [editable path="Characters/Player2/Inventory"]
-[editable path="Scenes/Lever"]
-[editable path="Scenes/RotationPuzzleRandomSolution"]
-[editable path="Scenes/RotationPuzzleRandomSolution/RotationPuzzle"]
+[editable path="Mechanics/Lever"]
+[editable path="Mechanics/RotationPuzzleRandomSolution"]
+[editable path="Mechanics/RotationPuzzleRandomSolution/RotationPuzzle"]
 [editable path="PauseMenu"]

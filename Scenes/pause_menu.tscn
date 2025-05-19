@@ -93,7 +93,7 @@ script = ExtResource("3_myy0f")
 [node name="Controls" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_k0w1u")
-text = "Controls"
+text = "Options"
 script = ExtResource("4_sjs17")
 
 [node name="Exit" type="Button" parent="VBoxContainer"]

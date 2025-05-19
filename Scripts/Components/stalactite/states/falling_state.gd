@@ -23,13 +23,11 @@ func update() -> void:
 func physics_update() -> void:
 	pass
 
-
 func _on_area_2d_area_entered(_area: Area2D) -> void:
 	emit_signal("Transitioned", self, next_state_name)
 
-
 func _on_body_entered(body: Node2D) -> void:
-	if body.has_method("die") and body is PlayerInstance:
+	if body is PlayerInstance:
 		body.die()
 	emit_signal("Transitioned", self, next_state_name)
 	

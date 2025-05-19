@@ -1,5 +1,7 @@
 extends Area2D
 
+@onready var spaceship_bg := $"../../CodeLabel/SpaceShipBGLock"
+
 var players_inside: Array[PlayerInstance] = []
 var open_lock_for_player = {}
 
@@ -33,4 +35,5 @@ func _process(_delta):
 			open_lock_for_player[player] = true
 			player.set_process_input(false)
 			player.set_physics_process(false)
+			spaceship_bg.visible = true
 			player.get_node("Camera2D").enabled = false

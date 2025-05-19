@@ -1533,6 +1533,7 @@ autoplay = "default"
 z_index = 2
 position = Vector2(617, 175)
 scale = Vector2(6, 6)
+die_scene = 4
 
 [node name="Inventory" parent="Characters/Player1" index="3"]
 scale = Vector2(0.166, 0.166)
@@ -1543,6 +1544,7 @@ position = Vector2(803, 176)
 scale = Vector2(6, 6)
 JUMP_VELOCITY = -300
 GRAVITY = 1000
+die_scene = 4
 
 [node name="Inventory" parent="Characters/Player2" index="3"]
 scale = Vector2(0.166, 0.166)

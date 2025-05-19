@@ -7,7 +7,8 @@ enum GameScenes {
 	LEVEL_1_COMPLETED,
 	GAME_OVER,
 	LEVEL_2,
-	GAME_OVER_LEVEL2
+	LEVEL_2_COMPLETED,
+	GAME_OVER_LEVEL2,
 }
 
 const SCENE_LIST = {
@@ -17,6 +18,7 @@ const SCENE_LIST = {
 	GameScenes.LEVEL_1_COMPLETED: "Level 1/level_1_completed",
 	GameScenes.GAME_OVER: "game_over_menu",
 	GameScenes.LEVEL_2: "Level 2/level_2",
+	GameScenes.LEVEL_2_COMPLETED: "Level 2/level_2_complete",
 	GameScenes.GAME_OVER_LEVEL2: "game_over_menu_level2"
 }
 

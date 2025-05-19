@@ -5,7 +5,7 @@ class_name PlayerInstance
 @export var SPEED := 650
 @export var JUMP_VELOCITY := -600
 @export var GRAVITY := 900
-@export var max_air_time := 1.6
+@export var MAX_AIR_TIME := 1.6
 @export var die_scene: SceneManager.GameScenes
 
 @export var animated_sprite: AnimatedSprite2D = null
@@ -14,7 +14,7 @@ class_name PlayerInstance
 
 var _warned_no_animation_attached := false
 var _warned_empty_animation := false
-var air_time := 0.0
+var _air_time := 0.0
 
 var _current_scene_name := ""
 
@@ -81,11 +81,11 @@ func _process(_delta: float) -> void:
 func _physics_process(delta: float):
 	self._process_vertical_gravity(delta)
 	
-	if is_on_floor() and  air_time < max_air_time:
-		air_time = 0.0
+	if is_on_floor() and  _air_time < MAX_AIR_TIME:
+		_air_time = 0.0
 	else:
-		air_time += delta
-		if air_time > max_air_time and is_on_floor():
+		_air_time += delta
+		if _air_time > MAX_AIR_TIME and is_on_floor():
 			die()
 	
 	if self.is_active and self._client_handles_authority():
@@ -98,6 +98,6 @@ func _physics_process(delta: float):
 
 	move_and_slide()
 
+@rpc("any_peer", "call_local")
 func die():
-	return
 	SceneManager.change_to_scene(die_scene)
