@@ -9,14 +9,14 @@ func _ready():
 	if get_child_count()>0:
 		get_child(0).change_expected_value(separed_digit(number))
 
-func separed_digit(numero: int) -> Array:
+func separed_digit(numero: int) -> Array[int]:
 	if numero < 100 or numero > 999:
 		push_error("El número debe tener exactamente tres dígitos")
 		return []
 
-	var centenas = numero / 100
-	var decenas = (numero % 100) / 10
-	var unidades = numero % 10
+	var centenas := numero / 100
+	var decenas := (numero % 100) / 10
+	var unidades := numero % 10
 
 	return [centenas, decenas, unidades]
 
