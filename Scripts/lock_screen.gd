@@ -29,11 +29,12 @@ extends Control
 var tries_left = 3
 
 func _ready():
+	check_button.pressed.connect(_on_check_pressed)
+	
 	for digit in digits:
 		digit["plus"].pressed.connect(func(): _change_digit(digit, 1))
 		digit["minus"].pressed.connect(func(): _change_digit(digit, -1))
 		_style_label(digit["label"])
-		check_button.pressed.connect(_on_check_pressed)
 
 func _change_digit(digit, delta):
 	digit["value"] = (digit["value"] + delta) % 10

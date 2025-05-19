@@ -13,15 +13,15 @@ func _ready() -> void:
 	parent = get_parent().get_parent()
 	sprite = $"../../Sprite2D"
 	
+func freeze_parent(value: bool):
+	parent.freeze = value
+
 func enter() -> void:
-	
 	if parent:
-		parent.freeze = true
+		freeze_parent.call_deferred(true)
 		parent.linear_velocity = Vector2.ZERO
 		parent.angular_velocity = 0.0
 		initial_position = parent.global_position
-
-
 
 func exit() -> void:
 	pass

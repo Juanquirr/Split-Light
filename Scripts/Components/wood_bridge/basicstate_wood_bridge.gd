@@ -14,15 +14,18 @@ func _ready() -> void:
 		initial_position = parent.global_position
 	else:
 		push_error("Parent is not a RigidBody2D")
+		
+func freeze_parent(value: bool):
+	parent.freeze = value
 
 func enter() -> void:
 	if parent:
-		parent.freeze = true
+		freeze_parent.call_deferred(true)
 		parent.global_position = initial_position
 
 func exit() -> void:
 	if parent:
-		parent.freeze = false
+		freeze_parent.call_deferred(false)
 
 func update() -> void:
 	parent.global_position = initial_position
@@ -30,7 +33,6 @@ func update() -> void:
 func physics_update() -> void:
 	pass 
 	
-
 func activate():
 	var sprite = $"../../Sprite2D"
 	sprite.position = original_position
