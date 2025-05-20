@@ -4,7 +4,7 @@ extends Node2D
 @onready var second_item = $second_item_solution
 @onready var third_item = $third_item_solution
 @onready var items_list := [first_item, second_item, third_item]
-@onready var rotation_puzzle = $RotationPuzzle
+@onready var rotation_puzzle: RotationPuzzleComponent = $RotationPuzzle
 
 
 var link_dict := {}
@@ -20,7 +20,7 @@ func generate_random_solution():
 	for index in range(items_list.size()):
 		var item = items_list[index]
 		var degree = get_degrees(item.sprite_rotation)
-		for i in range(get_random_up_to(4)):
+		for i in range(3 if rotation_puzzle.use_test_puzzle else get_random_up_to(4)):
 			item.rotate_90_degrees()
 		if get_degrees(item.sprite_rotation) - degree < 0.5:
 			item.rotate_90_degrees()

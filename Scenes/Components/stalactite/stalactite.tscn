@@ -1,12 +1,17 @@
-[gd_scene load_steps=7 format=3 uid="uid://b6x3h25wyurd2"]
+[gd_scene load_steps=8 format=3 uid="uid://b6x3h25wyurd2"]
 
-[ext_resource type="Script" uid="uid://djlaeocwcf66c" path="res://addons/StateMachine/state_machine.gd" id="1_uma3b"]
+[ext_resource type="Script" uid="uid://ck30ygwns4lug" path="res://addons/StateMachine/state_machine.gd" id="1_uma3b"]
 [ext_resource type="Script" uid="uid://cn7uft34myh7o" path="res://Scripts/Components/stalactite/states/basic_state.gd" id="2_2goke"]
 [ext_resource type="Script" uid="uid://d0slpi61coxk8" path="res://Scripts/Components/stalactite/states/falling_state.gd" id="3_u0yxr"]
 [ext_resource type="Script" uid="uid://bdtkraysobegt" path="res://Scripts/Components/stalactite/states/hittingstate.gd" id="4_2goke"]
 [ext_resource type="Texture2D" uid="uid://kwi64bh8reci" path="res://Assets/Common/stalactite.png" id="4_4yg7v"]
 
 [sub_resource type="SeparationRayShape2D" id="SeparationRayShape2D_uma3b"]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_2goke"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/replication_mode = 1
 
 [node name="stalactite" type="RigidBody2D"]
 z_index = 2
@@ -37,6 +42,9 @@ collision_mask = 3
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2d"]
 polygon = PackedVector2Array(-20, 0, 40, -1, 40, 6, 37, 6, 37, 7, 33, 7, 33, 9, 30, 9, 30, 10, 29, 10, 29, 12, 28, 12, 28, 13, 26, 13, 26, 14, 23, 14, 23, 16, 22, 16, 22, 19, 21, 19, 21, 23, 19, 23, 19, 30, 18, 30, 18, 35, 16, 35, 16, 41, 15, 41, 15, 45, 13, 45, 13, 55, 12, 55, 12, 60, 11, 60, 11, 67, 10, 67, 10, 75, 8, 75, 8, 80, 6, 80, 6, 76, 5, 76, 5, 63, 4, 63, 4, 56, 3, 56, 3, 40, 1, 40, 1, 35, 0, 35, 0, 29, -2, 29, -2, 25, -3, 25, -3, 21, -5, 21, -5, 20, -6, 20, -6, 17, -7, 17, -7, 12, -9, 13, -9, 11, -10, 11, -10, 8, -11, 8, -11, 7, -13, 7, -13, 5, -15, 5, -16, 4)
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_2goke")
 
 [connection signal="area_entered" from="Area2d" to="state_machine/fallingstate" method="_on_area_2d_area_entered"]
 [connection signal="body_entered" from="Area2d" to="state_machine/fallingstate" method="_on_body_entered"]

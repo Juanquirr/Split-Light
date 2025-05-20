@@ -18,10 +18,10 @@ func _ready() -> void:
 	update_label_time()
 
 func update_client_time():
-	rpc_id(MultiplayerManager.CLIENT_ID, "receive_number")
+	rpc("receive_number", GetFinalTime.get_final_time())
 
-@rpc("any_peer", "call_remote")
-func receive_number(number: int):
+@rpc("authority", "call_remote")
+func receive_number(number: float):
 	GetFinalTime.set_final_time(number)
 	SaveLoadManager.on_level_completed(get_level_id())
 	is_new_best_time = SaveLoadManager.save_level_time(get_level_id(), get_time_string()) 

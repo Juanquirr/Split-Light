@@ -7,6 +7,8 @@ extends Control
 @onready var main_pause_bg: ColorRect = $ColorRect
 @onready var pause_black_bg: ColorRect = $Black
 
+@export var restart_level: SceneManager.GameScenes
+
 func _reset_state():
 	self.confirm_quit_screen.visible = false
 	self.confirm_restart_screen.visible = false
@@ -30,15 +32,20 @@ func show_pause_menu():
 	if camera:
 		var screen_center = camera.get_screen_center_position()
 		
-		# Ajustar la posición del menú para que esté centrado
-		position = screen_center - Vector2(1572, 388)
+		if get_tree().current_scene.name == "PlaygroundMalbork":
+			position = screen_center - Vector2(1572, 388)
+		else:
+			position = screen_center
 
 func pause():
 	BackgroundAudioManagerInstance.pause_active_audio()
-	get_tree().paused = true
 	visible = true
+	if not MultiplayerManager.IS_MULTIPLAYER:
+		get_tree().paused = true
 
 func unpause():
 	visible = false
 	self._reset_state()
-	get_tree().paused = false
+	
+	if not MultiplayerManager.IS_MULTIPLAYER:
+		get_tree().paused = false

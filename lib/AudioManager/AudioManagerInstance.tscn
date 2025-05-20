@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://bo8axprub1pdg"]
+[gd_scene load_steps=48 format=3 uid="uid://bo8axprub1pdg"]
 
 [ext_resource type="Script" uid="uid://bxuhmuh7ux44m" path="res://lib/AudioManager/AudioManager.gd" id="1_oarm3"]
 [ext_resource type="Script" uid="uid://ca5hvco441wld" path="res://lib/AudioManager/SoundEffectSetting.gd" id="2_nmrk3"]
@@ -27,6 +27,12 @@
 [ext_resource type="AudioStream" uid="uid://d2obcapviaaoe" path="res://Assets/Sounds/Effects/jump/reverend_jump2.mp3" id="16_onbiv"]
 [ext_resource type="AudioStream" uid="uid://bg2f15bblepvu" path="res://Assets/Sounds/Effects/step/wood5.ogg" id="17_qnfrp"]
 [ext_resource type="AudioStream" uid="uid://cdd23thm6ia0o" path="res://Assets/Sounds/Effects/step/wood6.ogg" id="18_ib634"]
+[ext_resource type="AudioStream" uid="uid://4t0j1fl3c3un" path="res://Assets/Sounds/Effects/step/grass1.ogg" id="28_5adym"]
+[ext_resource type="AudioStream" uid="uid://dgorbp0rsw712" path="res://Assets/Sounds/Effects/step/grass2.ogg" id="29_a12ra"]
+[ext_resource type="AudioStream" uid="uid://cbqmmswvcg543" path="res://Assets/Sounds/Effects/step/grass3.ogg" id="30_dw8p8"]
+[ext_resource type="AudioStream" uid="uid://meekmr0u6sk3" path="res://Assets/Sounds/Effects/step/grass4.ogg" id="31_5mckt"]
+[ext_resource type="AudioStream" uid="uid://kiosyilgqncl" path="res://Assets/Sounds/Effects/step/grass5.ogg" id="32_x802r"]
+[ext_resource type="AudioStream" uid="uid://c2hrclpiqv7te" path="res://Assets/Sounds/Effects/step/grass6.ogg" id="33_wxyri"]
 
 [sub_resource type="Resource" id="Resource_xu5v1"]
 script = ExtResource("2_nmrk3")
@@ -150,14 +156,24 @@ pitch_randomness = 0.0
 [sub_resource type="Resource" id="Resource_rbitm"]
 script = ExtResource("3_p3c4e")
 limit = 1
-type = 2
+type = 3
 sound_variants = Array[AudioStream]([ExtResource("15_rbitm"), ExtResource("16_onbiv")])
 volume = -5.0
 pitch_scale = 1.1
 pitch_randomness = 0.05
 metadata/_custom_type_script = "uid://dectxygt7wgxb"
 
+[sub_resource type="Resource" id="Resource_w2u0s"]
+script = ExtResource("3_p3c4e")
+limit = 1
+type = 2
+sound_variants = Array[AudioStream]([ExtResource("28_5adym"), ExtResource("29_a12ra"), ExtResource("30_dw8p8"), ExtResource("31_5mckt"), ExtResource("32_x802r"), ExtResource("33_wxyri")])
+volume = -5.0
+pitch_scale = 1.0
+pitch_randomness = 0.0
+metadata/_custom_type_script = "uid://dectxygt7wgxb"
+
 [node name="AudioManagerInstance" type="Node2D"]
 script = ExtResource("1_oarm3")
 sound_effects = Array[ExtResource("2_nmrk3")]([SubResource("Resource_xu5v1"), SubResource("Resource_kyfub"), SubResource("Resource_mqulx"), SubResource("Resource_tm5vn"), SubResource("Resource_3ujss"), SubResource("Resource_ltw0k"), SubResource("Resource_q8vuj"), SubResource("Resource_vwnaf"), SubResource("Resource_oummw"), SubResource("Resource_bkhv3")])
-variant_sound_effects = Array[ExtResource("3_p3c4e")]([SubResource("Resource_rvts4"), SubResource("Resource_iujpo"), SubResource("Resource_rbitm")])
+variant_sound_effects = Array[ExtResource("3_p3c4e")]([SubResource("Resource_rvts4"), SubResource("Resource_iujpo"), SubResource("Resource_rbitm"), SubResource("Resource_w2u0s")])
