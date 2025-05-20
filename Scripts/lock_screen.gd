@@ -93,7 +93,6 @@ func _on_check_pressed():
 		return
 
 	var correct = true
-	print(expected)
 
 	for i in range(3):
 		if digits[i]["value"] != expected[i]:
