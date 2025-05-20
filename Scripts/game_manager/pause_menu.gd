@@ -39,10 +39,13 @@ func show_pause_menu():
 
 func pause():
 	BackgroundAudioManagerInstance.pause_active_audio()
-	get_tree().paused = true
 	visible = true
+	if not MultiplayerManager.IS_MULTIPLAYER:
+		get_tree().paused = true
 
 func unpause():
 	visible = false
 	self._reset_state()
-	get_tree().paused = false
+	
+	if not MultiplayerManager.IS_MULTIPLAYER:
+		get_tree().paused = false

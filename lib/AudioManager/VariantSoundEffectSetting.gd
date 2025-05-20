@@ -7,6 +7,7 @@ class_name VariantSoundEffect
 enum VARIANT_SOUND_EFFECT_TYPE {
 	ON_STONE_WALK,
 	ON_WOOD_WALK,
+	ON_GRASS_WALK,
 	ON_REVEREND_JUMP,
 }
 

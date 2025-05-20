@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dwin1ecgemtr3"]
+[gd_scene load_steps=6 format=3 uid="uid://dwin1ecgemtr3"]
 
 [ext_resource type="Script" uid="uid://c5n2etj17befl" path="res://Scripts/lock_screen.gd" id="1_8hiqv"]
 [ext_resource type="Texture2D" uid="uid://b5x638ie822go" path="res://Assets/Level 2/candado.png" id="2_o65ij"]
@@ -10,6 +10,14 @@ border_width_left = 2
 border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_o65ij"]
+properties/0/path = NodePath(".:expected")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+properties/1/path = NodePath(".:attempts_left")
+properties/1/spawn = true
+properties/1/replication_mode = 1
 
 [node name="LockScreen" type="Control"]
 layout_mode = 3
@@ -148,3 +156,6 @@ theme_override_fonts/font = ExtResource("3_o65ij")
 theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_o65ij")
 text = "Check"
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_o65ij")

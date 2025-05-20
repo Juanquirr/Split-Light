@@ -4270,10 +4270,6 @@ offset_bottom = 8.0
 position = Vector2(16, 0)
 enabled = false
 
-[node name="Camera2D" type="Camera2D" parent="CodeLabel/Label"]
-position = Vector2(-64, -8)
-enabled = false
-
 [node name="Characters" type="TileMapLayer" parent="."]
 z_index = 5
 tile_set = SubResource("TileSet_fkuja")
@@ -4398,7 +4394,6 @@ limit_right = 3500
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SpaceShip/Area2D"]
 position = Vector2(32.877, -6.84912)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_ins2x")
 
 [node name="Lights" type="TileMapLayer" parent="."]
@@ -4457,6 +4452,7 @@ shadow_enabled = true
 texture = SubResource("GradientTexture2D_hbomi")
 
 [node name="SpaceshipShadow" type="PointLight2D" parent="Lights"]
+z_index = 50
 position = Vector2(2675.38, 935.844)
 scale = Vector2(30.543, 16.9951)
 energy = 3.0
@@ -4464,6 +4460,7 @@ blend_mode = 1
 texture = SubResource("GradientTexture2D_rohmv")
 
 [node name="NumberShadow" type="PointLight2D" parent="Lights"]
+z_index = 50
 position = Vector2(1139.5, 828.5)
 scale = Vector2(15.0469, 9.89063)
 energy = 2.0

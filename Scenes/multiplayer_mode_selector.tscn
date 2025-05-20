@@ -250,7 +250,7 @@ offset_right = 817.0
 offset_bottom = 392.0
 bbcode_enabled = true
 text = "[font_size=15][center][font=\"res://Assets/Fonts/yoster.ttf\"][color=#a1a1a1]Default port: 49359
-Ports must be between 1024 and 65535[/color][/font][/center][/font_size]"
+Ports must be between 49152 and 65535[/color][/font][/center][/font_size]"
 
 [node name="ServerHandlerButtons" type="Control" parent="HostRoomDialog"]
 anchors_preset = 0

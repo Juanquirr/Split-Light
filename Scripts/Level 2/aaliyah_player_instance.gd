@@ -9,6 +9,10 @@ func _ready() -> void:
 
 	configure_multiplayer()
 	configure_as_client()
+	
+func sound_process() -> void:
+	if self.direction != 0 and is_on_floor():
+		AudioManagerInstance.create_variant_audio(VariantSoundEffect.VARIANT_SOUND_EFFECT_TYPE.ON_GRASS_WALK)
 
 func animation_process():
 	if not is_on_floor():

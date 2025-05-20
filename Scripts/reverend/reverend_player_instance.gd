@@ -19,7 +19,6 @@ func _process_jump() -> bool:
 	return true
 	
 func sound_process() -> void:
-	
 	is_on_wood = false
 	for i in get_slide_collision_count():
 		var collision = get_slide_collision(i)

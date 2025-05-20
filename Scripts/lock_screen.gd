@@ -31,10 +31,11 @@ extends Control
 @onready var result_label = $DigitsContainer/ResultLabel
 @onready var check_button = $DigitsContainer/CheckButton
 @onready var attempts_label = $TriesLabel
-var attempts_left = 3
+@export var attempts_left = 3
 
 func _ready():
-	check_button.pressed.connect(_on_check_pressed)
+	check_button.pressed.connect(func(): _on_check_pressed.rpc())
+	animation_player.connect("animation_finished", on_animation_finish)
 	
 	for digit in digits:
 		digit["plus"].pressed.connect(func(): _change_digit(digit, 1))
@@ -58,16 +59,20 @@ func wait(seconds: float) -> void:
 	await get_tree().create_timer(seconds).timeout
 
 @rpc("any_peer", "call_local")
-func goto_win_scene(animation_name: String):
-	if animation_name != "spaceship_ship": return
+func _go_to_win_scene():
 	timer_component.set_remaining_time()
 	SceneManager.change_to_scene(SceneManager.GameScenes.LEVEL_2_COMPLETED)
 
+func on_animation_finish(animation_name: String):
+	if animation_name != "spaceship_ship": return
+	_go_to_win_scene.rpc()
+	
+@rpc("any_peer", "call_local")
 func _play_spaceship_animation():
 	animation_player.current_animation = "spaceship_ship"
-	animation_player.connect("animation_finished", goto_win_scene)
 	animation_player.play("spaceship_ship")
 
+@rpc("any_peer", "call_local")
 func _on_lock_guess_correct():
 	result_label.text = "Correct"
 	result_label.add_theme_color_override("font_color", Color.GREEN)
@@ -80,8 +85,9 @@ func _on_lock_guess_correct():
 	var spaceship_cam := $"../../../SpaceShip/Area2D/SpaceShip/SpaceshipEndingCam"
 	spaceship_cam.enabled = true
 	spaceship_cam.make_current()
-	_play_spaceship_animation()
+	_play_spaceship_animation.rpc()
 
+@rpc("any_peer", "call_local")
 func _on_check_pressed():
 	if attempts_left <= 0:
 		return
@@ -95,7 +101,7 @@ func _on_check_pressed():
 			break
 
 	if correct:
-		self._on_lock_guess_correct()
+		self._on_lock_guess_correct.rpc()
 	else:
 		attempts_left -= 1
 		attempts_label.text = "Attempts: %d" % attempts_left
